@@ -10,6 +10,7 @@ export interface IFormData {
   formId: string;
   formName: string;
   schema: IJSONSchema;
+  customComponent?: boolean;
   ui: IFormUI;
   [key: string]: unknown; // Allow additional form-level properties
 }

@@ -19,9 +19,9 @@
   "ui": {
     "ui:header": true,
     "ui:layout": [
-      { "type": "field", "name": "proposers_name" },
-      { "type": "field", "name": "contact_number" },
-      { "type": "field", "name": "nic_number" },
+      { "type": "field", "name": "proposers_name", "label": "Proposer's Name" },
+      { "type": "field", "name": "contact_number", "label": "Contact Number" },
+      { "type": "field", "name": "nic_number", "label": "NIC Number" },
       { "type": "subheader", "text": "THREAT CLAUSE", "align": "center" },
       {
         "type": "md",
