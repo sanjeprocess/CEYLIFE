@@ -8,7 +8,6 @@ import type { TextAlign, ListBulletType } from "./types";
 export interface IFieldLayoutItem {
   type: "field";
   name: string;
-  label?: string;
 }
 
 export interface ISubheaderLayoutItem {
@@ -109,3 +108,4 @@ export interface IFormUI {
   "ui:layout": ILayoutItem[];
   [key: string]: unknown; // Allow additional UI properties
 }
+
