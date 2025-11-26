@@ -15,6 +15,7 @@ import {
 } from "@/components/atoms/select";
 import { Separator } from "@/components/atoms/separator";
 import { H1, P } from "@/components/atoms/typography";
+import { FormView } from "@/components/organism/form-view";
 import { getForm } from "@/forms";
 
 interface IFormPageProps {
@@ -81,12 +82,13 @@ export default async function FormPage({ params }: IFormPageProps) {
               height={212}
             />
 
-            <div className="my-6 text-center">
+            <div className="mt-6 text-center">
               <H1>{form.metadata.formTitle}</H1>
               <P className="text-muted-foreground">
                 {form.metadata.formDescription}
               </P>
             </div>
+            <FormView form={form} />
           </CardContent>
         </Card>
       </main>

@@ -45,7 +45,6 @@ export interface IFormFieldValidation {
 }
 
 export interface IFormConditionalFieldOptions {
-  fieldId: string;
   operator: FormConditionalOperator;
   value: string | number | boolean | string[] | number[] | boolean[];
 }
@@ -61,4 +60,5 @@ export interface IFormField {
   options?: Record<string, string>; // for select and radio-group
   fileOptions?: IFormFileOptions; // for file
   conditionalOptions?: IFormConditionalFieldOptions; // for conditional fields
+  dependencies?: IFormField[]; // for conditional rendering
 }

@@ -231,23 +231,26 @@
       "options": [
         { "value": "no", "label": "No" },
         { "value": "yes", "label": "Yes" }
+      ],
+      "dependencies": [
+        {
+          "existingPolicyDetails": {
+            "type": "textarea",
+            "label": "Existing Policy Details",
+            "required": false,
+            "placeholder": "Company, policy number, sum assured, commencement date, etc.",
+            "description": "Provide details of all existing life insurance policies.",
+            "defaultValue": "",
+            "validation": {
+              "maxLength": 1000
+            },
+            "conditionalOptions": {
+              "operator": "eq",
+              "value": "yes"
+            }
+          }
+        }
       ]
-    },
-    "existingPolicyDetails": {
-      "type": "textarea",
-      "label": "Existing Policy Details",
-      "required": false,
-      "placeholder": "Company, policy number, sum assured, commencement date, etc.",
-      "description": "Provide details of all existing life insurance policies.",
-      "defaultValue": "",
-      "validation": {
-        "maxLength": 1000
-      },
-      "conditionalOptions": {
-        "fieldId": "hasExistingPolicies",
-        "operator": "eq",
-        "value": "yes"
-      }
     },
     "beneficiaryName": {
       "type": "text",
