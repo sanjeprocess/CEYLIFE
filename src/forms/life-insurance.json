@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "formVersion": 1,
+    "formTitle": "Life Insurance Proposal Form",
+    "formDescription": "Apply for comprehensive life insurance cover with optional riders and beneficiary nominations.",
+    "availableLocales": ["en", "si", "ta"],
+    "otpRequired": true
+  },
+  "prefilledFields": ["fullName", "email", "mobile"],
+  "submission": {
+    "endpoint": "/api/forms/life-insurance",
+    "method": "POST",
+    "requiresAccessToken": true
+  },
+  "fields": {
+    "fullName": {
+      "type": "text",
+      "label": "Full Name (as per NIC / Passport)",
+      "required": true,
+      "placeholder": "e.g. Perera A.B.C.",
+      "description": "Please enter your full legal name including all middle names.",
+      "defaultValue": "",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 100
+      }
+    },
+    "dob": {
+      "type": "date",
+      "label": "Date of Birth",
+      "required": true,
+      "placeholder": "",
+      "description": "You must be between 18 and 65 years of age to apply.",
+      "defaultValue": "",
+      "validation": {}
+    },
+    "gender": {
+      "type": "radio-group",
+      "label": "Gender",
+      "required": true,
+      "placeholder": "",
+      "description": "",
+      "defaultValue": "",
+      "validation": {},
+      "options": [
+        { "value": "male", "label": "Male" },
+        { "value": "female", "label": "Female" },
+        { "value": "other", "label": "Other / Prefer not to say" }
+      ]
+    },
+    "maritalStatus": {
+      "type": "select",
+      "label": "Marital Status",
+      "required": true,
+      "placeholder": "Select marital status",
+      "description": "",
+      "defaultValue": "",
+      "validation": {},
+      "options": [
+        { "value": "single", "label": "Single" },
+        { "value": "married", "label": "Married" },
+        { "value": "widowed", "label": "Widowed" },
+        { "value": "divorced", "label": "Divorced" }
+      ]
+    },
+    "nationalId": {
+      "type": "text",
+      "label": "National ID / Passport No.",
+      "required": true,
+      "placeholder": "e.g. 123456789V",
+      "description": "Enter your valid NIC or passport number.",
+      "defaultValue": "",
+      "validation": {
+        "minLength": 5,
+        "maxLength": 20,
+        "pattern": "^[A-Za-z0-9]+$"
+      }
+    },
+    "mobile": {
+      "type": "tel",
+      "label": "Mobile Number",
+      "required": true,
+      "placeholder": "e.g. +94 7X XXX XXXX",
+      "description": "We will use this for OTP and policy communication.",
+      "defaultValue": "",
+      "validation": {
+        "minLength": 9,
+        "maxLength": 20,
+        "pattern": "^[0-9+\\-\\s]+$"
+      }
+    },
+    "email": {
+      "type": "email",
+      "label": "Email Address",
+      "required": true,
+      "placeholder": "you@example.com",
+      "description": "Policy documents and notifications may be sent to this email.",
+      "defaultValue": "",
+      "validation": {
+        "maxLength": 100
+      }
+    },
+    "address": {
+      "type": "textarea",
+      "label": "Residential Address",
+      "required": true,
+      "placeholder": "House No, Street, City",
+      "description": "",
+      "defaultValue": "",
+      "validation": {
+        "minLength": 10,
+        "maxLength": 300
+      }
+    },
+    "occupation": {
+      "type": "text",
+      "label": "Occupation",
+      "required": true,
+      "placeholder": "e.g. Software Engineer",
+      "description": "",
+      "defaultValue": "",
+      "validation": {
+        "minLength": 2,
+        "maxLength": 100
+      }
+    },
+    "annualIncome": {
+      "type": "number",
+      "label": "Annual Income (LKR)",
+      "required": true,
+      "placeholder": "e.g. 2500000",
+      "description": "Used only for risk assessment and underwriting.",
+      "defaultValue": "",
+      "validation": {
+        "min": 0
+      }
+    },
+    "smokerStatus": {
+      "type": "radio-group",
+      "label": "Do you smoke or use tobacco products?",
+      "required": true,
+      "placeholder": "",
+      "description": "",
+      "defaultValue": "",
+      "validation": {},
+      "options": [
+        { "value": "non_smoker", "label": "No, I do not" },
+        { "value": "occasional", "label": "Yes, occasionally" },
+        { "value": "regular", "label": "Yes, regularly" }
+      ]
+    },
+    "alcoholUse": {
+      "type": "radio-group",
+      "label": "Do you consume alcohol?",
+      "required": true,
+      "placeholder": "",
+      "description": "",
+      "defaultValue": "",
+      "validation": {},
+      "options": [
+        { "value": "none", "label": "Never" },
+        { "value": "social", "label": "Occasionally / Socially" },
+        { "value": "regular", "label": "Regularly" }
+      ]
+    },
+    "sumAssured": {
+      "type": "number",
+      "label": "Requested Sum Assured (LKR)",
+      "required": true,
+      "placeholder": "e.g. 10000000",
+      "description": "Total life cover amount you are applying for.",
+      "defaultValue": "",
+      "validation": {
+        "min": 1000000,
+        "max": 50000000
+      }
+    },
+    "policyTermYears": {
+      "type": "number",
+      "label": "Policy Term (Years)",
+      "required": true,
+      "placeholder": "e.g. 20",
+      "description": "Number of years you want the cover to run.",
+      "defaultValue": "",
+      "validation": {
+        "min": 5,
+        "max": 40
+      }
+    },
+    "premiumPaymentFrequency": {
+      "type": "select",
+      "label": "Premium Payment Frequency",
+      "required": true,
+      "placeholder": "Select frequency",
+      "description": "",
+      "defaultValue": "",
+      "validation": {},
+      "options": [
+        { "value": "monthly", "label": "Monthly" },
+        { "value": "quarterly", "label": "Quarterly" },
+        { "value": "semi_annual", "label": "Semi-Annual" },
+        { "value": "annual", "label": "Annual" }
+      ]
+    },
+    "addCriticalIllnessRider": {
+      "type": "checkbox",
+      "label": "Add Critical Illness Rider",
+      "required": false,
+      "placeholder": "",
+      "description": "Provides additional payout on diagnosis of covered critical illnesses.",
+      "defaultValue": "",
+      "validation": {}
+    },
+    "addAccidentalDeathRider": {
+      "type": "checkbox",
+      "label": "Add Accidental Death Benefit Rider",
+      "required": false,
+      "placeholder": "",
+      "description": "Additional benefit in the event of death due to accident.",
+      "defaultValue": "",
+      "validation": {}
+    },
+    "hasExistingPolicies": {
+      "type": "radio-group",
+      "label": "Do you have existing life insurance policies?",
+      "required": true,
+      "placeholder": "",
+      "description": "",
+      "defaultValue": "",
+      "validation": {},
+      "options": [
+        { "value": "no", "label": "No" },
+        { "value": "yes", "label": "Yes" }
+      ]
+    },
+    "existingPolicyDetails": {
+      "type": "textarea",
+      "label": "Existing Policy Details",
+      "required": false,
+      "placeholder": "Company, policy number, sum assured, commencement date, etc.",
+      "description": "Provide details of all existing life insurance policies.",
+      "defaultValue": "",
+      "validation": {
+        "maxLength": 1000
+      },
+      "conditionalOptions": {
+        "fieldId": "hasExistingPolicies",
+        "operator": "eq",
+        "value": "yes"
+      }
+    },
+    "beneficiaryName": {
+      "type": "text",
+      "label": "Primary Beneficiary Name",
+      "required": true,
+      "placeholder": "e.g. Perera X.Y.Z.",
+      "description": "",
+      "defaultValue": "",
+      "validation": {
+        "minLength": 3,
+        "maxLength": 100
+      }
+    },
+    "beneficiaryRelationship": {
+      "type": "select",
+      "label": "Relationship to Beneficiary",
+      "required": true,
+      "placeholder": "Select relationship",
+      "description": "",
+      "defaultValue": "",
+      "validation": {},
+      "options": [
+        { "value": "spouse", "label": "Spouse" },
+        { "value": "child", "label": "Child" },
+        { "value": "parent", "label": "Parent" },
+        { "value": "sibling", "label": "Sibling" },
+        { "value": "other", "label": "Other" }
+      ]
+    },
+    "idDocument": {
+      "type": "file",
+      "label": "Upload ID Document",
+      "required": true,
+      "placeholder": "",
+      "description": "Upload a clear scan/photo of your NIC or passport (PDF/JPG/PNG).",
+      "defaultValue": "",
+      "validation": {},
+      "fileOptions": {
+        "maxSize": 5242880,
+        "allowedExtensions": ["pdf", "jpg", "jpeg", "png"],
+        "multiple": false
+      }
+    },
+    "declarationAgreement": {
+      "type": "checkbox",
+      "label": "I declare that the information provided is true and complete.",
+      "required": true,
+      "placeholder": "",
+      "description": "You must agree before submitting the proposal.",
+      "defaultValue": "",
+      "validation": {}
+    }
+  },
+  "layout": {
+    "h1": "Life Insurance Proposal",
+    "h2": "Personal and Contact Details",
+    "text": "Please complete all required fields. Inaccurate information may affect your cover and claim eligibility.",
+    "spacer": 24,
+    "divider": true,
+    "h3": "Coverage Details",
+    "h4": "Beneficiary & Declarations",
+    "field": true
+  },
+  "localization": {
+    "en": {
+      "formTitle": "Life Insurance Proposal Form",
+      "formDescription": "Apply for comprehensive life insurance cover with optional riders and beneficiary nominations.",
+      "fields.fullName.label": "Full Name (as per NIC / Passport)",
+      "fields.fullName.placeholder": "e.g. Perera A.B.C.",
+      "fields.sumAssured.label": "Requested Sum Assured (LKR)",
+      "fields.policyTermYears.label": "Policy Term (Years)",
+      "fields.premiumPaymentFrequency.label": "Premium Payment Frequency"
+    },
+    "si": {
+      "formTitle": "ජීවිත රක්ෂණ යෝජනා පත්‍රය",
+      "formDescription": "විකල්ප අතිරේක ප්‍රතිලාභ සහ වාරසාධිකයින් නම් කිරීම සමඟ සම්පූර්ණ ජීවිත රක්ෂණ ආවරණයක් සඳහා අයදුම් කරන්න.",
+      "fields.fullName.label": "සම්පූර්ණ නම (ජා.හැ./ පස්පෝට් අනුව)",
+      "fields.fullName.placeholder": "උදා: පෙරේරා A.B.C.",
+      "fields.sumAssured.label": "ඉල්ලෙන ආවරණ (රු.)",
+      "fields.policyTermYears.label": "පොලිසි කාලය (වසර)",
+      "fields.premiumPaymentFrequency.label": "ප්‍රිමියම් ගෙවීම් අවධිය"
+    },
+    "ta": {
+      "formTitle": "வாழ்க்கை காப்பீட்டு முன்மொழிவு படிவம்",
+      "formDescription": "கூடுதல் ரைடர்களும் பயனாளி நியமனங்களும் உடன் முழுமையான வாழ்க்கை காப்பீட்டு பாதுகாப்புக்கு விண்ணப்பிக்கவும்.",
+      "fields.fullName.label": "முழுப்பெயர் (தே.அ/ பாஸ்போர்ட் படி)",
+      "fields.sumAssured.label": "கோரப்பட்ட காப்பீட்டு தொகை (LKR)",
+      "fields.policyTermYears.label": "காப்பீட்டு காலம் (ஆண்டுகள்)"
+    }
+  }
+}
