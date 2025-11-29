@@ -1,7 +1,13 @@
 import { useRef } from "react";
 
 import { IFormFileField } from "@/common/interfaces/form.interfaces";
+import { useTranslation } from "@/hooks/useTranslation.hook";
 import useFormStore from "@/stores/form.store";
+import {
+  getFieldDescriptionKey,
+  getFieldLabelKey,
+  getFieldPlaceholderKey,
+} from "@/utils/fieldKey.utils";
 
 import {
   Field,
@@ -19,6 +25,7 @@ export function FileField({
   name: string;
 }) {
   const { values, updateValue } = useFormStore();
+  const translate = useTranslation();
   const storedFile = values[name] as File | null | undefined;
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -35,7 +42,7 @@ export function FileField({
     }
 
     const file = files[0];
-    
+
     // Validate file extension
     if (allowedExtensions.length > 0) {
       const fileExtension = file.name.split(".").pop()?.toLowerCase();
@@ -68,17 +75,23 @@ export function FileField({
     const k = 1024;
     const sizes = ["Bytes", "KB", "MB", "GB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return Math.round(bytes / Math.pow(k, i) * 100) / 100 + " " + sizes[i];
+    return Math.round((bytes / Math.pow(k, i)) * 100) / 100 + " " + sizes[i];
   };
 
-  const acceptExtensions = allowedExtensions.length > 0
-    ? allowedExtensions.map((ext) => `.${ext}`).join(",")
+  const acceptExtensions =
+    allowedExtensions.length > 0
+      ? allowedExtensions.map((ext) => `.${ext}`).join(",")
+      : undefined;
+
+  const label = translate(getFieldLabelKey(name), field.label);
+  const description = field.description
+    ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;
 
   return (
     <Field>
       <FieldLabel>
-        {field.label}
+        {label}
         {field.required && <span className="text-destructive"> *</span>}
       </FieldLabel>
       <FieldContent>
@@ -98,9 +111,7 @@ export function FileField({
               Selected: {storedFile.name} ({formatFileSize(storedFile.size)})
             </div>
           )}
-          {field.description && (
-            <FieldDescription>{field.description}</FieldDescription>
-          )}
+          {description && <FieldDescription>{description}</FieldDescription>}
           {maxSize && (
             <FieldDescription>
               Maximum file size: {formatFileSize(maxSize)}

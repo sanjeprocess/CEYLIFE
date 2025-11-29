@@ -22,6 +22,7 @@ export interface IFormMetadata {
   formTitle: string;
   formDescription: string;
   availableLocales: Locale[];
+  defaultLocale?: Locale; // if left blank, en is used
   otpRequired: boolean;
 }
 
@@ -90,7 +91,8 @@ export type IFormField =
   | IFormCheckboxField
   | IFormTextareaField;
 
-export type IFormLayoutItem = Record<
-  FormLayoutItemType,
-  string | number | boolean
->;
+export type IFormLayoutItem = {
+  [K in FormLayoutItemType]?: string | number | boolean;
+} & {
+  key?: string; // Translation key for non-field layout items (e.g., "h2.personal_information")
+};

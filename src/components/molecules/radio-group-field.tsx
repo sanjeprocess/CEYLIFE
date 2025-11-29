@@ -1,5 +1,11 @@
 import { IFormRadioGroupField } from "@/common/interfaces/form.interfaces";
+import { useTranslation } from "@/hooks/useTranslation.hook";
 import useFormStore from "@/stores/form.store";
+import {
+  getFieldDescriptionKey,
+  getFieldLabelKey,
+  getFieldOptionKey,
+} from "@/utils/fieldKey.utils";
 
 import {
   Field,
@@ -18,6 +24,7 @@ export function RadioGroupField({
   name: string;
 }) {
   const { values, updateValue } = useFormStore();
+  const translate = useTranslation();
   const storedValue = values[name];
   const value = storedValue !== undefined && storedValue !== null
     ? (storedValue as string)
@@ -29,10 +36,15 @@ export function RadioGroupField({
 
   const { orientation = "vertical", options } = field;
 
+  const label = translate(getFieldLabelKey(name), field.label);
+  const description = field.description
+    ? translate(getFieldDescriptionKey(name), field.description)
+    : undefined;
+
   return (
     <Field>
       <FieldLabel>
-        {field.label}
+        {label}
         {field.required && <span className="text-destructive"> *</span>}
       </FieldLabel>
       <FieldContent>
@@ -42,23 +54,29 @@ export function RadioGroupField({
           className={orientation === "horizontal" ? "flex flex-row gap-4" : ""}
         >
           {options &&
-            Object.entries(options).map(([optionValue, optionLabel]) => (
-              <div
-                key={optionValue}
-                className="flex items-center gap-2 space-x-2"
-              >
-                <RadioGroupItem value={optionValue} id={`${name}-${optionValue}`} />
-                <Label
-                  htmlFor={`${name}-${optionValue}`}
-                  className="font-normal cursor-pointer"
+            Object.entries(options).map(([optionValue, optionLabel]) => {
+              const translatedOptionLabel = translate(
+                getFieldOptionKey(name, optionValue),
+                optionLabel
+              );
+              return (
+                <div
+                  key={optionValue}
+                  className="flex items-center gap-2 space-x-2"
                 >
-                  {optionLabel}
-                </Label>
-              </div>
-            ))}
+                  <RadioGroupItem value={optionValue} id={`${name}-${optionValue}`} />
+                  <Label
+                    htmlFor={`${name}-${optionValue}`}
+                    className="font-normal cursor-pointer"
+                  >
+                    {translatedOptionLabel}
+                  </Label>
+                </div>
+              );
+            })}
         </RadioGroup>
-        {field.description && (
-          <FieldDescription>{field.description}</FieldDescription>
+        {description && (
+          <FieldDescription>{description}</FieldDescription>
         )}
       </FieldContent>
     </Field>

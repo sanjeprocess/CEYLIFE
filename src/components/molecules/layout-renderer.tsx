@@ -2,6 +2,7 @@ import {
   IFormField,
   IFormLayoutItem,
 } from "@/common/interfaces/form.interfaces";
+import { useTranslation } from "@/hooks/useTranslation.hook";
 
 import { CheckboxField } from "./checkbox-field";
 import { ConditionalRenderer } from "./conditional-renderer";
@@ -19,27 +20,58 @@ interface LayoutRendererProps {
 }
 
 export function LayoutRenderer({ layout, fields }: LayoutRendererProps) {
-  const items = Object.entries(layout);
+  const translate = useTranslation();
+  const items = Object.entries(layout).filter(([key]) => key !== "key");
   if (items.length === 0) return null;
   if (items.length > 1) {
     console.warn("LayoutRenderer: Only one item is allowed in the layout");
   }
   const [type, value] = items[0];
+  const translationKey = layout.key;
+
   switch (type) {
-    case "h1":
-      return <H1>{value}</H1>;
-    case "h2":
-      return <H2>{value}</H2>;
-    case "h3":
-      return <H3>{value}</H3>;
-    case "h4":
-      return <H4>{value}</H4>;
-    case "h5":
-      return <H5>{value}</H5>;
-    case "h6":
-      return <H6>{value}</H6>;
-    case "text":
-      return <P>{value}</P>;
+    case "h1": {
+      const displayValue = translationKey
+        ? translate(translationKey, value as string)
+        : (value as string);
+      return <H1>{displayValue}</H1>;
+    }
+    case "h2": {
+      const displayValue = translationKey
+        ? translate(translationKey, value as string)
+        : (value as string);
+      return <H2>{displayValue}</H2>;
+    }
+    case "h3": {
+      const displayValue = translationKey
+        ? translate(translationKey, value as string)
+        : (value as string);
+      return <H3>{displayValue}</H3>;
+    }
+    case "h4": {
+      const displayValue = translationKey
+        ? translate(translationKey, value as string)
+        : (value as string);
+      return <H4>{displayValue}</H4>;
+    }
+    case "h5": {
+      const displayValue = translationKey
+        ? translate(translationKey, value as string)
+        : (value as string);
+      return <H5>{displayValue}</H5>;
+    }
+    case "h6": {
+      const displayValue = translationKey
+        ? translate(translationKey, value as string)
+        : (value as string);
+      return <H6>{displayValue}</H6>;
+    }
+    case "text": {
+      const displayValue = translationKey
+        ? translate(translationKey, value as string)
+        : (value as string);
+      return <P>{displayValue}</P>;
+    }
     case "spacer":
       return <div style={{ height: value as number }} />;
     case "divider":

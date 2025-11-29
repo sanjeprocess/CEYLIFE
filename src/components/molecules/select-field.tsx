@@ -1,5 +1,12 @@
 import { IFormSelectField } from "@/common/interfaces/form.interfaces";
+import { useTranslation } from "@/hooks/useTranslation.hook";
 import useFormStore from "@/stores/form.store";
+import {
+  getFieldDescriptionKey,
+  getFieldLabelKey,
+  getFieldOptionKey,
+  getFieldPlaceholderKey,
+} from "@/utils/fieldKey.utils";
 
 import {
   Field,
@@ -23,6 +30,7 @@ export function SelectField({
   name: string;
 }) {
   const { values, updateValue } = useFormStore();
+  const translate = useTranslation();
   const storedValue = values[name];
   const value = storedValue !== undefined && storedValue !== null
     ? (storedValue as string)
@@ -34,27 +42,41 @@ export function SelectField({
 
   const options = field.options || {};
 
+  const label = translate(getFieldLabelKey(name), field.label);
+  const placeholder = field.placeholder
+    ? translate(getFieldPlaceholderKey(name), field.placeholder)
+    : "Select an option";
+  const description = field.description
+    ? translate(getFieldDescriptionKey(name), field.description)
+    : undefined;
+
   return (
     <Field>
       <FieldLabel>
-        {field.label}
+        {label}
         {field.required && <span className="text-destructive"> *</span>}
       </FieldLabel>
       <FieldContent>
         <Select value={value} onValueChange={handleValueChange}>
           <SelectTrigger>
-            <SelectValue placeholder={field.placeholder || "Select an option"} />
+            <SelectValue placeholder={placeholder} />
           </SelectTrigger>
           <SelectContent>
-            {Object.entries(options).map(([optionValue, optionLabel]) => (
-              <SelectItem key={optionValue} value={optionValue}>
-                {optionLabel}
-              </SelectItem>
-            ))}
+            {Object.entries(options).map(([optionValue, optionLabel]) => {
+              const translatedOptionLabel = translate(
+                getFieldOptionKey(name, optionValue),
+                optionLabel
+              );
+              return (
+                <SelectItem key={optionValue} value={optionValue}>
+                  {translatedOptionLabel}
+                </SelectItem>
+              );
+            })}
           </SelectContent>
         </Select>
-        {field.description && (
-          <FieldDescription>{field.description}</FieldDescription>
+        {description && (
+          <FieldDescription>{description}</FieldDescription>
         )}
       </FieldContent>
     </Field>

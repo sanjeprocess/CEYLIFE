@@ -2,19 +2,10 @@ import { Globe, Mail, MapPin, Phone } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 
-import { FORM_LOCALES } from "@/common/constants/form.constants";
 import { Card, CardContent } from "@/components/atoms/card";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/atoms/select";
 import { Separator } from "@/components/atoms/separator";
-import { H1, P } from "@/components/atoms/typography";
+import { FormHeader } from "@/components/molecules/form-header";
+import { LocaleSelector } from "@/components/molecules/locale-selector";
 import { FormView } from "@/components/organism/form-view";
 import { getForm } from "@/forms";
 
@@ -55,21 +46,7 @@ export default async function FormPage({ params }: IFormPageProps) {
             <Separator orientation="vertical" />
           </div>
           <Globe className="size-5" />
-          <Select defaultValue="en">
-            <SelectTrigger className="w-[100px]" size="sm">
-              <SelectValue placeholder="Select a language" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Language</SelectLabel>
-                {form.metadata.availableLocales.map((locale) => (
-                  <SelectItem key={locale} value={locale}>
-                    {FORM_LOCALES[locale as keyof typeof FORM_LOCALES]}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <LocaleSelector />
         </nav>
       </div>
       <main className="max-w-3xl md:max-w-5xl lg:max-w-[1140px] mx-auto w-full py-8">
@@ -82,12 +59,7 @@ export default async function FormPage({ params }: IFormPageProps) {
               height={212}
             />
 
-            <div className="mt-6 text-center">
-              <H1>{form.metadata.formTitle}</H1>
-              <P className="text-muted-foreground">
-                {form.metadata.formDescription}
-              </P>
-            </div>
+            <FormHeader form={form} />
             <FormView form={form} />
           </CardContent>
         </Card>

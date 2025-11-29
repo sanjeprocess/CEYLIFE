@@ -1,5 +1,11 @@
 import { IFormField } from "@/common/interfaces/form.interfaces";
+import { useTranslation } from "@/hooks/useTranslation.hook";
 import useFormStore from "@/stores/form.store";
+import {
+  getFieldDescriptionKey,
+  getFieldLabelKey,
+  getFieldPlaceholderKey,
+} from "@/utils/fieldKey.utils";
 
 import {
   Field,
@@ -17,6 +23,7 @@ export function TextField({
   name: string;
 }) {
   const { values, updateValue } = useFormStore();
+  const translate = useTranslation();
   const storedValue = values[name];
   const defaultValue = field.defaultValue || "";
   const value = storedValue !== undefined && storedValue !== null
@@ -35,10 +42,18 @@ export function TextField({
     updateValue(name, newValue);
   };
 
+  const label = translate(getFieldLabelKey(name), field.label);
+  const placeholder = field.placeholder
+    ? translate(getFieldPlaceholderKey(name), field.placeholder)
+    : undefined;
+  const description = field.description
+    ? translate(getFieldDescriptionKey(name), field.description)
+    : undefined;
+
   return (
     <Field>
       <FieldLabel>
-        {field.label}
+        {label}
         {field.required && <span className="text-destructive"> *</span>}
       </FieldLabel>
       <FieldContent>
@@ -46,7 +61,7 @@ export function TextField({
           type={field.type}
           name={name}
           value={value as string | number}
-          placeholder={field.placeholder}
+          placeholder={placeholder}
           required={field.required}
           min={field.validation.min}
           max={field.validation.max}
@@ -55,8 +70,8 @@ export function TextField({
           pattern={field.validation.pattern}
           onChange={handleChange}
         />
-        {field.description && (
-          <FieldDescription>{field.description}</FieldDescription>
+        {description && (
+          <FieldDescription>{description}</FieldDescription>
         )}
       </FieldContent>
     </Field>

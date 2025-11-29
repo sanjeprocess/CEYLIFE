@@ -1,5 +1,10 @@
 import { IFormCheckboxField } from "@/common/interfaces/form.interfaces";
+import { useTranslation } from "@/hooks/useTranslation.hook";
 import useFormStore from "@/stores/form.store";
+import {
+  getFieldDescriptionKey,
+  getFieldLabelKey,
+} from "@/utils/fieldKey.utils";
 
 import { Checkbox } from "../atoms/checkbox";
 import {
@@ -17,6 +22,7 @@ export function CheckboxField({
   name: string;
 }) {
   const { values, updateValue } = useFormStore();
+  const translate = useTranslation();
   const storedValue = values[name];
   const value =
     storedValue !== undefined
@@ -26,6 +32,11 @@ export function CheckboxField({
   const handleCheckedChange = (checked: boolean) => {
     updateValue(name, checked);
   };
+
+  const label = translate(getFieldLabelKey(name), field.label);
+  const description = field.description
+    ? translate(getFieldDescriptionKey(name), field.description)
+    : undefined;
 
   return (
     <Field orientation="horizontal">
@@ -38,13 +49,11 @@ export function CheckboxField({
             required={field.required}
           />
           <FieldLabel htmlFor={name} className="font-normal cursor-pointer">
-            {field.label}
+            {label}
             {field.required && <span className="text-destructive"> *</span>}
           </FieldLabel>
         </div>
-        {field.description && (
-          <FieldDescription>{field.description}</FieldDescription>
-        )}
+        {description && <FieldDescription>{description}</FieldDescription>}
       </FieldContent>
     </Field>
   );
