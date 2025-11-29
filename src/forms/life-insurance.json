@@ -42,11 +42,11 @@
       "description": "",
       "defaultValue": "",
       "validation": {},
-      "options": [
-        { "value": "male", "label": "Male" },
-        { "value": "female", "label": "Female" },
-        { "value": "other", "label": "Other / Prefer not to say" }
-      ]
+      "options": {
+        "male": "Male",
+        "female": "Female",
+        "other": "Other / Prefer not to say"
+      }
     },
     "maritalStatus": {
       "type": "select",
@@ -56,12 +56,12 @@
       "description": "",
       "defaultValue": "",
       "validation": {},
-      "options": [
-        { "value": "single", "label": "Single" },
-        { "value": "married", "label": "Married" },
-        { "value": "widowed", "label": "Widowed" },
-        { "value": "divorced", "label": "Divorced" }
-      ]
+      "options": {
+        "single": "Single",
+        "married": "Married",
+        "widowed": "Widowed",
+        "divorced": "Divorced"
+      }
     },
     "nationalId": {
       "type": "text",
@@ -143,11 +143,11 @@
       "description": "",
       "defaultValue": "",
       "validation": {},
-      "options": [
-        { "value": "non_smoker", "label": "No, I do not" },
-        { "value": "occasional", "label": "Yes, occasionally" },
-        { "value": "regular", "label": "Yes, regularly" }
-      ]
+      "options": {
+        "non_smoker": "No, I do not",
+        "occasional": "Yes, occasionally",
+        "regular": "Yes, regularly"
+      }
     },
     "alcoholUse": {
       "type": "radio-group",
@@ -157,11 +157,11 @@
       "description": "",
       "defaultValue": "",
       "validation": {},
-      "options": [
-        { "value": "none", "label": "Never" },
-        { "value": "social", "label": "Occasionally / Socially" },
-        { "value": "regular", "label": "Regularly" }
-      ]
+      "options": {
+        "none": "Never",
+        "social": "Occasionally / Socially",
+        "regular": "Regularly"
+      }
     },
     "sumAssured": {
       "type": "number",
@@ -195,12 +195,12 @@
       "description": "",
       "defaultValue": "",
       "validation": {},
-      "options": [
-        { "value": "monthly", "label": "Monthly" },
-        { "value": "quarterly", "label": "Quarterly" },
-        { "value": "semi_annual", "label": "Semi-Annual" },
-        { "value": "annual", "label": "Annual" }
-      ]
+      "options": {
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "semi_annual": "Semi-Annual",
+        "annual": "Annual"
+      }
     },
     "addCriticalIllnessRider": {
       "type": "checkbox",
@@ -228,29 +228,27 @@
       "description": "",
       "defaultValue": "",
       "validation": {},
-      "options": [
-        { "value": "no", "label": "No" },
-        { "value": "yes", "label": "Yes" }
-      ],
-      "dependencies": [
-        {
-          "existingPolicyDetails": {
-            "type": "textarea",
-            "label": "Existing Policy Details",
-            "required": false,
-            "placeholder": "Company, policy number, sum assured, commencement date, etc.",
-            "description": "Provide details of all existing life insurance policies.",
-            "defaultValue": "",
-            "validation": {
-              "maxLength": 1000
-            },
-            "conditionalOptions": {
-              "operator": "eq",
-              "value": "yes"
-            }
+      "options": {
+        "no": "No",
+        "yes": "Yes"
+      },
+      "dependencies": {
+        "existingPolicyDetails": {
+          "type": "textarea",
+          "label": "Existing Policy Details",
+          "required": false,
+          "placeholder": "Company, policy number, sum assured, commencement date, etc.",
+          "description": "Provide details of all existing life insurance policies.",
+          "defaultValue": "",
+          "validation": {
+            "maxLength": 1000
+          },
+          "conditionalOptions": {
+            "operator": "eq",
+            "value": "yes"
           }
         }
-      ]
+      }
     },
     "beneficiaryName": {
       "type": "text",
@@ -272,13 +270,13 @@
       "description": "",
       "defaultValue": "",
       "validation": {},
-      "options": [
-        { "value": "spouse", "label": "Spouse" },
-        { "value": "child", "label": "Child" },
-        { "value": "parent", "label": "Parent" },
-        { "value": "sibling", "label": "Sibling" },
-        { "value": "other", "label": "Other" }
-      ]
+      "options": {
+        "spouse": "Spouse",
+        "child": "Child",
+        "parent": "Parent",
+        "sibling": "Sibling",
+        "other": "Other"
+      }
     },
     "idDocument": {
       "type": "file",
@@ -304,41 +302,132 @@
       "validation": {}
     }
   },
-  "layout": {
-    "h1": "Life Insurance Proposal",
-    "h2": "Personal and Contact Details",
-    "text": "Please complete all required fields. Inaccurate information may affect your cover and claim eligibility.",
-    "spacer": 24,
-    "divider": true,
-    "h3": "Coverage Details",
-    "h4": "Beneficiary & Declarations",
-    "field": true
-  },
+  "layout": [
+    {
+      "text": "Please complete all required fields. Inaccurate information may affect your cover and claim eligibility."
+    },
+    {
+      "divider": true
+    },
+    {
+      "h2": "Personal Information"
+    },
+    {
+      "field": "fullName"
+    },
+    {
+      "field": "dob"
+    },
+    {
+      "field": "gender"
+    },
+    {
+      "field": "maritalStatus"
+    },
+    {
+      "field": "nationalId"
+    },
+    {
+      "field": "mobile"
+    },
+    {
+      "field": "email"
+    },
+    {
+      "field": "address"
+    },
+    {
+      "field": "occupation"
+    },
+    {
+      "field": "annualIncome"
+    },
+    {
+      "divider": true
+    },
+    {
+      "h2": "Health Information"
+    },
+    {
+      "field": "smokerStatus"
+    },
+    {
+      "field": "alcoholUse"
+    },
+    {
+      "divider": true
+    },
+    {
+      "h2": "Coverage Details"
+    },
+    {
+      "field": "sumAssured"
+    },
+    {
+      "field": "policyTermYears"
+    },
+    {
+      "field": "premiumPaymentFrequency"
+    },
+    {
+      "field": "addCriticalIllnessRider"
+    },
+    {
+      "field": "addAccidentalDeathRider"
+    },
+    {
+      "field": "hasExistingPolicies"
+    },
+    {
+      "divider": true
+    },
+    {
+      "h2": "Beneficiary Information"
+    },
+    {
+      "field": "beneficiaryName"
+    },
+    {
+      "field": "beneficiaryRelationship"
+    },
+    {
+      "divider": true
+    },
+    {
+      "h2": "Documents & Declaration"
+    },
+    {
+      "field": "idDocument"
+    },
+    {
+      "field": "declarationAgreement"
+    }
+  ],
   "localization": {
     "en": {
       "formTitle": "Life Insurance Proposal Form",
       "formDescription": "Apply for comprehensive life insurance cover with optional riders and beneficiary nominations.",
-      "fields.fullName.label": "Full Name (as per NIC / Passport)",
-      "fields.fullName.placeholder": "e.g. Perera A.B.C.",
-      "fields.sumAssured.label": "Requested Sum Assured (LKR)",
-      "fields.policyTermYears.label": "Policy Term (Years)",
-      "fields.premiumPaymentFrequency.label": "Premium Payment Frequency"
+      "fullName.label": "Full Name (as per NIC / Passport)",
+      "fullName.placeholder": "e.g. Perera A.B.C.",
+      "sumAssured.label": "Requested Sum Assured (LKR)",
+      "policyTermYears.label": "Policy Term (Years)",
+      "premiumPaymentFrequency.label": "Premium Payment Frequency"
     },
     "si": {
       "formTitle": "ජීවිත රක්ෂණ යෝජනා පත්‍රය",
       "formDescription": "විකල්ප අතිරේක ප්‍රතිලාභ සහ වාරසාධිකයින් නම් කිරීම සමඟ සම්පූර්ණ ජීවිත රක්ෂණ ආවරණයක් සඳහා අයදුම් කරන්න.",
-      "fields.fullName.label": "සම්පූර්ණ නම (ජා.හැ./ පස්පෝට් අනුව)",
-      "fields.fullName.placeholder": "උදා: පෙරේරා A.B.C.",
-      "fields.sumAssured.label": "ඉල්ලෙන ආවරණ (රු.)",
-      "fields.policyTermYears.label": "පොලිසි කාලය (වසර)",
-      "fields.premiumPaymentFrequency.label": "ප්‍රිමියම් ගෙවීම් අවධිය"
+      "fullName.label": "සම්පූර්ණ නම (ජා.හැ./ පස්පෝට් අනුව)",
+      "fullName.placeholder": "උදා: පෙරේරා A.B.C.",
+      "sumAssured.label": "ඉල්ලෙන ආවරණ (රු.)",
+      "policyTermYears.label": "පොලිසි කාලය (වසර)",
+      "premiumPaymentFrequency.label": "ප්‍රිමියම් ගෙවීම් අවධිය"
     },
     "ta": {
       "formTitle": "வாழ்க்கை காப்பீட்டு முன்மொழிவு படிவம்",
       "formDescription": "கூடுதல் ரைடர்களும் பயனாளி நியமனங்களும் உடன் முழுமையான வாழ்க்கை காப்பீட்டு பாதுகாப்புக்கு விண்ணப்பிக்கவும்.",
-      "fields.fullName.label": "முழுப்பெயர் (தே.அ/ பாஸ்போர்ட் படி)",
-      "fields.sumAssured.label": "கோரப்பட்ட காப்பீட்டு தொகை (LKR)",
-      "fields.policyTermYears.label": "காப்பீட்டு காலம் (ஆண்டுகள்)"
+      "fullName.label": "முழுப்பெயர் (தே.அ/ பாஸ்போர்ட் படி)",
+      "sumAssured.label": "கோரப்பட்ட காப்பீட்டு தொகை (LKR)",
+      "policyTermYears.label": "காப்பீட்டு காலம் (ஆண்டுகள்)"
     }
   }
 }

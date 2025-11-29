@@ -40,6 +40,6 @@ export type FormLayoutItemType =
   | "h6"
   | "text"
   | "spacer"
-  | "divider"
-  | "section.title"
-  | "section.description";
+  | "divider";
+
+export type FormRadioGroupOrientation = "vertical" | "horizontal";

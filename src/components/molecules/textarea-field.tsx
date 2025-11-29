@@ -1,4 +1,4 @@
-import { IFormField } from "@/common/interfaces/form.interfaces";
+import { IFormTextareaField } from "@/common/interfaces/form.interfaces";
 import useFormStore from "@/stores/form.store";
 
 import {
@@ -7,32 +7,25 @@ import {
   FieldDescription,
   FieldLabel,
 } from "../atoms/field";
-import { Input } from "../atoms/input";
+import { Textarea } from "../atoms/textarea";
 
-export function TextField({
+export function TextareaField({
   field,
   name,
 }: {
-  field: IFormField;
+  field: IFormTextareaField;
   name: string;
 }) {
   const { values, updateValue } = useFormStore();
   const storedValue = values[name];
   const defaultValue = field.defaultValue || "";
-  const value = storedValue !== undefined && storedValue !== null
-    ? storedValue
-    : defaultValue;
+  const value =
+    storedValue !== undefined && storedValue !== null
+      ? (storedValue as string)
+      : defaultValue;
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const newValue =
-      field.type === "number"
-        ? e.target.value === ""
-          ? null
-          : Number(e.target.value)
-        : e.target.value;
-    updateValue(name, newValue);
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    updateValue(name, e.target.value || null);
   };
 
   return (
@@ -42,17 +35,14 @@ export function TextField({
         {field.required && <span className="text-destructive"> *</span>}
       </FieldLabel>
       <FieldContent>
-        <Input
-          type={field.type}
+        <Textarea
           name={name}
-          value={value as string | number}
+          value={value}
           placeholder={field.placeholder}
           required={field.required}
-          min={field.validation.min}
-          max={field.validation.max}
+          rows={field.rows}
           minLength={field.validation.minLength}
           maxLength={field.validation.maxLength}
-          pattern={field.validation.pattern}
           onChange={handleChange}
         />
         {field.description && (

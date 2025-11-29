@@ -1,18 +1,25 @@
-import { IForm } from "@/common/interfaces/form.interfaces";
+"use client";
 
-import { SectionTitle } from "../molecules/section";
-import { TextField } from "../molecules/text-field";
+import { useEffect } from "react";
+
+import { IForm } from "@/common/interfaces/form.interfaces";
+import useFormStore from "@/stores/form.store";
+
+import { LayoutRenderer } from "../molecules/layout-renderer";
 
 export function FormView({ form }: { form: IForm }) {
+  const { values, initializeForm } = useFormStore();
+
+  useEffect(() => {
+    initializeForm(form);
+  }, [form, initializeForm]);
+
   return (
-    <div className="mt-12">
-      <SectionTitle
-        title={form.metadata.formTitle}
-        description={form.metadata.formDescription}
-      />
-      {Object.entries(form.fields).map(([key, field], index) => (
-        <TextField key={index} field={field} name={key} />
+    <div className="mt-12 grid grid-cols-1 gap-4">
+      {form.layout.map((item, index) => (
+        <LayoutRenderer key={index} layout={item} fields={form.fields} />
       ))}
+      <pre>{JSON.stringify(values, null, 2)}</pre>
     </div>
   );
 }

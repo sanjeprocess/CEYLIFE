@@ -3,6 +3,7 @@ import {
   FieldType,
   FormConditionalOperator,
   FormLayoutItemType,
+  FormRadioGroupOrientation,
   FormVersion,
   Locale,
 } from "@/common/types/form.types";
@@ -12,7 +13,7 @@ export interface IForm {
   prefilledFields?: string[]; // field keys that are prefilled using OTP service
   submission: IFormSubmission;
   fields: Record<string, IFormField>;
-  layout: Record<FormLayoutItemType, string | number | boolean>;
+  layout: IFormLayoutItem[];
   localization: Record<Locale, Record<string, string>>; // based on json keys (eg: "fields.name.label" -> "Name")
 }
 
@@ -49,7 +50,7 @@ export interface IFormConditionalFieldOptions {
   value: string | number | boolean | string[] | number[] | boolean[];
 }
 
-export interface IFormField {
+export interface IFormFieldBase {
   type: FieldType;
   label: string;
   required?: boolean;
@@ -57,8 +58,39 @@ export interface IFormField {
   description?: string;
   defaultValue?: string;
   validation: IFormFieldValidation;
-  options?: Record<string, string>; // for select and radio-group
-  fileOptions?: IFormFileOptions; // for file
+  dependencies?: Record<string, IFormField>; // for conditional rendering
   conditionalOptions?: IFormConditionalFieldOptions; // for conditional fields
-  dependencies?: IFormField[]; // for conditional rendering
 }
+
+export interface IFormTextareaField extends IFormFieldBase {
+  rows?: number;
+}
+
+export interface IFormCheckboxField extends IFormFieldBase {
+  checked?: boolean;
+}
+
+export interface IFormSelectField extends IFormFieldBase {
+  options?: Record<string, string>; // for select and radio-group
+}
+
+export interface IFormRadioGroupField extends IFormFieldBase {
+  orientation?: FormRadioGroupOrientation;
+  options?: Record<string, string>; // for select and radio-group
+}
+
+export interface IFormFileField extends IFormFieldBase {
+  fileOptions?: IFormFileOptions; // for file
+}
+
+export type IFormField =
+  | IFormSelectField
+  | IFormRadioGroupField
+  | IFormFileField
+  | IFormCheckboxField
+  | IFormTextareaField;
+
+export type IFormLayoutItem = Record<
+  FormLayoutItemType,
+  string | number | boolean
+>;
