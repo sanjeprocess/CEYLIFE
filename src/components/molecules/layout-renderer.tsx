@@ -4,6 +4,7 @@ import {
 } from "@/common/interfaces/form.interfaces";
 
 import { CheckboxField } from "./checkbox-field";
+import { ConditionalRenderer } from "./conditional-renderer";
 import { FileField } from "./file-field";
 import { RadioGroupField } from "./radio-group-field";
 import { SelectField } from "./select-field";
@@ -52,8 +53,15 @@ export function LayoutRenderer({ layout, fields }: LayoutRendererProps) {
   }
 }
 
-function FieldRenderer({ field, name }: { field: IFormField; name: string }) {
+export function FieldRenderer({
+  field,
+  name,
+}: {
+  field: IFormField;
+  name: string;
+}) {
   if (!field) return null;
+  let Component = null;
   switch (field.type) {
     case "text":
     case "number":
@@ -64,22 +72,42 @@ function FieldRenderer({ field, name }: { field: IFormField; name: string }) {
     case "datetime-local":
     case "tel":
     case "url":
-      return <TextField field={field} name={name} />;
+      Component = <TextField field={field} name={name} />;
+      break;
     case "select":
-      return <SelectField field={field} name={name} />;
+      Component = <SelectField field={field} name={name} />;
+      break;
     case "radio-group":
-      return <RadioGroupField field={field} name={name} />;
+      Component = <RadioGroupField field={field} name={name} />;
+      break;
     case "checkbox":
-      return <CheckboxField field={field} name={name} />;
+      Component = <CheckboxField field={field} name={name} />;
+      break;
     case "textarea":
-      return <TextareaField field={field} name={name} />;
+      Component = <TextareaField field={field} name={name} />;
+      break;
     case "file":
-      return <FileField field={field} name={name} />;
+      Component = <FileField field={field} name={name} />;
+      break;
     default:
-      return (
+      Component = (
         <div>
           Unsupported field type: {field.type} for field: {name}
         </div>
       );
+      break;
   }
+
+  return (
+    <>
+      {Component}
+      {/* Rendering Conditional Dependencies */}
+      {field.dependencies && (
+        <ConditionalRenderer
+          parentName={name}
+          dependencies={field.dependencies}
+        />
+      )}
+    </>
+  );
 }

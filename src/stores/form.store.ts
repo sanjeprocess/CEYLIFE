@@ -17,7 +17,6 @@ const useFormStore = create<FormStore>((set, get) => ({
   values: {},
   initializeForm: (form: IForm) =>
     set({ form, values: parseFormToFormData(form) }),
-
   updateValue: (key: string, value: FormValue) =>
     set((state) => ({ values: { ...state.values, [key]: value } })),
   resetForm: () =>
