@@ -9,7 +9,7 @@ import { useLocalizationStore } from "@/stores/localization.store";
 import { LayoutRenderer } from "../molecules/layout-renderer";
 
 export function FormView({ form }: { form: IForm }) {
-  const { values, initializeForm } = useFormStore();
+  const { initializeForm } = useFormStore();
   const { initializeLocalization } = useLocalizationStore();
 
   useEffect(() => {
@@ -22,7 +22,6 @@ export function FormView({ form }: { form: IForm }) {
       {form.layout.map((item, index) => (
         <LayoutRenderer key={index} layout={item} fields={form.fields} />
       ))}
-      <pre>{JSON.stringify(values, null, 2)}</pre>
     </div>
   );
 }
