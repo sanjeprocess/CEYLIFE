@@ -113,11 +113,11 @@ The form JSON follows a strict schema defined in `src/common/interfaces/form.int
 
 ```typescript
 interface IFormMetadata {
-  formVersion: FormVersion;        // Currently: 1
-  formTitle: string;               // Display title
-  formDescription: string;         // Display description
-  availableLocales: Locale[];      // ["en", "si", "ta"]
-  otpRequired: boolean;            // Whether OTP verification is required
+  formVersion: FormVersion; // Currently: 1
+  formTitle: string; // Display title
+  formDescription: string; // Display description
+  availableLocales: Locale[]; // ["en", "si", "ta"]
+  otpRequired: boolean; // Whether OTP verification is required
 }
 ```
 
@@ -125,9 +125,9 @@ interface IFormMetadata {
 
 ```typescript
 interface IFormSubmission {
-  endpoint: string;                // API endpoint for form submission
-  method: HttpMethod;              // "GET" | "POST" | "PUT" | "DELETE" | "PATCH"
-  requiresAccessToken: boolean;    // Whether auth token is required
+  endpoint: string; // API endpoint for form submission
+  method: HttpMethod; // "GET" | "POST" | "PUT" | "DELETE" | "PATCH"
+  requiresAccessToken: boolean; // Whether auth token is required
 }
 ```
 
@@ -180,6 +180,7 @@ Start with the metadata object:
 ```
 
 **Notes**:
+
 - `formVersion` must be `1` (current version)
 - `availableLocales` should include at least `"en"`
 - Set `otpRequired` to `true` if OTP verification is needed
@@ -354,15 +355,15 @@ All fields share these common properties:
 
 ```typescript
 interface IFormFieldBase {
-  type: FieldType;                    // Field type (see below)
-  label: string;                      // Display label
-  required?: boolean;                 // Whether field is required
-  placeholder?: string;               // Placeholder text
-  description?: string;               // Help text below field
-  defaultValue?: string;              // Default value
-  validation: IFormFieldValidation;   // Validation rules
-  dependencies?: Record<string, IFormField>;  // Conditional fields
-  conditionalOptions?: IFormConditionalFieldOptions;  // Conditional options
+  type: FieldType; // Field type (see below)
+  label: string; // Display label
+  required?: boolean; // Whether field is required
+  placeholder?: string; // Placeholder text
+  description?: string; // Help text below field
+  defaultValue?: string; // Default value
+  validation: IFormFieldValidation; // Validation rules
+  dependencies?: Record<string, IFormField>; // Conditional fields
+  conditionalOptions?: IFormConditionalFieldOptions; // Conditional options
 }
 ```
 
@@ -438,6 +439,7 @@ These field types render as `<input>` elements:
 Dropdown selection field.
 
 **Properties**:
+
 - `options` - Object mapping option values to labels: `{ "value": "Label" }`
 
 **Example**:
@@ -468,6 +470,7 @@ Dropdown selection field.
 Radio button group for single selection.
 
 **Properties**:
+
 - `options` - Object mapping option values to labels: `{ "value": "Label" }`
 - `orientation` - `"vertical"` (default) or `"horizontal"`
 
@@ -500,6 +503,7 @@ Radio button group for single selection.
 Single checkbox field.
 
 **Properties**:
+
 - `checked` - Default checked state (boolean)
 
 **Example**:
@@ -526,6 +530,7 @@ Single checkbox field.
 Multi-line text input.
 
 **Properties**:
+
 - `rows` - Number of visible rows (optional)
 
 **Example**:
@@ -555,6 +560,7 @@ Multi-line text input.
 File upload field.
 
 **Properties**:
+
 - `fileOptions` - File upload configuration:
   - `maxSize` - Maximum file size in bytes (e.g., `5242880` for 5MB)
   - `allowedExtensions` - Array of allowed extensions: `["pdf", "jpg", "png"]`
@@ -587,7 +593,7 @@ File upload field.
 
 ## Layout System
 
-The `layout` array defines the order and structure of form elements. Each item in the array is an object with a single key-value pair.
+The `layout` array defines the order and structure of form elements. Each item in the array is an object with a single key-value pair. Non-field items (text, headings) can optionally include a `key` property for translation support.
 
 ### Layout Item Types
 
@@ -602,14 +608,23 @@ The `layout` array defines the order and structure of form elements. Each item i
 { "h6": "Smallest Heading" }
 ```
 
+**With Translation Key** (recommended for multi-language forms):
+
+```json
+{
+  "h2": "Personal Information",
+  "key": "h2.personal_information"
+}
+```
+
 **Example**:
 
 ```json
 {
   "layout": [
-    { "h1": "Application Form" },
-    { "h2": "Personal Information" },
-    { "h2": "Contact Details" }
+    { "h1": "Application Form", "key": "h1.application_form" },
+    { "h2": "Personal Information", "key": "h2.personal_information" },
+    { "h2": "Contact Details", "key": "h2.contact_details" }
   ]
 }
 ```
@@ -622,9 +637,18 @@ Plain text paragraph:
 { "text": "Please complete all required fields marked with *" }
 ```
 
+**With Translation Key**:
+
+```json
+{
+  "text": "Please complete all required fields marked with *",
+  "key": "text.completion_notice"
+}
+```
+
 #### Divider
 
-Horizontal separator line:
+Horizontal separator line (no translation needed):
 
 ```json
 { "divider": true }
@@ -632,7 +656,7 @@ Horizontal separator line:
 
 #### Spacer
 
-Vertical spacing (height in pixels):
+Vertical spacing (height in pixels, no translation needed):
 
 ```json
 { "spacer": 20 }
@@ -646,7 +670,53 @@ Reference to a field defined in the `fields` object:
 { "field": "fieldName" }
 ```
 
-**Important**: The field name must exist in the `fields` object.
+**Important**:
+
+- The field name must exist in the `fields` object
+- Field translations use the field name automatically (no `key` property needed)
+- Field labels, placeholders, descriptions, and options are translated using field-specific keys
+
+### Translation Support for Layout Items
+
+To enable translation for text and heading layout items, add a `key` property:
+
+```json
+{
+  "layout": [
+    {
+      "text": "Please complete all required fields.",
+      "key": "text.completion_notice"
+    },
+    {
+      "h2": "Personal Information",
+      "key": "h2.personal_information"
+    },
+    {
+      "field": "fullName"
+      // No key needed - field translations handled automatically
+    }
+  ]
+}
+```
+
+Then add translations in the `localization` object:
+
+```json
+{
+  "localization": {
+    "en": {
+      "text.completion_notice": "Please complete all required fields.",
+      "h2.personal_information": "Personal Information"
+    },
+    "si": {
+      "text.completion_notice": "කරුණාකර සියලුම අවශ්‍ය ක්ෂේත්‍ර පුරවන්න.",
+      "h2.personal_information": "පුද්ගලික තොරතුරු"
+    }
+  }
+}
+```
+
+**Note**: Layout items without a `key` property will display the original text value and cannot be translated. This is useful for static content that doesn't need translation.
 
 ### Complete Layout Example
 
@@ -654,13 +724,15 @@ Reference to a field defined in the `fields` object:
 {
   "layout": [
     {
-      "text": "Please complete all required fields. Inaccurate information may affect your application."
+      "text": "Please complete all required fields. Inaccurate information may affect your application.",
+      "key": "text.completion_notice"
     },
     {
       "divider": true
     },
     {
-      "h2": "Personal Information"
+      "h2": "Personal Information",
+      "key": "h2.personal_information"
     },
     {
       "field": "fullName"
@@ -675,7 +747,8 @@ Reference to a field defined in the `fields` object:
       "divider": true
     },
     {
-      "h2": "Contact Information"
+      "h2": "Contact Information",
+      "key": "h2.contact_information"
     },
     {
       "field": "email"
@@ -687,7 +760,8 @@ Reference to a field defined in the `fields` object:
       "spacer": 20
     },
     {
-      "h2": "Additional Details"
+      "h2": "Additional Details",
+      "key": "h2.additional_details"
     },
     {
       "field": "address"
@@ -704,6 +778,8 @@ Reference to a field defined in the `fields` object:
 4. **Use spacers** sparingly for fine-tuning spacing
 5. **Group related fields** together in the layout
 6. **Order fields logically** (most important first, or follow user flow)
+7. **Add `key` properties** to text and heading items for translation support
+8. **Use descriptive keys** following the pattern `{type}.{description}` (e.g., `h2.personal_information`)
 
 **Implementation**: See `src/components/molecules/layout-renderer.tsx`
 
@@ -857,6 +933,7 @@ Shows field when parent field value contains the string `"premium"`.
 ### Value Types
 
 The `value` in `conditionalOptions` can be:
+
 - `string` - For text comparisons
 - `number` - For numeric comparisons
 - `boolean` - For checkbox fields
@@ -916,7 +993,8 @@ You can have multiple conditional fields under one parent:
 4. **Test all conditional paths** to ensure fields appear/disappear correctly
 5. **Use appropriate operators** - `eq`/`neq` for select/radio, `gt`/`lt` for numbers
 
-**Implementation**: 
+**Implementation**:
+
 - See `src/components/molecules/conditional-renderer.tsx` for rendering logic
 - See `src/services/conditinonal.service.ts` for condition evaluation
 
@@ -930,11 +1008,11 @@ Validation rules ensure data quality and provide user feedback. Validation is de
 
 ```typescript
 interface IFormFieldValidation {
-  maxLength?: number;      // Maximum character length
-  minLength?: number;      // Minimum character length
-  min?: number;            // Minimum numeric value
-  max?: number;            // Maximum numeric value
-  pattern?: string;        // Regex pattern for string matching
+  maxLength?: number; // Maximum character length
+  minLength?: number; // Minimum character length
+  min?: number; // Minimum numeric value
+  max?: number; // Maximum numeric value
+  pattern?: string; // Regex pattern for string matching
 }
 ```
 
@@ -1117,7 +1195,14 @@ The `email` type provides built-in email validation. You can add additional cons
 
 ## Localization
 
-The form system supports multi-language forms through the `localization` property. Currently supported locales are: `en` (English), `si` (Sinhala), and `ta` (Tamil).
+The form system supports multi-language forms through the `localization` property. Currently supported locales are: `en` (English), `si` (Sinhala), and `ta` (Tamil). The translation system automatically falls back to the original field values when translations are missing.
+
+### How Localization Works
+
+1. **Form Initialization**: When a form loads, the `localization` data is stored in the localization store
+2. **Translation Lookup**: Components use the `useTranslation()` hook to look up translations
+3. **Fallback**: If a translation key is missing, the original value from the field definition is used
+4. **Reactive Updates**: Translations update automatically when the locale changes
 
 ### Localization Structure
 
@@ -1129,7 +1214,10 @@ The form system supports multi-language forms through the `localization` propert
       "formDescription": "English Description",
       "fieldName.label": "English Label",
       "fieldName.placeholder": "English Placeholder",
-      "fieldName.description": "English Description"
+      "fieldName.description": "English Description",
+      "fieldName.options.optionValue": "English Option Label",
+      "text.completion_notice": "English text content",
+      "h2.section_title": "English Section Title"
     },
     "si": {
       "formTitle": "සිංහල මාතෘකාව",
@@ -1145,42 +1233,228 @@ The form system supports multi-language forms through the `localization` propert
 
 ### Localization Keys
 
-Localization keys follow this pattern:
+Localization keys follow specific patterns based on what they translate:
 
-- `formTitle` - Form title
-- `formDescription` - Form description
+#### Form Metadata Keys
+
+- `formTitle` - Form title displayed at the top
+- `formDescription` - Form description displayed below the title
+
+#### Field Keys
+
 - `{fieldName}.label` - Field label
-- `{fieldName}.placeholder` - Field placeholder
-- `{fieldName}.description` - Field description
+- `{fieldName}.placeholder` - Field placeholder text
+- `{fieldName}.description` - Field help/description text
+- `{fieldName}.options.{optionValue}` - Option label for select/radio-group fields
 
-### Example from life-insurance.json
+**Example**:
+
+```json
+{
+  "gender.label": "Gender",
+  "gender.options.male": "Male",
+  "gender.options.female": "Female",
+  "gender.options.other": "Other / Prefer not to say"
+}
+```
+
+#### Layout Item Keys
+
+For non-field layout items (text, headings), use a `key` property in the layout item:
+
+```json
+{
+  "layout": [
+    {
+      "text": "Please complete all required fields.",
+      "key": "text.completion_notice"
+    },
+    {
+      "h2": "Personal Information",
+      "key": "h2.personal_information"
+    }
+  ]
+}
+```
+
+Then add translations:
+
+```json
+{
+  "localization": {
+    "en": {
+      "text.completion_notice": "Please complete all required fields.",
+      "h2.personal_information": "Personal Information"
+    },
+    "si": {
+      "text.completion_notice": "කරුණාකර සියලුම අවශ්‍ය ක්ෂේත්‍ර පුරවන්න.",
+      "h2.personal_information": "පුද්ගලික තොරතුරු"
+    }
+  }
+}
+```
+
+**Note**: Layout items without a `key` property will display the original text value and cannot be translated.
+
+### Complete Localization Example
 
 ```json
 {
   "localization": {
     "en": {
       "formTitle": "Life Insurance Proposal Form",
-      "formDescription": "Apply for comprehensive life insurance cover...",
+      "formDescription": "Apply for comprehensive life insurance cover with optional riders and beneficiary nominations.",
+      "text.completion_notice": "Please complete all required fields. Inaccurate information may affect your cover and claim eligibility.",
+      "h2.personal_information": "Personal Information",
+      "h2.health_information": "Health Information",
+      "h2.coverage_details": "Coverage Details",
+      "h2.beneficiary_information": "Beneficiary Information",
+      "h2.documents_declaration": "Documents & Declaration",
       "fullName.label": "Full Name (as per NIC / Passport)",
       "fullName.placeholder": "e.g. Perera A.B.C.",
-      "sumAssured.label": "Requested Sum Assured (LKR)"
+      "fullName.description": "Please enter your full legal name including all middle names.",
+      "gender.label": "Gender",
+      "gender.options.male": "Male",
+      "gender.options.female": "Female",
+      "gender.options.other": "Other / Prefer not to say",
+      "maritalStatus.label": "Marital Status",
+      "maritalStatus.placeholder": "Select marital status",
+      "maritalStatus.options.single": "Single",
+      "maritalStatus.options.married": "Married",
+      "maritalStatus.options.widowed": "Widowed",
+      "maritalStatus.options.divorced": "Divorced",
+      "sumAssured.label": "Requested Sum Assured (LKR)",
+      "sumAssured.placeholder": "e.g. 10000000",
+      "sumAssured.description": "Total life cover amount you are applying for."
     },
     "si": {
       "formTitle": "ජීවිත රක්ෂණ යෝජනා පත්‍රය",
-      "formDescription": "විකල්ප අතිරේක ප්‍රතිලාභ...",
+      "formDescription": "විකල්ප අතිරේක ප්‍රතිලාභ සහ වාරසාධිකයින් නම් කිරීම සමඟ සම්පූර්ණ ජීවිත රක්ෂණ ආවරණයක් සඳහා අයදුම් කරන්න.",
+      "text.completion_notice": "කරුණාකර සියලුම අවශ්‍ය ක්ෂේත්‍ර පුරවන්න. නිවැරදි නොවන තොරතුරු ඔබගේ ආවරණය සහ හිමිකම් සුදුසුකම්වලට බලපෑම් කළ හැකිය.",
+      "h2.personal_information": "පුද්ගලික තොරතුරු",
+      "h2.health_information": "සෞඛ්‍ය තොරතුරු",
+      "h2.coverage_details": "ආවරණ විස්තර",
+      "h2.beneficiary_information": "වාරසාධික තොරතුරු",
+      "h2.documents_declaration": "ලේඛන සහ ප්‍රකාශනය",
       "fullName.label": "සම්පූර්ණ නම (ජා.හැ./ පස්පෝට් අනුව)",
       "fullName.placeholder": "උදා: පෙරේරා A.B.C.",
-      "sumAssured.label": "ඉල්ලෙන ආවරණ (රු.)"
+      "fullName.description": "කරුණාකර ඔබගේ සම්පූර්ණ නීත්‍යානුකූල නම මැද නම් ඇතුළුව ඇතුළත් කරන්න.",
+      "gender.label": "ලිංගය",
+      "gender.options.male": "පිරිමි",
+      "gender.options.female": "ගැහැණු",
+      "gender.options.other": "වෙනත් / කීමට කැමති නැත",
+      "maritalStatus.label": "විවාහක තත්ත්වය",
+      "maritalStatus.placeholder": "විවාහක තත්ත්වය තෝරන්න",
+      "maritalStatus.options.single": "අවිවාහක",
+      "maritalStatus.options.married": "විවාහක",
+      "maritalStatus.options.widowed": "වැන්දඹු",
+      "maritalStatus.options.divorced": "දික්කසාද",
+      "sumAssured.label": "ඉල්ලෙන ආවරණ (රු.)",
+      "sumAssured.placeholder": "උදා: 10000000",
+      "sumAssured.description": "ඔබ අයදුම් කරන සම්පූර්ණ ජීවිත ආවරණ මුදල."
     },
     "ta": {
       "formTitle": "வாழ்க்கை காப்பீட்டு முன்மொழிவு படிவம்",
-      "formDescription": "கூடுதல் ரைடர்களும் பயனாளி...",
+      "formDescription": "கூடுதல் ரைடர்களும் பயனாளி நியமனங்களும் உடன் முழுமையான வாழ்க்கை காப்பீட்டு பாதுகாப்புக்கு விண்ணப்பிக்கவும்.",
+      "text.completion_notice": "தயவுசெய்து அனைத்து தேவையான புலங்களையும் நிரப்பவும். துல்லியமற்ற தகவல்கள் உங்கள் பாதுகாப்பு மற்றும் கோரிக்கை தகுதியை பாதிக்கலாம்.",
+      "h2.personal_information": "தனிப்பட்ட தகவல்",
+      "h2.health_information": "சுகாதார தகவல்",
+      "h2.coverage_details": "பாதுகாப்பு விவரங்கள்",
+      "h2.beneficiary_information": "பயனாளி தகவல்",
+      "h2.documents_declaration": "ஆவணங்கள் மற்றும் அறிவிப்பு",
       "fullName.label": "முழுப்பெயர் (தே.அ/ பாஸ்போர்ட் படி)",
-      "sumAssured.label": "கோரப்பட்ட காப்பீட்டு தொகை (LKR)"
+      "fullName.placeholder": "எ.கா: பெரேரா A.B.C.",
+      "fullName.description": "தயவுசெய்து உங்கள் முழு சட்டப்பூர்வ பெயரை அனைத்து நடுத்தர பெயர்களுடன் உள்ளிடவும்.",
+      "gender.label": "பாலினம்",
+      "gender.options.male": "ஆண்",
+      "gender.options.female": "பெண்",
+      "gender.options.other": "மற்றவை / சொல்ல விரும்பவில்லை",
+      "maritalStatus.label": "திருமண நிலை",
+      "maritalStatus.placeholder": "திருமண நிலையைத் தேர்ந்தெடுக்கவும்",
+      "maritalStatus.options.single": "திருமணமாகாத",
+      "maritalStatus.options.married": "திருமணமான",
+      "maritalStatus.options.widowed": "விதவை",
+      "maritalStatus.options.divorced": "விவாகரத்து",
+      "sumAssured.label": "கோரப்பட்ட காப்பீட்டு தொகை (LKR)",
+      "sumAssured.placeholder": "எ.கா: 10000000",
+      "sumAssured.description": "நீங்கள் விண்ணப்பிக்கும் மொத்த வாழ்க்கை காப்பீட்டு தொகை."
     }
   }
 }
 ```
+
+### Translating Layout Items
+
+To translate non-field layout items (text, headings), add a `key` property to the layout item:
+
+```json
+{
+  "layout": [
+    {
+      "text": "Please complete all required fields.",
+      "key": "text.completion_notice"
+    },
+    {
+      "h2": "Personal Information",
+      "key": "h2.personal_information"
+    },
+    {
+      "h2": "Contact Details",
+      "key": "h2.contact_details"
+    },
+    {
+      "divider": true
+      // No key needed - divider has no text
+    },
+    {
+      "field": "email"
+      // No key needed - field translations use field name
+    }
+  ]
+}
+```
+
+**Key Naming Convention**: Use descriptive keys like `{type}.{description}`:
+
+- `text.completion_notice`
+- `h2.personal_information`
+- `h2.health_information`
+- `h1.main_title`
+
+### Translating Field Options
+
+For `select` and `radio-group` fields, translate each option using the pattern `{fieldName}.options.{optionValue}`:
+
+```json
+{
+  "fields": {
+    "gender": {
+      "type": "radio-group",
+      "options": {
+        "male": "Male",
+        "female": "Female",
+        "other": "Other"
+      }
+    }
+  },
+  "localization": {
+    "en": {
+      "gender.label": "Gender",
+      "gender.options.male": "Male",
+      "gender.options.female": "Female",
+      "gender.options.other": "Other"
+    },
+    "si": {
+      "gender.label": "ලිංගය",
+      "gender.options.male": "පිරිමි",
+      "gender.options.female": "ගැහැණු",
+      "gender.options.other": "වෙනත්"
+    }
+  }
+}
+```
+
+**Important**: The `optionValue` in the translation key must match the key in the `options` object, not the label.
 
 ### Setting Available Locales
 
@@ -1189,36 +1463,64 @@ Define which locales your form supports in `metadata.availableLocales`:
 ```json
 {
   "metadata": {
-    "availableLocales": ["en", "si", "ta"]
+    "availableLocales": ["en", "si", "ta"],
+    "defaultLocale": "en"
   }
 }
 ```
 
+**Note**: `defaultLocale` is optional. If not specified, `"en"` is used as the default.
+
+### Translation Fallback Behavior
+
+The translation system uses a fallback mechanism:
+
+1. **Translation exists**: Uses the translated value
+2. **Translation missing**: Falls back to the original value from the field definition or layout item
+3. **Empty translation**: Falls back to the original value (empty strings are treated as missing)
+
+This ensures forms always display content, even with incomplete translations.
+
 ### Localization Best Practices
 
 1. **Include all supported locales** in the `localization` object
-2. **Translate all user-facing text**: labels, placeholders, descriptions, headings
-3. **Keep keys consistent** across locales
-4. **Test with different locales** to ensure proper rendering
-5. **Consider text length** - some languages may need more space
+2. **Translate all user-facing text**:
+   - Form title and description
+   - Field labels, placeholders, and descriptions
+   - Field options (select/radio-group)
+   - Layout items (text, headings) using `key` property
+3. **Use consistent key naming**: Follow the patterns `{fieldName}.{property}` and `{type}.{description}`
+4. **Keep keys consistent** across locales - same keys should exist in all locale objects
+5. **Test with different locales** to ensure proper rendering
+6. **Consider text length** - some languages may need more space
+7. **Use descriptive keys** for layout items (e.g., `h2.personal_information` not `h2.section1`)
 
 ### Partial Localization
 
-You don't need to translate everything. If a key is missing for a locale, the default value from the field definition will be used:
+You don't need to translate everything. If a key is missing for a locale, the default value from the field definition or layout item will be used:
 
 ```json
 {
   "localization": {
     "en": {
-      "fullName.label": "Full Name"
+      "fullName.label": "Full Name",
+      "fullName.placeholder": "Enter your name"
     },
     "si": {
       "fullName.label": "සම්පූර්ණ නම"
+      // "fullName.placeholder" missing - will use "Enter your name" from field definition
     }
-    // "ta" missing - will use default from field definition
+    // "ta" missing entirely - will use all default values from field definitions
   }
 }
 ```
+
+### Implementation Details
+
+- **Translation Hook**: Components use `useTranslation()` hook from `src/hooks/useTranslation.hook.ts`
+- **Field Key Utilities**: Translation keys are generated using utilities from `src/utils/fieldKey.utils.ts`
+- **Localization Store**: Translations are managed by Zustand store in `src/stores/localization.store.ts`
+- **Automatic Updates**: Translations update reactively when locale changes via the locale selector
 
 ---
 
@@ -1237,6 +1539,7 @@ Some fields can be automatically prefilled from external sources (e.g., OTP serv
 ```
 
 **Notes**:
+
 - Field names must match keys in the `fields` object
 - Prefilled fields are typically read-only or disabled
 - Values are set when the form is initialized
@@ -1250,9 +1553,9 @@ File fields support advanced configuration:
   "document": {
     "type": "file",
     "fileOptions": {
-      "maxSize": 5242880,              // 5MB in bytes
+      "maxSize": 5242880, // 5MB in bytes
       "allowedExtensions": ["pdf", "jpg", "jpeg", "png"],
-      "multiple": false                 // Single or multiple files
+      "multiple": false // Single or multiple files
     }
   }
 }
@@ -1272,7 +1575,7 @@ Control the layout of radio button groups:
 {
   "preference": {
     "type": "radio-group",
-    "orientation": "horizontal",  // or "vertical" (default)
+    "orientation": "horizontal", // or "vertical" (default)
     "options": {
       "option1": "Option 1",
       "option2": "Option 2"
@@ -1292,7 +1595,7 @@ Control the visible height of textarea fields:
 {
   "comments": {
     "type": "textarea",
-    "rows": 6,  // Number of visible rows
+    "rows": 6, // Number of visible rows
     "label": "Comments"
   }
 }
@@ -1336,7 +1639,7 @@ Set default values for fields:
 {
   "country": {
     "type": "select",
-    "defaultValue": "lk",  // Pre-selects "lk" option
+    "defaultValue": "lk", // Pre-selects "lk" option
     "options": {
       "us": "United States",
       "lk": "Sri Lanka"
@@ -1344,13 +1647,14 @@ Set default values for fields:
   },
   "newsletter": {
     "type": "checkbox",
-    "defaultValue": "true",  // Checked by default
+    "defaultValue": "true", // Checked by default
     "checked": true
   }
 }
 ```
 
 **Notes**:
+
 - For checkboxes, use `"true"` string or `true` boolean
 - For select/radio, use the option value string
 - Default values are set when the form initializes
@@ -1595,6 +1899,7 @@ Let's walk through a complete example form. This example demonstrates most featu
 ### Reference: life-insurance.json
 
 For a production-ready example, see `src/forms/life-insurance.json`. It demonstrates:
+
 - Complex conditional logic
 - Multiple field types
 - Comprehensive validation
@@ -1612,11 +1917,13 @@ For a production-ready example, see `src/forms/life-insurance.json`. It demonstr
 **Problem**: Field defined in `fields` but not showing in form.
 
 **Solutions**:
+
 - Check that the field name in `layout` matches the key in `fields`
 - Verify the field is included in the `layout` array
 - Check for JSON syntax errors (missing commas, quotes)
 
 **Example**:
+
 ```json
 // ❌ Wrong - field name mismatch
 "fields": { "fullName": {...} }
@@ -1632,17 +1939,20 @@ For a production-ready example, see `src/forms/life-insurance.json`. It demonstr
 **Problem**: Conditional field doesn't appear or disappear when expected.
 
 **Solutions**:
+
 1. Verify `conditionalOptions.operator` is correct
 2. Check that `conditionalOptions.value` matches the parent field's option value exactly
 3. Ensure parent field is in `dependencies` of the correct parent
 4. Check field types - some operators work differently for different types
 
 **Debugging**:
+
 - Check browser console for warnings
 - Verify parent field value matches expected value (case-sensitive)
 - Test with different operators (`eq` vs `neq`)
 
 **Example**:
+
 ```json
 // ❌ Wrong - value mismatch
 "parent": {
@@ -1669,12 +1979,14 @@ For a production-ready example, see `src/forms/life-insurance.json`. It demonstr
 **Problem**: Validation rules not being enforced.
 
 **Solutions**:
+
 1. Check that `validation` object is not empty `{}` if you want validation
 2. Verify validation rules match field type (e.g., `min`/`max` for numbers, `minLength`/`maxLength` for text)
 3. Ensure `required: true` is set for required fields
 4. Check regex patterns - escape special characters with `\\`
 
 **Example**:
+
 ```json
 // ❌ Wrong - using min/max on text field
 {
@@ -1700,6 +2012,7 @@ For a production-ready example, see `src/forms/life-insurance.json`. It demonstr
 **Problem**: Form doesn't load, JSON parse errors.
 
 **Solutions**:
+
 1. Validate JSON syntax using a JSON validator
 2. Check for:
    - Missing commas between objects
@@ -1708,6 +2021,7 @@ For a production-ready example, see `src/forms/life-insurance.json`. It demonstr
    - Unescaped quotes in strings
 
 **Common Mistakes**:
+
 ```json
 // ❌ Trailing comma
 {
@@ -1727,11 +2041,13 @@ For a production-ready example, see `src/forms/life-insurance.json`. It demonstr
 **Problem**: File upload not working or rejecting valid files.
 
 **Solutions**:
+
 1. Check `fileOptions.allowedExtensions` - extensions should be lowercase without dots
 2. Verify `maxSize` is in bytes (e.g., 5MB = 5242880 bytes)
 3. Ensure `multiple` is set correctly (boolean, not string)
 
 **Example**:
+
 ```json
 // ❌ Wrong - extensions with dots
 "fileOptions": {
@@ -1749,12 +2065,16 @@ For a production-ready example, see `src/forms/life-insurance.json`. It demonstr
 **Problem**: Translations not appearing.
 
 **Solutions**:
+
 1. Verify locale is in `metadata.availableLocales`
 2. Check localization key format: `{fieldName}.label`, `{fieldName}.placeholder`, etc.
 3. Ensure locale key exists in `localization` object
 4. Check that field names match exactly (case-sensitive)
+5. For layout items, ensure `key` property is added to the layout item
+6. Verify translation keys match the `key` property values exactly
 
-**Example**:
+**Field Translation Example**:
+
 ```json
 // ❌ Wrong - incorrect key format
 "localization": {
@@ -1771,16 +2091,83 @@ For a production-ready example, see `src/forms/life-insurance.json`. It demonstr
 }
 ```
 
+**Layout Item Translation Example**:
+
+```json
+// ❌ Wrong - missing key property in layout
+{
+  "layout": [
+    {
+      "h2": "Personal Information"
+      // Missing "key" property - cannot be translated
+    }
+  ],
+  "localization": {
+    "en": {
+      "h2.personal_information": "Personal Information"  // Key exists but layout item has no key property
+    }
+  }
+}
+
+// ✅ Correct
+{
+  "layout": [
+    {
+      "h2": "Personal Information",
+      "key": "h2.personal_information"  // Key property matches localization key
+    }
+  ],
+  "localization": {
+    "en": {
+      "h2.personal_information": "Personal Information"
+    }
+  }
+}
+```
+
+**Option Translation Example**:
+
+```json
+// ❌ Wrong - using option label instead of option value
+{
+  "fields": {
+    "gender": {
+      "options": {
+        "male": "Male",
+        "female": "Female"
+      }
+    }
+  },
+  "localization": {
+    "en": {
+      "gender.options.Male": "Male"  // Should use option key "male", not label "Male"
+    }
+  }
+}
+
+// ✅ Correct
+{
+  "localization": {
+    "en": {
+      "gender.options.male": "Male",  // Uses option key "male"
+      "gender.options.female": "Female"
+    }
+  }
+}
+```
+
 #### Select/Radio Options Not Showing
 
 **Problem**: Options not appearing in select or radio-group fields.
 
 **Solutions**:
+
 1. Verify `options` object exists and is not empty
 2. Check that option values are strings
 3. Ensure `options` is an object, not an array
 
 **Example**:
+
 ```json
 // ❌ Wrong - options as array
 {
@@ -1860,4 +2247,3 @@ This guide covers all aspects of building forms in the JSON-based form system. F
 4. Test your form incrementally as you build it
 
 Happy form building!
-
