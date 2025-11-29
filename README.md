@@ -313,8 +313,8 @@ When adding new features:
 
 This project contains dual intellectual property ownership:
 
-- **Form Building Algorithm and Code**: Copyright © 2025-2035 Sihilel Himasara Wickramarathna. All rights reserved.
-- **Form Data and Information**: Copyright © 2025-2035 Ceylinco Life Insurance Limited. All rights reserved.
+- **Form Building Algorithm and Code**: Copyright © 2025 Sihilel Himasara Wickramarathna. All rights reserved.
+- **Form Data and Information**: Copyright © 2025 Ceylinco Life Insurance Limited. All rights reserved.
 
 For complete licensing terms, restrictions, and usage rights, see [LICENSE.md](./LICENSE.md).
 
