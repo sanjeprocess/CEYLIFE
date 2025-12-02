@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "formVersion": 1,
+    "formTitle": "DIABETIC QUESTIONNAIRE",
+    "formDescription": "",
+    "availableLocales": ["en"],
+    "otpRequired": true
+  },
+  "prefilledFields": ["field1", "field2"],
+  "submission": {
+    "endpoint": "/api/forms/form-name",
+    "method": "POST",
+    "requiresAccessToken": true
+  },
+  "fields": {
+    "proposerName": {
+      "type": "text",
+      "label": "Full Name (as per NIC / Passport)",
+      "required": true,
+      "validation": {
+        "minLength": 3,
+        "maxLength": 100
+      }
+    }
+  },
+  "layout": [
+    {
+      "text": "(To be completed by the Proposer)"
+    },
+    {
+      "divider": true
+    },
+    {
+      "field": "proposerName"
+    }
+  ],
+  "localization": {
+    "en": {},
+    "si": {},
+    "ta": {}
+  }
+}
