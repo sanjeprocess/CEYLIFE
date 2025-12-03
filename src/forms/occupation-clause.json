@@ -28,12 +28,12 @@
             "description": "Proposer's Name",
             "defaultValue": ""
         },
-        "contactNumber": {
-            "type": "tel",
-            "label": "Contact Number",
+        "contractNumber": {
+            "type": "text",
+            "label": "Contract Number",
             "required": true,
-            "placeholder": "Contact Number",
-            "description": "Contact Number",
+            "placeholder": "Contract Number",
+            "description": "Contract Number",
             "defaultValue": ""
         },
         "nicNumber": {
