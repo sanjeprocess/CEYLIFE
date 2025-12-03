@@ -1,0 +1,220 @@
+{
+    "metadata": {
+        "formVersion": 1,
+        "formTitle": "CEYLINCO LIFE",
+        "formDescription": "Ceylinco Life Insurance Limited \n Ceylinco Life Insurance Limited, Ceylinco Life Tower, 106 Havelock Road, Colombo.05, Co. Reg: PB5183 Tel:(011)2461461 Email: service@ceylife.lk Web: www.ceylincolife.com.Form description",
+        "availableLocales": [
+            "en",
+            "si",
+            "ta"
+        ],
+        "otpRequired": true
+    },
+    "prefilledFields": [
+        "field1",
+        "field2"
+    ],
+    "submission": {
+        "endpoint": "/api/forms/marine-service-questionnaire",
+        "method": "POST",
+        "requiresAccessToken": true
+    },
+    "fields": {
+        "ProposerName": {
+            "type": "text",
+            "label": "Proposer's Name",
+            "required": true,
+            "placeholder": "Proposer's Name",
+            "description": "Proposer's Name",
+            "defaultValue": ""
+        },
+        "proposalNum": {
+            "type": "number",
+            "label": "Proposal Number",
+            "required": true,
+            "placeholder": "Proposal Number",
+            "description": "Proposal Number",
+            "defaultValue": ""
+        },
+        "vesselName": {
+            "type": "text",
+            "label": "a.1) What is the name of the Vessel?",
+            "required": true,
+            "placeholder": "Vessel Name",
+            "defaultValue": ""
+        },
+        "vesselOwner": {
+            "type": "text",
+            "label": "a.2) Who is the owner of the Vessel?",
+            "required": true,
+            "placeholder": "Vessel Owner",
+            "defaultValue": ""
+        },
+        "vesselLine": {
+            "type": "text",
+            "label": "a.3) To what line does it belong?",
+            "required": true,
+            "placeholder": "Vessel Line",
+            "defaultValue": ""
+        },
+        "motivePower": {
+            "type": "text",
+            "label": "b.) What is its motive power, rating and gross tonnage?",
+            "required": true,
+            "placeholder": "Enter Motive Power ,rating and gross tonnage",
+            "defaultValue": ""
+        },
+        "vesselBusiness": {
+            "type": "text",
+            "label": "c.) In what business is it engaged?",
+            "required": true,
+            "placeholder": "Enter  Business type",
+            "defaultValue": ""
+        },
+        "businessPly": {
+            "type": "text",
+            "label": "d.) In what waters does it ply?",
+            "required": true,
+            "placeholder": "Enter  waters",
+            "defaultValue": ""
+        },
+        "ports": {
+            "type": "text",
+            "label": "e.) Between what ports?",
+            "required": true,
+            "placeholder": "Enter  ports",
+            "defaultValue": ""
+        },
+        "vesselType": {
+            "type": "radio-group",
+            "label": "f.) What is the type of the vessel?",
+            "required": true,
+            "options": {
+                "barge_boat": "Is the boat a barge?",
+                "tug_boat": "Tug Boat",
+                "launch_first": "Launch First - class passenger steamship?",
+                "freight_steamship": "Freight steamship",
+                "sailing_vessel": "Sailing vessel"
+            }
+        },
+        "position": {
+            "type": "text",
+            "label": "g.)  What is the title of your position?",
+            "required": true,
+            "placeholder": "Enter  position",
+            "defaultValue": ""
+        },
+        "serviceYears": {
+            "type": "number",
+            "label": "h.) How long have you been engaged in a sea-faring occupation?",
+            "required": true,
+            "placeholder": "Enter  years",
+            "defaultValue": ""
+        },
+        "insurable": {
+            "type": "radio-group",
+            "label": "i.) Is the vessel seaworthy and insurable?",
+            "required": true,
+            "options": {
+                "yes": "Yes",
+                "no": "No"
+            },
+            "orientation": "horizontal",
+            "dependencies": {
+                "Details": {
+                    "type": "textarea",
+                    "label": "If so, is the vessel now insured?",
+                    "placeholder": "Enter insurance status.",
+                    "defaultValue": "",
+                    "conditionalOptions": {
+                        "operator": "eq",
+                        "value": "yes"
+                    }
+                }
+            }
+        },
+        "date": {
+            "type": "date",
+            "label": "Date",
+            "required": true,
+            "placeholder": "Date",
+            "defaultValue": ""
+        },
+        "signature": {
+            "type": "file",
+            "label": "Signature",
+            "required": true,
+            "defaultValue": "",
+            "fileOptions": {
+                "maxFileSize": 10485760,
+                "allowedExtensions": [
+                    ".png",
+                    ".jpg",
+                    ".jpeg",
+                    ".pdf"
+                ]
+            }
+        }
+    },
+    "layout": [
+        {
+            "field": "ProposerName"
+        },
+        {
+            "field": "proposalNum"
+        },
+        {
+            "h1": "Marine Service Questionnaire"
+        },
+        {
+            "field": "vesselName"
+        },
+        {
+            "field": "vesselOwner"
+        },
+        {
+            "field": "vesselLine"
+        },
+        {
+            "field": "motivePower"
+        },
+        {
+            "field": "vesselBusiness"
+        },
+        {
+            "field": "businessPly"
+        },
+        {
+            "field": "ports"
+        },
+        {
+            "field": "vesselType"
+        },
+        {
+            "field": "position"
+        },
+        {
+            "field": "serviceYears"
+        },
+        {
+            "field": "insurable"
+        },
+        {
+            "text": "I declare that the answers I have given are to the best of my knowledge true and that I have not withheld any material information that may influence the assessment or acceptance of the proposal."
+        },
+        {
+            "text": "I agree that this form will constitute part of my proposal for life assurance and that failure to disclose any material fact known to me may invalidate the contract."
+        },
+        {
+            "field": "date"
+        },
+        {
+            "field": "signature"
+        }
+    ],
+    "localization": {
+        "en": {},
+        "si": {},
+        "ta": {}
+    }
+}
