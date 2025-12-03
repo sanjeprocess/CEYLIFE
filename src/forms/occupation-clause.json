@@ -1,8 +1,8 @@
 {
     "metadata": {
         "formVersion": 1,
-        "formTitle": "Form Title",
-        "formDescription": "Form description",
+        "formTitle": "CEYLINCO LIFE",
+        "formDescription": "Ceylinco Life Insurance Limited Ceylinco Life Insurance Limited, Ceylinco Life Tower, 106 Havelock Road, Colombo.05, Co. Reg: PB5183 Tel:(011)2461461 Email: service@ceylife.lk Web: www.ceylincolife.com.",
         "availableLocales": [
             "en",
             "si",
@@ -15,7 +15,7 @@
         "field2"
     ],
     "submission": {
-        "endpoint": "/api/forms/form-name",
+        "endpoint": "/api/forms/occupation-clause",
         "method": "POST",
         "requiresAccessToken": true
     },
@@ -28,12 +28,12 @@
             "description": "Proposer's Name",
             "defaultValue": ""
         },
-        "contactNumber": {
-            "type": "tel",
-            "label": "Contact Number",
+        "contractNumber": {
+            "type": "text",
+            "label": "Contract Number",
             "required": true,
-            "placeholder": "Contact Number",
-            "description": "Contact Number",
+            "placeholder": "Contract Number",
+            "description": "Contract Number",
             "defaultValue": ""
         },
         "nicNumber": {
