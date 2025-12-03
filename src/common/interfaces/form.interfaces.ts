@@ -17,13 +17,23 @@ export interface IForm {
   localization: Record<Locale, Record<string, string>>; // based on json keys (eg: "fields.name.label" -> "Name")
 }
 
+export interface IOnFormOpen {
+  action: "verify-user";
+  method: HttpMethod;
+  endpoint: string;
+  requiresAccessToken: boolean;
+  parameters: Record<string, string>;
+  body: Record<string, unknown>;
+  response: Record<string, string>;
+}
+
 export interface IFormMetadata {
   formVersion: FormVersion;
   formTitle: string;
   formDescription: string;
   availableLocales: Locale[];
   defaultLocale?: Locale; // if left blank, en is used
-  otpRequired: boolean;
+  otp: boolean; // whether OTP is required for the form, if enabled form can use $otp for its onFormOpen, fields as a variable.
 }
 
 export interface IFormSubmission {
@@ -58,7 +68,7 @@ export interface IFormFieldBase {
   placeholder?: string;
   description?: string;
   defaultValue?: string;
-  validation: IFormFieldValidation;
+  validation?: IFormFieldValidation;
   dependencies?: Record<string, IFormField>; // for conditional rendering
   conditionalOptions?: IFormConditionalFieldOptions; // for conditional fields
 }

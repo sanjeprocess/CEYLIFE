@@ -56,8 +56,8 @@ export function TextareaField({
           placeholder={placeholder}
           required={field.required}
           rows={field.rows}
-          minLength={field.validation.minLength}
-          maxLength={field.validation.maxLength}
+          minLength={field.validation?.minLength}
+          maxLength={field.validation?.maxLength}
           onChange={handleChange}
         />
         {description && <FieldDescription>{description}</FieldDescription>}

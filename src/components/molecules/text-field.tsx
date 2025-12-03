@@ -63,11 +63,11 @@ export function TextField({
           value={value as string | number}
           placeholder={placeholder}
           required={field.required}
-          min={field.validation.min}
-          max={field.validation.max}
-          minLength={field.validation.minLength}
-          maxLength={field.validation.maxLength}
-          pattern={field.validation.pattern}
+          min={field.validation?.min}
+          max={field.validation?.max}
+          minLength={field.validation?.minLength}
+          maxLength={field.validation?.maxLength}
+          pattern={field.validation?.pattern}
           onChange={handleChange}
         />
         {description && (
