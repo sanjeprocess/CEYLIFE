@@ -71,7 +71,7 @@
             "field": "ProposerName"
         },
         {
-            "field": "contactNumber"
+            "field": "contractNumber"
         },
         {
             "field": "nicNumber"
