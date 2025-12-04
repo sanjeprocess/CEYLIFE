@@ -3,15 +3,10 @@
     "formVersion": 1,
     "formTitle": "CEYLINCO LIFE",
     "formDescription": "Ceylinco Life Insurance Limited Ceylinco Life Insurance Limited, Ceylinco Life Tower, 106 Havelock Road, Colombo.05, Co. Reg: PB5183 Tel:(011)2461461 Email: service@ceylife.lk Web: www.ceylincolife.com.",
-    "availableLocales": [
-      "en"
-    ],
+    "availableLocales": ["en"],
     "otpRequired": true
   },
-  "prefilledFields": [
-    "field1",
-    "field2"
-  ],
+  "prefilledFields": ["field1", "field2"],
   "submission": {
     "endpoint": "/api/forms/diabetic-questionnaire",
     "method": "POST",
@@ -256,12 +251,7 @@
       "defaultValue": "",
       "fileOptions": {
         "maxFileSize": 10485760,
-        "allowedExtensions": [
-          ".png",
-          ".jpg",
-          ".jpeg",
-          ".pdf"
-        ]
+        "allowedExtensions": [".png", ".jpg", ".jpeg", ".pdf"]
       }
     }
   },
