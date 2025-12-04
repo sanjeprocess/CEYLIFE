@@ -17,12 +17,16 @@ export function RowLayout({ layout, fields, columnCount }: RowLayoutProps) {
     return null;
   }
 
+  // Mobile: flex flex-col (single column stack)
+  // Desktop (md+): grid with dynamic columns
+  // Note: gridTemplateColumns and gridColumn inline styles only apply when grid is active (md+)
+  // On mobile, flex takes precedence so these styles are ignored
   return (
     <div
-      className="grid gap-4"
+      className="flex flex-col gap-4 md:grid"
       style={styles({
-        gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
         margin: layout.margin,
+        gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
       })}
     >
       {layout.columns.map((columnItem, index) => (

@@ -10,8 +10,10 @@ import { CheckboxGroupField } from "./checkbox-group-field";
 import { ConditionalRenderer } from "./conditional-renderer";
 import { FileField } from "./file-field";
 import { RadioGroupField } from "./radio-group-field";
+import { ResetButton } from "./reset-button";
 import { RowLayout } from "./row-layout";
 import { SelectField } from "./select-field";
+import { SubmitButton } from "./submit-button";
 import { TextCard } from "./text-card";
 import { TextField } from "./text-field";
 import { TextareaField } from "./textarea-field";
@@ -27,9 +29,6 @@ export function LayoutRenderer({ layout, fields }: LayoutRendererProps) {
   const translate = useTranslation();
   const items = Object.entries(layout).filter(([key]) => key !== "key");
   if (items.length === 0) return null;
-  if (items.length > 1) {
-    console.warn("LayoutRenderer: Only one item is allowed in the layout");
-  }
   const [type, value] = items[0];
   const translationKey = layout.key;
 
@@ -170,6 +169,20 @@ export function LayoutRenderer({ layout, fields }: LayoutRendererProps) {
     case "field":
       return (
         <FieldRenderer field={fields[value as string]} name={value as string} />
+      );
+    case "submit":
+      return (
+        <SubmitButton
+          layout={layout}
+          submitText={value as string | number | boolean}
+        />
+      );
+    case "reset":
+      return (
+        <ResetButton
+          layout={layout}
+          resetText={value as string | number | boolean}
+        />
       );
     default:
       return <div>Unsupported layout type: {type}</div>;

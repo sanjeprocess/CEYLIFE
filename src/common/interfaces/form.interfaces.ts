@@ -115,6 +115,19 @@ export interface IFormLayoutStyles {
   margin?: number | string; // Margin in CSS shorthand, e.g. "10px 0 20px 0"
 }
 
+// Submit button specific properties
+export interface IFormLayoutSubmitButton {
+  variant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link"; // Button variant (defaults to "default")
+  loadingText?: string; // Text to show while submitting (for future use)
+  loadingTextKey?: string; // Translation key for loading text (for future use)
+}
+
 // Card-specific content for "card" layout items
 export interface IFormLayoutCardContent extends IFormLayoutStyles {
   label: string; // Label for the card
@@ -123,7 +136,7 @@ export interface IFormLayoutCardContent extends IFormLayoutStyles {
 
 // The main type describing any layout item in the form layout
 export type IFormLayoutItem = IFormLayoutStyles & {
-  // Optional translation key for non-field items (e.g. headings, text, cards)
+  // Optional translation key for non-field items (e.g. headings, text, cards, submit)
   key?: string;
 
   // Only for "card" layout items: nested layout items inside the card
@@ -132,8 +145,8 @@ export type IFormLayoutItem = IFormLayoutStyles & {
   // Only for "row" layout items: describes the row's columns/items
   columns?: IFormLayoutItem[];
   colspan?: number; // Only for "row" layout column items
-} & {
-  // For every layout item type, optionally store associated value:
-  // e.g., field: true, h1: "Heading", divider: true, etc.
-  [K in FormLayoutItemType]?: string | number | boolean;
-};
+} & IFormLayoutSubmitButton & {
+    // For every layout item type, optionally store associated value:
+    // e.g., field: true, h1: "Heading", divider: true, submit: "Submit Form", etc.
+    [K in FormLayoutItemType]?: string | number | boolean;
+  };
