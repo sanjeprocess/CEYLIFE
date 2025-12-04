@@ -12,3 +12,10 @@ export function getForm(formId: string): IForm {
   const formData = fs.readFileSync(formDataPath, "utf8");
   return JSON.parse(formData) as IForm;
 }
+
+export function getMissingSearchParams(
+  searchParamsVariables: Record<string, string>,
+  searchParams: { [key: string]: string | string[] | undefined }
+) {
+  return Object.keys(searchParamsVariables).filter((key) => !searchParams[key]);
+}

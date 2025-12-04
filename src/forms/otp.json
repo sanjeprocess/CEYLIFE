@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "formVersion": 1,
+    "formTitle": "Otp",
+    "formDescription": "Form description for Otp",
+    "availableLocales": ["en"],
+    "defaultLocale": "en",
+    "otp": false,
+    "searchParamsVariables": {
+      "cs": "contract_sequence",
+      "id": "card_id"
+    }
+  },
+  "submission": {
+    "endpoint": "/api/forms/otp",
+    "method": "POST",
+    "requiresAccessToken": true
+  },
+  "fields": {
+    "exampleField": {
+      "type": "text",
+      "label": "Example Field",
+      "required": false,
+      "placeholder": "Enter value",
+      "description": "This is an example field. Replace or remove as needed."
+    }
+  },
+  "layout": [
+    {
+      "h2": "Form Section"
+    },
+    {
+      "field": "exampleField"
+    },
+    {
+      "spacer": 20
+    },
+    {
+      "submit": "Submit"
+    }
+  ],
+  "localization": {
+    "en": {},
+    "si": {},
+    "ta": {}
+  }
+}

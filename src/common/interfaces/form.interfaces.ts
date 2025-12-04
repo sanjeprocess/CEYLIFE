@@ -11,15 +11,14 @@ import {
 
 export interface IForm {
   metadata: IFormMetadata;
-  prefilledFields?: string[]; // field keys that are prefilled using OTP service
+  otp?: IFormOtp;
   submission: IFormSubmission;
   fields: Record<string, IFormField>;
   layout: IFormLayoutItem[];
   localization: Record<Locale, Record<string, string>>; // based on json keys (eg: "fields.name.label" -> "Name")
 }
 
-export interface IOnFormOpen {
-  action: "verify-user";
+export interface IFormOtp {
   method: HttpMethod;
   endpoint: string;
   requiresAccessToken: boolean;
@@ -35,7 +34,7 @@ export interface IFormMetadata {
   showFormHeader: boolean; // default: true (show form header with title and description)
   availableLocales: Locale[];
   defaultLocale?: Locale; // if left blank, en is used
-  otp: boolean; // whether OTP is required for the form, if enabled form can use $otp for its onFormOpen, fields as a variable.
+  searchParamsVariables?: Record<string, string>; // variables to be used in the form (eg: "cs": "contract_sequence", "id": "card_id")
 }
 
 export interface IFormSubmission {
