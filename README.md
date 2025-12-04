@@ -22,8 +22,10 @@ This portal addresses the critical need to **digitalize manual form filling proc
 - **Multi-Language Support** - Built-in localization for English (en), Sinhala (si), and Tamil (ta)
 - **Conditional Fields** - Dynamic forms that show/hide fields based on customer responses
 - **Comprehensive Validation** - Client-side validation with customizable rules for data quality
-- **Multiple Field Types** - Text, email, number, date, select, radio, checkbox, textarea, file upload
-- **Dynamic Layout System** - Flexible layout with headings, text, dividers, and spacers
+- **Multiple Field Types** - Text, email, number, date, select, radio, checkbox, checkbox-group, textarea, file upload
+- **Dynamic Layout System** - Flexible layout with headings, text, cards, rows, dividers, and spacers
+- **Markdown Support** - Rich text formatting in headings and text components
+- **Layout Styling** - Customizable alignment, font size, and margins for layout items
 - **OTP Integration** - Support for OTP verification and prefilled customer data
 - **Type-Safe** - Full TypeScript support with strict type definitions
 - **State Management** - Zustand-powered form state management
@@ -154,13 +156,16 @@ Forms are defined as JSON files in `src/forms/` directory. Each form follows thi
 - **Select**: Dropdown selection with options
 - **Radio Group**: Radio button group (vertical/horizontal orientation)
 - **Checkbox**: Single checkbox field
+- **Checkbox Group**: Multiple checkbox selection (stores `string[]`)
 - **Textarea**: Multi-line text input
 - **File**: File upload with size and extension restrictions
 
 ### Layout Items
 
-- **Headings**: `h1`, `h2`, `h3`, `h4`, `h5`, `h6`
-- **Text**: Plain text paragraphs
+- **Headings**: `h1`, `h2`, `h3`, `h4`, `h5`, `h6` (with markdown support)
+- **Text**: Plain text paragraphs (with markdown support)
+- **Card**: Text card with neutral background and border (supports nested items)
+- **Row**: Grid-based row layout with configurable columns and colspan
 - **Divider**: Horizontal separator line
 - **Spacer**: Vertical spacing (pixels)
 - **Field**: Reference to a field defined in `fields` object

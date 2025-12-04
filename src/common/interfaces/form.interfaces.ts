@@ -2,6 +2,7 @@ import { HttpMethod } from "@/common/types/common.types";
 import {
   FieldType,
   FormConditionalOperator,
+  FormLayoutItemAlign,
   FormLayoutItemType,
   FormRadioGroupOrientation,
   FormVersion,
@@ -31,6 +32,7 @@ export interface IFormMetadata {
   formVersion: FormVersion;
   formTitle: string;
   formDescription: string;
+  showFormHeader: boolean; // default: true (show form header with title and description)
   availableLocales: Locale[];
   defaultLocale?: Locale; // if left blank, en is used
   otp: boolean; // whether OTP is required for the form, if enabled form can use $otp for its onFormOpen, fields as a variable.
@@ -90,6 +92,10 @@ export interface IFormRadioGroupField extends IFormFieldBase {
   options?: Record<string, string>; // for select and radio-group
 }
 
+export interface IFormCheckboxGroupField extends IFormFieldBase {
+  options?: Record<string, string>; // for checkbox-group
+}
+
 export interface IFormFileField extends IFormFieldBase {
   fileOptions?: IFormFileOptions; // for file
 }
@@ -97,12 +103,37 @@ export interface IFormFileField extends IFormFieldBase {
 export type IFormField =
   | IFormSelectField
   | IFormRadioGroupField
+  | IFormCheckboxGroupField
   | IFormFileField
   | IFormCheckboxField
   | IFormTextareaField;
 
-export type IFormLayoutItem = {
-  [K in FormLayoutItemType]?: string | number | boolean;
+// Layout styling options for form layout items
+export interface IFormLayoutStyles {
+  align?: FormLayoutItemAlign; // Horizontal alignment ("left", "center", etc.)
+  fontSize?: number; // Font size in pixels (auto-size if not set)
+  margin?: number | string; // Margin in CSS shorthand, e.g. "10px 0 20px 0"
+}
+
+// Card-specific content for "card" layout items
+export interface IFormLayoutCardContent extends IFormLayoutStyles {
+  label: string; // Label for the card
+  key?: string; // Translation key for the card description
+}
+
+// The main type describing any layout item in the form layout
+export type IFormLayoutItem = IFormLayoutStyles & {
+  // Optional translation key for non-field items (e.g. headings, text, cards)
+  key?: string;
+
+  // Only for "card" layout items: nested layout items inside the card
+  items?: IFormLayoutItem[];
+
+  // Only for "row" layout items: describes the row's columns/items
+  columns?: IFormLayoutItem[];
+  colspan?: number; // Only for "row" layout column items
 } & {
-  key?: string; // Translation key for non-field layout items (e.g., "h2.personal_information")
+  // For every layout item type, optionally store associated value:
+  // e.g., field: true, h1: "Heading", divider: true, etc.
+  [K in FormLayoutItemType]?: string | number | boolean;
 };

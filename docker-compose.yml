@@ -1,5 +1,5 @@
 services:
-  workspace:
+  ceylinco:
     build:
       context: .
       dockerfile: Dockerfile
@@ -7,3 +7,9 @@ services:
       - 3000:3000
     environment:
       - NODE_ENV=production
+    networks:
+      - nginx-net
+
+networks:
+  nginx-net:
+    external: true
