@@ -43,7 +43,9 @@ export type FormLayoutItemType =
   | "spacer"
   | "divider"
   | "card"
-  | "row";
+  | "row"
+  | "submit"
+  | "reset";
 
 export type FormRadioGroupOrientation = "vertical" | "horizontal";
 

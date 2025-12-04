@@ -534,6 +534,25 @@
     },
     {
       "field": "declarationAgreement"
+    },
+    {
+      "row": 12,
+      "columns": [
+        {
+          "submit": "Submit Form",
+          "key": "submit.button",
+          "align": "center",
+          "margin": "30px 0 0 0",
+          "variant": "default"
+        },
+        {
+          "reset": "Reset Form",
+          "key": "reset.button",
+          "align": "center",
+          "margin": "30px 0 0 0",
+          "variant": "outline"
+        }
+      ]
     }
   ],
   "localization": {
@@ -558,6 +577,8 @@
       "card.account": "Account Setup (Optional)",
       "text.account_info": "Create an account to track your application status and manage your policy online.",
       "card.policy_start": "Policy Start Preferences",
+      "reset.button": "Reset Form",
+      "submit.button": "Submit Form",
       "fullName.label": "Full Name (as per NIC / Passport)",
       "fullName.placeholder": "e.g. Perera A.B.C.",
       "fullName.description": "Please enter your full legal name including all middle names.",
@@ -671,6 +692,8 @@
       "card.account": "ගිණුම් සැකසීම (විකල්ප)",
       "text.account_info": "ඔබගේ අයදුම්කරණ තත්ත්වය නිරීක්ෂණය කිරීමට සහ ඔබගේ පොලිසිය මාර්ගගතව කළමනාකරණය කිරීමට ගිණුමක් සාදන්න.",
       "card.policy_start": "පොලිසි ආරම්භක මනාප",
+      "reset.button": "පෝරමය නැවත සැකසීම",
+      "submit.button": "පෝරමය ඉදිරිපත් කරන්න",
       "medicalConditions.label": "සෞඛ්‍ය තත්ත්වයන් (දැනටමත් ඇති සියල්ල තෝරන්න)",
       "medicalConditions.description": "කරුණාකර ඔබට හඳුනාගෙන ඇති ඕනෑම සෞඛ්‍ය තත්ත්වයක් තෝරන්න.",
       "medicalConditions.options.diabetes": "දියවැඩියාව",
@@ -700,6 +723,8 @@
       "card.account": "கணக்கு அமைப்பு (விருப்பமானது)",
       "text.account_info": "உங்கள் விண்ணப்ப நிலையைக் கண்காணிக்கவும் உங்கள் காப்பீட்டை ஆன்லைனில் நிர்வகிக்கவும் ஒரு கணக்கை உருவாக்கவும்.",
       "card.policy_start": "காப்பீட்டு தொடக்க விருப்பங்கள்",
+      "reset.button": "படிவத்தை மீட்டமை",
+      "submit.button": "படிவத்தை சமர்ப்பிக்கவும்",
       "medicalConditions.label": "மருத்துவ நிலைமைகள் (இருப்பவை அனைத்தையும் தேர்ந்தெடுக்கவும்)",
       "medicalConditions.description": "தயவுசெய்து உங்களுக்கு கண்டறியப்பட்ட எந்த மருத்துவ நிலைமைகளையும் தேர்ந்தெடுக்கவும்.",
       "medicalConditions.options.diabetes": "நீரிழிவு",
