@@ -12,6 +12,7 @@ export type FieldType =
   | "datetime-local"
   | "checkbox"
   | "radio-group"
+  | "checkbox-group"
   | "select"
   | "textarea"
   | "file"
@@ -40,6 +41,10 @@ export type FormLayoutItemType =
   | "h6"
   | "text"
   | "spacer"
-  | "divider";
+  | "divider"
+  | "card"
+  | "row";
 
 export type FormRadioGroupOrientation = "vertical" | "horizontal";
+
+export type FormLayoutItemAlign = "left" | "center" | "right" | "justify";

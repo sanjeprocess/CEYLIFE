@@ -525,6 +525,47 @@ Single checkbox field.
 
 **Implementation**: See `src/components/molecules/checkbox-field.tsx`
 
+### Checkbox Group Field
+
+Multiple checkbox selection field. Allows users to select multiple options from a list.
+
+**Properties**:
+
+- `options` - Object mapping option values to labels: `{ "value": "Label" }`
+
+**Value Storage**: Selected values are stored as `string[]` array
+
+**Example**:
+
+```json
+{
+  "interests": {
+    "type": "checkbox-group",
+    "label": "Select your interests",
+    "required": true,
+    "placeholder": "",
+    "description": "Select all that apply",
+    "defaultValue": "",
+    "validation": {},
+    "options": {
+      "sports": "Sports",
+      "music": "Music",
+      "reading": "Reading",
+      "travel": "Travel",
+      "cooking": "Cooking"
+    }
+  }
+}
+```
+
+**Notes**:
+
+- Selected values are stored as an array of option values (e.g., `["sports", "music"]`)
+- Default value can be a comma-separated string (e.g., `"sports,music"`) which will be converted to an array
+- Similar to radio-group but allows multiple selections
+
+**Implementation**: See `src/components/molecules/checkbox-group-field.tsx`
+
 ### Textarea Field
 
 Multi-line text input.
@@ -599,6 +640,8 @@ The `layout` array defines the order and structure of form elements. Each item i
 
 #### Headings
 
+Headings support markdown syntax for rich text formatting.
+
 ```json
 { "h1": "Main Title" }
 { "h2": "Section Title" }
@@ -617,6 +660,15 @@ The `layout` array defines the order and structure of form elements. Each item i
 }
 ```
 
+**With Markdown**:
+
+```json
+{
+  "h2": "**Important**: Please Review",
+  "key": "h2.important_review"
+}
+```
+
 **Example**:
 
 ```json
@@ -629,9 +681,17 @@ The `layout` array defines the order and structure of form elements. Each item i
 }
 ```
 
+**Markdown Support**: All headings support markdown syntax. You can use:
+
+- **Bold**: `**text**` or `__text__`
+- _Italic_: `*text*` or `_text_`
+- Links: `[text](url)`
+- Inline code: `` `code` ``
+- And other standard markdown features
+
 #### Text
 
-Plain text paragraph:
+Plain text paragraph with markdown support:
 
 ```json
 { "text": "Please complete all required fields marked with *" }
@@ -645,6 +705,161 @@ Plain text paragraph:
   "key": "text.completion_notice"
 }
 ```
+
+**Markdown Support**: Text content supports markdown syntax. You can use:
+
+- **Bold text**: `**bold**` or `__bold__`
+- _Italic text_: `*italic*` or `_italic_`
+- Links: `[link text](https://example.com)`
+- Lists: `- Item 1` or `1. Item 1`
+- And other standard markdown features
+
+**Example with Markdown**:
+
+```json
+{
+  "text": "**Important**: Please read the [terms and conditions](https://example.com/terms) before submitting.",
+  "key": "text.important_notice"
+}
+```
+
+#### Card
+
+Card layout item with neutral background and border. Can contain nested layout items.
+
+**Properties**:
+
+- `card` - Card title value (string) or `true` for card without title
+- `items` - Array of nested layout items to display inside the card
+- `key` - Optional translation key for card title
+- `align` - Optional text alignment: `"left"`, `"center"`, `"right"`, `"justify"`
+- `fontSize` - Optional font size in pixels
+- `margin` - Optional margin in CSS shorthand (e.g., `"10px 0 20px 0"`)
+
+**Example**:
+
+```json
+{
+  "card": "Important Information",
+  "key": "card.important_info",
+  "items": [
+    { "text": "Please review the following details carefully." },
+    { "field": "confirmationCheckbox" }
+  ]
+}
+```
+
+**Card with Styling**:
+
+```json
+{
+  "card": "Terms and Conditions",
+  "key": "card.terms",
+  "align": "center",
+  "fontSize": 18,
+  "margin": "20px 0",
+  "items": [{ "text": "By submitting this form, you agree to our terms." }]
+}
+```
+
+**Card without Title**:
+
+```json
+{
+  "card": true,
+  "items": [{ "h3": "Nested Content" }, { "field": "someField" }]
+}
+```
+
+**Implementation**: See `src/components/molecules/text-card.tsx`
+
+#### Row
+
+Grid-based row layout for organizing fields and layout items in columns.
+
+**Properties**:
+
+- `row` - Number of columns (e.g., `4` creates a 4-column grid)
+- `columns` - Array of layout items, each can have `colspan` property
+- `colspan` - Number of columns an item spans (default: 1)
+- `margin` - Optional margin in CSS shorthand
+
+**Example - 4 Column Row**:
+
+```json
+{
+  "row": 4,
+  "columns": [
+    {
+      "field": "firstName",
+      "colspan": 2
+    },
+    {
+      "field": "lastName",
+      "colspan": 2
+    }
+  ]
+}
+```
+
+**Example - 3 Column Row with Mixed Content**:
+
+```json
+{
+  "row": 3,
+  "columns": [
+    {
+      "field": "day",
+      "colspan": 1
+    },
+    {
+      "field": "month",
+      "colspan": 1
+    },
+    {
+      "field": "year",
+      "colspan": 1
+    }
+  ]
+}
+```
+
+**Example - Nested Row**:
+
+```json
+{
+  "row": 2,
+  "columns": [
+    {
+      "field": "email",
+      "colspan": 1
+    },
+    {
+      "row": 2,
+      "colspan": 1,
+      "columns": [
+        {
+          "field": "phone",
+          "colspan": 1
+        },
+        {
+          "field": "mobile",
+          "colspan": 1
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Notes**:
+
+- Column count is specified by the `row` value (e.g., `row: 4` = 4-column grid)
+- Each item in `columns` array can span multiple columns using `colspan`
+- `colspan` must not exceed the total column count
+- Rows can be nested for complex layouts
+
+**Implementation**: See `src/components/molecules/row-layout.tsx`
 
 #### Divider
 
@@ -735,7 +950,17 @@ Then add translations in the `localization` object:
       "key": "h2.personal_information"
     },
     {
-      "field": "fullName"
+      "row": 2,
+      "columns": [
+        {
+          "field": "firstName",
+          "colspan": 1
+        },
+        {
+          "field": "lastName",
+          "colspan": 1
+        }
+      ]
     },
     {
       "field": "dob"
@@ -747,14 +972,27 @@ Then add translations in the `localization` object:
       "divider": true
     },
     {
-      "h2": "Contact Information",
-      "key": "h2.contact_information"
-    },
-    {
-      "field": "email"
-    },
-    {
-      "field": "mobile"
+      "card": "Contact Information",
+      "key": "card.contact_info",
+      "items": [
+        {
+          "text": "Please provide your contact details.",
+          "key": "text.contact_instructions"
+        },
+        {
+          "row": 2,
+          "columns": [
+            {
+              "field": "email",
+              "colspan": 1
+            },
+            {
+              "field": "mobile",
+              "colspan": 1
+            }
+          ]
+        }
+      ]
     },
     {
       "spacer": 20
@@ -770,16 +1008,67 @@ Then add translations in the `localization` object:
 }
 ```
 
+### Layout Styling
+
+All layout items support optional styling properties:
+
+- `align` - Text alignment: `"left"`, `"center"`, `"right"`, or `"justify"`
+- `fontSize` - Font size in pixels (e.g., `18`)
+- `margin` - Margin in CSS shorthand (e.g., `"10px 0 20px 0"` or `"20px"`)
+
+**Example with Styling**:
+
+```json
+{
+  "h2": "Section Title",
+  "key": "h2.section",
+  "align": "center",
+  "fontSize": 24,
+  "margin": "30px 0 20px 0"
+}
+```
+
+### Markdown Support
+
+All text components (headings h1-h6 and text) support markdown syntax. Markdown is automatically processed and rendered as HTML.
+
+**Supported Markdown Features**:
+
+- **Bold text**: `**bold**` or `__bold__`
+- _Italic text_: `*italic*` or `_italic_`
+- Links: `[link text](https://example.com)`
+- Unordered lists: `- Item 1` or `* Item 1`
+- Ordered lists: `1. Item 1`
+- Inline code: `` `code` ``
+- Code blocks: ` ```code``` `
+- Headers: `# Header` (though you should use layout item types instead)
+- And other standard markdown features
+
+**Example**:
+
+```json
+{
+  "text": "**Important**: Please read the [terms](https://example.com/terms) before submitting.\n\n- Point 1\n- Point 2",
+  "key": "text.important_notice"
+}
+```
+
+**Note**: Markdown is processed automatically - no special configuration needed. Works seamlessly with the translation system.
+
 ### Best Practices
 
 1. **Use headings** to organize form sections
 2. **Use dividers** to visually separate major sections
-3. **Use text** for important instructions or warnings
-4. **Use spacers** sparingly for fine-tuning spacing
-5. **Group related fields** together in the layout
-6. **Order fields logically** (most important first, or follow user flow)
-7. **Add `key` properties** to text and heading items for translation support
-8. **Use descriptive keys** following the pattern `{type}.{description}` (e.g., `h2.personal_information`)
+3. **Use text** for important instructions or warnings (with markdown for formatting)
+4. **Use cards** to group related content visually
+5. **Use rows** to organize fields horizontally (e.g., date fields: day/month/year)
+6. **Use spacers** sparingly for fine-tuning spacing
+7. **Group related fields** together in the layout
+8. **Order fields logically** (most important first, or follow user flow)
+9. **Add `key` properties** to text and heading items for translation support
+10. **Use descriptive keys** following the pattern `{type}.{description}` (e.g., `h2.personal_information`)
+11. **Leverage markdown** in text and headings for rich formatting
+12. **Use styling properties** (`align`, `fontSize`, `margin`) for visual customization
 
 **Implementation**: See `src/components/molecules/layout-renderer.tsx`
 
@@ -2232,8 +2521,11 @@ For a production-ready example, see `src/forms/life-insurance.json`. It demonstr
 - **Select Field**: [`src/components/molecules/select-field.tsx`](src/components/molecules/select-field.tsx)
 - **Radio Group**: [`src/components/molecules/radio-group-field.tsx`](src/components/molecules/radio-group-field.tsx)
 - **Checkbox**: [`src/components/molecules/checkbox-field.tsx`](src/components/molecules/checkbox-field.tsx)
+- **Checkbox Group**: [`src/components/molecules/checkbox-group-field.tsx`](src/components/molecules/checkbox-group-field.tsx)
 - **Textarea**: [`src/components/molecules/textarea-field.tsx`](src/components/molecules/textarea-field.tsx)
 - **File Field**: [`src/components/molecules/file-field.tsx`](src/components/molecules/file-field.tsx)
+- **Text Card**: [`src/components/molecules/text-card.tsx`](src/components/molecules/text-card.tsx)
+- **Row Layout**: [`src/components/molecules/row-layout.tsx`](src/components/molecules/row-layout.tsx)
 
 ---
 
