@@ -11,6 +11,10 @@ export function useTranslation() {
   const applyVariableReplacement = useVariableReplacement;
 
   return (key: string, originalValue?: string): string => {
+    if (!localization) {
+      const fallback = originalValue ?? key;
+      return applyVariableReplacement(fallback);
+    }
     const localeTranslations = localization[currentLocale];
 
     if (!localeTranslations) {
