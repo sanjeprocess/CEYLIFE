@@ -57,3 +57,23 @@ export function getFormTitleKey(): string {
 export function getFormDescriptionKey(): string {
   return "formDescription";
 }
+
+export function getOtpDialogTitleKey(): string {
+  return "otp.dialog.title";
+}
+
+export function getOtpDialogContentKey(): string {
+  return "otp.dialog.content";
+}
+
+export function getOtpDialogButtonKey(): string {
+  return "otp.dialog.button";
+}
+
+export function getOtpDialogInputLabelKey(): string {
+  return "otp.dialog.input.label";
+}
+
+export function getOtpDialogInputPlaceholderKey(): string {
+  return "otp.dialog.input.placeholder";
+}

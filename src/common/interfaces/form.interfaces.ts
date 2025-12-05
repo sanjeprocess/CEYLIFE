@@ -19,12 +19,21 @@ export interface IForm {
 }
 
 export interface IFormOtp {
+  dialog?: {
+    title?: string;
+    content?: string;
+    button?: string;
+    input?: {
+      label?: string;
+      placeholder?: string;
+    };
+  };
   method: HttpMethod;
   endpoint: string;
   requiresAccessToken: boolean;
   parameters: Record<string, string>;
   body: Record<string, unknown>;
-  response: Record<string, string>;
+  response: Record<string, string>; // assign response to form variables based on json keys (eg: "fields.name.label" -> "{{Name}}")
 }
 
 export interface IFormMetadata {

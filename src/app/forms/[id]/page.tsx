@@ -9,6 +9,7 @@ import { CookieInitializer } from "@/components/molecules/cookie-initializer";
 import { FormHeader } from "@/components/molecules/form-header";
 import { IncompleteLinkCard } from "@/components/molecules/incomplete-link-card";
 import { LocaleSelector } from "@/components/molecules/locale-selector";
+import { OtpDialog } from "@/components/molecules/otp-dialog";
 import { FormView } from "@/components/organism/form-view";
 import { VariableHandler } from "@/components/organism/variable-handler";
 import { getForm, getMissingSearchParams } from "@/utils/form.utils";
@@ -62,8 +63,8 @@ export default async function FormPage({
         formId={id}
         searchParams={searchParamObj}
       />
-      <div className="bg-[#9f4248] text-white h-10 flex justify-end sticky top-0 z-10">
-        <nav className="flex justify-end items-center gap-4 max-w-3xl md:max-w-5xl lg:max-w-[1140px] mx-auto w-full">
+      <div className="sticky top-0 z-55 flex h-10 justify-end bg-[#9f4248] text-white">
+        <nav className="mx-auto flex w-full max-w-3xl items-center justify-end gap-4 md:max-w-5xl lg:max-w-[1140px]">
           <a href="https://www.ceylincolife.com/contact-us/">
             <Phone className="size-5" />
           </a>
@@ -81,19 +82,20 @@ export default async function FormPage({
         </nav>
       </div>
       <VariableHandler />
-      <main className="max-w-3xl md:max-w-5xl lg:max-w-[1140px] mx-auto w-full py-8">
+      {form.otp && <OtpDialog otpConfig={form.otp} />}
+      <main className="mx-auto w-full max-w-3xl py-8 md:max-w-5xl lg:max-w-[1140px]">
         <Card>
           <CardContent>
-            <div className="border rounded-md py-6">
+            <div className="rounded-md border py-6">
               <Image
                 src="/images/header.png"
                 alt="Ceylinco Life"
                 width={1776}
                 height={212}
               />
-              <div className="flex flex-col items-center justify-center gap-4 text-center mt-6">
+              <div className="mt-6 flex flex-col items-center justify-center gap-4 text-center">
                 <h1 className="text-4xl font-bold">Ceylinco Life</h1>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   Ceylinco Life Insurance Limited, Ceylinco Life Tower, 106
                   Havelock Road, Colombo 5. <br />
                   <b> Tel:</b> (+94) 11 2461000, 2461461
