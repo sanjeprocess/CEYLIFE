@@ -31,10 +31,14 @@ export function SelectField({
 }) {
   const { values, updateValue } = useFormStore();
   const translate = useTranslation();
+  
+  // Apply variable replacement to default value via translate
+  const defaultValue = field.defaultValue ? translate("", field.defaultValue) : "";
+  
   const storedValue = values[name];
   const value = storedValue !== undefined && storedValue !== null
     ? (storedValue as string)
-    : (field.defaultValue || "");
+    : defaultValue;
 
   const handleValueChange = (newValue: string) => {
     updateValue(name, newValue || null);
@@ -42,10 +46,13 @@ export function SelectField({
 
   const options = field.options || {};
 
+  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
+  
   const placeholder = field.placeholder
     ? translate(getFieldPlaceholderKey(name), field.placeholder)
-    : "Select an option";
+    : translate("", "Select an option");
+  
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;
@@ -63,13 +70,13 @@ export function SelectField({
           </SelectTrigger>
           <SelectContent>
             {Object.entries(options).map(([optionValue, optionLabel]) => {
-              const translatedOptionLabel = translate(
+              const optionLabelWithVars = translate(
                 getFieldOptionKey(name, optionValue),
                 optionLabel
               );
               return (
                 <SelectItem key={optionValue} value={optionValue}>
-                  {translatedOptionLabel}
+                  {optionLabelWithVars}
                 </SelectItem>
               );
             })}

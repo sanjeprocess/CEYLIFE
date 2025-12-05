@@ -24,8 +24,11 @@ export function TextField({
 }) {
   const { values, updateValue } = useFormStore();
   const translate = useTranslation();
+  
+  // Apply variable replacement to default value via translate
+  const defaultValue = field.defaultValue ? translate("", field.defaultValue) : "";
+  
   const storedValue = values[name];
-  const defaultValue = field.defaultValue || "";
   const value = storedValue !== undefined && storedValue !== null
     ? storedValue
     : defaultValue;
@@ -42,10 +45,13 @@ export function TextField({
     updateValue(name, newValue);
   };
 
+  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
+  
   const placeholder = field.placeholder
     ? translate(getFieldPlaceholderKey(name), field.placeholder)
     : undefined;
+  
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;

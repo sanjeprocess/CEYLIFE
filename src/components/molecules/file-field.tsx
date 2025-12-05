@@ -6,7 +6,6 @@ import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
-  getFieldPlaceholderKey,
 } from "@/utils/fieldKey.utils";
 
 import {
@@ -83,7 +82,9 @@ export function FileField({
       ? allowedExtensions.map((ext) => `.${ext}`).join(",")
       : undefined;
 
+  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
+
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;

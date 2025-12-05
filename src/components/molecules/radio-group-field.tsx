@@ -25,10 +25,14 @@ export function RadioGroupField({
 }) {
   const { values, updateValue } = useFormStore();
   const translate = useTranslation();
+  
+  // Apply variable replacement to default value via translate
+  const defaultValue = field.defaultValue ? translate("", field.defaultValue) : "";
+  
   const storedValue = values[name];
   const value = storedValue !== undefined && storedValue !== null
     ? (storedValue as string)
-    : (field.defaultValue || "");
+    : defaultValue;
 
   const handleValueChange = (newValue: string) => {
     updateValue(name, newValue || null);
@@ -36,7 +40,9 @@ export function RadioGroupField({
 
   const { orientation = "vertical", options } = field;
 
+  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
+  
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;
@@ -55,7 +61,7 @@ export function RadioGroupField({
         >
           {options &&
             Object.entries(options).map(([optionValue, optionLabel]) => {
-              const translatedOptionLabel = translate(
+              const optionLabelWithVars = translate(
                 getFieldOptionKey(name, optionValue),
                 optionLabel
               );
@@ -69,7 +75,7 @@ export function RadioGroupField({
                     htmlFor={`${name}-${optionValue}`}
                     className="font-normal cursor-pointer"
                   >
-                    {translatedOptionLabel}
+                    {optionLabelWithVars}
                   </Label>
                 </div>
               );

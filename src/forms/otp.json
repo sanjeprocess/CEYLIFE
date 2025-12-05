@@ -19,15 +19,16 @@
   "fields": {
     "exampleField": {
       "type": "text",
-      "label": "Example Field",
+      "label": "Example Field {{card_id}}",
       "required": false,
-      "placeholder": "Enter value",
-      "description": "This is an example field. Replace or remove as needed."
+      "placeholder": "Enter value {{card_id}}",
+      "description": "This is an example field. Replace or remove as needed. {{card_id}}",
+      "defaultValue": "{{card_id}}"
     }
   },
   "layout": [
     {
-      "h2": "Form Section"
+      "h2": "Form Section {{card_id}}"
     },
     {
       "field": "exampleField"

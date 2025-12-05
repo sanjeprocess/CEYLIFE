@@ -33,7 +33,9 @@ export function CheckboxField({
     updateValue(name, checked);
   };
 
+  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
+
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;

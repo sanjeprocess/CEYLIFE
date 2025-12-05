@@ -25,18 +25,22 @@ export function CheckboxGroupField({
 }) {
   const { values, updateValue } = useFormStore();
   const translate = useTranslation();
+  
+  // Apply variable replacement to default value via translate
+  const defaultValue = field.defaultValue ? translate("", field.defaultValue) : "";
+  
   const storedValue = values[name];
   const value = Array.isArray(storedValue)
     ? (storedValue as string[])
-    : field.defaultValue
-      ? field.defaultValue.split(",").filter(Boolean)
+    : defaultValue
+      ? defaultValue.split(",").filter(Boolean)
       : [];
 
   const handleCheckedChange = (optionValue: string, checked: boolean) => {
     const currentValues = Array.isArray(storedValue)
       ? (storedValue as string[])
-      : field.defaultValue
-        ? field.defaultValue.split(",").filter(Boolean)
+      : defaultValue
+        ? defaultValue.split(",").filter(Boolean)
         : [];
 
     const newValues = checked
@@ -48,7 +52,9 @@ export function CheckboxGroupField({
 
   const { options } = field;
 
+  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
+  
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;
@@ -64,7 +70,7 @@ export function CheckboxGroupField({
           {options &&
             Object.entries(options).map(([optionValue, optionLabel]) => {
               const isChecked = value.includes(optionValue);
-              const translatedOptionLabel = translate(
+              const optionLabelWithVars = translate(
                 getFieldOptionKey(name, optionValue),
                 optionLabel
               );
@@ -84,7 +90,7 @@ export function CheckboxGroupField({
                     htmlFor={`${name}-${optionValue}`}
                     className="font-normal cursor-pointer"
                   >
-                    {translatedOptionLabel}
+                    {optionLabelWithVars}
                   </Label>
                 </div>
               );
