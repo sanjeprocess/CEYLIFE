@@ -1,6 +1,6 @@
 import { IFormCheckboxGroupField } from "@/common/interfaces/form.interfaces";
+import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
-import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -23,38 +23,34 @@ export function CheckboxGroupField({
   field: IFormCheckboxGroupField;
   name: string;
 }) {
-  const { values, updateValue } = useFormStore();
+  const { rawValue, computedValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
-  
-  // Apply variable replacement to default value via translate
-  const defaultValue = field.defaultValue ? translate("", field.defaultValue) : "";
-  
-  const storedValue = values[name];
-  const value = Array.isArray(storedValue)
-    ? (storedValue as string[])
-    : defaultValue
-      ? defaultValue.split(",").filter(Boolean)
+
+  const defaultParsed =
+    typeof computedValue === "string" && computedValue
+      ? computedValue.split(",").filter(Boolean)
       : [];
 
+  const value = Array.isArray(rawValue)
+    ? (rawValue as string[])
+    : defaultParsed;
+
   const handleCheckedChange = (optionValue: string, checked: boolean) => {
-    const currentValues = Array.isArray(storedValue)
-      ? (storedValue as string[])
-      : defaultValue
-        ? defaultValue.split(",").filter(Boolean)
-        : [];
+    const currentValues = Array.isArray(rawValue)
+      ? (rawValue as string[])
+      : defaultParsed;
 
     const newValues = checked
       ? [...currentValues, optionValue]
       : currentValues.filter((v) => v !== optionValue);
 
-    updateValue(name, newValues.length > 0 ? newValues : []);
+    updateValue(newValues.length > 0 ? newValues : []);
   };
 
   const { options } = field;
 
-  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
-  
+
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;
@@ -101,4 +97,3 @@ export function CheckboxGroupField({
     </Field>
   );
 }
-

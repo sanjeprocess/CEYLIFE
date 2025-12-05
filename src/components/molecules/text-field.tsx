@@ -1,6 +1,6 @@
 import { IFormField } from "@/common/interfaces/form.interfaces";
+import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
-import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -22,36 +22,28 @@ export function TextField({
   field: IFormField;
   name: string;
 }) {
-  const { values, updateValue } = useFormStore();
+  const { computedValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
-  
-  // Apply variable replacement to default value via translate
-  const defaultValue = field.defaultValue ? translate("", field.defaultValue) : "";
-  
-  const storedValue = values[name];
-  const value = storedValue !== undefined && storedValue !== null
-    ? storedValue
-    : defaultValue;
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const value =
+    computedValue !== undefined && computedValue !== null ? computedValue : "";
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue =
       field.type === "number"
         ? e.target.value === ""
           ? null
           : Number(e.target.value)
         : e.target.value;
-    updateValue(name, newValue);
+    updateValue(newValue);
   };
 
-  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
-  
+
   const placeholder = field.placeholder
     ? translate(getFieldPlaceholderKey(name), field.placeholder)
     : undefined;
-  
+
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;
@@ -76,9 +68,7 @@ export function TextField({
           pattern={field.validation?.pattern}
           onChange={handleChange}
         />
-        {description && (
-          <FieldDescription>{description}</FieldDescription>
-        )}
+        {description && <FieldDescription>{description}</FieldDescription>}
       </FieldContent>
     </Field>
   );

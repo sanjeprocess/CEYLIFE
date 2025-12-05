@@ -1,6 +1,6 @@
 import { IFormRadioGroupField } from "@/common/interfaces/form.interfaces";
+import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
-import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -23,26 +23,22 @@ export function RadioGroupField({
   field: IFormRadioGroupField;
   name: string;
 }) {
-  const { values, updateValue } = useFormStore();
+  const { computedValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
-  
-  // Apply variable replacement to default value via translate
-  const defaultValue = field.defaultValue ? translate("", field.defaultValue) : "";
-  
-  const storedValue = values[name];
-  const value = storedValue !== undefined && storedValue !== null
-    ? (storedValue as string)
-    : defaultValue;
+
+  const value =
+    computedValue !== undefined && computedValue !== null
+      ? (computedValue as string)
+      : "";
 
   const handleValueChange = (newValue: string) => {
-    updateValue(name, newValue || null);
+    updateValue(newValue || null);
   };
 
   const { orientation = "vertical", options } = field;
 
-  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
-  
+
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;
@@ -70,7 +66,10 @@ export function RadioGroupField({
                   key={optionValue}
                   className="flex items-center gap-2 space-x-2"
                 >
-                  <RadioGroupItem value={optionValue} id={`${name}-${optionValue}`} />
+                  <RadioGroupItem
+                    value={optionValue}
+                    id={`${name}-${optionValue}`}
+                  />
                   <Label
                     htmlFor={`${name}-${optionValue}`}
                     className="font-normal cursor-pointer"
@@ -81,9 +80,7 @@ export function RadioGroupField({
               );
             })}
         </RadioGroup>
-        {description && (
-          <FieldDescription>{description}</FieldDescription>
-        )}
+        {description && <FieldDescription>{description}</FieldDescription>}
       </FieldContent>
     </Field>
   );

@@ -13,9 +13,40 @@ export function getForm(formId: string): IForm {
   return JSON.parse(formData) as IForm;
 }
 
+export interface MissingSearchParam {
+  paramKey: string;
+  variableName: string;
+}
+
 export function getMissingSearchParams(
   searchParamsVariables: Record<string, string>,
   searchParams: { [key: string]: string | string[] | undefined }
-) {
+): string[] {
   return Object.keys(searchParamsVariables).filter((key) => !searchParams[key]);
+}
+
+export function getMissingSearchParamsDetailed(
+  searchParamsVariables: Record<string, string>,
+  searchParams: { [key: string]: string | string[] | undefined }
+): MissingSearchParam[] {
+  return Object.entries(searchParamsVariables)
+    .filter(([paramKey]) => !searchParams[paramKey])
+    .map(([paramKey, variableName]) => ({
+      paramKey,
+      variableName,
+    }));
+}
+
+export function validateSearchParams(
+  searchParamsVariables: Record<string, string>,
+  searchParams: { [key: string]: string | string[] | undefined }
+): { isValid: boolean; missing: MissingSearchParam[] } {
+  const missing = getMissingSearchParamsDetailed(
+    searchParamsVariables,
+    searchParams
+  );
+  return {
+    isValid: missing.length === 0,
+    missing,
+  };
 }

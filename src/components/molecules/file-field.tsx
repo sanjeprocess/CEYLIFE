@@ -1,8 +1,8 @@
 import { useRef } from "react";
 
 import { IFormFileField } from "@/common/interfaces/form.interfaces";
+import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
-import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -16,6 +16,14 @@ import {
 } from "../atoms/field";
 import { Input } from "../atoms/input";
 
+function formatFileSize(bytes: number): string {
+  if (bytes === 0) return "0 Bytes";
+  const k = 1024;
+  const sizes = ["Bytes", "KB", "MB", "GB"];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return Math.round((bytes / Math.pow(k, i)) * 100) / 100 + " " + sizes[i];
+}
+
 export function FileField({
   field,
   name,
@@ -23,9 +31,9 @@ export function FileField({
   field: IFormFileField;
   name: string;
 }) {
-  const { values, updateValue } = useFormStore();
+  const { rawValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
-  const storedFile = values[name] as File | null | undefined;
+  const storedFile = rawValue as File | null | undefined;
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const fileOptions = field.fileOptions || {};
@@ -36,13 +44,12 @@ export function FileField({
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files || files.length === 0) {
-      updateValue(name, null);
+      updateValue(null);
       return;
     }
 
     const file = files[0];
 
-    // Validate file extension
     if (allowedExtensions.length > 0) {
       const fileExtension = file.name.split(".").pop()?.toLowerCase();
       if (!fileExtension || !allowedExtensions.includes(fileExtension)) {
@@ -56,7 +63,6 @@ export function FileField({
       }
     }
 
-    // Validate file size
     if (maxSize && file.size > maxSize) {
       const maxSizeMB = (maxSize / 1024 / 1024).toFixed(2);
       alert(`File size exceeds maximum allowed size of ${maxSizeMB} MB`);
@@ -66,15 +72,7 @@ export function FileField({
       return;
     }
 
-    updateValue(name, file);
-  };
-
-  const formatFileSize = (bytes: number): string => {
-    if (bytes === 0) return "0 Bytes";
-    const k = 1024;
-    const sizes = ["Bytes", "KB", "MB", "GB"];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return Math.round((bytes / Math.pow(k, i)) * 100) / 100 + " " + sizes[i];
+    updateValue(file);
   };
 
   const acceptExtensions =
@@ -82,7 +80,6 @@ export function FileField({
       ? allowedExtensions.map((ext) => `.${ext}`).join(",")
       : undefined;
 
-  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
 
   const description = field.description

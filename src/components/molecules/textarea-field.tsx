@@ -1,6 +1,6 @@
 import { IFormTextareaField } from "@/common/interfaces/form.interfaces";
+import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
-import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -22,29 +22,24 @@ export function TextareaField({
   field: IFormTextareaField;
   name: string;
 }) {
-  const { values, updateValue } = useFormStore();
+  const { computedValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
-  
-  // Apply variable replacement to default value via translate
-  const defaultValue = field.defaultValue ? translate("", field.defaultValue) : "";
-  
-  const storedValue = values[name];
+
   const value =
-    storedValue !== undefined && storedValue !== null
-      ? (storedValue as string)
-      : defaultValue;
+    computedValue !== undefined && computedValue !== null
+      ? (computedValue as string)
+      : "";
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    updateValue(name, e.target.value || null);
+    updateValue(e.target.value || null);
   };
 
-  // Translation now includes variable replacement
   const label = translate(getFieldLabelKey(name), field.label);
-  
+
   const placeholder = field.placeholder
     ? translate(getFieldPlaceholderKey(name), field.placeholder)
     : undefined;
-  
+
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;

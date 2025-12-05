@@ -42,7 +42,7 @@ export function DependencyRenderer({
   name,
   parentName,
 }: DependencyRendererProps) {
-  const { values, form, updateValue } = useFormStore();
+  const { rawValues, form, updateValue } = useFormStore();
 
   const { operator, value: expectedValue } = field.conditionalOptions ?? {};
   const [shouldRender, setShouldRender] = useState<boolean>(false);
@@ -59,7 +59,6 @@ export function DependencyRenderer({
         return;
       }
 
-      // Get parent field from form store
       const parentField = form?.fields[parentName];
       if (!parentField) {
         console.warn(
@@ -70,10 +69,8 @@ export function DependencyRenderer({
         return;
       }
 
-      // Get actual form value from store
-      const actualValue = values[parentName];
+      const actualValue = rawValues[parentName];
 
-      // Evaluate condition with actual and expected values
       const shouldRender = evaluateCondition(
         operator,
         actualValue,
@@ -83,11 +80,9 @@ export function DependencyRenderer({
       setShouldRender(shouldRender);
     }
     checkCondition();
-  }, [values, form, field, name, parentName, operator, expectedValue]);
+  }, [rawValues, form, field, name, parentName, operator, expectedValue]);
 
-  // Clear field value when condition becomes false (field is hidden)
   useEffect(() => {
-    // Only clear if transitioning from visible to hidden
     if (previousShouldRender.current && !shouldRender) {
       updateValue(name, null);
     }
