@@ -24,6 +24,14 @@
       "placeholder": "Enter value {{card_id}}",
       "description": "This is an example field. Replace or remove as needed. {{card_id}}",
       "defaultValue": "{{card_id}}"
+    },
+    "exampleField2": {
+      "type": "datetime-local",
+      "label": "Example Field 2 {{card_id}}",
+      "required": false,
+      "placeholder": "Select date 2 {{card_id}}",
+      "description": "This is an example field 2. Replace or remove as needed. {{card_id}}",
+      "defaultValue": "{{$now}}"
     }
   },
   "layout": [
@@ -35,6 +43,9 @@
     },
     {
       "spacer": 20
+    },
+    {
+      "field": "exampleField2"
     },
     {
       "submit": "Submit"

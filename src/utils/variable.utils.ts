@@ -52,3 +52,22 @@ export function isValidVariableSyntax(text: string): boolean {
 
   return true;
 }
+
+export function isSystemVariable(name: string): boolean {
+  return name.startsWith("$");
+}
+
+export function getSystemVariable(name: string): string | null {
+  const now = new Date();
+
+  switch (name) {
+    case "$today":
+      return now.toISOString().split("T")[0];
+    case "$now":
+      return now.toISOString().slice(0, 16);
+    case "$time":
+      return now.toTimeString().slice(0, 5);
+    default:
+      return null;
+  }
+}

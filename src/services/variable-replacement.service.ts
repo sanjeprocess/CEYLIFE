@@ -1,3 +1,5 @@
+import { getSystemVariable, isSystemVariable } from "@/utils/variable.utils";
+
 export interface ReplacementOptions {
   keepUnresolved?: boolean;
   warnOnMissing?: boolean;
@@ -26,6 +28,13 @@ export function replaceVariablesInText(
 
   const result = text.replace(VARIABLE_PATTERN, (match, varName: string) => {
     const trimmedVarName = varName.trim();
+
+    if (isSystemVariable(trimmedVarName)) {
+      const systemValue = getSystemVariable(trimmedVarName);
+      if (systemValue !== null) {
+        return systemValue;
+      }
+    }
 
     if (trimmedVarName in variables) {
       return variables[trimmedVarName];
