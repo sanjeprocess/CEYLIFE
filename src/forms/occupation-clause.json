@@ -1,8 +1,9 @@
 {
   "metadata": {
     "formVersion": 1,
-    "formTitle": "CEYLINCO LIFE",
-    "formDescription": "Ceylinco Life Insurance Limited Ceylinco Life Insurance Limited, Ceylinco Life Tower, 106 Havelock Road, Colombo.05, Co. Reg: PB5183 Tel:(011)2461461 Email: service@ceylife.lk Web: www.ceylincolife.com.",
+    "formTitle": "Occupation Clause",
+    "formDescription": "",
+    "showFormHeader": false,
     "availableLocales": ["en", "si", "ta"],
     "otpRequired": true
   },
@@ -26,7 +27,6 @@
       "label": "Contract Number",
       "required": true,
       "placeholder": "Contract Number",
-      "description": "Contract Number",
       "defaultValue": ""
     },
     "nicNumber": {
@@ -59,28 +59,63 @@
       "field": "ProposerName"
     },
     {
-      "field": "contractNumber"
+      "row": 2,
+      "columns": [
+        {
+          "field": "contractNumber"
+        },
+        {
+          "field": "nicNumber"
+        }
+      ]
     },
     {
-      "field": "nicNumber"
+      "card": "Occupation Clause",
+      "key": "card.occupationClause",
+      "items": [
+        {
+          "text": "It is hereby declared and agreed, that if the Life Assured / Spouse Assured meets with an accident whilst being engaged in his usual occupation as indicated in the Proposal Form or Declaration of Good Health, the Company will not be liable to pay the supplementary benefits under the Policy, viz. Jeewayathra Accidental Death Benefit, Jeewayathra Monthly Income Benefit, Jeewayathra Partial and Permanent Disability Benefit."
+        }
+      ]
     },
     {
-      "h1": "Occupation Clause"
+      "card": "Consent",
+      "key": "card.consent",
+      "items": [
+        {
+          "text": "I have read and understood the afore-said clause and hereby give my consent to accept the Life Assurance proposal subject to respective clause."
+        }
+      ]
     },
     {
-      "text": "It is hereby declared and agreed, that if the Life Assured / Spouse Assured meets with an accident whilst being engaged in his usual occupation as indicated in the Proposal Form or Declaration of Good Health, the Company will not be liable to pay the supplementary benefits under the Policy, viz. Jeewayathra Accidental Death Benefit, Jeewayathra Monthly Income Benefit, Jeewayathra Partial and Permanent Disability Benefit."
+      "row": 2,
+      "columns": [
+        {
+          "field": "date"
+        },
+        {
+          "field": "signature"
+        }
+      ]
     },
     {
-      "text": "Consent"
-    },
-    {
-      "text": "I have read and understood the afore-said clause and hereby give my consent to accept the Life Assurance proposal subject to respective clause."
-    },
-    {
-      "field": "date"
-    },
-    {
-      "field": "signature"
+      "row": 12,
+      "columns": [
+        {
+          "submit": "Submit Form",
+          "key": "submit.button",
+          "align": "center",
+          "margin": "30px 0 0 0",
+          "variant": "default"
+        },
+        {
+          "reset": "Reset Form",
+          "key": "reset.button",
+          "align": "center",
+          "margin": "30px 0 0 0",
+          "variant": "outline"
+        }
+      ]
     }
   ],
   "localization": {
