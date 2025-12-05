@@ -27,7 +27,7 @@ export function CheckboxField({
   const value =
     rawValue !== undefined
       ? (rawValue as boolean)
-      : field.checked ?? field.defaultValue === "true";
+      : (field.checked ?? field.defaultValue === "true");
 
   const handleCheckedChange = (checked: boolean) => {
     updateValue(checked);
@@ -49,7 +49,7 @@ export function CheckboxField({
             onCheckedChange={handleCheckedChange}
             required={field.required}
           />
-          <FieldLabel htmlFor={name} className="font-normal cursor-pointer">
+          <FieldLabel htmlFor={name} className="cursor-pointer font-normal">
             {label}
             {field.required && <span className="text-destructive"> *</span>}
           </FieldLabel>

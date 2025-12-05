@@ -21,7 +21,7 @@ export function ResetButton({ layout, resetText }: ResetButtonProps) {
   const translatedText = translationKey
     ? translate(translationKey, String(resetText))
     : String(resetText);
-  
+
   // Apply variable replacement
   const buttonText = useVariableReplacement(translatedText);
 
@@ -43,14 +43,9 @@ export function ResetButton({ layout, resetText }: ResetButtonProps) {
         margin: layout.margin,
       })}
     >
-      <Button
-        type="button"
-        variant={variant}
-        onClick={handleReset}
-      >
+      <Button type="button" variant={variant} onClick={handleReset}>
         {buttonText}
       </Button>
     </div>
   );
 }
-

@@ -72,7 +72,7 @@ export function RadioGroupField({
                   />
                   <Label
                     htmlFor={`${name}-${optionValue}`}
-                    className="font-normal cursor-pointer"
+                    className="cursor-pointer font-normal"
                   >
                     {optionLabelWithVars}
                   </Label>

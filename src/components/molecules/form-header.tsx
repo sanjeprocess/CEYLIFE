@@ -6,10 +6,7 @@ import { IForm } from "@/common/interfaces/form.interfaces";
 import { useTranslation } from "@/hooks/useTranslation.hook";
 import { useVariableReplacement } from "@/hooks/useVariableReplacement.hook";
 import { useLocalizationStore } from "@/stores/localization.store";
-import {
-  getFormDescriptionKey,
-  getFormTitleKey,
-} from "@/utils/fieldKey.utils";
+import { getFormDescriptionKey, getFormTitleKey } from "@/utils/fieldKey.utils";
 
 import { H1, P } from "../atoms/typography";
 
@@ -25,10 +22,7 @@ export function FormHeader({ form }: FormHeaderProps) {
     initializeLocalization(form);
   }, [form, initializeLocalization]);
 
-  const translatedTitle = translate(
-    getFormTitleKey(),
-    form.metadata.formTitle
-  );
+  const translatedTitle = translate(getFormTitleKey(), form.metadata.formTitle);
   const translatedDescription = translate(
     getFormDescriptionKey(),
     form.metadata.formDescription
@@ -45,4 +39,3 @@ export function FormHeader({ form }: FormHeaderProps) {
     </div>
   );
 }
-

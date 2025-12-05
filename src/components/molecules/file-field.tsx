@@ -105,7 +105,7 @@ export function FileField({
             className="cursor-pointer"
           />
           {storedFile && (
-            <div className="text-sm text-muted-foreground">
+            <div className="text-muted-foreground text-sm">
               Selected: {storedFile.name} ({formatFileSize(storedFile.size)})
             </div>
           )}

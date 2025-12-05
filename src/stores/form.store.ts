@@ -61,10 +61,13 @@ const useFormStore = create<FormStore>((set, get) => ({
     const { rawValues } = get();
     const variables = useVariableStore.getState().variables;
 
-    return Object.entries(rawValues).reduce((acc, [key, value]) => {
-      acc[key] = computeValue(value, variables);
-      return acc;
-    }, {} as Record<string, FormValue>);
+    return Object.entries(rawValues).reduce(
+      (acc, [key, value]) => {
+        acc[key] = computeValue(value, variables);
+        return acc;
+      },
+      {} as Record<string, FormValue>
+    );
   },
 
   resetForm: () => {

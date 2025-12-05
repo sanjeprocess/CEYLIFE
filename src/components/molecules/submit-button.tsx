@@ -19,7 +19,7 @@ export function SubmitButton({ layout, submitText }: SubmitButtonProps) {
   const translatedText = translationKey
     ? translate(translationKey, String(submitText))
     : String(submitText);
-  
+
   // Apply variable replacement
   const buttonText = useVariableReplacement(translatedText);
 
@@ -47,4 +47,3 @@ export function SubmitButton({ layout, submitText }: SubmitButtonProps) {
     </div>
   );
 }
-

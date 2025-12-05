@@ -16,7 +16,7 @@ export function IncompleteLinkCard({
   missingSearchParams,
 }: IIncompleteLinkCardProps) {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
+    <div className="bg-background flex min-h-screen items-center justify-center">
       <main className="w-full max-w-2xl px-4 py-16">
         <div className="mb-8 flex justify-center">
           <Image
@@ -36,7 +36,7 @@ export function IncompleteLinkCard({
               information is missing.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
+          <CardContent className="text-muted-foreground space-y-4 text-sm">
             <p>
               The link you have used does not contain enough data to open the
               form. This may have happened because you accessed the form
@@ -56,8 +56,8 @@ export function IncompleteLinkCard({
             </p>
           </CardContent>
         </Card>
-        <div className="fixed left-1/2 bottom-4 transform -translate-x-1/2">
-          <p className="text-xs italic text-muted-foreground">
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 transform">
+          <p className="text-muted-foreground text-xs italic">
             Missing search params: {missingSearchParams.join(", ")}
           </p>
         </div>

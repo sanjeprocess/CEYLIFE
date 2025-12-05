@@ -30,7 +30,7 @@ export function TextCard({
       ? translate(translationKey, cardTitleValueStr)
       : cardTitleValueStr
     : "";
-  
+
   // Apply variable replacement
   const cardTitle = useVariableReplacement(translatedTitle);
   const cardTitleHtml = cardTitle ? mdToHtml(cardTitle) : "";
