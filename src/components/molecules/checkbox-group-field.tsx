@@ -1,6 +1,6 @@
 import { IFormCheckboxGroupField } from "@/common/interfaces/form.interfaces";
+import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
-import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -23,32 +23,34 @@ export function CheckboxGroupField({
   field: IFormCheckboxGroupField;
   name: string;
 }) {
-  const { values, updateValue } = useFormStore();
+  const { rawValue, computedValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
-  const storedValue = values[name];
-  const value = Array.isArray(storedValue)
-    ? (storedValue as string[])
-    : field.defaultValue
-      ? field.defaultValue.split(",").filter(Boolean)
+
+  const defaultParsed =
+    typeof computedValue === "string" && computedValue
+      ? computedValue.split(",").filter(Boolean)
       : [];
 
+  const value = Array.isArray(rawValue)
+    ? (rawValue as string[])
+    : defaultParsed;
+
   const handleCheckedChange = (optionValue: string, checked: boolean) => {
-    const currentValues = Array.isArray(storedValue)
-      ? (storedValue as string[])
-      : field.defaultValue
-        ? field.defaultValue.split(",").filter(Boolean)
-        : [];
+    const currentValues = Array.isArray(rawValue)
+      ? (rawValue as string[])
+      : defaultParsed;
 
     const newValues = checked
       ? [...currentValues, optionValue]
       : currentValues.filter((v) => v !== optionValue);
 
-    updateValue(name, newValues.length > 0 ? newValues : []);
+    updateValue(newValues.length > 0 ? newValues : []);
   };
 
   const { options } = field;
 
   const label = translate(getFieldLabelKey(name), field.label);
+
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;
@@ -64,7 +66,7 @@ export function CheckboxGroupField({
           {options &&
             Object.entries(options).map(([optionValue, optionLabel]) => {
               const isChecked = value.includes(optionValue);
-              const translatedOptionLabel = translate(
+              const optionLabelWithVars = translate(
                 getFieldOptionKey(name, optionValue),
                 optionLabel
               );
@@ -84,7 +86,7 @@ export function CheckboxGroupField({
                     htmlFor={`${name}-${optionValue}`}
                     className="font-normal cursor-pointer"
                   >
-                    {translatedOptionLabel}
+                    {optionLabelWithVars}
                   </Label>
                 </div>
               );
@@ -95,4 +97,3 @@ export function CheckboxGroupField({
     </Field>
   );
 }
-

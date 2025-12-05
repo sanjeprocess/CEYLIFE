@@ -1,6 +1,6 @@
 import { IFormSelectField } from "@/common/interfaces/form.interfaces";
+import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
-import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -29,23 +29,26 @@ export function SelectField({
   field: IFormSelectField;
   name: string;
 }) {
-  const { values, updateValue } = useFormStore();
+  const { computedValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
-  const storedValue = values[name];
-  const value = storedValue !== undefined && storedValue !== null
-    ? (storedValue as string)
-    : (field.defaultValue || "");
+
+  const value =
+    computedValue !== undefined && computedValue !== null
+      ? (computedValue as string)
+      : "";
 
   const handleValueChange = (newValue: string) => {
-    updateValue(name, newValue || null);
+    updateValue(newValue || null);
   };
 
   const options = field.options || {};
 
   const label = translate(getFieldLabelKey(name), field.label);
+
   const placeholder = field.placeholder
     ? translate(getFieldPlaceholderKey(name), field.placeholder)
-    : "Select an option";
+    : translate("", "Select an option");
+
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;
@@ -63,21 +66,19 @@ export function SelectField({
           </SelectTrigger>
           <SelectContent>
             {Object.entries(options).map(([optionValue, optionLabel]) => {
-              const translatedOptionLabel = translate(
+              const optionLabelWithVars = translate(
                 getFieldOptionKey(name, optionValue),
                 optionLabel
               );
               return (
                 <SelectItem key={optionValue} value={optionValue}>
-                  {translatedOptionLabel}
+                  {optionLabelWithVars}
                 </SelectItem>
               );
             })}
           </SelectContent>
         </Select>
-        {description && (
-          <FieldDescription>{description}</FieldDescription>
-        )}
+        {description && <FieldDescription>{description}</FieldDescription>}
       </FieldContent>
     </Field>
   );

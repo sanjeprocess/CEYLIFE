@@ -1,6 +1,6 @@
 import { IFormCheckboxField } from "@/common/interfaces/form.interfaces";
+import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
-import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -21,19 +21,20 @@ export function CheckboxField({
   field: IFormCheckboxField;
   name: string;
 }) {
-  const { values, updateValue } = useFormStore();
+  const { rawValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
-  const storedValue = values[name];
+
   const value =
-    storedValue !== undefined
-      ? (storedValue as boolean)
+    rawValue !== undefined
+      ? (rawValue as boolean)
       : field.checked ?? field.defaultValue === "true";
 
   const handleCheckedChange = (checked: boolean) => {
-    updateValue(name, checked);
+    updateValue(checked);
   };
 
   const label = translate(getFieldLabelKey(name), field.label);
+
   const description = field.description
     ? translate(getFieldDescriptionKey(name), field.description)
     : undefined;

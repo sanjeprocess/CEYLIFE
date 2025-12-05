@@ -1,8 +1,10 @@
 import { IFormLayoutItem } from "@/common/interfaces/form.interfaces";
 import { useTranslation } from "@/hooks/useTranslation.hook";
+import { useVariableReplacement } from "@/hooks/useVariableReplacement.hook";
 import { styles } from "@/services/render.service";
-import { Button } from "../atoms/button";
 import { cn } from "@/utils/shadcn.utils";
+
+import { Button } from "../atoms/button";
 
 interface SubmitButtonProps {
   layout: IFormLayoutItem;
@@ -14,9 +16,12 @@ export function SubmitButton({ layout, submitText }: SubmitButtonProps) {
   const translationKey = layout.key;
 
   // Get button text (translated if key provided, otherwise use submitText)
-  const buttonText = translationKey
+  const translatedText = translationKey
     ? translate(translationKey, String(submitText))
     : String(submitText);
+  
+  // Apply variable replacement
+  const buttonText = useVariableReplacement(translatedText);
 
   // Get variant (default to "default" if not specified)
   const variant = layout.variant || "default";
