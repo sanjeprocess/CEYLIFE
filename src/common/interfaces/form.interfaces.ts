@@ -18,22 +18,51 @@ export interface IForm {
   localization: Record<Locale, Record<string, string>>; // based on json keys (eg: "fields.name.label" -> "Name")
 }
 
-export interface IFormOtp {
-  dialog?: {
-    title?: string;
-    content?: string;
-    button?: string;
-    input?: {
-      label?: string;
-      placeholder?: string;
-    };
-  };
+// OTP Header configuration for API requests
+export interface IFormOtpHeader {
+  name: string;
+  value: string;
+}
+
+// OTP Query parameter configuration for API requests
+export interface IFormOtpQueryParam {
+  name: string;
+  value: string;
+}
+
+// Variable mapping from API response to form variables
+export interface IFormOtpVariableMapping {
+  path: string; // Path expression e.g., "[0].clientName", "data.user.name"
+  to: string; // Target variable name
+  required: boolean; // If true, verification fails if this field is missing
+}
+
+// OTP verification API request configuration
+export interface IFormOtpVerification {
   method: HttpMethod;
+  baseUrl: string;
   endpoint: string;
-  requiresAccessToken: boolean;
-  parameters: Record<string, string>;
-  body: Record<string, unknown>;
-  response: Record<string, string>; // assign response to form variables based on json keys (eg: "fields.name.label" -> "{{Name}}")
+  headers: IFormOtpHeader[];
+  queryParams: IFormOtpQueryParam[];
+  response: {
+    variableMapping: IFormOtpVariableMapping[];
+  };
+}
+
+// OTP dialog UI configuration
+export interface IFormOtpDialog {
+  title?: string;
+  content?: string;
+  button?: string;
+  inputLabel?: string;
+  inputPlaceholder?: string;
+}
+
+// Main OTP configuration interface
+export interface IFormOtp {
+  enabled: boolean;
+  dialog?: IFormOtpDialog;
+  verification: IFormOtpVerification;
 }
 
 export interface IFormMetadata {

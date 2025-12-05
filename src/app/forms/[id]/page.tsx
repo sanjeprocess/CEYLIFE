@@ -82,7 +82,7 @@ export default async function FormPage({
         </nav>
       </div>
       <VariableHandler />
-      {form.otp && <OtpDialog otpConfig={form.otp} />}
+      {form.otp?.enabled && <OtpDialog otpConfig={form.otp} />}
       <main className="mx-auto w-full max-w-3xl py-8 md:max-w-5xl lg:max-w-[1140px]">
         <Card>
           <CardContent>

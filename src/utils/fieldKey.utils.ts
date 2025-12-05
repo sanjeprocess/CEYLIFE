@@ -71,9 +71,9 @@ export function getOtpDialogButtonKey(): string {
 }
 
 export function getOtpDialogInputLabelKey(): string {
-  return "otp.dialog.input.label";
+  return "otp.dialog.inputLabel";
 }
 
 export function getOtpDialogInputPlaceholderKey(): string {
-  return "otp.dialog.input.placeholder";
+  return "otp.dialog.inputPlaceholder";
 }

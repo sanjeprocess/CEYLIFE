@@ -1,6 +1,8 @@
 "use client";
 
+import { LoaderCircle } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 import { IFormOtp } from "@/common/interfaces/form.interfaces";
 import { Button } from "@/components/atoms/button";
@@ -14,7 +16,9 @@ import { Input } from "@/components/atoms/input";
 import { Label } from "@/components/atoms/label";
 import { useTranslation } from "@/hooks/useTranslation.hook";
 import { useVariableReplacement } from "@/hooks/useVariableReplacement.hook";
-import { verifyOTP } from "@/services/workhub.service";
+import { verifyOtp } from "@/services/otp-verification.service";
+import { refreshVariablesFromCookies } from "@/services/variable.service";
+import { useVariableStore } from "@/stores/variable.store";
 import {
   getOtpDialogTitleKey,
   getOtpDialogContentKey,
@@ -34,13 +38,17 @@ const DEFAULT_OTP_PLACEHOLDER = "Enter OTP";
 
 export function OtpDialog({ otpConfig }: { otpConfig: IFormOtp }) {
   const translate = useTranslation();
+  const { variables } = useVariableStore();
+  const [isOpen, setIsOpen] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const titleValue = otpConfig.dialog?.title ?? DEFAULT_OTP_TITLE;
   const contentValue = otpConfig.dialog?.content ?? DEFAULT_OTP_CONTENT;
   const buttonValue = otpConfig.dialog?.button ?? DEFAULT_OTP_BUTTON;
-  const labelValue = otpConfig.dialog?.input?.label ?? DEFAULT_OTP_LABEL;
+  const labelValue = otpConfig.dialog?.inputLabel ?? DEFAULT_OTP_LABEL;
   const placeholderValue =
-    otpConfig.dialog?.input?.placeholder ?? DEFAULT_OTP_PLACEHOLDER;
+    otpConfig.dialog?.inputPlaceholder ?? DEFAULT_OTP_PLACEHOLDER;
 
   const translatedTitle = translate(getOtpDialogTitleKey(), titleValue);
   const translatedContent = translate(getOtpDialogContentKey(), contentValue);
@@ -59,11 +67,36 @@ export function OtpDialog({ otpConfig }: { otpConfig: IFormOtp }) {
 
   const verifyOTPAction = async (formData: FormData) => {
     const otp = formData.get("otp") as string;
-    await verifyOTP(otp, otpConfig);
+
+    if (!otp || otp.trim() === "") {
+      setError("Please enter an OTP");
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const result = await verifyOtp(otp, otpConfig, variables);
+
+      if (result.success) {
+        // Refresh variables from cookies to sync new data
+        refreshVariablesFromCookies();
+        // Close dialog on success
+        setIsOpen(false);
+      } else {
+        setError(result.error || "Verification failed");
+      }
+    } catch (err) {
+      setError("An unexpected error occurred");
+      console.error("OTP verification error:", err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
-    <Dialog open={true}>
+    <Dialog open={isOpen}>
       <DialogContent className="sm:max-w-3xl" showCloseButton={false}>
         <form action={verifyOTPAction} className="grid gap-4">
           <div className="mt-4">
@@ -81,11 +114,20 @@ export function OtpDialog({ otpConfig }: { otpConfig: IFormOtp }) {
           <div className="grid gap-4">
             <div className="grid gap-3">
               <Label htmlFor="otp">{label}</Label>
-              <Input id="otp" name="otp" placeholder={placeholder} />
+              <Input
+                id="otp"
+                name="otp"
+                placeholder={placeholder}
+                disabled={isLoading}
+              />
             </div>
+            {error && <P className="text-sm text-red-600">{error}</P>}
           </div>
           <div>
-            <Button type="submit">{buttonText}</Button>
+            <Button type="submit" disabled={isLoading} className="gap-2">
+              {isLoading && <LoaderCircle className="h-4 w-4 animate-spin" />}
+              {isLoading ? "Verifying..." : buttonText}
+            </Button>
           </div>
         </form>
       </DialogContent>

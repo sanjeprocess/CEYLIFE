@@ -16,6 +16,10 @@ interface VariableStore {
     source?: VariableSource
   ) => void;
   updateVariable: (key: string, value: string) => void;
+  mergeVariables: (
+    newVariables: Record<string, string>,
+    source: VariableSource
+  ) => void;
   resetVariables: () => void;
   hasVariable: (key: string) => boolean;
   getVariableKeys: () => string[];
@@ -58,6 +62,32 @@ export const useVariableStore = create<VariableStore>((set, get) => ({
     set((state) => ({
       variables: { ...state.variables, [key]: value },
     })),
+
+  mergeVariables: (
+    newVariables: Record<string, string>,
+    source: VariableSource
+  ) =>
+    set((state) => {
+      const merged = { ...state.variables, ...newVariables };
+
+      if (process.env.NODE_ENV === "development") {
+        console.log(
+          `[VariableStore] Merged ${
+            Object.keys(newVariables).length
+          } variables from ${source}:`,
+          Object.keys(newVariables)
+        );
+      }
+
+      return {
+        variables: merged,
+        metadata: {
+          ...state.metadata,
+          source,
+          timestamp: Date.now(),
+        },
+      };
+    }),
 
   resetVariables: () =>
     set({
