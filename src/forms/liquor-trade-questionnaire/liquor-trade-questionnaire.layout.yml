@@ -1,0 +1,40 @@
+# liquor-trade-questionnaire form layout
+
+- field: ProposerName
+- field: proposalNum
+- field: occupation
+- field: dutyInvolve
+- field: teetotaler
+- field: liquorType
+- field: avvgDailyIntake
+- field: health
+- field: smoker
+- field: changeTheNature
+- card: ""
+  key: card.declare
+  items:
+    - text: I declare that the answers I have given are to the best of my knowledge
+        true and that I have not withheld any material information that may
+        influence the assessment or acceptance of the proposal.
+- card: ""
+  key: card.agree
+  items:
+    - text: I agree that this form will constitute part of my proposal for life
+        assurance and that failure to disclose any material fact known to me may
+        invalidate the contract.
+- row: 2
+  columns:
+    - field: date
+    - field: signature
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline
