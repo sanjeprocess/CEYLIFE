@@ -1,12 +1,18 @@
 {
   "metadata": {
     "formVersion": 1,
-    "formTitle": "CEYLINCO LIFE",
-    "formDescription": "Ceylinco Life Insurance Limited Ceylinco Life Insurance Limited, Ceylinco Life Tower, 106 Havelock Road, Colombo.05, Co. Reg: PB5183 Tel:(011)2461461 Email: service@ceylife.lk Web: www.ceylincolife.com.",
-    "availableLocales": ["en"],
+    "formTitle": "DIABETIC QUESTIONNAIRE",
+    "formDescription": "",
+    "showFormHeader": true,
+    "availableLocales": [
+      "en"
+    ],
     "otpRequired": true
   },
-  "prefilledFields": ["field1", "field2"],
+  "prefilledFields": [
+    "field1",
+    "field2"
+  ],
   "submission": {
     "endpoint": "/api/forms/diabetic-questionnaire",
     "method": "POST",
@@ -251,14 +257,16 @@
       "defaultValue": "",
       "fileOptions": {
         "maxFileSize": 10485760,
-        "allowedExtensions": [".png", ".jpg", ".jpeg", ".pdf"]
+        "allowedExtensions": [
+          ".png",
+          ".jpg",
+          ".jpeg",
+          ".pdf"
+        ]
       }
     }
   },
   "layout": [
-    {
-      "h1": "DIABETIC QUESTIONNAIRE"
-    },
     {
       "text": "(To be completed by the Proposer)"
     },
@@ -299,16 +307,43 @@
       "field": "illnesses"
     },
     {
-      "h1": "Declaration"
+      "card": "Declaration",
+      "key": "card.declaration",
+      "items": [
+        {
+          "text": "I declare that the answers I have given are to the best of my knowledge true and that I have not withheld any material information that may influence the assessment or acceptance of the proposal. \n \n I agree that this form will constitute part of my proposal for life assurance and that liable to disclose any material fact known to me may invalidate the contract"
+        }
+      ]
     },
     {
-      "text": "I declare that the answers I have given are to the best of my knowledge true and that I have not withheld any material information that may influence the assessment or acceptance of the proposal.<br>I agree that this form will constitute part of my proposal for life assurance and that liable to disclose any material fact known to me may invalidate the contract"
+      "row": 2,
+      "columns": [
+        {
+          "field": "date"
+        },
+        {
+          "field": "signature"
+        }
+      ]
     },
     {
-      "field": "date"
-    },
-    {
-      "field": "signature"
+      "row": 12,
+      "columns": [
+        {
+          "submit": "Submit Form",
+          "key": "submit.button",
+          "align": "center",
+          "margin": "30px 0 0 0",
+          "variant": "default"
+        },
+        {
+          "reset": "Reset Form",
+          "key": "reset.button",
+          "align": "center",
+          "margin": "30px 0 0 0",
+          "variant": "outline"
+        }
+      ]
     }
   ],
   "localization": {
