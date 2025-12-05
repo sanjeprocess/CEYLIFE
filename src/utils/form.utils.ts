@@ -1,16 +1,47 @@
 import fs from "fs";
 import path from "path";
 
+import yaml from "yaml";
+
 import { IForm } from "@/common/interfaces/form.interfaces";
 
 export function getForm(formId: string): IForm {
   const root = process.cwd();
-  const formDataPath = path.join(root, "src", "forms", `${formId}.json`);
-  if (!fs.existsSync(formDataPath)) {
-    throw new Error(`Form data file not found: ${formDataPath}`);
+  const formFolder = path.join(root, "src", "forms", formId);
+
+  // Check if folder exists
+  if (!fs.existsSync(formFolder)) {
+    throw new Error(`Form folder not found: ${formFolder}`);
   }
-  const formData = fs.readFileSync(formDataPath, "utf8");
-  return JSON.parse(formData) as IForm;
+
+  // Read all YAML files (both .yml and .yaml extensions)
+  const files = fs
+    .readdirSync(formFolder)
+    .filter((f) => f.endsWith(".yml") || f.endsWith(".yaml"));
+
+  if (files.length === 0) {
+    throw new Error(`No YAML files found in form folder: ${formFolder}`);
+  }
+
+  // Combine all YAML files into one object
+  const formData: Record<string, unknown> = {};
+
+  files.forEach((file) => {
+    const filePath = path.join(formFolder, file);
+    const content = fs.readFileSync(filePath, "utf8");
+    const parsed = yaml.parse(content);
+
+    // Extract property name from filename (e.g., otp.metadata.yml -> metadata)
+    // Support both .yml and .yaml extensions
+    const propertyName = file
+      .replace(`${formId}.`, "")
+      .replace(".yml", "")
+      .replace(".yaml", "");
+
+    formData[propertyName] = parsed;
+  });
+
+  return formData as unknown as IForm;
 }
 
 export interface MissingSearchParam {
