@@ -1,0 +1,11 @@
+# marine-service-questionnaire form metadata
+
+formVersion: 1
+formTitle: Marine Service Questionnaire
+formDescription: ""
+showFormHeader: false
+availableLocales:
+  - en
+  - si
+  - ta
+otpRequired: true

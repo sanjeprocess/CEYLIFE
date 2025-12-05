@@ -1,0 +1,29 @@
+# otp form layout
+
+- h2: Personal Information
+- field: clientName
+- spacer: 10
+- field: clientEmail
+- spacer: 20
+- h2: Contract Details
+- field: contractNumber
+- spacer: 10
+- field: clouReference
+- spacer: 10
+- field: clientNumber
+- spacer: 20
+- h2: Contact Information
+- field: contactNo1
+- spacer: 10
+- field: contactNo2
+- spacer: 20
+- h2: Additional Information
+- field: requestType
+- spacer: 10
+- field: questionnaireType
+- spacer: 10
+- field: preferredLanguage
+- spacer: 10
+- field: submissionDate
+- spacer: 30
+- submit: Submit Form

@@ -1,0 +1,12 @@
+# life-insurance form metadata
+
+formVersion: 1
+formTitle: Life Insurance Proposal Form
+formDescription: Apply for comprehensive life insurance cover with optional
+  riders and beneficiary nominations.
+availableLocales:
+  - en
+  - si
+  - ta
+otpRequired: true
+showFormHeader: false

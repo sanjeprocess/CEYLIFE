@@ -1,0 +1,13 @@
+# otp form metadata
+
+formVersion: 1
+formTitle: Otp
+formDescription: Form description for Otp
+availableLocales:
+  - en
+  - si
+  - ta
+defaultLocale: en
+searchParamsVariables:
+  cs: contract_sequence
+  id: card_id

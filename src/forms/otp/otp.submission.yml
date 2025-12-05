@@ -1,0 +1,5 @@
+# otp form submission
+
+endpoint: /api/forms/otp
+method: POST
+requiresAccessToken: true

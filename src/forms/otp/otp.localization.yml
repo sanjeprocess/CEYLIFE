@@ -1,0 +1,23 @@
+# otp form localization
+
+en:
+  otp.dialog.title: OTP Verification
+  otp.dialog.content: Thank you for accessing the digital forms of Ceylinco Life.
+    In order to proceed ahead, please enter the OTP you received via SMS.
+  otp.dialog.button: Verify OTP
+  otp.dialog.inputLabel: OTP
+  otp.dialog.inputPlaceholder: Enter OTP
+si:
+  otp.dialog.title: OTP සත්‍යාපනය
+  otp.dialog.content: සෙලින්කෝ ලයිෆ් ඩිජිටල් පෝරම වෙත පිවිසීම ගැන ස්තුතියි.
+    ඉදිරියට යාමට, SMS මගින් ඔබට ලැබුණු OTP අංකය ඇතුළත් කරන්න.
+  otp.dialog.button: OTP තහවුරු කරන්න
+  otp.dialog.inputLabel: OTP
+  otp.dialog.inputPlaceholder: OTP ඇතුළත් කරන්න
+ta:
+  otp.dialog.title: OTP சரிபார்ப்பு
+  otp.dialog.content: செலின்கோ லைஃப் டிஜிட்டல் படிவங்களை அணுகியதற்கு நன்றி. தொடர,
+    SMS மூலம் நீங்கள் பெற்ற OTP ஐ உள்ளிடவும்.
+  otp.dialog.button: OTP சரிபார்க்க
+  otp.dialog.inputLabel: OTP
+  otp.dialog.inputPlaceholder: OTP ஐ உள்ளிடவும்
