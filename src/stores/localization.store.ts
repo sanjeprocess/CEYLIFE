@@ -22,7 +22,7 @@ export const useLocalizationStore = create<LocalizationStore>((set) => ({
   initializeLocalization: (form: IForm) => {
     set({
       availableLocales: form.metadata.availableLocales,
-      localization: form.localization,
+      localization: form.localization ?? { en: {}, si: {}, ta: {} },
       currentLocale: form.metadata.defaultLocale ?? "en",
     });
   },

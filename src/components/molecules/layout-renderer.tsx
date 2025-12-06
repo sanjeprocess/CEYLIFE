@@ -2,8 +2,6 @@ import {
   IFormField,
   IFormLayoutItem,
 } from "@/common/interfaces/form.interfaces";
-import { useTranslation } from "@/hooks/useTranslation.hook";
-import { mdToHtml, styles } from "@/services/render.service";
 
 import { CheckboxField } from "./checkbox-field";
 import { CheckboxGroupField } from "./checkbox-group-field";
@@ -17,8 +15,8 @@ import { SubmitButton } from "./submit-button";
 import { TextCard } from "./text-card";
 import { TextField } from "./text-field";
 import { TextareaField } from "./textarea-field";
+import { TypographyRenderer } from "./typography-renderer";
 import { Separator } from "../atoms/separator";
-import { H1, H4, H2, H3, H5, H6, P } from "../atoms/typography";
 
 interface LayoutRendererProps {
   layout: IFormLayoutItem;
@@ -26,125 +24,25 @@ interface LayoutRendererProps {
 }
 
 export function LayoutRenderer({ layout, fields }: LayoutRendererProps) {
-  const translate = useTranslation();
   const items = Object.entries(layout).filter(([key]) => key !== "key");
   if (items.length === 0) return null;
   const [type, value] = items[0];
-  const translationKey = layout.key;
 
   switch (type) {
-    case "h1": {
-      const displayValue = translationKey
-        ? translate(translationKey, value as string)
-        : (value as string);
-      const htmlContent = mdToHtml(displayValue);
+    case "h1":
+    case "h2":
+    case "h3":
+    case "h4":
+    case "h5":
+    case "h6":
+    case "text":
       return (
-        <H1
-          style={styles({
-            textAlign: layout.align,
-            fontSize: layout.fontSize,
-            margin: layout.margin,
-          })}
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        <TypographyRenderer
+          layout={layout}
+          type={type as "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "text"}
+          value={value}
         />
       );
-    }
-    case "h2": {
-      const displayValue = translationKey
-        ? translate(translationKey, value as string)
-        : (value as string);
-      const htmlContent = mdToHtml(displayValue);
-      return (
-        <H2
-          style={styles({
-            textAlign: layout.align,
-            fontSize: layout.fontSize,
-            margin: layout.margin,
-          })}
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
-      );
-    }
-    case "h3": {
-      const displayValue = translationKey
-        ? translate(translationKey, value as string)
-        : (value as string);
-      const htmlContent = mdToHtml(displayValue);
-      return (
-        <H3
-          style={styles({
-            textAlign: layout.align,
-            fontSize: layout.fontSize,
-            margin: layout.margin,
-          })}
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
-      );
-    }
-    case "h4": {
-      const displayValue = translationKey
-        ? translate(translationKey, value as string)
-        : (value as string);
-      const htmlContent = mdToHtml(displayValue);
-      return (
-        <H4
-          style={styles({
-            textAlign: layout.align,
-            fontSize: layout.fontSize,
-            margin: layout.margin,
-          })}
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
-      );
-    }
-    case "h5": {
-      const displayValue = translationKey
-        ? translate(translationKey, value as string)
-        : (value as string);
-      const htmlContent = mdToHtml(displayValue);
-      return (
-        <H5
-          style={styles({
-            textAlign: layout.align,
-            fontSize: layout.fontSize,
-            margin: layout.margin,
-          })}
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
-      );
-    }
-    case "h6": {
-      const displayValue = translationKey
-        ? translate(translationKey, value as string)
-        : (value as string);
-      const htmlContent = mdToHtml(displayValue);
-      return (
-        <H6
-          style={styles({
-            textAlign: layout.align,
-            fontSize: layout.fontSize,
-            margin: layout.margin,
-          })}
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
-      );
-    }
-    case "text": {
-      const displayValue = translationKey
-        ? translate(translationKey, value as string)
-        : (value as string);
-      const htmlContent = mdToHtml(displayValue);
-      return (
-        <P
-          style={styles({
-            textAlign: layout.align,
-            fontSize: layout.fontSize,
-            margin: layout.margin,
-          })}
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
-      );
-    }
     case "spacer":
       return <div style={{ height: value as number }} />;
     case "divider":
@@ -155,7 +53,7 @@ export function LayoutRenderer({ layout, fields }: LayoutRendererProps) {
           layout={layout}
           fields={fields}
           cardTitleValue={value}
-          translationKey={translationKey}
+          translationKey={layout.key}
         />
       );
     case "row":

@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
+    <div className="bg-background flex min-h-screen items-center justify-center">
       <main className="w-full max-w-2xl px-4 py-16">
         <div className="mb-8 flex justify-center">
           <Image
@@ -32,7 +32,7 @@ export default function Home() {
               Portal.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
+          <CardContent className="text-muted-foreground space-y-4 text-sm">
             <p>
               The Customer Form Portal is designed to be accessed only through
               specific form links that are provided to you by Ceylinco Life (for

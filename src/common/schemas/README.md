@@ -60,7 +60,7 @@ If autocomplete isn't working:
 ### Schema Version
 
 This schema is based on the TypeScript interfaces defined in:
+
 - `src/common/interfaces/form.interfaces.ts`
 - `src/common/types/form.types.ts`
 - `src/common/types/common.types.ts`
-

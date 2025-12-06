@@ -1,0 +1,11 @@
+# occupation-clause form metadata
+
+formVersion: 1
+formTitle: Occupation Clause
+formDescription: ""
+showFormHeader: false
+availableLocales:
+  - en
+  - si
+  - ta
+otpRequired: true

@@ -1,0 +1,40 @@
+# diabetic-questionnaire form layout
+
+- text: (To be completed by the Proposer)
+- divider: true
+- field: proposerName
+- field: contactNum
+- field: dateDiagnosed
+- field: nameAndAddressOfTheDoctor
+- field: strictDiet
+- field: oralDrug
+- field: insulin
+- field: oralInsulinVaried
+- field: urineCheck
+- field: coma
+- field: illnesses
+- card: Declaration
+  key: card.declaration
+  items:
+    - text: >-
+        I declare that the answers I have given are to the best of my knowledge
+        true and that I have not withheld any material information that may
+        influence the assessment or acceptance of the proposal. 
+         
+         I agree that this form will constitute part of my proposal for life assurance and that liable to disclose any material fact known to me may invalidate the contract
+- row: 2
+  columns:
+    - field: date
+    - field: signature
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline

@@ -1,0 +1,39 @@
+# occupation-clause form layout
+
+- field: ProposerName
+- row: 2
+  columns:
+    - field: contractNumber
+    - field: nicNumber
+- card: Occupation Clause
+  key: card.occupationClause
+  items:
+    - text: It is hereby declared and agreed, that if the Life Assured / Spouse
+        Assured meets with an accident whilst being engaged in his usual
+        occupation as indicated in the Proposal Form or Declaration of Good
+        Health, the Company will not be liable to pay the supplementary benefits
+        under the Policy, viz. Jeewayathra Accidental Death Benefit, Jeewayathra
+        Monthly Income Benefit, Jeewayathra Partial and Permanent Disability
+        Benefit.
+- card: Consent
+  key: card.consent
+  items:
+    - text: I have read and understood the afore-said clause and hereby give my
+        consent to accept the Life Assurance proposal subject to respective
+        clause.
+- row: 2
+  columns:
+    - field: date
+    - field: signature
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline
