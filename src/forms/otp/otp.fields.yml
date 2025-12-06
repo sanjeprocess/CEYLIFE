@@ -1,0 +1,79 @@
+# otp form fields
+
+clientName:
+  type: text
+  label: Client Name
+  required: true
+  placeholder: Auto-filled after OTP verification
+  description: Your name as per our records
+  defaultValue: "{{client_name}}"
+contractNumber:
+  type: text
+  label: Contract Number
+  required: true
+  placeholder: Auto-filled after OTP verification
+  description: Your contract number
+  defaultValue: "{{contract_number}}"
+clouReference:
+  type: text
+  label: CLOU Reference Number
+  required: true
+  placeholder: Auto-filled after OTP verification
+  description: CLOU reference number
+  defaultValue: "{{clou_reference}}"
+clientEmail:
+  type: email
+  label: Email Address
+  required: false
+  placeholder: Auto-filled after OTP verification
+  description: Your email address
+  defaultValue: "{{client_email}}"
+clientNumber:
+  type: text
+  label: Client Number
+  required: false
+  placeholder: Auto-filled after OTP verification
+  description: Your client number
+  defaultValue: "{{client_number}}"
+contactNo1:
+  type: tel
+  label: Primary Contact Number
+  required: false
+  placeholder: Auto-filled after OTP verification
+  description: Your primary contact number
+  defaultValue: "{{contact_1}}"
+contactNo2:
+  type: tel
+  label: Secondary Contact Number
+  required: false
+  placeholder: Auto-filled after OTP verification
+  description: Your secondary contact number
+  defaultValue: "{{contact_2}}"
+requestType:
+  type: text
+  label: Request Type
+  required: false
+  placeholder: Auto-filled after OTP verification
+  description: Type of request
+  defaultValue: "{{request_type}}"
+questionnaireType:
+  type: text
+  label: Questionnaire Type
+  required: false
+  placeholder: Auto-filled after OTP verification
+  description: Questionnaire type
+  defaultValue: "{{questionnaire_type}}"
+preferredLanguage:
+  type: text
+  label: Preferred Language
+  required: false
+  placeholder: Auto-filled after OTP verification
+  description: Your preferred language
+  defaultValue: "{{preferred_language}}"
+submissionDate:
+  type: datetime-local
+  label: Submission Date & Time
+  required: false
+  placeholder: Current date and time
+  description: Date and time of submission
+  defaultValue: "{{$now}}"

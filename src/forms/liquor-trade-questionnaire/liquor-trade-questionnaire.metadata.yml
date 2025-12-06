@@ -1,0 +1,11 @@
+# liquor-trade-questionnaire form metadata
+
+formVersion: 1
+formTitle: Liquor Trade Questionnaire
+formDescription: ""
+showFormHeader: true
+availableLocales:
+  - en
+  - si
+  - ta
+otpRequired: true

@@ -1,0 +1,235 @@
+# life-insurance form fields
+
+fullName:
+  type: text
+  label: Full Name (as per NIC / Passport)
+  required: true
+  placeholder: e.g. Perera A.B.C.
+  description: Please enter your full legal name including all middle names.
+  validation:
+    minLength: 3
+    maxLength: 100
+accountPassword:
+  type: password
+  label: Account Password
+  required: false
+  placeholder: Create a secure password
+  description: "Optional: Create password for account access"
+  validation:
+    minLength: 8
+    maxLength: 50
+dob:
+  type: date
+  label: Date of Birth
+  required: true
+  description: You must be between 18 and 65 years of age to apply.
+appointmentTime:
+  type: time
+  label: Preferred Appointment Time
+  required: false
+  description: Select your preferred time for medical examination
+policyStartDateTime:
+  type: datetime-local
+  label: Desired Policy Start Date & Time
+  required: false
+  description: When would you like the policy to commence?
+gender:
+  type: radio-group
+  label: Gender
+  required: true
+  options:
+    male: Male
+    female: Female
+    other: Other / Prefer not to say
+maritalStatus:
+  type: select
+  label: Marital Status
+  required: true
+  placeholder: Select marital status
+  options:
+    single: Single
+    married: Married
+    widowed: Widowed
+    divorced: Divorced
+medicalConditions:
+  type: checkbox-group
+  label: Medical Conditions (Select all that apply)
+  required: false
+  description: Please select any medical conditions you have been diagnosed with.
+  options:
+    diabetes: Diabetes
+    hypertension: Hypertension
+    heart_disease: Heart Disease
+    asthma: Asthma
+    none: None of the above
+nationalId:
+  type: text
+  label: National ID / Passport No.
+  required: true
+  placeholder: e.g. 123456789V
+  description: Enter your valid NIC or passport number.
+  validation:
+    minLength: 5
+    maxLength: 20
+    pattern: ^[A-Za-z0-9]+$
+mobile:
+  type: tel
+  label: Mobile Number
+  required: true
+  placeholder: e.g. +94 7X XXX XXXX
+  description: We will use this for OTP and policy communication.
+  validation:
+    minLength: 9
+    maxLength: 20
+    pattern: ^[0-9+\-\s]+$
+email:
+  type: email
+  label: Email Address
+  required: true
+  placeholder: you@example.com
+  description: Policy documents and notifications may be sent to this email.
+  validation:
+    maxLength: 100
+website:
+  type: url
+  label: Personal Website (Optional)
+  required: false
+  placeholder: https://example.com
+  description: If you have a personal or professional website
+  validation:
+    maxLength: 200
+address:
+  type: textarea
+  label: Residential Address
+  required: true
+  placeholder: House No, Street, City
+  validation:
+    minLength: 10
+    maxLength: 300
+  rows: 3
+occupation:
+  type: text
+  label: Occupation
+  required: true
+  placeholder: e.g. Software Engineer
+  validation:
+    minLength: 2
+    maxLength: 100
+annualIncome:
+  type: number
+  label: Annual Income (LKR)
+  required: true
+  placeholder: e.g. 2500000
+  description: Used only for risk assessment and underwriting.
+  validation:
+    min: 0
+smokerStatus:
+  type: radio-group
+  label: Do you smoke or use tobacco products?
+  required: true
+  options:
+    non_smoker: No, I do not
+    occasional: Yes, occasionally
+    regular: Yes, regularly
+alcoholUse:
+  type: radio-group
+  label: Do you consume alcohol?
+  required: true
+  options:
+    none: Never
+    social: Occasionally / Socially
+    regular: Regularly
+sumAssured:
+  type: number
+  label: Requested Sum Assured (LKR)
+  required: true
+  placeholder: e.g. 10000000
+  description: Total life cover amount you are applying for.
+  validation:
+    min: 1000000
+    max: 50000000
+policyTermYears:
+  type: number
+  label: Policy Term (Years)
+  required: true
+  placeholder: e.g. 20
+  description: Number of years you want the cover to run.
+  validation:
+    min: 5
+    max: 40
+premiumPaymentFrequency:
+  type: select
+  label: Premium Payment Frequency
+  required: true
+  placeholder: Select frequency
+  options:
+    monthly: Monthly
+    quarterly: Quarterly
+    semi_annual: Semi-Annual
+    annual: Annual
+addCriticalIllnessRider:
+  type: checkbox
+  label: Add Critical Illness Rider
+  required: false
+  description: Provides additional payout on diagnosis of covered critical illnesses.
+addAccidentalDeathRider:
+  type: checkbox
+  label: Add Accidental Death Benefit Rider
+  required: false
+  description: Additional benefit in the event of death due to accident.
+hasExistingPolicies:
+  type: radio-group
+  label: Do you have existing life insurance policies?
+  required: true
+  options:
+    no: No
+    yes: Yes
+  dependencies:
+    existingPolicyDetails:
+      type: textarea
+      label: Existing Policy Details
+      required: false
+      placeholder: Company, policy number, sum assured, commencement date, etc.
+      description: Provide details of all existing life insurance policies.
+      validation:
+        maxLength: 1000
+      conditionalOptions:
+        operator: eq
+        value: yes
+beneficiaryName:
+  type: text
+  label: Primary Beneficiary Name
+  required: true
+  placeholder: e.g. Perera X.Y.Z.
+  validation:
+    minLength: 3
+    maxLength: 100
+beneficiaryRelationship:
+  type: select
+  label: Relationship to Beneficiary
+  required: true
+  placeholder: Select relationship
+  options:
+    spouse: Spouse
+    child: Child
+    parent: Parent
+    sibling: Sibling
+    other: Other
+idDocument:
+  type: file
+  label: Upload ID Document
+  required: true
+  description: Upload a clear scan/photo of your NIC or passport (PDF/JPG/PNG).
+  fileOptions:
+    maxSize: 5242880
+    allowedExtensions:
+      - pdf
+      - jpg
+      - jpeg
+      - png
+    multiple: false
+declarationAgreement:
+  type: checkbox
+  label: I declare that the information provided is true and complete.
+  required: true
+  description: You must agree before submitting the proposal.

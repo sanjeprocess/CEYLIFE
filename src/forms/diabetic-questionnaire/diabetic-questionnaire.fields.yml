@@ -1,0 +1,199 @@
+# diabetic-questionnaire form fields
+
+proposerName:
+  type: text
+  label: Full Name (as per NIC / Passport)
+  required: true
+  validation:
+    minLength: 3
+    maxLength: 100
+contactNum:
+  type: tel
+  label: Contract Number
+  required: true
+  validation:
+    minLength: 3
+    maxLength: 100
+dateDiagnosed:
+  type: date
+  label: Date diabetes Diagnosed
+  required: true
+  validation:
+    minLength: 3
+    maxLength: 100
+nameAndAddressOfTheDoctor:
+  type: text
+  label: Name and address of the doctor or clinic now treating you
+  required: true
+  validation:
+    minLength: 3
+    maxLength: 100
+strictDiet:
+  type: radio-group
+  options:
+    no: No
+    yes: Yes
+  label: Do you follow a strict Diet?
+  required: true
+  validation:
+    minLength: 3
+    maxLength: 100
+  orientation: horizontal
+oralDrug:
+  type: radio-group
+  options:
+    no: No
+    yes: Yes
+  label: Are you having oral drug treatment? if so, please give the name of the
+    drug and dosage
+  required: true
+  validation:
+    minLength: 3
+    maxLength: 100
+  orientation: horizontal
+  dependencies:
+    Details:
+      type: textarea
+      label: Details
+      required: false
+      placeholder: Enter the name of the drug and dosage.
+      defaultValue: ""
+      validation:
+        minLength: 3
+        maxLength: 100
+      conditionalOptions:
+        operator: eq
+        value: yes
+insulin:
+  type: radio-group
+  options:
+    no: No
+    yes: Yes
+  label: " Are you now taking Insulin? If so, please give the number of units per day"
+  required: true
+  validation:
+    minLength: 3
+    maxLength: 100
+  orientation: horizontal
+  dependencies:
+    Details:
+      type: textarea
+      label: Details
+      required: false
+      placeholder: Enter the number of units per day.
+      defaultValue: ""
+      validation:
+        minLength: 3
+        maxLength: 100
+      conditionalOptions:
+        operator: eq
+        value: yes
+oralInsulinVaried:
+  type: radio-group
+  options:
+    no: No
+    yes: Yes
+  label: Has your intake of Insulin or oral drugs varied during the last 2 years?
+    If so, please give full details
+  required: true
+  validation:
+    minLength: 3
+    maxLength: 100
+  orientation: horizontal
+  dependencies:
+    Details:
+      type: textarea
+      label: Details
+      required: false
+      placeholder: Please give full details
+      defaultValue: ""
+      validation:
+        minLength: 3
+        maxLength: 100
+      conditionalOptions:
+        operator: eq
+        value: yes
+urineCheck:
+  type: radio-group
+  options:
+    no: No
+    yes: Yes
+  label: HDo you check your urine on a regular basis? If so, how often does it
+    contain sugar?
+  required: true
+  validation:
+    minLength: 3
+    maxLength: 100
+  orientation: horizontal
+  dependencies:
+    Details:
+      type: radio-group
+      options:
+        never: a.)Never
+        Rarely: b.)Rarely
+        occasionally: c.)Occasionally
+        Often: d.)Often
+      label: Details
+      required: true
+      defaultValue: ""
+      validation:
+        minLength: 3
+        maxLength: 100
+      conditionalOptions:
+        operator: eq
+        value: yes
+coma:
+  type: radio-group
+  options:
+    no: No
+    yes: Yes
+  label: Since your treatment began have you ever had a diabetic or Insulin Coma?
+    (If so please give details including the dates.)
+  required: true
+  orientation: horizontal
+  dependencies:
+    Details:
+      type: textarea
+      label: Details
+      required: true
+      placeholder: Enter details including the dates.
+      defaultValue: ""
+      conditionalOptions:
+        operator: eq
+        value: yes
+illnesses:
+  type: radio-group
+  options:
+    no: No
+    yes: Yes
+  label: Have you ever had any illness or disease of the Heart, Kidney, Eyes,
+    Circulatory or Nervous System? If so, please give full details.
+  required: true
+  orientation: horizontal
+  dependencies:
+    Details:
+      type: textarea
+      label: Details
+      required: true
+      placeholder: Enter in full details
+      defaultValue: ""
+      conditionalOptions:
+        operator: eq
+        value: yes
+date:
+  type: date
+  label: Date
+  required: true
+  defaultValue: ""
+signature:
+  type: file
+  label: Signature
+  required: true
+  defaultValue: ""
+  fileOptions:
+    maxFileSize: 10485760
+    allowedExtensions:
+      - .png
+      - .jpg
+      - .jpeg
+      - .pdf

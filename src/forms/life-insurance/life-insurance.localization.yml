@@ -1,0 +1,193 @@
+# life-insurance form localization
+
+en:
+  formTitle: Life Insurance Proposal Form
+  formDescription: Apply for comprehensive life insurance cover with optional
+    riders and beneficiary nominations.
+  h1.main_title: Life Insurance Proposal Form
+  text.completion_notice: "**Important**: Please complete all required fields
+    marked with *. Inaccurate information may affect your cover and claim
+    eligibility."
+  text.overview_info: This form will take approximately 15-20 minutes to complete.
+    Please have your **NIC/Passport** and **income details** ready.
+  card.overview: Application Overview
+  h2.personal_information: Personal Information
+  h3.basic_details: Basic Details
+  h4.contact_info: Contact Information
+  h5.employment: Employment & Income
+  h2.health_information: Health Information
+  h2.coverage_details: Coverage Details
+  h6.policy_config: Policy Configuration
+  card.riders: Optional Riders
+  text.rider_info: "Select additional coverage options below:"
+  h2.beneficiary_information: Beneficiary Information
+  h2.documents_declaration: Documents & Declaration
+  card.account: Account Setup (Optional)
+  text.account_info: Create an account to track your application status and manage
+    your policy online.
+  card.policy_start: Policy Start Preferences
+  reset.button: Reset Form
+  submit.button: Submit Form
+  fullName.label: Full Name (as per NIC / Passport)
+  fullName.placeholder: e.g. Perera A.B.C.
+  fullName.description: Please enter your full legal name including all middle names.
+  accountPassword.label: Account Password
+  accountPassword.placeholder: Create a secure password
+  accountPassword.description: "Optional: Create password for account access"
+  dob.label: Date of Birth
+  dob.description: You must be between 18 and 65 years of age to apply.
+  appointmentTime.label: Preferred Appointment Time
+  appointmentTime.description: Select your preferred time for medical examination
+  policyStartDateTime.label: Desired Policy Start Date & Time
+  policyStartDateTime.description: When would you like the policy to commence?
+  gender.label: Gender
+  gender.options.male: Male
+  gender.options.female: Female
+  gender.options.other: Other / Prefer not to say
+  maritalStatus.label: Marital Status
+  maritalStatus.placeholder: Select marital status
+  maritalStatus.options.single: Single
+  maritalStatus.options.married: Married
+  maritalStatus.options.widowed: Widowed
+  maritalStatus.options.divorced: Divorced
+  medicalConditions.label: Medical Conditions (Select all that apply)
+  medicalConditions.description: Please select any medical conditions you have been diagnosed with.
+  medicalConditions.options.diabetes: Diabetes
+  medicalConditions.options.hypertension: Hypertension
+  medicalConditions.options.heart_disease: Heart Disease
+  medicalConditions.options.asthma: Asthma
+  medicalConditions.options.none: None of the above
+  nationalId.label: National ID / Passport No.
+  nationalId.placeholder: e.g. 123456789V
+  nationalId.description: Enter your valid NIC or passport number.
+  mobile.label: Mobile Number
+  mobile.placeholder: e.g. +94 7X XXX XXXX
+  mobile.description: We will use this for OTP and policy communication.
+  email.label: Email Address
+  email.placeholder: you@example.com
+  email.description: Policy documents and notifications may be sent to this email.
+  website.label: Personal Website (Optional)
+  website.placeholder: https://example.com
+  website.description: If you have a personal or professional website
+  address.label: Residential Address
+  address.placeholder: House No, Street, City
+  occupation.label: Occupation
+  occupation.placeholder: e.g. Software Engineer
+  annualIncome.label: Annual Income (LKR)
+  annualIncome.placeholder: e.g. 2500000
+  annualIncome.description: Used only for risk assessment and underwriting.
+  smokerStatus.label: Do you smoke or use tobacco products?
+  smokerStatus.options.non_smoker: No, I do not
+  smokerStatus.options.occasional: Yes, occasionally
+  smokerStatus.options.regular: Yes, regularly
+  alcoholUse.label: Do you consume alcohol?
+  alcoholUse.options.none: Never
+  alcoholUse.options.social: Occasionally / Socially
+  alcoholUse.options.regular: Regularly
+  sumAssured.label: Requested Sum Assured (LKR)
+  sumAssured.placeholder: e.g. 10000000
+  sumAssured.description: Total life cover amount you are applying for.
+  policyTermYears.label: Policy Term (Years)
+  policyTermYears.placeholder: e.g. 20
+  policyTermYears.description: Number of years you want the cover to run.
+  premiumPaymentFrequency.label: Premium Payment Frequency
+  premiumPaymentFrequency.placeholder: Select frequency
+  premiumPaymentFrequency.options.monthly: Monthly
+  premiumPaymentFrequency.options.quarterly: Quarterly
+  premiumPaymentFrequency.options.semi_annual: Semi-Annual
+  premiumPaymentFrequency.options.annual: Annual
+  addCriticalIllnessRider.label: Add Critical Illness Rider
+  addCriticalIllnessRider.description: Provides additional payout on diagnosis of covered critical illnesses.
+  addAccidentalDeathRider.label: Add Accidental Death Benefit Rider
+  addAccidentalDeathRider.description: Additional benefit in the event of death due to accident.
+  hasExistingPolicies.label: Do you have existing life insurance policies?
+  hasExistingPolicies.options.no: No
+  hasExistingPolicies.options.yes: Yes
+  existingPolicyDetails.label: Existing Policy Details
+  existingPolicyDetails.placeholder: Company, policy number, sum assured, commencement date, etc.
+  existingPolicyDetails.description: Provide details of all existing life insurance policies.
+  beneficiaryName.label: Primary Beneficiary Name
+  beneficiaryName.placeholder: e.g. Perera X.Y.Z.
+  beneficiaryRelationship.label: Relationship to Beneficiary
+  beneficiaryRelationship.placeholder: Select relationship
+  beneficiaryRelationship.options.spouse: Spouse
+  beneficiaryRelationship.options.child: Child
+  beneficiaryRelationship.options.parent: Parent
+  beneficiaryRelationship.options.sibling: Sibling
+  beneficiaryRelationship.options.other: Other
+  idDocument.label: Upload ID Document
+  idDocument.description: Upload a clear scan/photo of your NIC or passport (PDF/JPG/PNG).
+  declarationAgreement.label: I declare that the information provided is true and complete.
+  declarationAgreement.description: You must agree before submitting the proposal.
+si:
+  formTitle: ජීවිත රක්ෂණ යෝජනා පත්‍රය
+  formDescription: විකල්ප අතිරේක ප්‍රතිලාභ සහ වාරසාධිකයින් නම් කිරීම සමඟ සම්පූර්ණ
+    ජීවිත රක්ෂණ ආවරණයක් සඳහා අයදුම් කරන්න.
+  h1.main_title: ජීවිත රක්ෂණ යෝජනා පත්‍රය
+  text.completion_notice: "**වැදගත්**: කරුණාකර * සලකුණු කර ඇති සියලුම අවශ්‍ය
+    ක්ෂේත්‍ර පුරවන්න. නිවැරදි නොවන තොරතුරු ඔබගේ ආවරණය සහ හිමිකම් සුදුසුකම්වලට
+    බලපෑම් කළ හැකිය."
+  text.overview_info: මෙම පෝරමය සම්පූර්ණ කිරීමට ආසන්න වශයෙන් මිනිත්තු 15-20 ක් ගත
+    වනු ඇත. කරුණාකර ඔබගේ **ජා.හැ./පාස්පෝට්** සහ **ආදායම් විස්තර** සූදානම් කරන්න.
+  card.overview: අයදුම්කරණයේ දළ විශ්ලේෂණය
+  h2.personal_information: පුද්ගලික තොරතුරු
+  h3.basic_details: මූලික විස්තර
+  h4.contact_info: සම්බන්ධතා තොරතුරු
+  h5.employment: රැකියාව සහ ආදායම
+  h2.health_information: සෞඛ්‍ය තොරතුරු
+  h2.coverage_details: ආවරණ විස්තර
+  h6.policy_config: පොලිසි වින්‍යාසය
+  card.riders: විකල්ප රයිඩර්
+  text.rider_info: "පහතින් අතිරේක ආවරණ විකල්ප තෝරන්න:"
+  h2.beneficiary_information: වාරසාධික තොරතුරු
+  h2.documents_declaration: ලේඛන සහ ප්‍රකාශනය
+  card.account: ගිණුම් සැකසීම (විකල්ප)
+  text.account_info: ඔබගේ අයදුම්කරණ තත්ත්වය නිරීක්ෂණය කිරීමට සහ ඔබගේ පොලිසිය
+    මාර්ගගතව කළමනාකරණය කිරීමට ගිණුමක් සාදන්න.
+  card.policy_start: පොලිසි ආරම්භක මනාප
+  reset.button: පෝරමය නැවත සැකසීම
+  submit.button: පෝරමය ඉදිරිපත් කරන්න
+  medicalConditions.label: සෞඛ්‍ය තත්ත්වයන් (දැනටමත් ඇති සියල්ල තෝරන්න)
+  medicalConditions.description: කරුණාකර ඔබට හඳුනාගෙන ඇති ඕනෑම සෞඛ්‍ය තත්ත්වයක් තෝරන්න.
+  medicalConditions.options.diabetes: දියවැඩියාව
+  medicalConditions.options.hypertension: අධි රුධිර පීඩනය
+  medicalConditions.options.heart_disease: හෘද රෝග
+  medicalConditions.options.asthma: ඇස්තමාව
+  medicalConditions.options.none: ඉහත කිසිවක් නැත
+ta:
+  formTitle: வாழ்க்கை காப்பீட்டு முன்மொழிவு படிவம்
+  formDescription: கூடுதல் ரைடர்களும் பயனாளி நியமனங்களும் உடன் முழுமையான வாழ்க்கை
+    காப்பீட்டு பாதுகாப்புக்கு விண்ணப்பிக்கவும்.
+  h1.main_title: வாழ்க்கை காப்பீட்டு முன்மொழிவு படிவம்
+  text.completion_notice: "**முக்கியம்**: தயவுசெய்து * குறிக்கப்பட்ட அனைத்து
+    தேவையான புலங்களையும் நிரப்பவும். துல்லியமற்ற தகவல்கள் உங்கள் பாதுகாப்பு
+    மற்றும் கோரிக்கை தகுதியை பாதிக்கலாம்."
+  text.overview_info: இந்த படிவத்தை நிரப்ப சுமார் 15-20 நிமிடங்கள் ஆகும்.
+    தயவுசெய்து உங்கள் **தே.அ/பாஸ்போர்ட்** மற்றும் **வருமான விவரங்கள்** தயாராக
+    வைக்கவும்.
+  card.overview: விண்ணப்ப கண்ணோட்டம்
+  h2.personal_information: தனிப்பட்ட தகவல்
+  h3.basic_details: அடிப்படை விவரங்கள்
+  h4.contact_info: தொடர்பு தகவல்
+  h5.employment: வேலைவாய்ப்பு மற்றும் வருமானம்
+  h2.health_information: சுகாதார தகவல்
+  h2.coverage_details: பாதுகாப்பு விவரங்கள்
+  h6.policy_config: காப்பீட்டு கட்டமைப்பு
+  card.riders: விருப்ப ரைடர்கள்
+  text.rider_info: "கீழே கூடுதல் பாதுகாப்பு விருப்பங்களைத் தேர்ந்தெடுக்கவும்:"
+  h2.beneficiary_information: பயனாளி தகவல்
+  h2.documents_declaration: ஆவணங்கள் மற்றும் அறிவிப்பு
+  card.account: கணக்கு அமைப்பு (விருப்பமானது)
+  text.account_info: உங்கள் விண்ணப்ப நிலையைக் கண்காணிக்கவும் உங்கள் காப்பீட்டை
+    ஆன்லைனில் நிர்வகிக்கவும் ஒரு கணக்கை உருவாக்கவும்.
+  card.policy_start: காப்பீட்டு தொடக்க விருப்பங்கள்
+  reset.button: படிவத்தை மீட்டமை
+  submit.button: படிவத்தை சமர்ப்பிக்கவும்
+  medicalConditions.label: மருத்துவ நிலைமைகள் (இருப்பவை அனைத்தையும் தேர்ந்தெடுக்கவும்)
+  medicalConditions.description: தயவுசெய்து உங்களுக்கு கண்டறியப்பட்ட எந்த மருத்துவ
+    நிலைமைகளையும் தேர்ந்தெடுக்கவும்.
+  medicalConditions.options.diabetes: நீரிழிவு
+  medicalConditions.options.hypertension: உயர் இரத்த அழுத்தம்
+  medicalConditions.options.heart_disease: இதய நோய்
+  medicalConditions.options.asthma: ஆஸ்துமா
+  medicalConditions.options.none: மேலே எதுவும் இல்லை

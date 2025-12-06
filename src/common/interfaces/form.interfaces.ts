@@ -11,21 +11,58 @@ import {
 
 export interface IForm {
   metadata: IFormMetadata;
-  prefilledFields?: string[]; // field keys that are prefilled using OTP service
+  otp?: IFormOtp;
   submission: IFormSubmission;
   fields: Record<string, IFormField>;
   layout: IFormLayoutItem[];
   localization: Record<Locale, Record<string, string>>; // based on json keys (eg: "fields.name.label" -> "Name")
 }
 
-export interface IOnFormOpen {
-  action: "verify-user";
+// OTP Header configuration for API requests
+export interface IFormOtpHeader {
+  name: string;
+  value: string;
+}
+
+// OTP Query parameter configuration for API requests
+export interface IFormOtpQueryParam {
+  name: string;
+  value: string;
+}
+
+// Variable mapping from API response to form variables
+export interface IFormOtpVariableMapping {
+  path: string; // Path expression e.g., "[0].clientName", "data.user.name"
+  to: string; // Target variable name
+  required: boolean; // If true, verification fails if this field is missing
+}
+
+// OTP verification API request configuration
+export interface IFormOtpVerification {
   method: HttpMethod;
+  baseUrl: string;
   endpoint: string;
-  requiresAccessToken: boolean;
-  parameters: Record<string, string>;
-  body: Record<string, unknown>;
-  response: Record<string, string>;
+  headers: IFormOtpHeader[];
+  queryParams: IFormOtpQueryParam[];
+  response: {
+    variableMapping: IFormOtpVariableMapping[];
+  };
+}
+
+// OTP dialog UI configuration
+export interface IFormOtpDialog {
+  title?: string;
+  content?: string;
+  button?: string;
+  inputLabel?: string;
+  inputPlaceholder?: string;
+}
+
+// Main OTP configuration interface
+export interface IFormOtp {
+  enabled: boolean;
+  dialog?: IFormOtpDialog;
+  verification: IFormOtpVerification;
 }
 
 export interface IFormMetadata {
@@ -35,7 +72,7 @@ export interface IFormMetadata {
   showFormHeader: boolean; // default: true (show form header with title and description)
   availableLocales: Locale[];
   defaultLocale?: Locale; // if left blank, en is used
-  otp: boolean; // whether OTP is required for the form, if enabled form can use $otp for its onFormOpen, fields as a variable.
+  searchParamsVariables?: Record<string, string>; // variables to be used in the form (eg: "cs": "contract_sequence", "id": "card_id")
 }
 
 export interface IFormSubmission {

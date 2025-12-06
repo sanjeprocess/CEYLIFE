@@ -1,0 +1,124 @@
+# life-insurance form layout
+
+- h1: Life Insurance Proposal Form
+  key: h1.main_title
+  align: center
+- text: "**Important**: Please complete all required fields marked with *.
+    Inaccurate information may affect your cover and claim eligibility."
+  key: text.completion_notice
+  align: center
+  margin: 20px 0
+- spacer: 10
+- card: Application Overview
+  key: card.overview
+  items:
+    - text: This form will take approximately 15-20 minutes to complete. Please have
+        your **NIC/Passport** and **income details** ready.
+      key: text.overview_info
+- divider: true
+- h2: Personal Information
+  key: h2.personal_information
+- h3: Basic Details
+  key: h3.basic_details
+- row: 3
+  columns:
+    - field: fullName
+      colspan: 2
+    - field: dob
+      colspan: 1
+- row: 2
+  columns:
+    - field: gender
+      colspan: 1
+    - field: maritalStatus
+      colspan: 1
+- field: nationalId
+- h4: Contact Information
+  key: h4.contact_info
+- row: 2
+  columns:
+    - field: mobile
+      colspan: 1
+    - field: email
+      colspan: 1
+- field: website
+- field: address
+- h5: Employment & Income
+  key: h5.employment
+- row: 2
+  columns:
+    - field: occupation
+      colspan: 1
+    - field: annualIncome
+      colspan: 1
+- divider: true
+- h2: Health Information
+  key: h2.health_information
+- field: smokerStatus
+- field: alcoholUse
+- field: medicalConditions
+- divider: true
+- h2: Coverage Details
+  key: h2.coverage_details
+- h6: Policy Configuration
+  key: h6.policy_config
+- row: 3
+  columns:
+    - field: sumAssured
+      colspan: 1
+    - field: policyTermYears
+      colspan: 1
+    - field: premiumPaymentFrequency
+      colspan: 1
+- card: Optional Riders
+  key: card.riders
+  items:
+    - text: "Select additional coverage options below:"
+      key: text.rider_info
+    - field: addCriticalIllnessRider
+    - field: addAccidentalDeathRider
+- field: hasExistingPolicies
+- divider: true
+- h2: Beneficiary Information
+  key: h2.beneficiary_information
+- row: 2
+  columns:
+    - field: beneficiaryName
+      colspan: 1
+    - field: beneficiaryRelationship
+      colspan: 1
+- divider: true
+- h2: Documents & Declaration
+  key: h2.documents_declaration
+- field: idDocument
+- spacer: 20
+- card: Account Setup (Optional)
+  key: card.account
+  items:
+    - text: Create an account to track your application status and manage your policy
+        online.
+      key: text.account_info
+    - field: accountPassword
+- card: Policy Start Preferences
+  key: card.policy_start
+  items:
+    - row: 2
+      columns:
+        - field: appointmentTime
+          colspan: 1
+        - field: policyStartDateTime
+          colspan: 1
+- spacer: 20
+- field: declarationAgreement
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline

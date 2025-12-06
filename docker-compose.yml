@@ -5,11 +5,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
-    environment:
-      - NODE_ENV=production
-    networks:
-      - nginx-net
-
-networks:
-  nginx-net:
-    external: true
+    env_file:
+      - .env

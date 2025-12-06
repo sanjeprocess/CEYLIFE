@@ -1,0 +1,9 @@
+# diabetic-questionnaire form metadata
+
+formVersion: 1
+formTitle: DIABETIC QUESTIONNAIRE
+formDescription: ""
+showFormHeader: true
+availableLocales:
+  - en
+otpRequired: true

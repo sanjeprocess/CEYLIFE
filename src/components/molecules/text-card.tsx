@@ -3,6 +3,7 @@ import {
   IFormLayoutItem,
 } from "@/common/interfaces/form.interfaces";
 import { useTranslation } from "@/hooks/useTranslation.hook";
+import { useVariableReplacement } from "@/hooks/useVariableReplacement.hook";
 import { mdToHtml, styles } from "@/services/render.service";
 
 import { LayoutRenderer } from "./layout-renderer";
@@ -24,11 +25,14 @@ export function TextCard({
   const translate = useTranslation();
   const cardTitleValueStr =
     typeof cardTitleValue === "string" ? cardTitleValue : "";
-  const cardTitle = cardTitleValueStr
+  const translatedTitle = cardTitleValueStr
     ? translationKey
       ? translate(translationKey, cardTitleValueStr)
       : cardTitleValueStr
     : "";
+
+  // Apply variable replacement
+  const cardTitle = useVariableReplacement(translatedTitle);
   const cardTitleHtml = cardTitle ? mdToHtml(cardTitle) : "";
 
   return (

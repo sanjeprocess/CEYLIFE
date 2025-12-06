@@ -18,7 +18,7 @@ export function LocaleSelector() {
     useLocalizationStore();
   return (
     <Select value={currentLocale} onValueChange={setCurrentLocale}>
-      <SelectTrigger className="w-[100px]" size="sm">
+      <SelectTrigger className="pointer-events-auto! w-[100px]" size="sm">
         <SelectValue placeholder="Select a language" />
       </SelectTrigger>
       <SelectContent>

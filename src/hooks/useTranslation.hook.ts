@@ -1,17 +1,25 @@
 import { useLocalizationStore } from "@/stores/localization.store";
 
+import { useVariableReplacement } from "./useVariableReplacement.hook";
+
 /**
- * Hook for translating form fields and metadata
- * @returns A function that translates a key with fallback to original value
+ * Hook for translating form fields and metadata with automatic variable replacement
+ * @returns A function that translates a key with fallback to original value and applies variable replacement
  */
 export function useTranslation() {
   const { currentLocale, localization } = useLocalizationStore();
+  const applyVariableReplacement = useVariableReplacement;
 
   return (key: string, originalValue?: string): string => {
+    if (!localization) {
+      const fallback = originalValue ?? key;
+      return applyVariableReplacement(fallback);
+    }
     const localeTranslations = localization[currentLocale];
 
     if (!localeTranslations) {
-      return originalValue ?? key;
+      const fallback = originalValue ?? key;
+      return applyVariableReplacement(fallback);
     }
 
     const translatedValue = localeTranslations[key];
@@ -22,9 +30,10 @@ export function useTranslation() {
       translatedValue !== null &&
       translatedValue !== ""
     ) {
-      return translatedValue;
+      return applyVariableReplacement(translatedValue);
     }
 
-    return originalValue ?? key;
+    const fallback = originalValue ?? key;
+    return applyVariableReplacement(fallback);
   };
 }
