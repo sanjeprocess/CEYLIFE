@@ -1,0 +1,18 @@
+# dgh form layout
+
+- h1: Personal Information
+- field: policyNumber
+- field: fullName
+- field: address
+- field: telephoneNumber
+- field: mobileNumber
+- field: emailAddress
+- field: occupation
+- field: natureOfOccupation
+- field: annualIncome
+- row: 1
+  columns:
+    - field: applyTo
+    - field: applyToBenifit
+- spacer: 20
+- submit: Submit

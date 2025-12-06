@@ -1,0 +1,5 @@
+# dgh form submission
+
+endpoint: /api/forms/dgh
+method: POST
+requiresAccessToken: true
