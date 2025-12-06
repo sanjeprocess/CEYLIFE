@@ -1,0 +1,9 @@
+# dgh form metadata
+
+formVersion: 1
+formTitle: Dgh
+formDescription: Form description for Dgh
+availableLocales:
+  - en
+defaultLocale: en
+otpRequired: false
