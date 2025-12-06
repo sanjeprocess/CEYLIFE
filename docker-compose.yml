@@ -7,9 +7,3 @@ services:
       - 3000:3000
     env_file:
       - .env
-    networks:
-      - nginx-net
-
-networks:
-  nginx-net:
-    external: true
