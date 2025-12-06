@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "formVersion": 1,
+    "formTitle": "Dgh",
+    "formDescription": "Form description for Dgh",
+    "availableLocales": [
+      "en"
+    ],
+    "defaultLocale": "en",
+    "otp": false
+  },
+  "submission": {
+    "endpoint": "/api/forms/dgh",
+    "method": "POST",
+    "requiresAccessToken": true
+  },
+  "fields": {
+    "policyNumber": {
+      "type": "number",
+      "label": "Policy Number",
+      "required": true,
+      "placeholder": "Enter policy number"
+    },
+    "fullName": {
+      "type": "text",
+      "label": "Full Name",
+      "required": true,
+      "placeholder": "Enter full name"
+    },
+    "address": {
+      "type": "text",
+      "label": "Address",
+      "required": true,
+      "placeholder": "Enter address"
+    },
+    "telephoneNumber": {
+      "type": "tel",
+      "label": "Telephone Number",
+      "required": false,
+      "placeholder": "Enter telephone number"
+    },
+    "mobileNumber": {
+      "type": "tel",
+      "label": "Mobile Number",
+      "required": true,
+      "placeholder": "Enter mobile number"
+    },
+    "emailAddress": {
+      "type": "email",
+      "label": "Email Address",
+      "required": true,
+      "placeholder": "Enter email address"
+    },
+    "occupation": {
+      "type": "text",
+      "label": "Occupation/Business/Job Title",
+      "required": true,
+      "placeholder": "Enter occupation"
+    },
+    "natureOfOccupation": {
+      "type": "text",
+      "label": "Nature of Occupation/Business/Job",
+      "required": true,
+      "placeholder": "Enter nature of occupation"
+    },
+    "annualIncome": {
+      "type": "number",
+      "label": "Annual Income",
+      "required": true,
+      "placeholder": "Enter annual income"
+    },
+    "applyTo": {
+      "type": "radio-group",
+      "label": "I hereby apply to:",
+      "required": false,
+      "placeholder": "Enter apply to",
+      "options": {
+        "revive the above certificate under special revival": "revive the above certificate under special revival",
+        "normal revival": "normal revival"
+      }
+    },
+    "applyToBenifit": {
+      "type": "checkbox",
+      "label": "benefit",
+      "required": false,
+      "dependencies": {
+        "include": {
+          "type": "textarea",
+          "label": "Include",
+          "required": false,
+          "placeholder": "Enter include details",
+          "conditionalOptions": {
+            "operator": "eq",
+            "value": "true"
+          }
+        }
+      }
+    }
+  },
+  "layout": [
+    {
+      "h1": "Personal Information"
+    },
+    {
+      "field": "policyNumber"
+    },
+    {
+      "field": "fullName"
+    },
+    {
+      "field": "address"
+    },
+    {
+      "field": "telephoneNumber"
+    },
+    {
+      "field": "mobileNumber"
+    },
+    {
+      "field": "emailAddress"
+    },
+    {
+      "field": "occupation"
+    },
+    {
+      "field": "natureOfOccupation"
+    },
+    {
+      "field": "annualIncome"
+    },
+    {
+      "row": 1,
+      "columns": [
+        {
+          "field": "applyTo"
+        },
+        {
+          "field": "applyToBenifit"
+        }
+      ]
+    },
+    {
+      "spacer": 20
+    },
+    {
+      "submit": "Submit"
+    }
+  ],
+  "localization": {
+    "en": {},
+    "si": {},
+    "ta": {}
+  }
+}
