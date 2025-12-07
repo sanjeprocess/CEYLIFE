@@ -1,0 +1,31 @@
+# threat-clause form fields
+# Types: text, number, email, password, date, time, datetime-local, checkbox, radio-group, checkbox-group, select, textarea, file, url, tel
+
+proposerName:
+  type: text
+  label: Proposer Name
+  required: true
+  placeholder: Enter Proposer Name
+
+proposerContact:
+  type: tel
+  label: Contact Number
+  required: true
+  placeholder: Enter Contact Number
+
+proposerNic:
+  type: text
+  label: NIC
+  required: true
+  placeholder: Enter NIC
+
+date:
+  type: date
+  label: Date
+  required: true
+  defaultValue: "{{$today}}"
+
+signature:
+  type: file
+  label: Signature of Life Assured
+  required: true
