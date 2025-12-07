@@ -1,0 +1,5 @@
+# dgh-hsp form submission
+
+endpoint: /api/forms/dgh-hsp
+method: POST
+requiresAccessToken: true

@@ -1,0 +1,13 @@
+# family-takaful form metadata
+
+formVersion: 1
+formTitle: DECLARATION OF GOOD HEALTH – FAMILY TAKAFUL
+formDescription: (ALL ANSWERS TO BE FILLED LEGIBLY, ANSWERS MUST BE GIVEN IN WORDS. IF YOU ARE IN DOUBT AS TO WHETHER ANY FACTS WOULD BE MATERIAL, IT IS IN YOUR INTEREST TO DECLARE THEM)
+showFormHeader: true
+availableLocales:
+  - en
+defaultLocale: en
+searchParamsVariables:
+  cs: contract_sequence
+  id: card_id
+

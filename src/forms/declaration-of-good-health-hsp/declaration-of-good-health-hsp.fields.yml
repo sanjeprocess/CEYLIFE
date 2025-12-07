@@ -1,0 +1,477 @@
+# dgh-hsp form fields
+
+policyNo:
+  type: text
+  label: Policy No
+  required: true
+  placeholder: Enter policy number
+  defaultValue: "{{policy_no}}"
+
+# Section 1: Life Assured
+fullName:
+  type: text
+  label: 1.1 Full Name
+  required: true
+  placeholder: Enter full name
+  defaultValue: "{{client_name}}"
+
+gender:
+  type: radio-group
+  label: Gender
+  required: true
+  options:
+    male: Male
+    female: Female
+    other: Other / Prefer not to say
+
+currentAddress:
+  type: text
+  label: 1.2 Current Address
+  required: true
+  placeholder: Enter current address
+
+country:
+  type: text
+  label: Country
+  required: true
+  placeholder: Enter country
+
+city:
+  type: text
+  label: City
+  required: true
+  placeholder: Enter city
+
+emailAddress:
+  type: email
+  label: Email Address
+  required: false
+  placeholder: e.g., name@example.com
+
+telephoneFixed:
+  type: tel
+  label: Telephone - Fixed line
+  required: false
+  placeholder: Enter telephone number
+
+mobile:
+  type: tel
+  label: Mobile
+  required: true
+  placeholder: Enter mobile number
+
+dateOfBirth:
+  type: date
+  label: 1.3 Date of Birth
+  required: true
+
+height:
+  type: text
+  label: 1.4 Height
+  required: true
+  placeholder: Enter height
+
+weight:
+  type: text
+  label: Weight
+  required: true
+  placeholder: Enter weight
+
+occupation:
+  type: text
+  label: 1.5 Occupation / Job Title / Business and its Nature
+  required: true
+  placeholder: Enter occupation/job title/business
+
+employerName:
+  type: text
+  label: Name of the Employee
+  required: true
+  placeholder: Enter employer name
+
+annualIncome:
+  type: number
+  label: 1.6 Annual Income – Rs
+  required: true
+  placeholder: Enter annual income
+
+# Section 2: Your Health Condition
+healthQ2_1:
+  type: radio-group
+  label: 2.1 Diabetes
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_1Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_2:
+  type: radio-group
+  label: 2.2 High blood pressure(Hypertension)
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_2Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_3:
+  type: radio-group
+  label: 2.3 Elevated cholesterol
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_3Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_4:
+  type: radio-group
+  label: "2.4 Any Disease of the Cardio Vascular System e.g.: Heart disease, Shortness of breath, Chest pain, Hole in the heart (ASD, VSD)"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_4Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_5:
+  type: radio-group
+  label: "2.5 Cyst, Nodule, Tumour, growth or any type of cancer"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_5Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_6:
+  type: radio-group
+  label: "2.6 Disorders of the blood such as Aneamia, Leukaemia, Thalassaemia, etc."
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_6Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_7:
+  type: radio-group
+  label: "2.7 Any disease of the brain or nervous system e.g.: Epilepsy or fits, Convulsion, Paralysis, Stroke, etc."
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_7Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_8:
+  type: radio-group
+  label: "2.8 Any disease of the lungs e.g.: frequent Cough, Asthma, Bronchitis, spitting of blood, Tuberculosis, etc."
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_8Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_9:
+  type: radio-group
+  label: "2.9 Any diseases of the Gastrointestinal or Digestive system e.g.: Gastric ulcer, Chronic indigestion / Diarrhea / Abdominal pain, Piles Fistula, Rupture, Hernia or Liver disease, Jaundice, Hepatitis or Gallbladder disease, etc."
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_9Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_10:
+  type: radio-group
+  label: "2.10 Any disorder of the Genito-urinary system – e.g.: fibroids, ovarian cyst, endometriosis, heavy or irregular menstruation, prostate disorder, Kidney / Bladder stones, Kidney failure or any other urinary disease, etc."
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_10Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_11:
+  type: radio-group
+  label: "2.11 Any disease of the eyes, ears, nose or throat -e.g.: Cataract, Goiter, etc."
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_11Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_12:
+  type: radio-group
+  label: "2.12 Any disease / disorder of the Spine, Bones, Joints or Gout, Rheumatism / Rheumatic fever, Arthritis"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_12Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_13:
+  type: radio-group
+  label: "2.13 Any sexually transmitted disease e.g.: Gonorrhoea, Syphilis, AIDS or any Genital sore or discharge."
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_13Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_14:
+  type: radio-group
+  label: "2.14 Chronic or Congenital skin conditions"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_14Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_15:
+  type: radio-group
+  label: "2.15 Any Mental impairments, disorder or illness"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_15Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_16:
+  type: radio-group
+  label: "2.16 Any Congenital disorders, deformities or anomalies"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_16Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_17:
+  type: radio-group
+  label: "2.17 A covid-19 infection or its complications"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_17Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2_18:
+  type: radio-group
+  label: "2.18 Any other disease not mentioned herein"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2_18Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+# Section 3: Other Information
+healthQ3_1:
+  type: radio-group
+  label: "3.1 Have you consulted a physician / surgeon for any reason including routine examinations or investigations and blood tests in the past 5 years?"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ3_1Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ3_2:
+  type: radio-group
+  label: "3.2 Do you consume liquor/drugs or smoke cigarettes? (if so, please state the frequency and quantity)"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ3_2Details:
+      type: textarea
+      label: Please state the frequency and quantity
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ3_3:
+  type: radio-group
+  label: "3.3 Has any of your proposal for insurance ever been declined or postponed or been accepted with an extra premium."
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ3_3Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ3_4:
+  type: radio-group
+  label: "3.4 Do you or your relatives have or had any kind of threat on your/their lives or is there any criminal case against you?"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ3_4Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ3_5:
+  type: radio-group
+  label: "3.5 Are you a politically exposed person (PEP) or related to a PEP? (PEP-Politicians, Senior Government Officers, Judges and judicial Officers, Commissioned Officers of Armed forces / police, Members of Commissions / Director Boards / University Councils, Officers of International Organizations.)"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ3_5Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+declarationDate:
+  type: date
+  label: Date
+  required: true
+  defaultValue: "{{$today}}"
+
+signature:
+  type: file
+  label: Signature of Life Assured
+  required: true

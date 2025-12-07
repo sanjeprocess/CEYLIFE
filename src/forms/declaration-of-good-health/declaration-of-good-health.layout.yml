@@ -1,0 +1,66 @@
+# dgh form layout
+
+- h1: Personal Information
+- field: policyNumber
+- field: fullName
+- field: address
+- row: 2
+  columns:
+    - field: telephoneNumber
+    - field: mobileNumber
+- field: emailAddress
+- field: occupation
+- field: natureOfOccupation
+- field: annualIncome
+- row: 1
+  columns:
+    - field: applyTo
+    - field: applyToBenifit
+- card: Your Health/Other Details
+  items:
+    - field: healthQ1
+    - field: healthQ1Details
+    - field: healthQ2
+    - field: healthQ2Details
+    - field: healthQ3
+    - field: healthQ3Details
+    - field: healthQ4
+    - field: healthQ4Details
+    - field: healthQ5
+    - field: healthQ5Details
+    - field: healthQ6
+    - field: healthQ6Details
+    - field: healthQ7
+    - field: liquorUsage
+    - field: smokeUsage
+    - field: drugsUsage
+    - field: healthQ8
+    - field: healthQ8Details
+    - field: healthQ9
+    - field: confinementDate
+    - field: healthQ10
+    - field: healthQ10Details
+- card: DECLARATION
+  align: center
+  items:
+    - text: "I dedicate that the foregoing statements and answers given by me are true and I have not withheld any information. I do hereby agree that this statement and this declaration shall form a part of the contract of insurance and if any untrue averment be contained, the said contract will be null and void."
+    - text: "I hereby give my consent to Ceylinco Life Insurance Limited to verify (Online/ Manual) my National Identity Card particulars with the department of registration of Persons."
+    - text: "I agree and consent to Ceylinco Life Insurance Ltd as well as their respective representatives, agents, the Companies' authorised service providers and relevant third parties whether within or outside Sri Lanka for collecting, using and/or disclosing my personal data for purpose reasonably required by the companies to evaluate my proposal and to provide the products or services which I am applying for."
+- row: 2
+  columns:
+    - field: submittedDate
+    - field: signature
+- spacer: 20
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline
+

@@ -1,0 +1,5 @@
+# health-support-benefit form submission
+
+endpoint: /api/forms/health-support-benefit
+method: POST
+requiresAccessToken: true

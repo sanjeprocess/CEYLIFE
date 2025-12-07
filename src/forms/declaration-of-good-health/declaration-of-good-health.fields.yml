@@ -1,0 +1,255 @@
+# dgh form fields
+
+policyNumber:
+  type: number
+  label: Policy Number
+  required: true
+  placeholder: Enter policy number
+fullName:
+  type: text
+  label: Full Name
+  required: true
+  placeholder: Enter full name
+address:
+  type: text
+  label: Address
+  required: true
+  placeholder: Enter address
+telephoneNumber:
+  type: tel
+  label: Telephone Number
+  required: false
+  placeholder: Enter telephone number
+mobileNumber:
+  type: tel
+  label: Mobile Number
+  required: true
+  placeholder: Enter mobile number
+emailAddress:
+  type: email
+  label: Email Address
+  required: true
+  placeholder: Enter email address
+occupation:
+  type: text
+  label: Occupation/Business/Job Title
+  required: true
+  placeholder: Enter occupation
+natureOfOccupation:
+  type: text
+  label: Nature of Occupation/Business/Job
+  required: true
+  placeholder: Enter nature of occupation
+annualIncome:
+  type: number
+  label: Annual Income
+  required: true
+  placeholder: Enter annual income
+applyTo:
+  type: radio-group
+  label: "I hereby apply to:"
+  required: false
+  placeholder: Enter apply to
+  options:
+    revive the above certificate under special revival: revive the above certificate under special revival
+    normal revival: normal revival
+applyToBenifit:
+  type: checkbox
+  label: benefit
+  required: false
+  dependencies:
+    include:
+      type: textarea
+      label: Include
+      required: false
+      placeholder: Enter include details
+      conditionalOptions:
+        operator: eq
+        value: "true"
+
+healthQ1:
+  type: radio-group
+  label: "1. Do you suffer or have you suffered from diabetes, heart disease, high blood pressure, elevated cholesterol, kidney disease, respiratory disease, liver disease, stroke, cancer?"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ1Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ2:
+  type: radio-group
+  label: "2. Do you suffer or have you suffered from any other disease or undergone any medical investigation or surgery?"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ2Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ3:
+  type: radio-group
+  label: "3. Have you consulted a physician for any reason, including routine examination and blood tests during last past 5 years"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ3Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ4:
+  type: radio-group
+  label: "4. Do you suffer from any mental impairment or physical deformity?"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ4Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ5:
+  type: radio-group
+  label: "5. Have you ever hospitalized for COVID-19 infections or its complications or do you have any ongoing to COVID-19 infection related complications"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ5Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ6:
+  type: radio-group
+  label: "6. Are you a Politically Exposed Person (PEP*) or related to a PEP? (*PEP)-Politicians, Senior Government Officers, Judges and judicial Officers, Commissioned Officers of armed forces / police, Members of Commissions/Director Boards/University Councils, Officers of International Organizations.)"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ6Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ7:
+  type: radio-group
+  label: "7. Do you consume liquor/drugs or smoke cigarettes? (If so, please state the frequency and quantity)"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    liquorUsage:
+      type: text
+      label: Liquor – quantity/frequency
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+    smokeUsage:
+      type: text
+      label: Smoke – quantity/frequency
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+    drugsUsage:
+      type: text
+      label: Drugs – quantity/frequency
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ8:
+  type: radio-group
+  label: "8. Do you or your relatives have or had any kind of threat on your/their lives or is there any criminal case against you?"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ8Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ9:
+  type: radio-group
+  label: "9. For female lives only: Are you pregnant? If so, when is the confinement?"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    confinementDate:
+      type: date
+      label: Confinement Date
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+healthQ10:
+  type: radio-group
+  label: "10. Had any proposal for life or health assurance ever been declined or postponed or been accepted with any extra premium?"
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    healthQ10Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+submittedDate:
+  type: date
+  label: Submitted Date
+  required: true
+  defaultValue: "{{$today}}"
+  readOnly: true
+
+signature:
+  type: file
+  label: Signature of the life Assured *
+  required: true
+
