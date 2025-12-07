@@ -1,0 +1,5 @@
+# family-takaful form submission
+
+endpoint: /api/forms/family-takaful
+method: POST
+requiresAccessToken: true
