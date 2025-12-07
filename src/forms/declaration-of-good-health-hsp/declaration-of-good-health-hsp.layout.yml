@@ -1,0 +1,107 @@
+# dgh-hsp form layout
+
+- field: policyNo
+- card: Important <br><br> Please make full disclosure of your health, occupation, habits and pursuits. Non-disclosure or misrepresentation will render your policy NULL and VOID. If you are in doubt as to whether any facts would be material, it is in your interest to disclose them.
+
+- card: 1. Life Assured
+  items:
+    - field: fullName
+    - field: gender
+    - field: currentAddress
+    - row: 2
+      columns:
+        - field: country
+        - field: city
+    - field: emailAddress
+    - row: 2
+      columns:
+        - field: telephoneFixed
+        - field: mobile
+    - field: dateOfBirth
+    - row: 2
+      columns:
+        - field: height
+        - field: weight
+    - field: occupation
+    - field: employerName
+    - field: annualIncome
+
+- card: 2. Your Health Condition
+  items:
+    - text: "Are you at present suffering from any of the following disorders/diseases or have you suffered from the following disorders/diseases during the last 10 years?"
+    - field: healthQ2_1
+    - field: healthQ2_1Details
+    - field: healthQ2_2
+    - field: healthQ2_2Details
+    - field: healthQ2_3
+    - field: healthQ2_3Details
+    - field: healthQ2_4
+    - field: healthQ2_4Details
+    - field: healthQ2_5
+    - field: healthQ2_5Details
+    - field: healthQ2_6
+    - field: healthQ2_6Details
+    - field: healthQ2_7
+    - field: healthQ2_7Details
+    - field: healthQ2_8
+    - field: healthQ2_8Details
+    - field: healthQ2_9
+    - field: healthQ2_9Details
+    - field: healthQ2_10
+    - field: healthQ2_10Details
+    - field: healthQ2_11
+    - field: healthQ2_11Details
+    - field: healthQ2_12
+    - field: healthQ2_12Details
+    - field: healthQ2_13
+    - field: healthQ2_13Details
+    - field: healthQ2_14
+    - field: healthQ2_14Details
+    - field: healthQ2_15
+    - field: healthQ2_15Details
+    - field: healthQ2_16
+    - field: healthQ2_16Details
+    - field: healthQ2_17
+    - field: healthQ2_17Details
+    - field: healthQ2_18
+    - field: healthQ2_18Details
+
+- card: Other Information
+  items:
+    - field: healthQ3_1
+    - field: healthQ3_1Details
+    - field: healthQ3_2
+    - field: healthQ3_2Details
+    - field: healthQ3_3
+    - field: healthQ3_3Details
+    - field: healthQ3_4
+    - field: healthQ3_4Details
+    - field: healthQ3_5
+    - field: healthQ3_5Details
+
+- card: DECLARATION
+  align: center
+  items:
+    - text: "I declare that the foregoing statements and answers given by me are true and accurate. I agree that these statements shall be the basis of the insurance policy between myself and Ceylinco Life Insurance Limited. Ceylinco Life Insurance Limited shall not be liable for any claims on account of illness or injury, the cause of which was known prior to approval of my request for this assurance."
+    - text: "I authorise any representative or a medical officer of Ceylinco Life Insurance Limited to peruse or obtain the Bed Head Ticket (BHT) or any other clinical notes from any Government / Private Hospital, Clinic, Nursing home, Asylum or sanatorium and authorise to obtain information from any other insurer."
+    - text: "I hereby give my consent to Ceylinco Life Insurance Limited to verify (Online / Manual) my National Identity Card particulars with the department of Registration of Persons."
+    - text: "I agree and consent to Ceylinco Life Insurance Limited as well as their respective representatives, agents, the company's authorized service providers and relevant third parties whether within or outside Sri Lanka for collecting, using and / or disclosing my personal data for purposes reasonably required by the company to evaluate my proposal and provide the products or services which I am applying for."
+
+- row: 2
+  columns:
+    - field: declarationDate
+    - field: signature
+
+- spacer: 20
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline

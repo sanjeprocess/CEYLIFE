@@ -1,0 +1,13 @@
+# dgh-hsp form metadata
+
+formVersion: 1
+formTitle: DECLARATION OF GOOD HEALTH 
+formDescription: (HSP/Customers living abroad)
+showFormHeader: true
+availableLocales:
+  - en
+defaultLocale: en
+searchParamsVariables:
+  cs: contract_sequence
+  id: card_id
+  policy: policy_no
