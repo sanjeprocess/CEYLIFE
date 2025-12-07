@@ -4,8 +4,10 @@
 - field: policyNumber
 - field: fullName
 - field: address
-- field: telephoneNumber
-- field: mobileNumber
+- row: 2
+  columns:
+    - field: telephoneNumber
+    - field: mobileNumber
 - field: emailAddress
 - field: occupation
 - field: natureOfOccupation
@@ -49,4 +51,16 @@
     - field: submittedDate
     - field: signature
 - spacer: 20
-- submit: Submit
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline
+
