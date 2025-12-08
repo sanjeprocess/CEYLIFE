@@ -1,0 +1,9 @@
+# declaration-for-cash form metadata
+
+formVersion: 1
+formTitle: DECLARATION FOR CEYLINCO LIFE HOSPITAL CASH / CEYLINCO LIFE MAJOR SURGERY / CEYLINCO LIFE FAMILY DIGASIRI / CEYLINCO LIFE HEALTH SUPPORT PLUS BENEFIT/S
+formDescription: Form description for Declaration For Cash
+showFormHeader: true
+availableLocales:
+  - en
+defaultLocale: en
