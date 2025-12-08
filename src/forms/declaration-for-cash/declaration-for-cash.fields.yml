@@ -411,7 +411,7 @@ onThis:
   required: false
 
 dayOf:
-  type: textarea
+  type: text
   label: ""
   placeholder: ""
   required: false
@@ -435,13 +435,13 @@ mothersSignature:
   required: false
 
 fathersNic:
-  type: textarea
+  type: text
   label: ""
   placeholder: "Fathers NIC"
   required: false
 
 mothersNic:
-  type: textarea
+  type: text
   label: ""
   placeholder: "Mothers NIC"
   required: false
@@ -453,13 +453,13 @@ witness1Signature:
   required: false
 
 witness1Name:
-  type: textarea
+  type: text
   label: ""
   placeholder: "Witness 1 Name"
   required: false
 
 witness1Address:
-  type: textarea
+  type: text
   label: ""
   placeholder: "Witness 1 Address"
   required: false
@@ -477,19 +477,19 @@ witness2Signature:
   required: false
 
 witness2Name:
-  type: textarea
+  type: text
   label: ""
   placeholder: "Witness 2 Name"
   required: false
 
 witness2Address:
-  type: textarea
+  type: text
   label: ""
   placeholder: "Witness 2 Address"
   required: false
 
 witness2CodeNo:
-  type: textarea
+  type: text
   label: ""
   placeholder: "Witness 2 Code Number"
   required: false
