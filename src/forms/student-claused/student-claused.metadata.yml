@@ -1,0 +1,13 @@
+# student-claused form metadata
+
+formVersion: 1
+formTitle: Student Claused
+formDescription: Form description for Student Claused
+showFormHeader: true
+availableLocales:
+  - en
+defaultLocale: en
+searchParamsVariables:
+  cs: contract_sequence
+  id: card_id
+  policyNo: policy_no

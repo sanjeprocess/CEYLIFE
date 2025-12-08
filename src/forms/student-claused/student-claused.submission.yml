@@ -1,0 +1,5 @@
+# student-claused form submission
+
+endpoint: /api/forms/student-claused
+method: POST
+requiresAccessToken: true

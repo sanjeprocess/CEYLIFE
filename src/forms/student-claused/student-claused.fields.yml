@@ -1,0 +1,38 @@
+# student-claused form fields
+# Types: text, number, email, password, date, time, datetime-local, checkbox, radio-group, checkbox-group, select, textarea, file, url, tel
+
+proposerName:
+  type: text
+  label: "Proposer Name"
+  required: false
+  placeholder: "Enter Proposer Name"
+  defaultValue: "{{client_name}}"
+
+proposerNic:
+  type: text
+  label: "Proposer NIC"
+  required: false
+  placeholder: "Enter Proposer NIC"
+  
+
+proposerContract:
+  type: text
+  label: "Proposer Contract"
+  required: false
+  placeholder: "Enter Proposer Contract"
+  defaultValue: "{{policy_no}}"
+
+signature:
+  type: file
+  label: Signature of Proposer
+  required: true
+  defaultValue: ""
+  fileOptions:
+    maxFileSize: 10485760
+    allowedExtensions:
+      - image/*
+date:
+  type: date
+  label: Date
+  required: true
+  placeholder: Date

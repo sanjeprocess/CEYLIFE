@@ -1,0 +1,39 @@
+# student-claused form layout
+# Items: field, h1, h2, h3, h4, h5, h6, text, spacer, divider, card, row, submit, reset
+
+- field: proposerName
+- row: 2
+  columns:
+    - field: proposerNic
+    - field: proposerContract
+
+- h1: STUDENT CLAUSE
+  align: center
+- text: (TO BE ACCEPTED BY THE PROPOSER)
+  align: center
+- text: It is hereby declared and agreed that the Life Assured / Spouse Assured undertakes to inform the Company immediately after taking up an occupation or a profession, the nature of duties involved in that occupation or profession. Upon receipt of such information, the Company may impose an extra premium or restrictions on this Assurance, if deemed necessary, Failure to inform the Company of the occupation or profession taken up and the nature of duties involved in such occupation or profession and/or pay any extra premium imposed by the Company will result in the amount payable under this Assurance being limited to a sum equal to either;
+
+- text: 1. the total premium paid excluding any extra premium (without interest), less any sums paid hereunder as the cash value of bonuses, advance payments and loans on the Policy together with accrued interest thereon or
+
+- text: 2. the net Surrender Value of the Policy, whichever shall be greater, but such sum shall not exceed the Death Benefit on the Basic Policy
+- divider: true
+- text: I have read and understood the afore-said clause and hereby give my consent to accept the Life Assurance proposal subject to the respective clause.
+
+- row: 2
+  columns:
+    - field: signature
+    - field: date
+
+
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline

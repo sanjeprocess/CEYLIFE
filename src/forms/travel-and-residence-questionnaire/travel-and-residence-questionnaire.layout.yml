@@ -1,0 +1,41 @@
+# travel-and-residence-questionnaire form layout
+# Items: field, h1, h2, h3, h4, h5, h6, text, spacer, divider, card, row, submit, reset
+
+- field: fullName
+- field: currentResidence
+- text: Please provide details of your previous residence and travel during the last 5 years (excluding holidays of less than 4 weeks )
+- field: dateOfStayPreviousResidence
+- field: countryOfPreviousResidence
+- field: reasonForVisitingPreviousResidence
+- field: frequencyOfVisitsPreviousResidence
+- field: durationOfStayPreviousResidence
+- text: Please provide details of your future residence and travel during the next 5 years (excluding holidays of less than 4 weeks )
+- field: dateOfStayFutureResidence
+- field: countryOfFutureResidence
+- field: reasonForVisitingFutureResidence
+- field: frequencyOfVisitsFutureResidence
+- field: durationOfStayFutureResidence
+- field: majorityOfTimeSpent
+- field: townRegionDetails
+- field: medicalDetails
+- field: additionalInformation
+
+- text: I declare that the answers I have given are, to the best of my knowledge,true and that I have not withheld any material information that may influence the assessment or acceptance of this application.
+- text: I agree that this form will constitute part of my application for insurance and that failure to disclose any material fact known to me may invalidate the contract.
+
+- row: 2 
+  columns: 
+    - field: signature
+    - field: date
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline

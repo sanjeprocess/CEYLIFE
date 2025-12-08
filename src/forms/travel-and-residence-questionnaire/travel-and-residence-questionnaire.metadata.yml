@@ -1,0 +1,9 @@
+# travel-and-residence-questionnaire form metadata
+
+formVersion: 1
+formTitle: Travel And Residence Questionnaire
+formDescription: Form description for Travel And Residence Questionnaire
+showFormHeader: true
+availableLocales:
+  - en
+defaultLocale: en
