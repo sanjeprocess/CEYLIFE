@@ -1,0 +1,46 @@
+# military-claused form layout
+# Items: field, h1, h2, h3, h4, h5, h6, text, spacer, divider, card, row, submit, reset
+
+
+- row: 12
+  columns:
+    - text: "Date"
+    - field: topDate
+
+- row: 12
+  columns:
+    - text: "Name"
+    - field: name
+      colspan: 5
+
+- row: 12
+  columns:
+    - text: "Address"
+    - field: address
+      colspan: 5
+
+- text: "The Manager"
+- text: "Ceylinco Life Insurance Limited"
+- text: "Dear Sir"
+
+- field: policyNo  
+- field: assuredName
+
+- text: "I do hereby declare and agreed that I have read and understood the clause given below, and my life insurance policy is issued subject to the conditions stipulated therein.<br><br>'If the death of the Life Assured should occur as a result of engaging or participating in any way or any manner in any war or war like operation (whether war be declared or not), civil war, rebellion, insurrection, any terrorist activity, civil commotion, military or usurped power, riot, mutiny, invasion, act of foreign enemies or any act against any lawfully constituted authority the Company shall not be liable to make any payment whatsoever under the policy'.<br><br>As per the policy conditions and exclusions of the Supplementary Benefits, I further agreed that the Company is not liable to make any payment under the said benefits as defined in the Policy Schedule including Family Hospital Cash benefit on occurrence of an insured event under the said supplementary benefits." 
+
+- text: Your Faithfully,
+- field: signature
+- field: date
+
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline
