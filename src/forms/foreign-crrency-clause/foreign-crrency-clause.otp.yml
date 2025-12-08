@@ -1,0 +1,58 @@
+# foreign-crrency-clause form otp
+
+enabled: true
+dialog:
+  title: OTP Verification
+  content: Thank you for accessing the digital forms of Ceylinco Life. In order to
+    proceed ahead, please enter the OTP you received via SMS.
+  button: Verify OTP
+  inputLabel: OTP
+  inputPlaceholder: Enter OTP
+verification:
+  method: GET
+  baseUrl: https://app.workhub24.com
+  endpoint: /api/view/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/Y5RKJDCXHHOUI7YHMDE27WS7JCSCIZV7
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Authorization
+      value: Bearer {{$WORKHUB_TOKEN}}
+  queryParams:
+    - name: OTP
+      value: "{{otp}}"
+    - name: Contract_Sequence
+      value: "{{contract_sequence}}"
+    - name: Card_ID
+      value: "{{card_id}}"
+  response:
+    variableMapping:
+      - path: "[0].cLOUReferenceNumber"
+        to: clou_reference
+        required: true
+      - path: "[0].clientEmail"
+        to: client_email
+        required: false
+      - path: "[0].clientName"
+        to: client_name
+        required: true
+      - path: "[0].clientNumber"
+        to: client_number
+        required: false
+      - path: "[0].contactNo1"
+        to: contact_1
+        required: false
+      - path: "[0].contactNo2"
+        to: contact_2
+        required: false
+      - path: "[0].contractNumber"
+        to: contract_number
+        required: true
+      - path: "[0].questionnaire"
+        to: questionnaire_type
+        required: false
+      - path: "[0].requestType"
+        to: request_type
+        required: false
+      - path: "[0].language"
+        to: preferred_language
+        required: false
