@@ -1,0 +1,104 @@
+# pregnancy-questionaire form fields
+# Types: text, number, email, password, date, time, datetime-local, checkbox, radio-group, checkbox-group, select, textarea, file, url, tel
+proposersName:
+  type: text
+  label: "Proposer's Name"
+  required: false
+  placeholder: "Proposer's Name"
+  defaultValue: "{{client_name}}"
+
+contractNumber:
+  type: text
+  label: "Contract Number"
+  required: false
+  placeholder: "Contract Number"
+  defaultValue: "{{contract_number}}"
+
+firstDateOfMenstrualPeriod:
+  type: date
+  label: Date of First Date of the last Menstrual Period
+  required: false
+
+deliveryDate:
+  type: date
+  label: Expected Date of Delivery
+  required: false
+
+medicalDetails:
+  type: textarea
+  label: Are you being-treated or closely monitored due to elevated blood pressure, diabetes or any other pregnet related complications? if so,pleasegive details and forward related medical reports. 
+  required: false
+
+abnormalitiesPertaining: 
+  type: radio-group
+  label: Are there any abnormalities pertaining to the pregnancy? 
+  required: false
+  options:
+    yes: Yes
+    no: No
+  dependencies:
+    abnormalitiesDetails:
+      type: textarea
+      label: Details
+      required: false
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: yes
+
+haveChildren:
+  type: radio-group
+  label: Do you have any children? 
+  required: false
+  options:
+    yes: Yes
+    no: No
+  dependencies:
+    childrenNo:
+      type: number
+      label: Number of Children
+      required: false
+      placeholder: Enter Number of Children
+      conditionalOptions:
+        operator: eq
+        value: yes
+
+prematureBirth:
+  type: textarea
+  label: Were there any premature births? 
+  required: false
+
+treatedforPregnancyRelatedComplications:
+  type: radio-group
+  label: During past pregnancy/ies, were you treated for elevated blood pressure, blood sugar or any adverse urine / blood reports or other illness/es? If so, please give details. 
+  required: false
+  options:
+    yes: Yes
+    no: No
+  dependencies:
+    complicationsDetails:
+      type: textarea
+      label: Details
+      required: false
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: yes
+
+
+date:
+  type: date
+  label: Date
+  required: true
+  placeholder: Date
+  defaultValue: ""
+
+signature:
+  type: file
+  label: Signature of the life to be assured
+  required: true
+  defaultValue: ""
+  fileOptions:
+    maxFileSize: 10485760
+    allowedExtensions:
+      - image/*
