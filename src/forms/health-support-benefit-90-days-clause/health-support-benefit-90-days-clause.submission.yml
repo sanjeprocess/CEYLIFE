@@ -1,0 +1,5 @@
+# health-support-benefit-90-days-clause form submission
+
+endpoint: /api/forms/health-support-benefit-90-days-clause
+method: POST
+requiresAccessToken: true

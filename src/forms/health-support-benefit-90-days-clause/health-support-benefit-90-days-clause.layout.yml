@@ -1,0 +1,26 @@
+# health-support-benefit-90-days-clause form layout
+# Items: field, h1, h2, h3, h4, h5, h6, text, spacer, divider, card, row, submit, reset
+
+- card:
+  items:
+    - field: proposersName
+    - field: policyNumber
+    - text: "Firstly, we thank you for submitting the above proposal form to our Company We have noted that you have requested to obtain the Ceylinco Life Health Support Plus Benefit, as a supplementary benefit. This benefit is offered only to resident Sri Lankans. Since it was mentioned by you that you are currently employed overseas, the Company has decided to offer the Health Support Plus Benefit subject to the following condition.<br><br><b>'The Health Support Plus Benefit included in this policy, will terminate if the insured will reside outside of Sri Lanka for a period of 90 days and above. However, the Health Support Plus Benefit will be activated and will resume as per original terms and conditions once the policyholder returns back to Sri Lanka'.</b><br><br>I hereby confirm having read and understood the above condition, whilst also accepting to obtain the policy under the above condition."
+
+- row: 2
+  columns:
+    - field: signature
+    - field: date
+
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline
