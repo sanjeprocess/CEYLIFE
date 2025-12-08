@@ -24,7 +24,7 @@ proposerContract:
 
 signature:
   type: file
-  label: Signature of the life to be assured/Proposer
+  label: Signature of Proposer
   required: true
   defaultValue: ""
   fileOptions:

@@ -15,7 +15,15 @@
 
 - text: 1. the total premium paid excluding any extra premium (without interest), less any sums paid hereunder as the cash value of bonuses, advance payments and loans on the Policy together with accrued interest thereon or
 
-- text: 2. the net Surrender Value of the Policy, whichever shall be greater, but such sum shall not exceed the Death Benefit on the Basic Policy
+- text: 2. the net Surrender Value of the Policy, whichever shall be greater, but such sum shall not exceed the Death Benefit on the Basic Policy
+- divider: true
+- text: I have read and understood the afore-said clause and hereby give my consent to accept the Life Assurance proposal subject to the respective clause.
+
+- row: 2
+  columns:
+    - field: signature
+    - field: date
+
 
 - row: 12
   columns:
