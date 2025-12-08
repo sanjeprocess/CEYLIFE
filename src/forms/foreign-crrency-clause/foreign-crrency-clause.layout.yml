@@ -1,0 +1,36 @@
+# foreign-crrency-clause form layout
+# Items: field, h1, h2, h3, h4, h5, h6, text, spacer, divider, card, row, submit, reset
+
+- card:
+  items:
+    - field: proposersName
+    - field: contractNumber
+
+- h2: PAYMENT TO EXPATRIATE POLICY HOLDERS
+- text: "I {{client_name}} the undersigned of _______________________________ Whose life is proposed to be assured, do here by declare that I am fully aware of the prevailing Exchange control Regulations of Sri Lanka that all monies payable in respect of this assurance, either to me or my dependents, whenever such monies become payable will be paid in Sri Lanka, in Sri Lankan currency. Future, I declare, that I am agreeable to these conditions and any changes for additions that may be embodied in the exchange control regulations from time to time; That the payment of all monies in respect of this assurance shall be subject to these conditions, and that this declaration shall form part of the proposal for assurance made by me to the Ceylinco Life Insurance Limited on" 
+- row: 12
+  columns:
+    - field: limitedOnDate
+    - text:   and shall be of the same effect as if contained in the original proposal.cuimer has to Fill.
+      colspan: 11
+- row: 2
+  columns:
+    - field: proposerDate
+    - field: proposerSignature
+- text: I have explained the contents of this form to the proposer and he has affixed his signature after fully understanding the same thereof
+- row: 2
+  columns:
+    - field: explainingPersonDate
+    - field: explainingPersonSignature
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline

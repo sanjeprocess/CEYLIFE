@@ -1,0 +1,495 @@
+# declaration-for-cash form fields
+# Types: text, number, email, password, date, time, datetime-local, checkbox, radio-group, checkbox-group, select, textarea, file, url, tel
+
+clientNo:
+  type: text
+  label: Client No.
+  required: true
+  placeholder: Enter Client No.
+
+policyNo:
+  type: text
+  label: Policy / Proposal No.
+  required: true
+  placeholder: Enter Policy / Proposal No.
+
+
+
+nameOfChild:
+  type: text
+  label: Name of Child
+  required: true
+  placeholder: Enter Name of Child
+
+dateOfBirth:
+  type: date
+  label: Date of Birth
+  required: true
+
+age:
+  type: number
+  label: Age
+  required: true
+  placeholder: Enter Age
+
+
+height:
+  type: text
+  label: Height
+  placeholder: "ft/in or cm"
+
+weight:
+  type: text
+  label: Weight
+  placeholder: "kg or lbs"
+
+address:
+  type: textarea
+  label: Address
+  required: true
+  placeholder: Enter Address
+
+nicNo:
+  type: text
+  label: NIC No.
+  placeholder: Enter NIC No.
+
+personalPhysicianName:
+  type: text
+  label: Name of Personal Physician
+  placeholder: Enter Name of Personal Physician
+
+email:
+  type: email
+  label: Email Address
+  placeholder: Enter Email Address
+
+telephone:
+  type: tel
+  label: Telephone No.
+  placeholder: Enter Telephone No.
+
+benefitsRequired:
+  type: checkbox-group
+  label: Benefits Required
+  options:
+    digasiri_plus: Ceylinco Life Family Digasiri Plus (New Benefit)
+    hospital_cash_plus: Ceylinco Life Hospital Cash Plus Benefit (Per Day)
+    major_surgery_plus: Ceylinco Life Major Surgery Plus Benefit
+    health_support_plus: Ceylinco Life Health Support Plus Benefit
+  dependencies:
+    benefitDetails:
+      type: textarea
+      label: Amount
+      placeholder: Enter Amount
+      conditionalOptions:
+        operator: neq
+        value: ""
+
+isChildGoodHealth:
+  type: radio-group
+  label: Is your child in good health and entirely free of any mental or physical impairments or deformities?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    goodHealthDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "no"
+
+circulatoryDisease:
+  type: radio-group
+  label: 2.1 Disease of the circulatory System (e.g. heart trouble, hole in the heart, valvular disease, rheumatic fever, high blood pressure, disease of the arteries or veins, myocardial infarction, coronary artery disease, heart valve disease, disease of aorta, primary pulmonary arterial hypertension)?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    circulatoryDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+respiratoryDisease:
+  type: radio-group
+  label: 2.2 Disease of the respiratory system (e.g. tuberculosis, asthma, persistent cough, pneumonia, chronic lung disease)?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    respiratoryDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+genitourinaryDisease:
+  type: radio-group
+  label: 2.3 Disease of the genito-urinary system or congenital abnormalities (e.g. infection of the kidneys, urinary passage, bladder or genital organs, renal stones, venereal disease, kidney failure)?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    genitourinaryDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+gastrointestinalDisease:
+  type: radio-group
+  label: 2.4 Disease of the gastro-intestinal system (e.g. digestive disorders, gastric or duodenal ulcer, disorders of the liver or gall bladder, hepatitis, fulminant hepatitis, chronic liver disease)?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    gastrointestinalDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+nervousSystemDisease:
+  type: radio-group
+  label: 2.5 Disease of the nervous system or mental disorders (e.g. epilepsy, fits or fainting attacks, frequent headaches, nervous breakdown, stroke, paralysis, multiple sclerosis)?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    nervousSystemDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+otherMajorDiseases:
+  type: radio-group
+  label: 2.6 Diabetes, cancer or any disease of the blood, glands, spleen, ears or eyes, muscular dystrophy, major burns, blindness, deafness or loss of speech?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    otherMajorDiseaseDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+chronicSymptoms:
+  type: radio-group
+  label: 2.7 Night-sweats and/or loss of weight, persistent fever, continuous or recurrent diarrhoea?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    chronicSymptomDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+otherAilments:
+  type: radio-group
+  label: 2.8 Any other disease or ailment not mentioned above?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    otherAilmentDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+hospitalTreatment:
+  type: radio-group
+  label: 3. Has your child ever had or been advised to have hospital treatment or surgery or major organ transplant?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    hospitalTreatmentDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+paediatricianConsultation:
+  type: radio-group
+  label: 4. Has your child consulted a paediatrician physician/surgeon for any reason including routine examinations or investigations and blood tests in the past 5 years?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    paediatricianConsultationDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+disabilityBenefit:
+  type: radio-group
+  label: 5. Has your child ever received or does he now receive any disability benefit?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    disabilityBenefitDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+existingPolicy:
+  type: radio-group
+  label: 6. Has your child received any Ceylinco Life Insurance policy that included Ceylinco Life Hospital Cash benefit or Ceylinco Life Major Surgery benefit or Ceylinco Life Digasiri benefit?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    existingPolicyNo:
+      type: text
+      label: Policy No
+      placeholder: Enter Policy No
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+declinedProposal:
+  type: radio-group
+  label: 7. Has any proposal for child protection or critical illness cover ever been declined or postponed or been accepted with an extra premium with regard to your child's insurance? If yes please state policy number
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    declinedProposalDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+smokedLast12Months:
+  type: radio-group
+  label: 8.1 Has your child ever smoked in the last 12 months?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+
+smokeNow:
+  type: radio-group
+  label: 8.2 Does he/she smoke now?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+
+drugsOrNarcotics:
+  type: radio-group
+  label: 8.3 Has your child ever taken or does he/she now take drugs or narcotic?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+
+alcoholConsumption:
+  type: radio-group
+  label: 8.4 Does he/she consume beer, wine or alcohol?( if so, please give average daily consumption)
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    alcoholConsumptionDetails:
+      type: text
+      label: Average daily consumption
+      placeholder: Enter average daily consumption
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+hazardousActivities:
+  type: radio-group
+  label: 9.1 Has your child an intention of engaging in any hazardous sports, activities or military allied services?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    hazardousActivitiesDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+criminalOffence:
+  type: radio-group
+  label: 9.2 Has your child ever been convicted of any criminal offence or illegal activity?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    criminalOffenceDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+pendingLitigation:
+  type: radio-group
+  label: 9.3 Is there any case of litigation pending or under investigation at present?
+  required: true
+  options:
+    yes: "Yes"
+    no: "No"
+  dependencies:
+    pendingLitigationDetails:
+      type: textarea
+      label: Details
+      placeholder: Enter Details
+      conditionalOptions:
+        operator: eq
+        value: "yes"
+
+datedAt: 
+  type: date
+  label: ""
+  placeholder: ""
+  required: false
+
+onThis:
+  type: date
+  label: ""
+  placeholder: ""
+  required: false
+
+dayOf:
+  type: text
+  label: ""
+  placeholder: ""
+  required: false
+
+yearOf:
+  type: number
+  label: ""
+  placeholder: ""
+  required: false
+
+fathersSignature:
+  type: file
+  label: "Fathers Signature"
+  placeholder: "Fathers Signature"
+  required: false
+  
+mothersSignature:
+  type: file
+  label: "Mothers Signature"
+  placeholder: "Mothers Signature"
+  required: false
+
+fathersNic:
+  type: text
+  label: ""
+  placeholder: "Fathers NIC"
+  required: false
+
+mothersNic:
+  type: text
+  label: ""
+  placeholder: "Mothers NIC"
+  required: false
+
+witness1Signature:
+  type: file
+  label: "Signature"
+  placeholder: "Witness 1 Signature"
+  required: false
+
+witness1Name:
+  type: text
+  label: ""
+  placeholder: "Witness 1 Name"
+  required: false
+
+witness1Address:
+  type: text
+  label: ""
+  placeholder: "Witness 1 Address"
+  required: false
+
+witness1Nic:
+  type: number
+  label: ""
+  placeholder: "Witness 1 NIC"
+  required: false
+
+witness2Signature:
+  type: file
+  label: "Signature"
+  placeholder: "Witness 2 Signature"
+  required: false
+
+witness2Name:
+  type: text
+  label: ""
+  placeholder: "Witness 2 Name"
+  required: false
+
+witness2Address:
+  type: text
+  label: ""
+  placeholder: "Witness 2 Address"
+  required: false
+
+witness2CodeNo:
+  type: text
+  label: ""
+  placeholder: "Witness 2 Code Number"
+  required: false

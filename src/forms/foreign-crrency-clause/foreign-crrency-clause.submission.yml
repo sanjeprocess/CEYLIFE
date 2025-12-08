@@ -1,0 +1,5 @@
+# foreign-crrency-clause form submission
+
+endpoint: /api/forms/foreign-crrency-clause
+method: POST
+requiresAccessToken: true

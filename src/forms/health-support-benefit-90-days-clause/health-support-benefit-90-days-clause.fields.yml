@@ -1,0 +1,33 @@
+# health-support-benefit-90-days-clause form fields
+# Types: text, number, email, password, date, time, datetime-local, checkbox, radio-group, checkbox-group, select, textarea, file, url, tel
+
+proposersName:
+  type: text
+  label: "Proposer's Name"
+  required: false
+  placeholder: "Proposer's Name"
+  defaultValue: "{{client_name}}"
+
+policyNumber:
+  type: text
+  label: "Life Insurance Policy Number"
+  required: false
+  placeholder: "Life Insurance Policy Number"
+  defaultValue: "{{policy_number}}"
+
+signature:
+  type: file
+  label: Signature of the life to be assured/Proposer
+  required: true
+  defaultValue: ""
+  fileOptions:
+    maxFileSize: 10485760
+    allowedExtensions:
+      - image/*
+date:
+  type: date
+  label: Date
+  required: true
+  placeholder: Date
+  
+  

@@ -1,0 +1,5 @@
+# pregnancy-questionaire form submission
+
+endpoint: /api/forms/pregnancy-questionaire
+method: POST
+requiresAccessToken: true

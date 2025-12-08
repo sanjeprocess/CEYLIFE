@@ -1,0 +1,13 @@
+# military-claused form metadata
+
+formVersion: 1
+formTitle: Military Claused
+formDescription: Form description for Military Claused
+showFormHeader: true
+availableLocales:
+  - en
+defaultLocale: en
+searchParamsVariables:
+  cs: contract_sequence
+  id: card_id
+  policyNo: policy_no

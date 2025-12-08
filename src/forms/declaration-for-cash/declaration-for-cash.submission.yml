@@ -1,0 +1,5 @@
+# declaration-for-cash form submission
+
+endpoint: /api/forms/declaration-for-cash
+method: POST
+requiresAccessToken: true

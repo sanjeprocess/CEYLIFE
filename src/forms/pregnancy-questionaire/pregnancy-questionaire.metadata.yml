@@ -1,0 +1,12 @@
+# pregnancy-questionaire form metadata
+
+formVersion: 1
+formTitle: Pregnancy Questionaire
+formDescription: Form description for Pregnancy Questionaire
+showFormHeader: false
+availableLocales:
+  - en
+defaultLocale: en
+searchParamsVariables:
+  cs: contract_sequence
+  id: card_id

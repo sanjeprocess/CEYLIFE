@@ -1,0 +1,51 @@
+# military-claused form fields
+# Types: text, number, email, password, date, time, datetime-local, checkbox, radio-group, checkbox-group, select, textarea, file, url, tel
+
+topDate:
+  type: date
+  label: ""
+  required: false
+  placeholder: Enter Date
+
+
+name:
+  type: text
+  label: ""
+  required: false
+  placeholder: Enter Name
+
+
+address:
+  type: text
+  label: ""
+  required: false
+  placeholder: Enter Address
+
+policyNo:
+  type: text
+  label: "LIFE ASSURANCE POLICY NO"
+  required: false
+  placeholder: Enter Policy No
+  defaultValue: "{{policy_no}}"
+
+assuredName:
+  type: text
+  label: "LIFE ASSURED'S NAME"
+  required: false
+  placeholder: Enter Assured Name
+  defaultValue: "{{client_name}}"
+
+signature:
+  type: file
+  label: Signature of the life to be assured/Proposer
+  required: true
+  defaultValue: ""
+  fileOptions:
+    maxFileSize: 10485760
+    allowedExtensions:
+      - image/*
+date:
+  type: date
+  label: Date
+  required: true
+  placeholder: Date

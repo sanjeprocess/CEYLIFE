@@ -1,0 +1,9 @@
+# threat-clause form metadata
+
+formVersion: 1
+formTitle: Threat Clause
+formDescription: ""
+showFormHeader: true
+availableLocales:
+  - en
+defaultLocale: en

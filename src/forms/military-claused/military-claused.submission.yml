@@ -1,0 +1,5 @@
+# military-claused form submission
+
+endpoint: /api/forms/military-claused
+method: POST
+requiresAccessToken: true

@@ -1,0 +1,5 @@
+# threat-clause form submission
+
+endpoint: /api/forms/threat-clause
+method: POST
+requiresAccessToken: true

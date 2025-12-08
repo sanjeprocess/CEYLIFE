@@ -1,0 +1,121 @@
+# declaration-for-cash form layout
+# Items: field, h1, h2, h3, h4, h5, h6, text, spacer, divider, card, row, submit, reset
+
+- card:
+  items:
+    - row: 2
+      columns:
+        - field: clientNo
+        - field: policyNo
+
+    - field: nameOfChild
+      colspan: 2
+
+    - row: 4
+      columns:
+        - field: dateOfBirth
+        - field: age
+        - field: height
+        - field: weight
+
+    - field: address
+    - field: nicNo
+    - field: personalPhysicianName
+
+    - row: 2
+      columns:
+        - field: email
+          colspan: 1
+        - field: telephone
+          colspan: 1
+
+    - field: benefitsRequired
+- card:
+  items:
+    - field: isChildGoodHealth
+- card:
+  items:
+    - field: circulatoryDisease
+    - field: respiratoryDisease
+    - field: genitourinaryDisease
+    - field: gastrointestinalDisease
+    - field: nervousSystemDisease
+    - field: otherMajorDiseases
+    - field: chronicSymptoms
+    - field: otherAilments
+
+- card:
+  items:
+    - field: hospitalTreatment
+    - field: paediatricianConsultation
+    - field: disabilityBenefit
+    - field: existingPolicy
+    - field: declinedProposal
+    - field: smokedLast12Months
+    - field: smokeNow
+    - field: drugsOrNarcotics
+    - field: alcoholConsumption
+
+- card:
+  items:
+    - field: hazardousActivities
+    - field: criminalOffence
+    - field: pendingLitigation
+
+- card: DECLARATION
+  items:
+    - text: The foregoing statements and answers are complete and true and we agree that the statements and answers shall be the basis of the contract of this assurance between this chid and Ceylinco Life Insurance Limited, Ceylinco Life Insurance Limited shall not be liable for any claim in the event of death or on account of illness or injury the cause of which was known to the proposer's pnor to acceptance of the proposal or any information or material facto withheld or concealed
+    - text: We hereby authorise any doctor, nurse or hospital official to disclose to Ceylinco Life Insurance Limited. any and all information regarding this child's past medical history, present treatment and the results of any investigation cared out
+    - row: 8
+      columns:
+        - text: Dated at
+        - field: datedAt
+        - text: On this
+        - field: onThis
+        - text: day of
+        - field: dayOf
+        - text: "20"
+        - field: yearOf
+    - row: 2
+      columns:
+        - field: fathersSignature
+        - field: mothersSignature
+    - row: 2
+      columns:
+        - field: fathersNic
+        - field: mothersNic
+    - row: 2
+      columns:
+        - text: Witnesses 1
+        - text: Witnesses 2
+    - row: 2
+      columns:
+        - field: witness1Signature
+        - field: witness2Signature
+    - row: 2
+      columns:
+        - field: witness1Name
+        - field: witness2Name
+    - row: 2
+      columns:
+        - field : witness1Address
+        - field : witness2Address
+    - row: 2
+      columns:
+        - field: witness1Nic
+        - field: witness2CodeNo
+
+        
+- spacer: 20
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline
