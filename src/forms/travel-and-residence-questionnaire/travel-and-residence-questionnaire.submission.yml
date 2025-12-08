@@ -1,0 +1,5 @@
+# travel-and-residence-questionnaire form submission
+
+endpoint: /api/forms/travel-and-residence-questionnaire
+method: POST
+requiresAccessToken: true

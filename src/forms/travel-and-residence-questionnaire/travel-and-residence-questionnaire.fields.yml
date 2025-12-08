@@ -1,0 +1,122 @@
+# travel-and-residence-questionnaire form fields
+# Types: text, number, email, password, date, time, datetime-local, checkbox, radio-group, checkbox-group, select, textarea, file, url, tel
+
+fullName:
+  type: text
+  label: Full Name
+  required: false
+  placeholder: Enter Full Name
+
+currentResidence:
+  type: text
+  label: 1. Please provide details of your current residency and your residency status including information of length of stay by visa etc,if appropriate
+  required: false
+  placeholder: Enter Current Residence
+
+#Previous Residence
+dateOfStayPreviousResidence:
+  type: textarea
+  label: a) Date of stay
+  required: false
+  placeholder: Enter Date of Stay of Previous Residence
+
+countryOfPreviousResidence:
+  type: textarea
+  label: b) Country and region of residence
+  required: false
+  placeholder: Enter Country and Region of Previous Residence
+
+reasonForVisitingPreviousResidence:
+  type: textarea
+  label: c) Reason for visiting
+  required: false
+  placeholder: Enter Reason for Visiting
+  
+frequencyOfVisitsPreviousResidence:
+  type: textarea
+  label: d) Frequency (number of visits per year)
+  required: false
+  placeholder: Enter Frequency of Visits
+
+durationOfStayPreviousResidence:
+  type: textarea
+  label: e) Duration of stay
+  required: false
+
+#Future Residence and Travel
+dateOfStayFutureResidence:
+  type: textarea
+  label: a) Date of stay
+  required: false
+  placeholder: Enter Date of Stay of Future Residence-Travel
+
+countryOfFutureResidence:
+  type: textarea
+  label: b) Country and region of residence
+  required: false
+  placeholder: Enter Country and Region of Future Residence-Travel
+
+reasonForVisitingFutureResidence:
+  type: textarea
+  label: c) Reason for visiting
+  required: false
+  placeholder: Enter Reason for Visiting
+  
+frequencyOfVisitsFutureResidence:
+  type: textarea
+  label: d) Frequency (number of visits per year)
+  required: false
+  placeholder: Enter Frequency of Visits
+
+durationOfStayFutureResidence:
+  type: textarea
+  label: e) Duration of stay
+  required: false
+  
+majorityOfTimeSpent:
+  type: radio-group
+  label: 5. Do you expect to spend the majority of your time in major / large cities? If NO, please provide the name of the town/ region and details of your likely accommodation, availability of medical facilities and your internal travel arrangements (e.g. light aircraft, boat etc.) 
+  required: false
+  options:
+    no: No
+    yes: Yes
+  dependencies:
+    townRegionDetails:
+      type: textarea
+      label: Town/Region Details
+      required: false
+      placeholder: Enter Town/Region Details
+      validation:
+        maxLength: 1000
+      conditionalOptions:
+        operator: eq
+        value: no
+
+medicalDetails: 
+  type: textarea
+  label: 6. Please give details of any medical treatment or surgery youhave received whilst resideny overseas
+  required: false
+  placeholder: Enter Medical Details
+
+additionalInformation:
+  type: textarea
+  label: 7. Please provide any additional information on your residence and travel which you feel may be helpful in processing your application
+  required: false
+  placeholder: Enter Additional Information
+
+signature:
+  type: file
+  label: Signature of Proposer
+  required: true
+  defaultValue: ""
+  fileOptions:
+    maxFileSize: 10485760
+    allowedExtensions:
+      - image/*
+date:
+  type: date
+  label: Date
+  required: true
+  placeholder: Date
+  
+  
