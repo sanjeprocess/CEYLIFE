@@ -6,14 +6,14 @@ ProposerName:
   required: true
   placeholder: Proposer's Name
   description: Proposer's Name
-  defaultValue: ""
+  defaultValue: "{{proposers_name}}"
 proposalNum:
   type: number
   label: Proposal Number
   required: true
   placeholder: Proposal Number
   description: Proposal Number
-  defaultValue: ""
+  defaultValue: "{{proposal_number}}"
 vesselName:
   type: text
   label: a.1) What is the name of the Vessel?

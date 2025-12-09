@@ -10,3 +10,4 @@ defaultLocale: en
 searchParamsVariables:
   cs: contract_sequence
   id: card_id
+  proposerName: proposers_name

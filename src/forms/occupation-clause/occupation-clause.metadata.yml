@@ -9,3 +9,6 @@ availableLocales:
   - si
   - ta
 otpRequired: true
+searchParamsVariables:
+  cs: contract_sequence
+  id: card_id

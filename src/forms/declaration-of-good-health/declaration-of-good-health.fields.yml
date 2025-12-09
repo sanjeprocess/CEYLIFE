@@ -5,11 +5,13 @@ policyNumber:
   label: Policy Number
   required: true
   placeholder: Enter policy number
+  defaultValue: "{{policy_no}}"
 fullName:
   type: text
   label: Full Name
   required: true
   placeholder: Enter full name
+  defaultValue: "{{full_name}}"
 address:
   type: text
   label: Address
