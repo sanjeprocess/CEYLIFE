@@ -454,19 +454,19 @@ witness1Signature:
 
 witness1Name:
   type: text
-  label: ""
+  label: "Witness 1 Name"
   placeholder: "Witness 1 Name"
   required: false
 
 witness1Address:
   type: text
-  label: ""
+  label: "Witness 1 Address"
   placeholder: "Witness 1 Address"
   required: false
 
 witness1Nic:
   type: number
-  label: ""
+  label: "Witness 1 NIC"
   placeholder: "Witness 1 NIC"
   required: false
 
@@ -478,18 +478,18 @@ witness2Signature:
 
 witness2Name:
   type: text
-  label: ""
+  label: "Witness 2 Name"
   placeholder: "Witness 2 Name"
   required: false
 
 witness2Address:
   type: text
-  label: ""
+  label: "Witness 2 Address"
   placeholder: "Witness 2 Address"
   required: false
 
 witness2CodeNo:
   type: text
-  label: ""
+  label: "Witness 2 Code Number"
   placeholder: "Witness 2 Code Number"
   required: false
