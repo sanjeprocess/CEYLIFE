@@ -3,7 +3,7 @@
 - text: (To be completed by the Proposer)
 - divider: true
 - field: proposerName
-- field: contactNum
+- field: contractNum
 - field: dateDiagnosed
 - field: nameAndAddressOfTheDoctor
 - field: strictDiet
