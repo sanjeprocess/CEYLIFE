@@ -69,22 +69,59 @@ telephone:
   label: Telephone No.
   placeholder: Enter Telephone No.
 
-benefitsRequired:
-  type: checkbox-group
-  label: Benefits Required
-  options:
-    digasiri_plus: Ceylinco Life Family Digasiri Plus (New Benefit)
-    hospital_cash_plus: Ceylinco Life Hospital Cash Plus Benefit (Per Day)
-    major_surgery_plus: Ceylinco Life Major Surgery Plus Benefit
-    health_support_plus: Ceylinco Life Health Support Plus Benefit
+
+familyDigasiriPlus:
+  type: checkbox
+  label: Ceylinco Life Family Digasiri Plus (New Benefit)
+  required: false
   dependencies:
     benefitDetails:
       type: textarea
       label: Amount
       placeholder: Enter Amount
       conditionalOptions:
-        operator: neq
-        value: ""
+        operator: eq
+        value: "true"
+
+hospitalCashPlus:
+  type: checkbox
+  label: Ceylinco Life Hospital Cash Plus Benefit (Per Day)
+  required: false
+  dependencies:
+    benefitDetails:
+      type: textarea
+      label: Amount
+      placeholder: Enter Amount
+      conditionalOptions:
+        operator: eq
+        value: "true"
+
+majorSurgeryPlus:
+  type: checkbox
+  label: Ceylinco Life Major Surgery Plus Benefit
+  required: false
+  dependencies:
+    benefitDetails:
+      type: textarea
+      label: Amount
+      placeholder: Enter Amount
+      conditionalOptions:
+        operator: eq
+        value: "true"
+
+healthSupportPlus:
+  type: checkbox
+  label: Ceylinco Life Health Support Plus Benefit
+  required: false
+  dependencies:
+    benefitDetails:
+      type: textarea
+      label: Amount
+      placeholder: Enter Amount
+      conditionalOptions:
+        operator: eq
+        value: "true"
+
 
 isChildGoodHealth:
   type: radio-group

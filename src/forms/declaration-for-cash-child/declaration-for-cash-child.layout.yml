@@ -29,7 +29,11 @@
         - field: telephone
           colspan: 1
 
-    - field: benefitsRequired
+    - text: Benefits Required
+    - field: familyDigasiriPlus
+    - field: hospitalCashPlus
+    - field: majorSurgeryPlus
+    - field: healthSupportPlus
 - card:
   items:
     - field: isChildGoodHealth
