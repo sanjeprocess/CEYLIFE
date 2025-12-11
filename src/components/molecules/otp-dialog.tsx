@@ -65,7 +65,10 @@ export function OtpDialog({ otpConfig }: { otpConfig: IFormOtp }) {
   const label = useVariableReplacement(translatedLabel);
   const placeholder = useVariableReplacement(translatedPlaceholder);
 
-  const verifyOTPAction = async (formData: FormData) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
     const otp = formData.get("otp") as string;
 
     if (!otp || otp.trim() === "") {
@@ -98,7 +101,7 @@ export function OtpDialog({ otpConfig }: { otpConfig: IFormOtp }) {
   return (
     <Dialog open={isOpen}>
       <DialogContent className="sm:max-w-3xl" showCloseButton={false}>
-        <form action={verifyOTPAction} className="grid gap-4">
+        <form onSubmit={handleSubmit} className="grid gap-4">
           <div className="mt-4">
             <Image
               src="/images/header.png"

@@ -6,6 +6,7 @@ import { IFormLayoutItem } from "@/common/interfaces/form.interfaces";
 import { useTranslation } from "@/hooks/useTranslation.hook";
 import { useVariableReplacement } from "@/hooks/useVariableReplacement.hook";
 import { submitForm } from "@/services/form-submission.service";
+import { validateForm } from "@/services/form-validation.service";
 import { styles } from "@/services/render.service";
 import { refreshVariablesFromCookies } from "@/services/variable.service";
 import useFormStore from "@/stores/form.store";
@@ -50,28 +51,20 @@ export function SubmitButton({ layout, submitText }: SubmitButtonProps) {
       return;
     }
 
-    // Validate required fields
+    // Validate all fields
     const formValues = getComputedValues();
-    const missingFields: string[] = [];
+    const validationResult = validateForm(form, formValues);
 
-    for (const [fieldKey, field] of Object.entries(form.fields)) {
-      if (field.required) {
-        const value = formValues[fieldKey];
-        if (
-          value === undefined ||
-          value === null ||
-          value === "" ||
-          (Array.isArray(value) && value.length === 0)
-        ) {
-          missingFields.push(field.label || fieldKey);
-        }
-      }
-    }
-
-    if (missingFields.length > 0) {
-      setSubmissionError(
-        `Please fill in all required fields: ${missingFields.join(", ")}`
+    if (!validationResult.isValid) {
+      // Format validation errors for display
+      const errorMessages = validationResult.errors.map(
+        (err) => `${err.fieldLabel}: ${err.error}`
       );
+      const errorMessage =
+        errorMessages.length === 1
+          ? `Please fix the following error: ${errorMessages[0]}`
+          : `Please fix the following errors: ${errorMessages.join(", ")}`;
+      setSubmissionError("Validation failed", errorMessage);
       return;
     }
 

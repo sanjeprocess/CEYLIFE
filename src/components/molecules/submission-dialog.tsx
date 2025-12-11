@@ -94,7 +94,7 @@ export function SubmissionDialog({
 
   return (
     <Dialog open={isOpen && !isClosing}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-3xl">
         <DialogHeader>
           <div className="flex items-center gap-3">
             {isSuccess ? (

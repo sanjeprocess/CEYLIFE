@@ -105,6 +105,9 @@ age:
   required: false
   placeholder: Enter your age
   description: Your age in years
+  validation:
+    min: 0
+    max: 100
 amount:
   type: number
   label: Requested Amount
