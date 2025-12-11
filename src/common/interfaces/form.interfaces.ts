@@ -95,7 +95,7 @@ export interface IFormSubmissionFieldMapping {
   to: string;
   transform?: IFormSubmissionTransform;
   options?: Record<string, unknown>;
-  script?: string;
+  script?: string; // transformation script to be executed
   value?: string;
 }
 

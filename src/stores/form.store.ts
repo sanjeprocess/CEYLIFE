@@ -16,6 +16,7 @@ interface FormStore {
   fieldVariableDeps: FieldVariableDeps;
   isSubmitting: boolean;
   submissionError: string | null;
+  submissionErrorReason: string | null;
   submissionSuccess: boolean;
   submissionData: Record<string, unknown> | null;
   initializeForm: (form: IForm) => void;
@@ -25,7 +26,7 @@ interface FormStore {
   getComputedValues: () => Record<string, FormValue>;
   resetForm: () => void;
   setSubmitting: (isSubmitting: boolean) => void;
-  setSubmissionError: (error: string | null) => void;
+  setSubmissionError: (error: string | null, errorReason?: string | null) => void;
   setSubmissionSuccess: (
     success: boolean,
     data?: Record<string, unknown>
@@ -52,6 +53,7 @@ const useFormStore = create<FormStore>((set, get) => ({
   fieldVariableDeps: {},
   isSubmitting: false,
   submissionError: null,
+  submissionErrorReason: null,
   submissionSuccess: false,
   submissionData: null,
 
@@ -96,9 +98,10 @@ const useFormStore = create<FormStore>((set, get) => ({
   setSubmitting: (isSubmitting: boolean) =>
     set({ isSubmitting, submissionError: null }),
 
-  setSubmissionError: (error: string | null) =>
+  setSubmissionError: (error: string | null, errorReason?: string | null) =>
     set({
       submissionError: error,
+      submissionErrorReason: errorReason || null,
       isSubmitting: false,
       submissionSuccess: false,
     }),
@@ -115,6 +118,7 @@ const useFormStore = create<FormStore>((set, get) => ({
     set({
       isSubmitting: false,
       submissionError: null,
+      submissionErrorReason: null,
       submissionSuccess: false,
       submissionData: null,
     }),
