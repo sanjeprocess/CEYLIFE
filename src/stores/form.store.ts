@@ -14,12 +14,24 @@ interface FormStore {
   form: IForm | undefined;
   rawValues: Record<string, FormValue>;
   fieldVariableDeps: FieldVariableDeps;
+  isSubmitting: boolean;
+  submissionError: string | null;
+  submissionErrorReason: string | null;
+  submissionSuccess: boolean;
+  submissionData: Record<string, unknown> | null;
   initializeForm: (form: IForm) => void;
   updateValue: (key: string, value: FormValue) => void;
   getRawValue: (key: string) => FormValue;
   getComputedValue: (key: string) => FormValue;
   getComputedValues: () => Record<string, FormValue>;
   resetForm: () => void;
+  setSubmitting: (isSubmitting: boolean) => void;
+  setSubmissionError: (error: string | null, errorReason?: string | null) => void;
+  setSubmissionSuccess: (
+    success: boolean,
+    data?: Record<string, unknown>
+  ) => void;
+  resetSubmissionState: () => void;
 }
 
 function computeValue(
@@ -39,6 +51,11 @@ const useFormStore = create<FormStore>((set, get) => ({
   form: undefined,
   rawValues: {},
   fieldVariableDeps: {},
+  isSubmitting: false,
+  submissionError: null,
+  submissionErrorReason: null,
+  submissionSuccess: false,
+  submissionData: null,
 
   initializeForm: (form: IForm) => {
     const rawValues = parseFormToFormData(form);
@@ -77,6 +94,34 @@ const useFormStore = create<FormStore>((set, get) => ({
       set({ rawValues });
     }
   },
+
+  setSubmitting: (isSubmitting: boolean) =>
+    set({ isSubmitting, submissionError: null }),
+
+  setSubmissionError: (error: string | null, errorReason?: string | null) =>
+    set({
+      submissionError: error,
+      submissionErrorReason: errorReason || null,
+      isSubmitting: false,
+      submissionSuccess: false,
+    }),
+
+  setSubmissionSuccess: (success: boolean, data?: Record<string, unknown>) =>
+    set({
+      submissionSuccess: success,
+      submissionData: data || null,
+      isSubmitting: false,
+      submissionError: null,
+    }),
+
+  resetSubmissionState: () =>
+    set({
+      isSubmitting: false,
+      submissionError: null,
+      submissionErrorReason: null,
+      submissionSuccess: false,
+      submissionData: null,
+    }),
 }));
 
 export default useFormStore;

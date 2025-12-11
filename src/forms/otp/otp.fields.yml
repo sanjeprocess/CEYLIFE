@@ -77,3 +77,101 @@ submissionDate:
   placeholder: Current date and time
   description: Date and time of submission
   defaultValue: "{{$now}}"
+termsAccepted:
+  type: checkbox
+  label: I accept the terms and conditions
+  required: true
+  description: Please check to proceed
+  checked: false
+marketingConsent:
+  type: checkbox
+  label: I consent to receive marketing communications
+  required: false
+  description: Optional marketing consent
+  checked: false
+preferences:
+  type: checkbox-group
+  label: Communication Preferences
+  required: false
+  description: Select your preferred communication methods
+  options:
+    email: Email
+    sms: SMS
+    phone: Phone Call
+    mail: Postal Mail
+age:
+  type: number
+  label: Age
+  required: false
+  placeholder: Enter your age
+  description: Your age in years
+amount:
+  type: number
+  label: Requested Amount
+  required: false
+  placeholder: 0.00
+  description: Amount in local currency
+  validation:
+    min: 0
+    max: 1000000
+priority:
+  type: number
+  label: Priority Level
+  required: false
+  placeholder: 1-10
+  description: Priority level (1 = low, 10 = high)
+  validation:
+    min: 1
+    max: 10
+tags:
+  type: text
+  label: Tags
+  required: false
+  placeholder: tag1, tag2, tag3
+  description: Comma-separated tags for categorization
+categories:
+  type: checkbox-group
+  label: Request Categories
+  required: false
+  description: Select applicable categories
+  options:
+    urgent: Urgent
+    standard: Standard
+    followup: Follow-up Required
+    documentation: Documentation
+    verification: Verification
+streetAddress:
+  type: text
+  label: Street Address
+  required: false
+  placeholder: 123 Main Street
+  description: Your street address
+city:
+  type: text
+  label: City
+  required: false
+  placeholder: Colombo
+  description: Your city
+postalCode:
+  type: text
+  label: Postal Code
+  required: false
+  placeholder: 00100
+  description: Your postal code
+status:
+  type: select
+  label: Request Status
+  required: false
+  description: Current status of the request
+  options:
+    pending: Pending
+    in_progress: In Progress
+    completed: Completed
+    cancelled: Cancelled
+notes:
+  type: textarea
+  label: Additional Notes
+  required: false
+  placeholder: Enter any additional information
+  description: Any additional notes or comments
+  rows: 4
