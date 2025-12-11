@@ -1,7 +1,8 @@
 # otp form submission
 
-baseUrl: http://localhost:8080
-endpoint: /submit
+# Mock endpoint for testing - change to real API endpoint for production
+baseUrl: http://localhost:3000
+endpoint: /api/mock-submit
 method: POST
 requiresAccessToken: true
 

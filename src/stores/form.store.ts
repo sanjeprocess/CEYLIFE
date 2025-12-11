@@ -26,7 +26,10 @@ interface FormStore {
   getComputedValues: () => Record<string, FormValue>;
   resetForm: () => void;
   setSubmitting: (isSubmitting: boolean) => void;
-  setSubmissionError: (error: string | null, errorReason?: string | null) => void;
+  setSubmissionError: (
+    error: string | null,
+    errorReason?: string | null
+  ) => void;
   setSubmissionSuccess: (
     success: boolean,
     data?: Record<string, unknown>
