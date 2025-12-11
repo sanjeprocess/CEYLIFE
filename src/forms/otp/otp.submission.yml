@@ -1,5 +1,65 @@
 # otp form submission
 
-endpoint: /api/forms/otp
+baseUrl: http://localhost:8080
+endpoint: /submit
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  - from: clientName
+    to: customer.name
+    transform: trim
+
+  - from: clientEmail
+    to: customer.email
+    transform: [trim, lowercase]
+
+  - from: contactNo1
+    to: customer.phone
+
+  - from: $static
+    to: metadata.form_id
+    value: otp-form
+
+  - from: $static
+    to: metadata.form_version
+    value: "1"
+
+  - from: $variable
+    to: metadata.contract_sequence
+    value: "{{contract_sequence}}"
+
+  - from: $variable
+    to: metadata.clou_reference
+    value: "{{clou_reference}}"
+
+  - from: $static
+    to: metadata.submitted_at
+    value: "{{$now}}"
+
+response:
+  successCheck:
+    - type: status
+      values: [200, 201]
+
+  variableMapping:
+    - path: data.submission_id
+      to: submission_id
+      required: true
+    - path: data.reference_number
+      to: reference_number
+      required: true
+
+  messages:
+    success:
+      title: Success
+      content: Form submitted successfully! Reference {{reference_number}}
+    error:
+      title: Error
+      content: "{{error_message}}"

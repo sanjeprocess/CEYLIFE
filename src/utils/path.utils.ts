@@ -90,3 +90,41 @@ export function convertToString(value: unknown): string {
 
   return String(value);
 }
+
+// Sets a value at a nested path in an object, creating intermediate objects as needed
+// Supports: "fieldName", "customer.contact.email"
+export function setValueByPath(
+  obj: Record<string, unknown>,
+  path: string,
+  value: unknown
+): Record<string, unknown> {
+  if (!path) {
+    return obj;
+  }
+
+  const segments = path
+    .replace(/\[(\d+)\]/g, ".$1")
+    .split(".")
+    .filter((segment) => segment !== "");
+
+  const result = JSON.parse(JSON.stringify(obj));
+  let current: Record<string, unknown> = result;
+
+  for (let i = 0; i < segments.length - 1; i++) {
+    const segment = segments[i];
+
+    if (
+      !current[segment] ||
+      typeof current[segment] !== "object" ||
+      Array.isArray(current[segment])
+    ) {
+      current[segment] = {};
+    }
+    current = current[segment] as Record<string, unknown>;
+  }
+
+  const lastSegment = segments[segments.length - 1];
+  current[lastSegment] = value;
+
+  return result;
+}

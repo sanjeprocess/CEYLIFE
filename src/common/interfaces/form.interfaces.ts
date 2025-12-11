@@ -75,10 +75,69 @@ export interface IFormMetadata {
   searchParamsVariables?: Record<string, string>; // variables to be used in the form (eg: "cs": "contract_sequence", "id": "card_id")
 }
 
+export interface IFormSubmissionHeader {
+  name: string;
+  value: string;
+}
+
+export interface IFormSubmissionQueryParam {
+  name: string;
+  value: string;
+}
+
+export type IFormSubmissionTransform =
+  | string
+  | string[]
+  | { name: string; options?: Record<string, unknown> };
+
+export interface IFormSubmissionFieldMapping {
+  from: string | string[];
+  to: string;
+  transform?: IFormSubmissionTransform;
+  options?: Record<string, unknown>;
+  script?: string;
+  value?: string;
+}
+
+export interface IFormSubmissionSuccessCheck {
+  type: "status" | "field";
+  values?: number[];
+  path?: string;
+  value?: unknown;
+}
+
+export interface IFormSubmissionVariableMapping {
+  path: string;
+  to: string;
+  required: boolean;
+}
+
+export interface IFormSubmissionMessages {
+  success: {
+    title?: string;
+    content: string;
+  };
+  error: {
+    title?: string;
+    content: string;
+  };
+}
+
+export interface IFormSubmissionResponse {
+  successCheck?: IFormSubmissionSuccessCheck[];
+  variableMapping?: IFormSubmissionVariableMapping[];
+  messages?: IFormSubmissionMessages;
+}
+
 export interface IFormSubmission {
+  baseUrl?: string;
   endpoint: string;
   method: HttpMethod;
   requiresAccessToken: boolean;
+  headers?: IFormSubmissionHeader[];
+  queryParams?: IFormSubmissionQueryParam[];
+  fieldMapping?: IFormSubmissionFieldMapping[];
+  response?: IFormSubmissionResponse;
 }
 
 export interface IFormFileOptions {

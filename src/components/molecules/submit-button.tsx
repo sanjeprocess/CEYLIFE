@@ -1,7 +1,10 @@
+import { LoaderCircle } from "lucide-react";
+
 import { IFormLayoutItem } from "@/common/interfaces/form.interfaces";
 import { useTranslation } from "@/hooks/useTranslation.hook";
 import { useVariableReplacement } from "@/hooks/useVariableReplacement.hook";
 import { styles } from "@/services/render.service";
+import useFormStore from "@/stores/form.store";
 import { cn } from "@/utils/shadcn.utils";
 
 import { Button } from "../atoms/button";
@@ -14,16 +17,18 @@ interface SubmitButtonProps {
 export function SubmitButton({ layout, submitText }: SubmitButtonProps) {
   const translate = useTranslation();
   const translationKey = layout.key;
+  const { isSubmitting } = useFormStore();
 
-  // Get button text (translated if key provided, otherwise use submitText)
   const translatedText = translationKey
     ? translate(translationKey, String(submitText))
     : String(submitText);
 
-  // Apply variable replacement
   const buttonText = useVariableReplacement(translatedText);
 
-  // Get variant (default to "default" if not specified)
+  const loadingText = layout.loadingTextKey
+    ? translate(layout.loadingTextKey, layout.loadingText || "Submitting...")
+    : layout.loadingText || "Submitting...";
+
   const variant = layout.variant || "default";
 
   return (
@@ -40,9 +45,11 @@ export function SubmitButton({ layout, submitText }: SubmitButtonProps) {
       <Button
         type="submit"
         variant={variant}
-        disabled={false} // Will be handled later when submission is implemented
+        disabled={isSubmitting}
+        className="gap-2"
       >
-        {buttonText}
+        {isSubmitting && <LoaderCircle className="h-4 w-4 animate-spin" />}
+        {isSubmitting ? loadingText : buttonText}
       </Button>
     </div>
   );
