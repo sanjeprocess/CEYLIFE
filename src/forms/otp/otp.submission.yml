@@ -10,27 +10,118 @@ headers:
     value: application/json
   - name: Authorization
     value: Bearer {{$WORKHUB_TOKEN}}
+  - name: X-Form-Version
+    value: "1.0"
+
+queryParams:
+  - name: source
+    value: web-form
+  - name: timestamp
+    value: "{{$now}}"
 
 fieldMapping:
+  # Transformation Return Types:
+  # The 'returnType' field allows you to explicitly declare the expected data type for strong type validation.
+  # Supported types: 'string', 'number', 'boolean', 'array', 'object', 'any'
+  # If returnType is specified, the system will validate and coerce the transformation result to match.
+  # If omitted, any JSON-serializable type is accepted (backward compatible).
+
+  # Basic transformations - single and chained (string return type)
   - from: clientName
     to: customer.name
     transform: trim
+    returnType: string
 
   - from: clientEmail
     to: customer.email
     transform: [trim, lowercase]
+    returnType: string
 
+  # Number transformation - returns number type
+  - from: clientNumber
+    to: customer.client_number
+    transform: toNumber
+    returnType: number
+
+  # Transformation with options (date formatting) - returns string
+  - from: submissionDate
+    to: customer.submission_date
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD HH:mm:ss"
+    returnType: string
+
+  # Custom JavaScript transformation - explicit string return type
   - from: contactNo1
     to: customer.phone
+    returnType: string
+    script: |
+      // Remove all non-digit characters and format phone number
+      const cleaned = String(value).replace(/\D/g, '');
+      if (cleaned.length === 11 && cleaned.startsWith('94')) {
+        return '+' + cleaned;
+      } else if (cleaned.length === 9) {
+        return '+94' + cleaned;
+      }
+      return String(value);
 
+  # Multiple field combination - returns array type
+  - from: [contactNo1, contactNo2]
+    to: customer.alternative_contacts
+    returnType: array
+    script: |
+      // Return array of contact numbers, filtering out empty values
+      if (Array.isArray(value)) {
+        return value.filter(c => c && String(c).trim() !== '');
+      }
+      // If value is a string (joined), split it
+      if (typeof value === 'string') {
+        return value.split(' ').filter(c => c && c.trim() !== '');
+      }
+      return [];
+
+  # Checkbox handling - returns boolean type (strongly typed)
+  - from: termsAccepted
+    to: consent.terms_accepted
+    returnType: boolean
+    script: |
+      // Return boolean directly - no conversion needed
+      return value === true || value === 'true' || value === 1;
+
+  # Checkbox with boolean return type
+  - from: marketingConsent
+    to: consent.marketing_consent
+    returnType: boolean
+    script: |
+      // Return boolean value directly
+      return value === true || value === 'true' || value === 1;
+
+  # Checkbox group handling - returns array type
+  - from: preferences
+    to: consent.communication_preferences
+    returnType: array
+    script: |
+      // Return array directly - no string conversion
+      if (Array.isArray(value)) {
+        return value.filter(v => v);
+      }
+      return [];
+
+  # Static values with variable replacement
   - from: $static
     to: metadata.form_id
     value: otp-form
 
   - from: $static
     to: metadata.form_version
-    value: "1"
+    value: "1.0"
 
+  - from: $static
+    to: metadata.environment
+    value: production
+
+  # Variables from form context
   - from: $variable
     to: metadata.contract_sequence
     value: "{{contract_sequence}}"
@@ -39,14 +130,162 @@ fieldMapping:
     to: metadata.clou_reference
     value: "{{clou_reference}}"
 
+  - from: $variable
+    to: metadata.client_name
+    value: "{{client_name}}"
+
+  # System variables
   - from: $static
     to: metadata.submitted_at
     value: "{{$now}}"
+
+  - from: $static
+    to: metadata.submitted_date
+    value: "{{$today}}"
+
+  # Complex custom transformation combining multiple values
+  - from: requestType
+    to: request.details.type
+    transform: uppercase
+    returnType: string
+
+  - from: questionnaireType
+    to: request.details.questionnaire_type
+    transform: [trim, lowercase]
+    returnType: string
+
+  - from: preferredLanguage
+    to: request.details.preferred_language
+    returnType: string
+    script: |
+      // Capitalize first letter of language
+      if (!value) return '';
+      return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+
+  # Number transformations - age, amount, priority
+  - from: age
+    to: customer.age
+    returnType: number
+    script: |
+      // Ensure age is a valid number between 0 and 150
+      const ageNum = typeof value === 'number' ? value : Number(value);
+      if (isNaN(ageNum) || ageNum < 0 || ageNum > 150) {
+        return null; // Invalid age
+      }
+      return Math.floor(ageNum);
+
+  - from: amount
+    to: request.amount
+    returnType: number
+    script: |
+      // Convert to number and round to 2 decimal places
+      const num = typeof value === 'number' ? value : Number(value);
+      if (isNaN(num) || num < 0) {
+        return 0;
+      }
+      return Math.round(num * 100) / 100;
+
+  - from: priority
+    to: request.priority
+    returnType: number
+    script: |
+      // Ensure priority is between 1 and 10
+      const priorityNum = typeof value === 'number' ? value : Number(value);
+      if (isNaN(priorityNum)) {
+        return 5; // Default priority
+      }
+      return Math.max(1, Math.min(10, Math.round(priorityNum)));
+
+  # Array transformations - tags and categories
+  - from: tags
+    to: request.tags
+    returnType: array
+    script: |
+      // Convert comma-separated string to array of trimmed tags
+      if (Array.isArray(value)) {
+        return value.map(tag => String(tag).trim()).filter(tag => tag);
+      }
+      if (typeof value === 'string') {
+        return value.split(',').map(tag => tag.trim()).filter(tag => tag);
+      }
+      return [];
+
+  - from: categories
+    to: request.categories
+    returnType: array
+    script: |
+      // Return array of selected categories
+      if (Array.isArray(value)) {
+        return value.filter(cat => cat);
+      }
+      return [];
+
+  # Object transformation - address object (nested structure)
+  # Setting nested paths (customer.address.street, customer.address.city, etc.)
+  # automatically creates the nested object structure
+  - from: streetAddress
+    to: customer.address.street
+    returnType: string
+    script: |
+      if (!value) return '';
+      return typeof value === 'string' ? value.trim() : String(value);
+
+  - from: city
+    to: customer.address.city
+    returnType: string
+    script: |
+      if (!value) return '';
+      return typeof value === 'string' ? value.trim() : String(value);
+
+  - from: postalCode
+    to: customer.address.postalCode
+    returnType: string
+    script: |
+      if (!value) return '';
+      // Clean postal code (remove spaces, ensure uppercase)
+      const code = typeof value === 'string' ? value.trim().toUpperCase() : String(value).toUpperCase();
+      return code.replace(/\s+/g, '');
+
+  # Object transformation example - contact info nested object
+  # Demonstrates building nested object structures using dot notation paths
+  - from: contactNo2
+    to: customer.contact.secondary
+    returnType: string
+    script: |
+      if (!value) return '';
+      return typeof value === 'string' ? value.trim() : String(value);
+
+  # Status transformation with validation
+  - from: status
+    to: request.status
+    returnType: string
+    script: |
+      // Normalize status value
+      if (!value) return 'pending';
+      const statusStr = typeof value === 'string' ? value.toLowerCase().trim() : String(value).toLowerCase();
+      const validStatuses = ['pending', 'in_progress', 'completed', 'cancelled'];
+      if (validStatuses.includes(statusStr)) {
+        return statusStr;
+      }
+      return 'pending'; // Default to pending if invalid
+
+  # Notes transformation
+  - from: notes
+    to: request.notes
+    returnType: string
+    script: |
+      if (!value) return '';
+      // Trim and normalize whitespace
+      const notesStr = typeof value === 'string' ? value : String(value);
+      return notesStr.trim().replace(/\n{3,}/g, '\n\n'); // Max 2 consecutive newlines
 
 response:
   successCheck:
     - type: status
       values: [200, 201]
+    - type: field
+      path: data.status
+      value: "success"
 
   variableMapping:
     - path: data.submission_id
@@ -55,11 +294,14 @@ response:
     - path: data.reference_number
       to: reference_number
       required: true
+    - path: data.tracking_code
+      to: tracking_code
+      required: false
 
   messages:
     success:
       title: Success
-      content: Form submitted successfully! Reference {{reference_number}}
+      content: Form submitted successfully! Your reference number is {{reference_number}}
     error:
       title: Error
       content: "{{error_message}}"

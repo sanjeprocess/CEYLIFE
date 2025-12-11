@@ -4,6 +4,8 @@
 - field: clientName
 - spacer: 10
 - field: clientEmail
+- spacer: 10
+- field: age
 - spacer: 20
 - h2: Contract Details
 - field: contractNumber
@@ -17,13 +19,40 @@
 - spacer: 10
 - field: contactNo2
 - spacer: 20
-- h2: Additional Information
+- h2: Address
+- field: streetAddress
+- spacer: 10
+- field: city
+- spacer: 10
+- field: postalCode
+- spacer: 20
+- h2: Request Details
 - field: requestType
 - spacer: 10
 - field: questionnaireType
 - spacer: 10
 - field: preferredLanguage
 - spacer: 10
+- field: status
+- spacer: 10
+- field: amount
+- spacer: 10
+- field: priority
+- spacer: 10
+- field: tags
+- spacer: 10
+- field: categories
+- spacer: 10
 - field: submissionDate
+- spacer: 20
+- h2: Additional Information
+- field: notes
+- spacer: 20
+- h2: Consent & Preferences
+- field: termsAccepted
+- spacer: 10
+- field: marketingConsent
+- spacer: 10
+- field: preferences
 - spacer: 30
 - submit: Submit Form
