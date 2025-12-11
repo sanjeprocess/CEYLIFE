@@ -97,6 +97,7 @@ export interface IFormSubmissionFieldMapping {
   options?: Record<string, unknown>;
   script?: string; // transformation script to be executed
   value?: string;
+  returnType?: "string" | "number" | "boolean" | "array" | "object" | "any"; // expected return type for strong type validation
 }
 
 export interface IFormSubmissionSuccessCheck {

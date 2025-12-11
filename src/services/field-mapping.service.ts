@@ -21,17 +21,24 @@ export async function mapFieldsToBody(
   let body: Record<string, unknown> = {};
 
   for (const mapping of fieldMapping) {
-    let sourceValue: string | undefined;
+    let sourceValue: unknown;
 
     // Determine source value based on 'from' field
     if (Array.isArray(mapping.from)) {
-      // Multiple fields - combine them (for future use)
-      sourceValue = mapping.from
+      // Multiple fields - combine them as array or join based on returnType
+      const values = mapping.from
         .map((field) => {
           const val = formValues[field];
-          return val !== undefined && val !== null ? String(val) : "";
+          return val !== undefined && val !== null ? val : null;
         })
-        .join(" ");
+        .filter((val) => val !== null);
+
+      // If returnType is array, keep as array; otherwise join as string
+      if (mapping.returnType === "array") {
+        sourceValue = values;
+      } else {
+        sourceValue = values.map((val) => String(val)).join(" ");
+      }
     } else if (mapping.from === "$static") {
       // Static value from 'value' field
       if (!mapping.value) {
@@ -59,13 +66,13 @@ export async function mapFieldsToBody(
         runtimeVariables
       );
     } else {
-      // Form field value
+      // Form field value - keep original type
       const formValue = formValues[mapping.from];
       if (formValue === undefined || formValue === null) {
         // Skip if field value is not present
         continue;
       }
-      sourceValue = String(formValue);
+      sourceValue = formValue;
     }
 
     // Apply transformations if provided
@@ -74,7 +81,8 @@ export async function mapFieldsToBody(
         mapping.transform,
         mapping.script,
         sourceValue,
-        variables
+        variables,
+        mapping.returnType
       );
 
       // Set value at the specified path in the body
