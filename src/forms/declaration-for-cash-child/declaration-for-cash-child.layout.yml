@@ -29,7 +29,11 @@
         - field: telephone
           colspan: 1
 
-    - field: benefitsRequired
+    - text: Benefits Required
+    - field: familyDigasiriPlus
+    - field: hospitalCashPlus
+    - field: majorSurgeryPlus
+    - field: healthSupportPlus
 - card:
   items:
     - field: isChildGoodHealth
@@ -84,25 +88,25 @@
       columns:
         - field: fathersNic
         - field: mothersNic
-    - row: 2
-      columns:
-        - text: Witnesses 1
-        - text: Witnesses 2
-    - row: 2
+    - text: Witnesses 1
+    - text: I certify that the signature 1-2 was/were placed in my presence
+    - row: 2 
       columns:
         - field: witness1Signature
-        - field: witness2Signature
+        - field: witness1Name
     - row: 2
       columns:
-        - field: witness1Name
+        - field: witness1Address
+        - field: witness1Nic
+    - text: Witnesses 2
+    - text: I certify that the signature 1-2 and witness 1 were placed in my presence
+    - row: 2
+      columns:
+        - field: witness2Signature
         - field: witness2Name
     - row: 2
       columns:
-        - field : witness1Address
-        - field : witness2Address
-    - row: 2
-      columns:
-        - field: witness1Nic
+        - field: witness2Address
         - field: witness2CodeNo
 
         

@@ -6,14 +6,14 @@ ProposerName:
   required: false
   placeholder: Proposer's Name
   description: Proposer's Name
-  defaultValue: ""
+  defaultValue: "{{proposers_name}}"
 proposalNum:
   type: number
   label: Proposal Number
   required: false
   placeholder: Proposal Number
   description: Proposal Number
-  defaultValue: ""
+  defaultValue: "{{proposal_number}}"
 occupation:
   type: text
   label: 1. What is your occupation? if more than one, State all occupations.

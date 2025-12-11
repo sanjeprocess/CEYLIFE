@@ -7,13 +7,15 @@ proposerName:
   validation:
     minLength: 3
     maxLength: 100
-contactNum:
+  defaultValue: "{{client_name}}"
+contractNum:
   type: tel
   label: Contract Number
   required: true
   validation:
     minLength: 3
     maxLength: 100
+  defaultValue: "{{contract_number}}"
 dateDiagnosed:
   type: date
   label: Date diabetes Diagnosed

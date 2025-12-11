@@ -6,6 +6,7 @@
     - field: contractNumber
     - field: nicNumber
 - card: Occupation Clause
+  align: center
   key: card.occupationClause
   items:
     - text: It is hereby declared and agreed, that if the Life Assured / Spouse

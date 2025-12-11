@@ -6,6 +6,7 @@ fullName:
   label: Full Name
   required: false
   placeholder: Enter Full Name
+  defaultValue: "{{full_name}}"
 
 currentResidence:
   type: text
