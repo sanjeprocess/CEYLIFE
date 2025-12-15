@@ -1,5 +1,308 @@
 # dgh-hsp form submission
 
-endpoint: /api/forms/dgh-hsp
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w2f50e680cd/cards
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # Section 1: Life Assured
+  - from: policyNo
+    to: policyNo
+    returnType: string
+
+  - from: 11FullName
+    to: 11FullName
+    returnType: string
+
+  - from: gender
+    to: gender
+    returnType: string
+
+  - from: 12CurrentAddress
+    to: 12CurrentAddress
+    returnType: string
+
+  - from: country
+    to: country
+    returnType: string
+
+  - from: city
+    to: city
+    returnType: string
+
+  - from: emailAddress
+    to: emailAddress
+    returnType: string
+
+  - from: telephoneFixed
+    to: telephoneFixed
+    returnType: string
+
+  - from: mobile
+    to: mobile
+    returnType: string
+
+  - from: 13DateOfBirth
+    to: 13DateOfBirth
+    returnType: string
+    transform: toDate
+
+  - from: 14Height
+    to: 14Height
+    returnType: string
+
+  - from: weight
+    to: weight
+    returnType: string
+
+  - from: 15OccupationJobTitleBusinessAndItsNature
+    to: 15OccupationJobTitleBusinessAndItsNature
+    returnType: string
+
+  - from: nameOfTheEmployee
+    to: nameOfTheEmployee
+    returnType: string
+
+  - from: 16AnnualIncome
+    to: 16AnnualIncome
+    returnType: string
+
+  # Section 2: Your Health Condition
+  - from: 21Diabetes
+    to: 21Diabetes
+    returnType: string
+
+  - from: 21Details
+    to: 21Details
+    returnType: string
+
+  - from: 22HighBloodPressure
+    to: 22HighBloodPressure
+    returnType: string
+
+  - from: 22Details
+    to: 22Details
+    returnType: string
+
+  - from: 23ElevatedCholesterol
+    to: 23ElevatedCholesterol
+    returnType: string
+
+  - from: 23Details
+    to: 23Details
+    returnType: string
+
+  - from: 24CardiovascularSystemDiseaseASDVSD
+    to: 24CardiovascularSystemDiseaseASDVSD
+    returnType: string
+
+  - from: 24Details
+    to: 24Details
+    returnType: string
+
+  - from: 25CystNoduleTumorGrowthOrAnyTypeOfCancer
+    to: 25CystNoduleTumorGrowthOrAnyTypeOfCancer
+    returnType: string
+
+  - from: 25Details
+    to: 25Details
+    returnType: string
+
+  - from: 26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc
+    to: 26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc
+    returnType: string
+
+  - from: 26Details
+    to: 26Details
+    returnType: string
+
+  - from: 27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc
+    to: 27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc
+    returnType: string
+
+  - from: 27Details
+    to: 27Details
+    returnType: string
+
+  - from: 28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc
+    to: 28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc
+    returnType: string
+
+  - from: healthQ2_8Details
+    to: 28Details
+    returnType: string
+
+  - from: 29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc
+    to: 29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc
+    returnType: string
+
+  - from: 29Details
+    to: 29Details
+    returnType: string
+
+  - from: 210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc
+    to: 210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc
+    returnType: string
+
+  - from: 210Details
+    to: 210Details
+    returnType: string
+
+  - from: 211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc
+    to: 211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc
+    returnType: string
+
+  - from: 211Details
+    to: 211Details
+    returnType: string
+
+  - from: 212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis
+    to: 212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis
+    returnType: string
+
+  - from: 212Details
+    to: 212Details
+    returnType: string
+
+  - from: 213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge
+    to: 213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge
+    returnType: string
+
+  - from: 213Details
+    to: 213Details
+    returnType: string
+
+  - from: 214ChronicOrCongenitalSkinCondition
+    to: 214ChronicOrCongenitalSkinCondition
+    returnType: string
+
+  - from: 214Details
+    to: 214Details
+    returnType: string
+
+  - from: 215AnyMentalImpairmentsDisorderOrIllness
+    to: 215AnyMentalImpairmentsDisorderOrIllness
+    returnType: string
+
+  - from: 215Details
+    to: 215Details
+    returnType: string
+
+  - from: 216AnyCongenitalDisordersDeformitiesOrAnomalies
+    to: 216AnyCongenitalDisordersDeformitiesOrAnomalies
+    returnType: string
+
+  - from: 216Details
+    to: 216Details
+    returnType: string
+
+  - from: 217ACovid19InfectionOrItsComplication
+    to: 217ACovid19InfectionOrItsComplication
+    returnType: string
+
+  - from: 217Details
+    to: 217Details
+    returnType: string
+
+  - from: 218AnyOtherDiseaseNotMentionedHerein
+    to: 218AnyOtherDiseaseNotMentionedHerein
+    returnType: string
+
+  - from: 218Details
+    to: 218Details
+    returnType: string
+
+  # Section 3: Other Information
+  - from: 31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years
+    to: 31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years
+    returnType: string
+
+  - from: 31Details
+    to: 31Details
+    returnType: string
+
+  - from: 32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity
+    to: 32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity
+    returnType: string
+
+  - from: 32Details
+    to: 32Details
+    returnType: string
+
+  - from: 33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium
+    to: 33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium
+    returnType: string
+
+  - from: 33Details
+    to: 33Details
+    returnType: string
+
+  - from: 34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou
+    to: 34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou
+    returnType: string
+
+  - from: 34Details
+    to: 34Details
+    returnType: string
+
+  - from: 35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP
+    to: 35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP
+    returnType: string
+
+  - from: 35Details
+    to: 35Details
+    returnType: string
+
+  - from: date
+    to: date
+    returnType: string
+    transform: toDate
+
+  - from: signatureOfLifeAssured
+    to: signatureOfLifeAssured
+    returnType: string
+
+
+  - from: [policyNo, 11FullName, mobile]
+    to: title
+    returnType: string
+    script: |
+      if (value) {
+      value = value.replaceAll(' ', '_');
+      return value;
+      }
+      return 'title_not_generated';
+
+  - from: iHerebyApplyTo
+    to: iHerebyApplyTo
+    returnType: array
+  
+  - from: details
+    to: details
+    returnType: string
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  # Metadata & Static Values
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+
