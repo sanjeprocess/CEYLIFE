@@ -5,9 +5,9 @@
 
 - card: 1. Life Assured
   items:
-    - field: fullName
+    - field: 11FullName
     - field: gender
-    - field: currentAddress
+    - field: 12CurrentAddress
     - row: 2
       columns:
         - field: country
@@ -17,67 +17,45 @@
       columns:
         - field: telephoneFixed
         - field: mobile
-    - field: dateOfBirth
+    - field: 13DateOfBirth
     - row: 2
       columns:
-        - field: height
+        - field: 14Height
         - field: weight
-    - field: occupation
-    - field: employerName
-    - field: annualIncome
+    - field: 15OccupationJobTitleBusinessAndItsNature
+    - field: nameOfTheEmployee
+    - field: 16AnnualIncome
 
 - card: 2. Your Health Condition
   items:
     - text: "Are you at present suffering from any of the following disorders/diseases or have you suffered from the following disorders/diseases during the last 10 years?"
-    - field: healthQ2_1
-    - field: healthQ2_1Details
-    - field: healthQ2_2
-    - field: healthQ2_2Details
-    - field: healthQ2_3
-    - field: healthQ2_3Details
-    - field: healthQ2_4
-    - field: healthQ2_4Details
-    - field: healthQ2_5
-    - field: healthQ2_5Details
-    - field: healthQ2_6
-    - field: healthQ2_6Details
-    - field: healthQ2_7
-    - field: healthQ2_7Details
-    - field: healthQ2_8
-    - field: healthQ2_8Details
-    - field: healthQ2_9
-    - field: healthQ2_9Details
-    - field: healthQ2_10
-    - field: healthQ2_10Details
-    - field: healthQ2_11
-    - field: healthQ2_11Details
-    - field: healthQ2_12
-    - field: healthQ2_12Details
-    - field: healthQ2_13
-    - field: healthQ2_13Details
-    - field: healthQ2_14
-    - field: healthQ2_14Details
-    - field: healthQ2_15
-    - field: healthQ2_15Details
-    - field: healthQ2_16
-    - field: healthQ2_16Details
-    - field: healthQ2_17
-    - field: healthQ2_17Details
-    - field: healthQ2_18
-    - field: healthQ2_18Details
+    - field: 21Diabetes
+    - field: 22HighBloodPressure
+    - field: 23ElevatedCholesterol
+    - field: 24CardiovascularSystemDiseaseASDVSD
+    - field: 25CystNoduleTumorGrowthOrAnyTypeOfCancer
+    - field: 26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc
+    - field: 27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc
+    - field: 28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc
+    - field: 29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc
+    - field: 210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc
+    - field: 211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc
+    - field: 212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis
+    - field: 213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge
+    - field: 214ChronicOrCongenitalSkinCondition
+    - field: 215AnyMentalImpairmentsDisorderOrIllness
+    - field: 216AnyCongenitalDisordersDeformitiesOrAnomalies
+    - field: 217ACovid19InfectionOrItsComplication
+    - field: 218AnyOtherDiseaseNotMentionedHerein
+
 
 - card: Other Information
   items:
-    - field: healthQ3_1
-    - field: healthQ3_1Details
-    - field: healthQ3_2
-    - field: healthQ3_2Details
-    - field: healthQ3_3
-    - field: healthQ3_3Details
-    - field: healthQ3_4
-    - field: healthQ3_4Details
-    - field: healthQ3_5
-    - field: healthQ3_5Details
+    - field: 31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years
+    - field: 32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity
+    - field: 33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium
+    - field: 34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou
+    - field: 35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP
 
 - card: DECLARATION
   align: center
@@ -89,8 +67,8 @@
 
 - row: 2
   columns:
-    - field: declarationDate
-    - field: signature
+    - field: date
+    - field: signatureOfLifeAssured
 
 - spacer: 20
 - row: 12

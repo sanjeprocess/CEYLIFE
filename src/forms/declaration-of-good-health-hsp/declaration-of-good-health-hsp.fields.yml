@@ -8,7 +8,7 @@ policyNo:
   defaultValue: "{{policy_no}}"
 
 # Section 1: Life Assured
-fullName:
+11FullName:
   type: text
   label: 1.1 Full Name
   required: true
@@ -24,7 +24,7 @@ gender:
     female: Female
     other: Other / Prefer not to say
 
-currentAddress:
+12CurrentAddress:
   type: text
   label: 1.2 Current Address
   required: true
@@ -60,12 +60,12 @@ mobile:
   required: true
   placeholder: Enter mobile number
 
-dateOfBirth:
+13DateOfBirth:
   type: date
   label: 1.3 Date of Birth
   required: true
 
-height:
+14Height:
   type: text
   label: 1.4 Height
   required: true
@@ -77,26 +77,26 @@ weight:
   required: true
   placeholder: Enter weight
 
-occupation:
+15OccupationJobTitleBusinessAndItsNature:
   type: text
   label: 1.5 Occupation / Job Title / Business and its Nature
   required: true
   placeholder: Enter occupation/job title/business
 
-employerName:
+nameOfTheEmployee:
   type: text
   label: Name of the Employee
   required: true
   placeholder: Enter employer name
 
-annualIncome:
+16AnnualIncome:
   type: number
   label: 1.6 Annual Income – Rs
   required: true
   placeholder: Enter annual income
 
 # Section 2: Your Health Condition
-healthQ2_1:
+21Diabetes:
   type: radio-group
   label: 2.1 Diabetes
   required: true
@@ -104,7 +104,7 @@ healthQ2_1:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_1Details:
+    21Details:
       type: textarea
       label: Please provide details
       required: true
@@ -112,7 +112,7 @@ healthQ2_1:
         operator: eq
         value: "yes"
 
-healthQ2_2:
+22HighBloodPressure:
   type: radio-group
   label: 2.2 High blood pressure(Hypertension)
   required: true
@@ -120,7 +120,7 @@ healthQ2_2:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_2Details:
+    22Details:
       type: textarea
       label: Please provide details
       required: true
@@ -128,7 +128,7 @@ healthQ2_2:
         operator: eq
         value: "yes"
 
-healthQ2_3:
+23ElevatedCholesterol:
   type: radio-group
   label: 2.3 Elevated cholesterol
   required: true
@@ -136,7 +136,7 @@ healthQ2_3:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_3Details:
+    23Details:
       type: textarea
       label: Please provide details
       required: true
@@ -144,7 +144,7 @@ healthQ2_3:
         operator: eq
         value: "yes"
 
-healthQ2_4:
+24CardiovascularSystemDiseaseASDVSD:
   type: radio-group
   label: "2.4 Any Disease of the Cardio Vascular System e.g.: Heart disease, Shortness of breath, Chest pain, Hole in the heart (ASD, VSD)"
   required: true
@@ -152,7 +152,7 @@ healthQ2_4:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_4Details:
+    24Details:
       type: textarea
       label: Please provide details
       required: true
@@ -160,7 +160,7 @@ healthQ2_4:
         operator: eq
         value: "yes"
 
-healthQ2_5:
+25CystNoduleTumorGrowthOrAnyTypeOfCancer:
   type: radio-group
   label: "2.5 Cyst, Nodule, Tumour, growth or any type of cancer"
   required: true
@@ -168,7 +168,7 @@ healthQ2_5:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_5Details:
+    25Details:
       type: textarea
       label: Please provide details
       required: true
@@ -176,7 +176,7 @@ healthQ2_5:
         operator: eq
         value: "yes"
 
-healthQ2_6:
+26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc:
   type: radio-group
   label: "2.6 Disorders of the blood such as Aneamia, Leukaemia, Thalassaemia, etc."
   required: true
@@ -184,7 +184,7 @@ healthQ2_6:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_6Details:
+    26Details:
       type: textarea
       label: Please provide details
       required: true
@@ -192,7 +192,7 @@ healthQ2_6:
         operator: eq
         value: "yes"
 
-healthQ2_7:
+27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc:
   type: radio-group
   label: "2.7 Any disease of the brain or nervous system e.g.: Epilepsy or fits, Convulsion, Paralysis, Stroke, etc."
   required: true
@@ -200,7 +200,7 @@ healthQ2_7:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_7Details:
+    27Details:
       type: textarea
       label: Please provide details
       required: true
@@ -208,14 +208,14 @@ healthQ2_7:
         operator: eq
         value: "yes"
 
-healthQ2_8:
+28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc:
   type: radio-group
   label: "2.8 Any disease of the lungs e.g.: frequent Cough, Asthma, Bronchitis, spitting of blood, Tuberculosis, etc."
   required: true
   options:
     yes: "Yes"
     no: "No"
-  dependencies:
+  28Details:
     healthQ2_8Details:
       type: textarea
       label: Please provide details
@@ -224,7 +224,7 @@ healthQ2_8:
         operator: eq
         value: "yes"
 
-healthQ2_9:
+29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc:
   type: radio-group
   label: "2.9 Any diseases of the Gastrointestinal or Digestive system e.g.: Gastric ulcer, Chronic indigestion / Diarrhea / Abdominal pain, Piles Fistula, Rupture, Hernia or Liver disease, Jaundice, Hepatitis or Gallbladder disease, etc."
   required: true
@@ -232,7 +232,7 @@ healthQ2_9:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_9Details:
+    29Details:
       type: textarea
       label: Please provide details
       required: true
@@ -240,7 +240,7 @@ healthQ2_9:
         operator: eq
         value: "yes"
 
-healthQ2_10:
+210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc:
   type: radio-group
   label: "2.10 Any disorder of the Genito-urinary system – e.g.: fibroids, ovarian cyst, endometriosis, heavy or irregular menstruation, prostate disorder, Kidney / Bladder stones, Kidney failure or any other urinary disease, etc."
   required: true
@@ -248,7 +248,7 @@ healthQ2_10:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_10Details:
+    210Details:
       type: textarea
       label: Please provide details
       required: true
@@ -256,7 +256,7 @@ healthQ2_10:
         operator: eq
         value: "yes"
 
-healthQ2_11:
+211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc:
   type: radio-group
   label: "2.11 Any disease of the eyes, ears, nose or throat -e.g.: Cataract, Goiter, etc."
   required: true
@@ -264,7 +264,7 @@ healthQ2_11:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_11Details:
+    211Details:
       type: textarea
       label: Please provide details
       required: true
@@ -272,7 +272,7 @@ healthQ2_11:
         operator: eq
         value: "yes"
 
-healthQ2_12:
+212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis:
   type: radio-group
   label: "2.12 Any disease / disorder of the Spine, Bones, Joints or Gout, Rheumatism / Rheumatic fever, Arthritis"
   required: true
@@ -280,7 +280,7 @@ healthQ2_12:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_12Details:
+    212Details:
       type: textarea
       label: Please provide details
       required: true
@@ -288,7 +288,7 @@ healthQ2_12:
         operator: eq
         value: "yes"
 
-healthQ2_13:
+213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge:
   type: radio-group
   label: "2.13 Any sexually transmitted disease e.g.: Gonorrhoea, Syphilis, AIDS or any Genital sore or discharge."
   required: true
@@ -296,7 +296,7 @@ healthQ2_13:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_13Details:
+    213Details:
       type: textarea
       label: Please provide details
       required: true
@@ -304,7 +304,7 @@ healthQ2_13:
         operator: eq
         value: "yes"
 
-healthQ2_14:
+214ChronicOrCongenitalSkinCondition:
   type: radio-group
   label: "2.14 Chronic or Congenital skin conditions"
   required: true
@@ -312,7 +312,7 @@ healthQ2_14:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_14Details:
+    214Details:
       type: textarea
       label: Please provide details
       required: true
@@ -320,7 +320,7 @@ healthQ2_14:
         operator: eq
         value: "yes"
 
-healthQ2_15:
+215AnyMentalImpairmentsDisorderOrIllness:
   type: radio-group
   label: "2.15 Any Mental impairments, disorder or illness"
   required: true
@@ -328,7 +328,7 @@ healthQ2_15:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_15Details:
+    215Details:
       type: textarea
       label: Please provide details
       required: true
@@ -336,7 +336,7 @@ healthQ2_15:
         operator: eq
         value: "yes"
 
-healthQ2_16:
+216AnyCongenitalDisordersDeformitiesOrAnomalies:
   type: radio-group
   label: "2.16 Any Congenital disorders, deformities or anomalies"
   required: true
@@ -344,7 +344,7 @@ healthQ2_16:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_16Details:
+    216Details:
       type: textarea
       label: Please provide details
       required: true
@@ -352,7 +352,7 @@ healthQ2_16:
         operator: eq
         value: "yes"
 
-healthQ2_17:
+217ACovid19InfectionOrItsComplication:
   type: radio-group
   label: "2.17 A covid-19 infection or its complications"
   required: true
@@ -360,7 +360,7 @@ healthQ2_17:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_17Details:
+    217Details:
       type: textarea
       label: Please provide details
       required: true
@@ -368,7 +368,7 @@ healthQ2_17:
         operator: eq
         value: "yes"
 
-healthQ2_18:
+218AnyOtherDiseaseNotMentionedHerein:
   type: radio-group
   label: "2.18 Any other disease not mentioned herein"
   required: true
@@ -376,7 +376,7 @@ healthQ2_18:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ2_18Details:
+    218Details:
       type: textarea
       label: Please provide details
       required: true
@@ -385,7 +385,7 @@ healthQ2_18:
         value: "yes"
 
 # Section 3: Other Information
-healthQ3_1:
+31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years:
   type: radio-group
   label: "3.1 Have you consulted a physician / surgeon for any reason including routine examinations or investigations and blood tests in the past 5 years?"
   required: true
@@ -393,7 +393,7 @@ healthQ3_1:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ3_1Details:
+    31Details:
       type: textarea
       label: Please provide details
       required: true
@@ -401,7 +401,7 @@ healthQ3_1:
         operator: eq
         value: "yes"
 
-healthQ3_2:
+32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity:
   type: radio-group
   label: "3.2 Do you consume liquor/drugs or smoke cigarettes? (if so, please state the frequency and quantity)"
   required: true
@@ -409,7 +409,7 @@ healthQ3_2:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ3_2Details:
+    32Details:
       type: textarea
       label: Please state the frequency and quantity
       required: true
@@ -417,7 +417,7 @@ healthQ3_2:
         operator: eq
         value: "yes"
 
-healthQ3_3:
+33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium:
   type: radio-group
   label: "3.3 Has any of your proposal for insurance ever been declined or postponed or been accepted with an extra premium."
   required: true
@@ -425,7 +425,7 @@ healthQ3_3:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ3_3Details:
+    33Details:
       type: textarea
       label: Please provide details
       required: true
@@ -433,7 +433,7 @@ healthQ3_3:
         operator: eq
         value: "yes"
 
-healthQ3_4:
+34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou:
   type: radio-group
   label: "3.4 Do you or your relatives have or had any kind of threat on your/their lives or is there any criminal case against you?"
   required: true
@@ -441,7 +441,7 @@ healthQ3_4:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ3_4Details:
+    34Details:
       type: textarea
       label: Please provide details
       required: true
@@ -449,7 +449,7 @@ healthQ3_4:
         operator: eq
         value: "yes"
 
-healthQ3_5:
+35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP:
   type: radio-group
   label: "3.5 Are you a politically exposed person (PEP) or related to a PEP? (PEP-Politicians, Senior Government Officers, Judges and judicial Officers, Commissioned Officers of Armed forces / police, Members of Commissions / Director Boards / University Councils, Officers of International Organizations.)"
   required: true
@@ -457,7 +457,7 @@ healthQ3_5:
     yes: "Yes"
     no: "No"
   dependencies:
-    healthQ3_5Details:
+    35Details:
       type: textarea
       label: Please provide details
       required: true
@@ -465,13 +465,13 @@ healthQ3_5:
         operator: eq
         value: "yes"
 
-declarationDate:
+date:
   type: date
   label: Date
   required: true
   defaultValue: "{{$today}}"
 
-signature:
+signatureOfLifeAssured:
   type: file
   label: Signature of Life Assured
   required: true
