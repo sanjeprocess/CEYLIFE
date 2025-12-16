@@ -12,6 +12,14 @@ fullName:
   required: true
   placeholder: Enter full name
   defaultValue: "{{full_name}}"
+gender:
+  type: radio-group
+  label: Gender
+  required: true
+  placeholder: Enter gender
+  options:
+    male: "Male"
+    female: "Female"
 address:
   type: text
   label: Address
@@ -176,21 +184,21 @@ healthQ7:
     liquorUsage:
       type: text
       label: Liquor – quantity/frequency
-      required: true
+ 
       conditionalOptions:
         operator: eq
         value: "yes"
     smokeUsage:
       type: text
       label: Smoke – quantity/frequency
-      required: true
+    
       conditionalOptions:
         operator: eq
         value: "yes"
     drugsUsage:
       type: text
       label: Drugs – quantity/frequency
-      required: true
+
       conditionalOptions:
         operator: eq
         value: "yes"
@@ -253,5 +261,5 @@ submittedDate:
 signature:
   type: file
   label: Signature of the life Assured *
-  required: true
+  required: false
 
