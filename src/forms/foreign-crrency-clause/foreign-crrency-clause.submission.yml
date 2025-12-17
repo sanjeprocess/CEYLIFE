@@ -1,5 +1,71 @@
 # foreign-crrency-clause form submission
 
-endpoint: /api/forms/foreign-crrency-clause
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w3047756566/cards
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Fields ---
+  - from: proposersName
+    to: proposersName
+    returnType: string
+
+  # Mapped twice as per cURL requirement for 'customerName'
+  - from: "{{client_name}}"
+    to: customerName
+    returnType: string
+
+  - from: contractNumber
+    to: contractNumber
+    returnType: string
+
+  - from: limitedOnDate
+    to: date
+    returnType: string
+
+
+  - from: proposerDate
+    to: 1Date 
+    returnType: string
+
+
+  - from: proposerSignature
+    to: signatureOfTheProposer
+    returnType: string
+
+  # --- Metadata & Variables ---
+
+
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: [contractNumber, proposersName, "{{contact_1}}"]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'title_not_generated';
