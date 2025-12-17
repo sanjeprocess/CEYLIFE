@@ -41,6 +41,19 @@ strictDiet:
     minLength: 3
     maxLength: 100
   orientation: horizontal
+  dependencies:
+    strictDietDetails:
+      type: textarea
+      label: Details
+      required: false
+      placeholder: Please give details
+      defaultValue: ""
+      validation:
+        minLength: 3
+        maxLength: 100
+      conditionalOptions:
+        operator: eq
+        value: yes
 oralDrug:
   type: radio-group
   options:
@@ -54,7 +67,7 @@ oralDrug:
     maxLength: 100
   orientation: horizontal
   dependencies:
-    Details:
+    oralDrugDetails:
       type: textarea
       label: Details
       required: false
@@ -78,7 +91,7 @@ insulin:
     maxLength: 100
   orientation: horizontal
   dependencies:
-    Details:
+    insulinDetails:
       type: textarea
       label: Details
       required: false
@@ -103,7 +116,7 @@ oralInsulinVaried:
     maxLength: 100
   orientation: horizontal
   dependencies:
-    Details:
+    oralInsulinVariedDetails:
       type: textarea
       label: Details
       required: false
@@ -128,7 +141,7 @@ urineCheck:
     maxLength: 100
   orientation: horizontal
   dependencies:
-    Details:
+    urineCheckDetails:
       type: radio-group
       options:
         never: a.)Never
@@ -154,7 +167,7 @@ coma:
   required: true
   orientation: horizontal
   dependencies:
-    Details:
+    comaDetails:
       type: textarea
       label: Details
       required: true
@@ -173,7 +186,7 @@ illnesses:
   required: true
   orientation: horizontal
   dependencies:
-    Details:
+    illnessesDetails:
       type: textarea
       label: Details
       required: true
@@ -190,12 +203,11 @@ date:
 signature:
   type: file
   label: Signature
-  required: true
-  defaultValue: ""
+  required: false
   fileOptions:
     maxFileSize: 10485760
     allowedExtensions:
-      - .png
-      - .jpg
-      - .jpeg
-      - .pdf
+      - jpg
+      - png
+      - jpeg
+      - pdf
