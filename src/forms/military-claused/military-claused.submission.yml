@@ -1,5 +1,72 @@
 # military-claused form submission
 
-endpoint: /api/forms/military-claused
+# baseUrl: https://app.workhub24.com
+# endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w5a5bf4da6e/cards
+baseUrl: http://localhost:3000
+endpoint: /api/mock-submit
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Personal Information ---
+  - from: date
+    to: submittedDate
+    returnType: string
+    transform: toDate
+
+  - from: topDate
+    to: date
+    returnType: string
+    transform: toDate
+
+  - from: name
+    to: name
+    returnType: string
+
+  - from: address
+    to: address
+    returnType: string
+
+  - from: policyNo
+    to: lIFEASSURANCEPOLICYNO
+    returnType: string
+
+  - from: assuredName
+    to: lIFEASSUREDSNAME
+    returnType: string
+
+  - from: signature
+    to: signature
+    returnType: string
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+  - from: [policyNo, assuredName]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'title_not_generated';
