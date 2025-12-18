@@ -1,0 +1,102 @@
+# liquor-trade-questionnaire form submission
+
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wc361b25ef7/cards
+method: POST
+requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  - from: occupation
+    to: 1WhatIsYourOccupationIfMoreThanOneStateAllOccupations
+    returnType: string
+
+  - from: dutyInvolve
+    to: doYourDutiesInvolvegiveDetails
+    returnType: string
+
+  - from: teetotaler
+    to: 3AreYouATeetotalerIfSoHaveYouAlwaysBeenSo
+    returnType: string
+
+  - from: teetotalerDetails
+    to: 3Details
+    returnType: string
+
+  - from: health
+    to: 4HasConsumptionOfLiquorEverAffectedYourHealthOrAbilityToWork
+    returnType: string
+
+  - from: smoker
+    to: 5DoYouSmokeIfSoGiveDetails
+    returnType: string
+
+  - from: smokerDetails
+    to: 5Details
+    returnType: string
+
+  - from: changeTheNature
+    to: 6DoYouIntendToChangeTheNatureOfTheWorkYouPerformInTheNextTwelveMonthsifSoGiveDetails
+    returnType: string
+
+  - from: changeTheNatureDetails
+    to: 6Details
+    returnType: string
+
+  - from: liquorType
+    to: aTypeOfLiquorConsumed
+    returnType: string
+
+  - from: avgDailyIntake
+    to: bAverageDailyIntakeInUnitsOneUnitRepresents1OunceSpiritsOr4OuncesWineOr10OuncesBeer
+    returnType: string
+
+  - from: date
+    to: date
+    returnType: string
+    transform: toDate
+
+  - from: ProposerName
+    to: proposersName
+    returnType: string
+
+  - from: proposalNum
+    to: proposalNumber
+    returnType: string
+
+  - from: signature
+    to: proposersSignature
+    returnType: string
+
+  # --- Metadata & Variables ---
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+  
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+  - from: [proposalNum, ProposerName]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'title_not_generated';
