@@ -73,7 +73,7 @@ position:
   placeholder: Enter  position
   defaultValue: ""
 serviceYears:
-  type: number
+  type: text
   label: h.) How long have you been engaged in a sea-faring occupation?
   required: true
   placeholder: Enter  years
@@ -104,7 +104,7 @@ date:
 signature:
   type: file
   label: Signature
-  required: true
+  required: false
   defaultValue: ""
   fileOptions:
     maxFileSize: 10485760
