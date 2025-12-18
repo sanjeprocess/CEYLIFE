@@ -1,5 +1,58 @@
-# student-claused form submission
-
-endpoint: /api/forms/student-claused
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wd6b25c9985/cards
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  - from: proposerName
+    to: proposersName
+    returnType: string
+
+  - from: proposerNic
+    to: nICNumber
+    returnType: string
+
+  - from: proposerContract
+    to: contractNumber
+    returnType: string
+
+  - from: date
+    to: date
+    returnType: string
+
+  - from: signature
+    to: signatureOfTheProposer
+    returnType: string
+
+  - from: [proposerContract, proposerName]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'student_clause_form';
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"

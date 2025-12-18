@@ -25,12 +25,15 @@ proposerContract:
 signature:
   type: file
   label: Signature of Proposer
-  required: true
+  required: false
   defaultValue: ""
   fileOptions:
     maxFileSize: 10485760
     allowedExtensions:
-      - image/*
+      - png
+      - jpg
+      - jpeg
+      - pdf
 date:
   type: date
   label: Date
