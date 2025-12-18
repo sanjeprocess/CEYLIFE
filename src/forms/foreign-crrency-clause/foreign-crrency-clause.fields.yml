@@ -29,15 +29,15 @@ proposerDate:
 proposerSignature:
   type: file
   label: Signature of the proposer
-  required: true
+  required: false
   defaultValue: ""
   fileOptions:
     maxFileSize: 10485760
     allowedExtensions:
-      - .png
-      - .jpg
-      - .jpeg
-      - .pdf
+      - png
+      - jpg
+      - jpeg
+      - pdf
   
 explainingPersonDate:
   type: date
@@ -48,12 +48,12 @@ explainingPersonDate:
 explainingPersonSignature:
   type: file
   label: Signature of the explaining person the content of the above declaration to the proposer
-  required: true
+  required: false
   defaultValue: ""
   fileOptions:
     maxFileSize: 10485760
     allowedExtensions:
-      - .png
-      - .jpg
-      - .jpeg
-      - .pdf
+      - png
+      - jpg
+      - jpeg
+      - pdf

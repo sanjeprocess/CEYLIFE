@@ -195,4 +195,4 @@ declarationDate:
 signature:
   type: file
   label: Signature of the participant
-  required: true
+  required: false

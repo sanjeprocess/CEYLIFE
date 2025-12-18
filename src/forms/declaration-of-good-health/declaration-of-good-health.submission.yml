@@ -1,5 +1,220 @@
 # dgh form submission
 
-endpoint: /api/forms/dgh
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w1fd6da45a6/cards
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Personal Information ---
+  - from: submittedDate
+    to: submittedDate
+    returnType: string
+    transform: toDate
+
+
+
+  - from: policyNumber
+    to: 11PolicyNo
+    returnType: string
+
+  - from: fullName
+    to: 12FullNames
+    returnType: string
+  
+
+
+  - from: gender
+    to: gender
+    returnType: string
+
+  - from: address
+    to: 13Address
+    returnType: string
+
+  - from: telephoneNumber
+    to: 14TelephoneNumberFixed
+    returnType: string
+
+  - from: mobileNumber
+    to: mobile
+    returnType: string
+
+  - from: emailAddress
+    to: 15EmailAddress
+    returnType: string
+
+  - from: occupation
+    to: 16OccupationBusinessJobTitle
+    returnType: string
+
+  - from: natureOfOccupation
+    to: 17NatureOfOccupationBusinessDetailsOfOtherSourceOfIncome
+    returnType: string
+
+  - from: annualIncome
+    to: 18AnnualIncome
+    returnType: string
+
+  # --- Apply To ---
+  - from: applyTo
+    to: iweHerebyApplyTo
+    returnType: string
+
+
+  - from: include
+    to: wILLPROVIDEALLBENEFITS
+    returnType: string
+
+  # --- Health Questions (Direct Aggregated) ---
+  
+  # 1. Major Diseases
+  - from: healthQ1
+    to: 21DoYouSufferOrHaveYouSufferedFromDiabetesHeartDiseaseHighBloodPressureElevatedCholesterolKidneyDiseaseRespiratoryDiseaseLiverDiseaseStrokeCancer
+    returnType: string
+
+
+  - from: healthQ1Details
+    to: 21Details
+    returnType: string
+
+  # 2. Other Diseases
+  - from: healthQ2
+    to: 22DoYouSufferOrHaveYouSufferedFromAnyOtherDiseaseOrUndergoneAnyMedicalInvestigationOrSurgery
+    returnType: string
+
+
+  - from: healthQ2Details
+    to: 22Details
+    returnType: string
+
+  # 3. Consulted
+  - from: healthQ3
+    to: 23HaveYouConsultedAPhysicianForReasonIncludingRoutineExaminationsAndBloodTestsDuringThePast05Years
+    returnType: string
+
+
+  - from: healthQ3Details
+    to: 23Details
+    returnType: string
+
+  # 4. Mental/Deformity
+  - from: healthQ4
+    to: 24DoYouSufferFromAnyMentalImpairmentOrPhysicalDeformity
+    returnType: string
+
+
+  - from: healthQ4Details
+    to: 24Details
+    returnType: string
+
+  # 5. Covid
+  - from: healthQ5
+    to: 25HaveYouEverHospitalizedForCovid19InfectionOrItsComplicationsOrDoYouHaveAnyOngoingToCOVID19InfectionRelatedComplications
+    returnType: string
+
+
+  - from: healthQ5Details
+    to: 25Details
+    returnType: string
+
+  # 6. PEP
+  - from: healthQ6
+    to: 26AreYouPoliticallyExposedPersonPEPOrRelatedToAPEPPEPPoliticiansSeniorGovernmentOfficersJudgesAndJudicialOfficersCommissionedOfficersOfArmedForcesPoliceMembersOfCommissionsDirectorBoardsUniversityCouncilsOfficersOfInternationalOrganizations
+    returnType: string
+
+  - from: healthQ6Details
+    to: 26Details
+    returnType: string
+
+  # 7. Liquor/Drugs/Smoke
+  - from: healthQ7
+    to: 27DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity
+    returnType: string
+
+
+  - from: liquorUsage
+    to: liquarQuniityfrequency
+    returnType: string
+
+  - from: smokeUsage
+    to: smokequantityFrequncy
+    returnType: string
+
+  - from: drugsUsage
+    to: drugsQuantityFrequency
+    returnType: string
+
+  # 8. Threat
+  - from: healthQ8
+    to: 28DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou
+    returnType: string
+
+
+  - from: healthQ8Details
+    to: 28Details
+    returnType: string
+
+  # 9. Pregnant (Female Only)
+  - from: healthQ9
+    to: 29ForFemalesLivesOnlyAreYouPregnantItSoWhenIsTheConfinement
+    returnType: string
+
+
+  - from: confinementDate
+    to: confinementDate
+    returnType: string
+    transform: toDate
+
+  # 10. Declined Proposal
+  - from: healthQ10
+    to: 210HadAnyProposalForLifeOrHealthAssuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnyExtraPremium
+    returnType: string
+
+
+  - from: healthQ10Details
+    to: 210Details
+    returnType: string
+
+  # --- Metadata & Variables ---
+  - from: signature
+    to: spaceForSignatureSignatureOfTheLifeAssured
+    returnType: string
+
+  - from: generatedPDF
+    to: generatedPDF
+    returnType: file
+
+
+  - from: [policyNumber, fullName, mobileNumber]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'title_not_generated';
+
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"

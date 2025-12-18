@@ -1,5 +1,159 @@
 # family-takaful form submission
 
-endpoint: /api/forms/family-takaful
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w6870919706/cards
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Metadata & Variables ---
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+  # --- Personal Information ---
+  - from: declarationDate
+    to: date
+    returnType: string
+    transform: toDate
+
+  - from: certificateNo
+    to: cERTIFICATENO
+    returnType: string
+
+  - from: participantName
+    to: pARTICIPANTSFULLNAME
+    returnType: string
+
+  - from: address
+    to: aDDRESS
+    returnType: string
+
+
+  - from: signature
+    to: signatureOfTheParticipant
+    returnType: string
+
+  # --- Revival / Benefit ---
+  - from: revivalType
+    to: iHerebyApplyTo
+    returnType: string
+
+  - from: include
+    to: includeBenefit
+    returnType: string
+
+  # --- Health Questions ---
+  # Q1
+  - from: healthQ1
+    to: "01DoYouSufferOrHaveYouSufferedFromDiabetesHeartDiseaseHighBloodPressureElevatedCholesterolKidneyDiseaseRespiratoryDiseaseLiverDiseaseStrokeCancer"
+    returnType: string
+
+  - from: healthQ1Details
+    to: "01Details"
+    returnType: string
+
+  # Q2
+  - from: healthQ2
+    to: "02DoYouSufferOrHaveYouSufferedFromAnyOtherDiseaseOrUndergoneAnyMedicalInvestigationOrSurgery"
+    returnType: string
+
+  - from: healthQ2Details
+    to: "02Details"
+    returnType: string
+
+  # Q3
+  - from: healthQ3
+    to: "03HaveYouConsultedAPhysicianForReasonIncludingRoutineExaminationsAndBloodTestsDuringThePast05Years"
+    returnType: string
+
+  - from: healthQ3Details
+    to: "03Details"
+    returnType: string
+
+  # Q4
+  - from: healthQ4
+    to: "04DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequencyAndQuantity"
+    returnType: string
+
+  - from: healthQ4Details
+    to: "04Detail"
+    returnType: string
+
+  # Q5
+  - from: healthQ5
+    to: "05DoYouOrYourRelativesHaveOrHadAnyKindOfTreatsOnYourtheirLivesOrIswasThereACriminalCaseMadeAgainstYou"
+    returnType: string
+
+  - from: healthQ5Details
+    to: "05Details"
+    returnType: string
+
+  # Q6
+  - from: healthQ6
+    to: "06HaveYouHadAnyProposalForLifeOrHealthAssuranceTakafulCoverDeclinedOrPostponedOrAcceptedWithAnyExtraPremiumcontribution"
+    returnType: string
+
+  - from: healthQ6Details
+    to: "06Detail"
+    returnType: string
+
+  # Q7
+  - from: healthQ7
+    to: "07DoYouSufferFromAnyMentalImpairmentOrPhysicalDeformity"
+    returnType: string
+
+  - from: healthQ7Details
+    to: "07Detail"
+    returnType: string
+
+  # Q8 (Female / Pregnant)
+  - from: healthQ8
+    to: "08ForFemaleLivesOnlyAreYouPregnantIfSoWhenIsTheConfinement"
+    returnType: string
+
+  - from: confinementDate
+    to: "8ConfinementDate"
+    returnType: string
+    transform: toDate
+
+  # Q9
+  - from: healthQ9
+    to: "09HaveYouChangedYourOccupation"
+    returnType: string
+
+  - from: healthQ9Details
+    to: "09Detail"
+    returnType: string
+
+  # --- Generated Fields ---
+
+  - from: [certificateNo, participantName]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'title_not_generated';
+
+
