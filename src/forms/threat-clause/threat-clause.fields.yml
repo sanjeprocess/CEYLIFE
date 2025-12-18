@@ -28,4 +28,4 @@ date:
 signature:
   type: file
   label: Signature of Life Assured
-  required: true
+  required: false

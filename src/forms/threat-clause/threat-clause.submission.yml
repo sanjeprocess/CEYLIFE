@@ -1,5 +1,66 @@
-# threat-clause form submission
+# threat-clause submission config
 
-endpoint: /api/forms/threat-clause
+# baseUrl: https://app.workhub24.com
+# endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w09b185f6a7/cards
+
+baseUrl: http://localhost:3000
+endpoint: /api/mock-submit
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Fields ---
+  - from: date
+    to: date
+    returnType: string
+    transform: toDate
+
+  - from: proposerName
+    to: proposersName
+    returnType: string
+
+  - from: proposerNic
+    to: nICNumber
+    returnType: string
+
+  - from: signature
+    to: signatureOfTheProposer
+    returnType: image
+
+  # --- Variables ---
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: contractNumber
+    value: "{{contract_number}}"
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+  # --- Computed ---
+  - from: ["{{contract_number}}",proposerName]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'title_not_generated';
