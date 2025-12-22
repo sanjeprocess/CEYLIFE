@@ -66,6 +66,10 @@ fieldMapping:
     to: iweHerebyApplyTo
     returnType: string
 
+  - from: applyToBenifit
+    to: benefit
+    returnType: string
+
   - from: include
     to: wILLPROVIDEALLBENEFITS
     returnType: string
