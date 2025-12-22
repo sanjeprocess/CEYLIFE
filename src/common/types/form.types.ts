@@ -17,7 +17,8 @@ export type FieldType =
   | "textarea"
   | "file"
   | "url"
-  | "tel";
+  | "tel"
+  | "age";
 
 export type FormConditionalOperator =
   | "eq"

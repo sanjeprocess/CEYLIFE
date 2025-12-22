@@ -5,6 +5,8 @@
 - spacer: 10
 - field: clientEmail
 - spacer: 10
+- field: dateOfBirth
+- spacer: 10
 - field: age
 - spacer: 20
 - h2: Contract Details

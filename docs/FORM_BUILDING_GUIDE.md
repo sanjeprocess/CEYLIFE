@@ -108,6 +108,7 @@ ta:
 | `checkbox`       | Single checkbox       | `checked: false`          |
 | `checkbox-group` | Multiple checkboxes   | `options: {value: Label}` |
 | `file`           | File upload           | `fileOptions`             |
+| `age`            | Age calculator        | `dateOfBirthField`, `format`, `toDate` |
 
 ### Field Examples
 
@@ -169,6 +170,43 @@ document:
       - png
     multiple: false
 ```
+
+**Age Field (Auto-calculated):**
+
+The age field automatically calculates age from a date of birth field. It updates in real-time when the date of birth changes.
+
+```yaml
+dateOfBirth:
+  type: date
+  label: Date of Birth
+  required: true
+  placeholder: Select your date of birth
+  description: Your date of birth
+
+age:
+  type: age
+  label: Age
+  required: false
+  placeholder: Automatically calculated
+  description: Your age (automatically calculated)
+  dateOfBirthField: dateOfBirth  # Required: name of the date of birth field
+  format: "{y} years, {m} months, {d} days"  # Optional: format string (default: "{y}")
+  toDate: "{{$today}}"  # Optional: target date for calculation (defaults to current date)
+```
+
+**Format String Placeholders:**
+- `{y}` - Years
+- `{m}` - Months
+- `{d}` - Days
+
+**Examples:**
+- `format: "{y}"` → "25"
+- `format: "{y} years"` → "25 years"
+- `format: "{y} years, {m} months"` → "25 years, 3 months"
+- `format: "{y} years, {m} months, {d} days"` → "25 years, 3 months, 10 days"
+
+**toDate Variable Support:**
+The `toDate` field supports variables like `{{$today}}` for dynamic date calculation. If not specified, it defaults to the current date.
 
 ---
 
