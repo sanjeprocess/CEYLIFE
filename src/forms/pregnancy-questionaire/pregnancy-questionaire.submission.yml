@@ -1,5 +1,108 @@
 # pregnancy-questionaire form submission
 
-endpoint: /api/forms/pregnancy-questionaire
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wbcb4aaff6f/cards
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Personal Information ---
+  - from: proposersName
+    to: proposersName
+    returnType: string
+
+  - from: contractNumber
+    to: contractNumber
+    returnType: string
+
+  - from: date
+    to: date
+    returnType: string
+    transform: toDate
+
+  # --- Questionnaire ---
+  # 1. Menstrual Period
+  - from: firstDateOfMenstrualPeriod
+    to: 1DateOfTheFirstDateOfTheLastMenstrualPeriod
+    returnType: string
+    transform: toDate
+
+  # 1. Children
+  - from: haveChildren
+    to: 1DoYouHaveChildrenIfYesStateTheNumber
+    returnType: string
+
+  - from: childrenNo
+    to: 1StateTheNumber
+    returnType: number
+
+  # 2. Delivery Date
+  - from: deliveryDate
+    to: 2ExpectedDateOfDelivery
+    returnType: string
+    transform: toDate
+
+  # 2. Premature Births
+  - from: prematureBirth
+    to: 2WereThereAnyPrematureBirths
+    returnType: string
+
+  # 3. Medical Details
+  - from: medicalDetails
+    to: 3AreYouBeingTreatedOrCloselyMonitoredDueToElevatedBloodPressureDiabetesOfForAnyOtherPregnantRelatedComplicationsIfSoPleaseGiveDetailsAndForwardRelatedMedicalReports
+    returnType: string
+
+  # 3. Past Pregnancy Complications
+  - from: treatedforPregnancyRelatedComplications
+    to: 3DuringPastPregnancyiesWereTreatedForElevatedBloodPressureBloodSugarOrAnyAdverseUrineBloodReportsOrOtherIllnessesIfSoPleaseGiveDetails
+    returnType: string
+
+  - from: complicationsDetails
+    to: 3Details
+    returnType: string
+
+  # 4. Abnormalities
+  - from: abnormalitiesPertaining
+    to: 4AreYouAwareOfAnyAbnormalitiesPertainingToCurrentPregnancyIfSoPleaseGiveDetails
+    returnType: string
+
+  - from: abnormalitiesDetails
+    to: 4Details
+    returnType: string
+
+  # --- Metadata & Variables ---
+  - from: signature
+    to: signatureOfTheLifeToBeAssured
+    returnType: string
+
+  - from: [contractNumber, proposersName]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'Pregnancy_Questionnaire';
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"

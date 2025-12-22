@@ -28,12 +28,12 @@ date:
 signature:
   type: file
   label: Signature
-  required: true
+  required: false
   defaultValue: ""
   fileOptions:
     maxFileSize: 10485760
     allowedExtensions:
-      - .png
-      - .jpg
-      - .jpeg
-      - .pdf
+      - png
+      - jpg
+      - jpeg
+      - pdf

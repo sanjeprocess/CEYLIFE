@@ -1,0 +1,220 @@
+# marine-service-questionnaire form submission
+
+
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wa51d7753b6/cards
+method: POST
+requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Vessel Information ---
+  - from: vesselName
+    to: a1WhatIsTheNameOfTheVessel
+    returnType: string
+
+  - from: vesselOwner
+    to: a2WhoAreItsOwners
+    returnType: string
+
+  - from: vesselLine
+    to: a3ToWhatLineDoesItBelong
+    returnType: string
+
+  - from: motivePower
+    to: bWhatIsItsMotivePowerRatingAndGrossTonnage
+    returnType: string
+
+  - from: vesselBusiness
+    to: cInWhatBusinessIsItEngaged
+    returnType: string
+
+  - from: vesselType
+    to: fWhatTypeOfVessel
+    returnType: string
+
+  - from: businessPly
+    to: dInWhatWatersDoesItPly
+    returnType: string
+
+  - from: date
+    to: date
+    returnType: string
+    transform: toDate
+
+  - from: ports
+    to: eBetweenWhatPorts
+    returnType: string
+
+  # --- Personal/Job Information ---
+  - from: position
+    to: gWhatIsTheTitleOfYourPosition
+    returnType: string
+
+  - from: serviceYears
+    to: hHowLongHaveYouBeenEngagedInASeaFaringOccupation
+    returnType: string
+
+  # --- Insurance Info ---
+  - from: insurable
+    to: iIsTheVesselSeaworthyAndInsurable
+    returnType: string
+
+  - from: Details
+    to: ifSoIsTheVesselNowInsured
+    returnType: string
+
+  # --- Proposer Information ---
+  - from: ProposerName
+    to: proposersName
+    returnType: string
+
+  - from: proposalNum
+    to: proposalNumber
+    returnType: string
+
+  - from: signature
+    to: proposersSignature
+    returnType: string
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+  # --- Calculated Title ---
+  - from: ["{{contract_number}}", ProposerName]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'Marine_Service_Questionnaire_Submission';
+
+# marine-service-questionnaire form submission
+
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wa51d7753b6/cards
+method: POST
+requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Vessel Information ---
+  - from: vesselName
+    to: a1WhatIsTheNameOfTheVessel
+    returnType: string
+
+  - from: vesselOwner
+    to: a2WhoAreItsOwners
+    returnType: string
+
+  - from: vesselLine
+    to: a3ToWhatLineDoesItBelong
+    returnType: string
+
+  - from: motivePower
+    to: bWhatIsItsMotivePowerRatingAndGrossTonnage
+    returnType: string
+
+  - from: vesselBusiness
+    to: cInWhatBusinessIsItEngaged
+    returnType: string
+
+  - from: vesselType
+    to: fWhatTypeOfVessel
+    returnType: string
+
+  - from: businessPly
+    to: dInWhatWatersDoesItPly
+    returnType: string
+
+  - from: date
+    to: date
+    returnType: string
+    transform: toDate
+
+  - from: ports
+    to: eBetweenWhatPorts
+    returnType: string
+
+  # --- Personal/Job Information ---
+  - from: position
+    to: gWhatIsTheTitleOfYourPosition
+    returnType: string
+
+  - from: serviceYears
+    to: hHowLongHaveYouBeenEngagedInASeaFaringOccupation
+    returnType: string
+
+  # --- Insurance Info ---
+  - from: insurable
+    to: iIsTheVesselSeaworthyAndInsurable
+    returnType: string
+
+  - from: Details
+    to: ifSoIsTheVesselNowInsured
+    returnType: string
+
+  # --- Proposer Information ---
+  - from: ProposerName
+    to: proposersName
+    returnType: string
+
+  - from: proposalNum
+    to: proposalNumber
+    returnType: string
+
+  - from: signature
+    to: proposersSignature
+    returnType: string
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+  # --- Calculated Title ---
+  - from: ["{{contract_number}}", ProposerName]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'Marine_Service_Questionnaire_Submission';
