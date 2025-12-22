@@ -1,18 +1,19 @@
 "use client";
 
+import { useEffect, useMemo, useRef } from "react";
+
 import { IFormAgeField } from "@/common/interfaces/form.interfaces";
 import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
+import { replaceVariablesInText } from "@/services/variable-replacement.service";
 import useFormStore from "@/stores/form.store";
 import { useVariableStore } from "@/stores/variable.store";
-import { replaceVariablesInText } from "@/services/variable-replacement.service";
+import { calculateAge, formatAge } from "@/utils/age-calculation.utils";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
   getFieldPlaceholderKey,
 } from "@/utils/fieldKey.utils";
-import { calculateAge, formatAge } from "@/utils/age-calculation.utils";
-import { useEffect, useMemo, useRef } from "react";
 
 import {
   Field,
@@ -41,7 +42,17 @@ export function AgeField({
     if (dateOfBirthRawValue === undefined || dateOfBirthRawValue === null) {
       return null;
     }
-    return getComputedValue(field.dateOfBirthField);
+    const computed = getComputedValue(field.dateOfBirthField);
+    // Type guard: ensure we have a string (date fields should be strings)
+    if (typeof computed === "string") {
+      return computed;
+    }
+    // If it's a number, convert to string (shouldn't happen for date fields, but handle it)
+    if (typeof computed === "number") {
+      return String(computed);
+    }
+    // For any other type (boolean, arrays, File, etc.), return null
+    return null;
   }, [getComputedValue, field.dateOfBirthField, dateOfBirthRawValue]);
 
   // Resolve toDate (supports variables like {{$today}})

@@ -1,4 +1,5 @@
 import {
+  IFormAgeField,
   IFormField,
   IFormLayoutItem,
 } from "@/common/interfaces/form.interfaces";
@@ -128,7 +129,7 @@ export function FieldRenderer({
       Component = <FileField field={field} name={name} />;
       break;
     case "age":
-      Component = <AgeField field={field} name={name} />;
+      Component = <AgeField field={field as IFormAgeField} name={name} />;
       break;
     default:
       Component = (

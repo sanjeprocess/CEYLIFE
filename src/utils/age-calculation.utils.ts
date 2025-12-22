@@ -15,7 +15,8 @@ export function calculateAge(
 
   // Parse dates
   const dob = dateOfBirth instanceof Date ? dateOfBirth : new Date(dateOfBirth);
-  const target = toDate instanceof Date ? toDate : new Date(toDate);
+  const target =
+    toDate instanceof Date ? toDate : new Date(toDate ?? new Date());
 
   // Validate dates
   if (isNaN(dob.getTime()) || isNaN(target.getTime())) {
@@ -70,4 +71,3 @@ export function formatAge(
     .replace(/{m}/g, String(age.months))
     .replace(/{d}/g, String(age.days));
 }
-
