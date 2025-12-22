@@ -5,7 +5,7 @@ policyNumber:
   label: Policy Number
   required: true
   placeholder: Enter policy number
-  defaultValue: "{{policy_No}}"
+  defaultValue: "{{policy_no}}"
 fullName:
   type: text
   label: Full Name
