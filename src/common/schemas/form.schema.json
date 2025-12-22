@@ -132,6 +132,7 @@
         { "$ref": "#/definitions/IFormFileField" },
         { "$ref": "#/definitions/IFormCheckboxField" },
         { "$ref": "#/definitions/IFormTextareaField" },
+        { "$ref": "#/definitions/IFormAgeField" },
         { "$ref": "#/definitions/IFormFieldBase" }
       ]
     },
@@ -156,7 +157,8 @@
             "textarea",
             "file",
             "url",
-            "tel"
+            "tel",
+            "age"
           ],
           "description": "Field type"
         },
@@ -309,6 +311,32 @@
             },
             "fileOptions": {
               "$ref": "#/definitions/IFormFileOptions"
+            }
+          }
+        }
+      ]
+    },
+    "IFormAgeField": {
+      "allOf": [
+        { "$ref": "#/definitions/IFormFieldBase" },
+        {
+          "type": "object",
+          "required": ["dateOfBirthField"],
+          "properties": {
+            "type": {
+              "const": "age"
+            },
+            "dateOfBirthField": {
+              "type": "string",
+              "description": "Name of the field containing the date of birth"
+            },
+            "format": {
+              "type": "string",
+              "description": "Format string for age display (e.g., '{y} years, {m} months, {d} days'). Placeholders: {y} for years, {m} for months, {d} for days. Default: '{y}'"
+            },
+            "toDate": {
+              "type": "string",
+              "description": "Target date to calculate age up to (supports variables like {{$today}}). Defaults to current date if not specified"
             }
           }
         }

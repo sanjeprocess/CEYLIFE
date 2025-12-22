@@ -6,8 +6,8 @@ formDescription: Form description for Foreign Crrency Clause
 showFormHeader: true
 availableLocales:
   - en
+  - si
 defaultLocale: en
 searchParamsVariables:
   cs: contract_sequence
   id: card_id
-  proposerName: proposers_name

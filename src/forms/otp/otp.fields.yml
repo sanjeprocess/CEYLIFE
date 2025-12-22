@@ -99,15 +99,22 @@ preferences:
     sms: SMS
     phone: Phone Call
     mail: Postal Mail
+dateOfBirth:
+  type: date
+  label: Date of Birth
+  required: false
+  placeholder: Select your date of birth
+  description: Your date of birth
+  defaultValue: ""
 age:
-  type: number
+  type: age
   label: Age
   required: false
-  placeholder: Enter your age
-  description: Your age in years
-  validation:
-    min: 0
-    max: 100
+  placeholder: Automatically calculated
+  description: Your age (automatically calculated from date of birth)
+  dateOfBirthField: dateOfBirth
+  format: "{y} years, {m} months, {d} days"
+  toDate: "{{$today}}"
 amount:
   type: number
   label: Requested Amount

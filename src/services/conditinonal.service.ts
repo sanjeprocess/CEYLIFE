@@ -63,6 +63,15 @@ export function normalizeValueForConditions(
     case "number":
       const attempt = Number(value);
       return isNaN(attempt) ? 0 : attempt;
+    case "age":
+      // Age fields contain formatted strings, treat as text
+      // Try to parse as number first (for simple formats like "{y}")
+      const ageNumAttempt = Number(value);
+      if (!isNaN(ageNumAttempt)) {
+        return ageNumAttempt;
+      }
+      // Fall back to string length for formatted strings
+      return String(value).length;
     default:
       return 0;
   }

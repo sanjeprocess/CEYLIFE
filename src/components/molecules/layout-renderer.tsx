@@ -3,6 +3,7 @@ import {
   IFormLayoutItem,
 } from "@/common/interfaces/form.interfaces";
 
+import { AgeField } from "./age-field";
 import { CheckboxField } from "./checkbox-field";
 import { CheckboxGroupField } from "./checkbox-group-field";
 import { ConditionalRenderer } from "./conditional-renderer";
@@ -125,6 +126,9 @@ export function FieldRenderer({
       break;
     case "file":
       Component = <FileField field={field} name={name} />;
+      break;
+    case "age":
+      Component = <AgeField field={field} name={name} />;
       break;
     default:
       Component = (

@@ -197,13 +197,20 @@ export interface IFormFileField extends IFormFieldBase {
   fileOptions?: IFormFileOptions; // for file
 }
 
+export interface IFormAgeField extends IFormFieldBase {
+  dateOfBirthField: string;
+  format?: string; // Eg: "{y} years, {m} months, {d} days", default: "{y}"
+  toDate?: string;
+}
+
 export type IFormField =
   | IFormSelectField
   | IFormRadioGroupField
   | IFormCheckboxGroupField
   | IFormFileField
   | IFormCheckboxField
-  | IFormTextareaField;
+  | IFormTextareaField
+  | IFormAgeField;
 
 // Layout styling options for form layout items
 export interface IFormLayoutStyles {
