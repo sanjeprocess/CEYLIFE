@@ -3,6 +3,7 @@
 - h1: Personal Information
 - field: policyNumber
 - field: fullName
+- field: gender
 - field: address
 - row: 2
   columns:

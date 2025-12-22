@@ -1,0 +1,136 @@
+# diabetic-questionnaire form submission
+
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wee881b4e45/cards
+method: POST
+requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Personal Information ---
+  - from: proposerName
+    to: proposerName
+    returnType: string
+
+  - from: contractNum
+    to: contractNumber
+    returnType: string
+
+  - from: dateDiagnosed
+    to: dateDiabetesDiagnosed
+    returnType: string
+    transform: toDate
+
+  - from: nameAndAddressOfTheDoctor
+    to: doctorNameAndAddress
+    returnType: string
+
+  # --- Health Questions ---
+  # 3. Strict Diet
+  - from: strictDiet
+    to: 3DoYouFollowAStrictDiet
+    returnType: string
+
+  - from: strictDietDetails
+    to: 3Details
+    returnType: string
+
+  # 4. Oral Drug
+  - from: oralDrug
+    to: 4AreYouHavingOralDrugTreatmentIfSoPleaseGiveTheNameOfTheDrugAndDosage
+    returnType: string
+
+  - from: oralDrugDetails
+    to: 4Details
+    returnType: string
+
+  # 5. Insulin
+  - from: insulin
+    to: 5AreYouNowTakingInsulinIfSoPleaseGiveTheNumberOfUnitsPerDay
+    returnType: string
+
+  - from: insulinDetails
+    to: 5Details
+    returnType: string
+
+  # 6. Oral/Insulin Varied
+  - from: oralInsulinVaried
+    to: 6HasYouIntakeOfInsulinOrOralDrugsVariedDuringTheLast2YearsIfSoPleaseGiveFullDetails
+    returnType: string
+
+  - from: oralInsulinVariedDetails
+    to: 6Details
+    returnType: string
+
+  # 7. Urine Check
+  - from: urineCheck
+    to: 7DoYouCheckYourUrineOnARegularBasisIfSoHowOftenDoesItContainSugar
+    returnType: string
+
+  - from: urineCheckDetails
+    to: 7Details
+    returnType: string
+
+  # 8. Coma
+  - from: coma
+    to: 8SinceYourTreatmentBeganHaveYouEverHadADiabeticOrInsulinComaIfSoPleaseGiveDetailsIncludingTheDates
+    returnType: string
+
+  - from: comaDetails
+    to: 8Details
+    returnType: string
+
+  # 9. Illnesses
+  - from: illnesses
+    to: 9HaveYouEverHadAnyIllnessOrDiseaseOfTheHeartKidneyEyesCirculatoryOrNervousSystemIfSoPleaseGiveFullDetails
+    returnType: string
+
+  - from: illnessesDetails
+    to: 9Details
+    returnType: string
+
+  # --- General ---
+  - from: date
+    to: date
+    returnType: string
+    transform: toDate
+
+  - from: signature
+    to: proposersSignature
+    returnType: string
+
+  - from: generatedPDF
+    to: generatedPDF
+    returnType: file
+
+  # --- Metadata & Variables ---
+  - from: [contractNum, proposerName,"{{contact_1}}"]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'title_not_generated';
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"

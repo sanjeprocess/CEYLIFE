@@ -1,5 +1,60 @@
-# health-support-benefit-90-days-clause form submission
-
-endpoint: /api/forms/health-support-benefit-90-days-clause
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w59ab243e96/cards
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: Authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Field Mappings ---
+  - from: date
+    to: date
+    returnType: string
+    transform: toDate
+
+  - from: policyNumber
+    to: lifeInsurancePolicyNumber
+    returnType: string
+
+  - from: proposersName
+    to: name
+    returnType: string
+
+  - from: signature
+    to: signatureOfLifeToBeAssuredProposer
+    returnType: string
+
+  # --- Metadata & Variables ---
+  - from: [policyNumber, proposersName]
+    to: title
+    returnType: string
+    script: |
+       if (value) {
+           value = value.replaceAll(' ', '_');
+           return value;
+       }
+       return 'title_not_generated';
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+    # Send the initial card id which was sent in the URL to this field
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+    # Pass this value as after taking it using the sequence and card id from the get API
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+    # Sent the request type which can be taken using the get api
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+    # Send the Sequence No which was sent in the URL to this field
