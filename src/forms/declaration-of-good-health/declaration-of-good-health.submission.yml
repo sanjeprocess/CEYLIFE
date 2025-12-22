@@ -16,9 +16,10 @@ fieldMapping:
   - from: submittedDate
     to: submittedDate
     returnType: string
-    transform: toDate
-
-
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: policyNumber
     to: 11PolicyNo
@@ -27,8 +28,6 @@ fieldMapping:
   - from: fullName
     to: 12FullNames
     returnType: string
-  
-
 
   - from: gender
     to: gender
@@ -67,18 +66,16 @@ fieldMapping:
     to: iweHerebyApplyTo
     returnType: string
 
-
   - from: include
     to: wILLPROVIDEALLBENEFITS
     returnType: string
 
   # --- Health Questions (Direct Aggregated) ---
-  
+
   # 1. Major Diseases
   - from: healthQ1
     to: 21DoYouSufferOrHaveYouSufferedFromDiabetesHeartDiseaseHighBloodPressureElevatedCholesterolKidneyDiseaseRespiratoryDiseaseLiverDiseaseStrokeCancer
     returnType: string
-
 
   - from: healthQ1Details
     to: 21Details
@@ -89,7 +86,6 @@ fieldMapping:
     to: 22DoYouSufferOrHaveYouSufferedFromAnyOtherDiseaseOrUndergoneAnyMedicalInvestigationOrSurgery
     returnType: string
 
-
   - from: healthQ2Details
     to: 22Details
     returnType: string
@@ -98,7 +94,6 @@ fieldMapping:
   - from: healthQ3
     to: 23HaveYouConsultedAPhysicianForReasonIncludingRoutineExaminationsAndBloodTestsDuringThePast05Years
     returnType: string
-
 
   - from: healthQ3Details
     to: 23Details
@@ -109,7 +104,6 @@ fieldMapping:
     to: 24DoYouSufferFromAnyMentalImpairmentOrPhysicalDeformity
     returnType: string
 
-
   - from: healthQ4Details
     to: 24Details
     returnType: string
@@ -118,7 +112,6 @@ fieldMapping:
   - from: healthQ5
     to: 25HaveYouEverHospitalizedForCovid19InfectionOrItsComplicationsOrDoYouHaveAnyOngoingToCOVID19InfectionRelatedComplications
     returnType: string
-
 
   - from: healthQ5Details
     to: 25Details
@@ -138,7 +131,6 @@ fieldMapping:
     to: 27DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity
     returnType: string
 
-
   - from: liquorUsage
     to: liquarQuniityfrequency
     returnType: string
@@ -156,7 +148,6 @@ fieldMapping:
     to: 28DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou
     returnType: string
 
-
   - from: healthQ8Details
     to: 28Details
     returnType: string
@@ -165,7 +156,6 @@ fieldMapping:
   - from: healthQ9
     to: 29ForFemalesLivesOnlyAreYouPregnantItSoWhenIsTheConfinement
     returnType: string
-
 
   - from: confinementDate
     to: confinementDate
@@ -176,7 +166,6 @@ fieldMapping:
   - from: healthQ10
     to: 210HadAnyProposalForLifeOrHealthAssuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnyExtraPremium
     returnType: string
-
 
   - from: healthQ10Details
     to: 210Details
@@ -191,17 +180,15 @@ fieldMapping:
     to: generatedPDF
     returnType: file
 
-
   - from: [policyNumber, fullName, mobileNumber]
     to: title
     returnType: string
     script: |
-       if (value) {
-           value = value.replaceAll(' ', '_');
-           return value;
-       }
-       return 'title_not_generated';
-
+      if (value) {
+          value = value.replaceAll(' ', '_');
+          return value;
+      }
+      return 'title_not_generated';
 
   - from: $variable
     to: initialRecordCardID

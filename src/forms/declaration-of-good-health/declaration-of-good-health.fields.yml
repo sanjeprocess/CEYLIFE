@@ -5,7 +5,7 @@ policyNumber:
   label: Policy Number
   required: true
   placeholder: Enter policy number
-  defaultValue: "{{policy_no}}"
+  defaultValue: "{{policy_No}}"
 fullName:
   type: text
   label: Full Name
@@ -62,7 +62,7 @@ applyTo:
   placeholder: Enter apply to
   options:
     revive the above certificate under special revival: revive the above certificate under special revival
-    normal revival: normal revival
+    Normal revival: Normal revival
 applyToBenifit:
   type: checkbox
   label: benefit
@@ -82,8 +82,8 @@ healthQ1:
   label: "1. Do you suffer or have you suffered from diabetes, heart disease, high blood pressure, elevated cholesterol, kidney disease, respiratory disease, liver disease, stroke, cancer?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ1Details:
       type: textarea
@@ -91,15 +91,15 @@ healthQ1:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ2:
   type: radio-group
   label: "2. Do you suffer or have you suffered from any other disease or undergone any medical investigation or surgery?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ2Details:
       type: textarea
@@ -107,15 +107,15 @@ healthQ2:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ3:
   type: radio-group
   label: "3. Have you consulted a physician for any reason, including routine examination and blood tests during last past 5 years"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ3Details:
       type: textarea
@@ -123,15 +123,15 @@ healthQ3:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ4:
   type: radio-group
   label: "4. Do you suffer from any mental impairment or physical deformity?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ4Details:
       type: textarea
@@ -139,15 +139,15 @@ healthQ4:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ5:
   type: radio-group
   label: "5. Have you ever hospitalized for COVID-19 infections or its complications or do you have any ongoing to COVID-19 infection related complications"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ5Details:
       type: textarea
@@ -155,15 +155,15 @@ healthQ5:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ6:
   type: radio-group
   label: "6. Are you a Politically Exposed Person (PEP*) or related to a PEP? (*PEP)-Politicians, Senior Government Officers, Judges and judicial Officers, Commissioned Officers of armed forces / police, Members of Commissions/Director Boards/University Councils, Officers of International Organizations.)"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ6Details:
       type: textarea
@@ -171,45 +171,45 @@ healthQ6:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ7:
   type: radio-group
   label: "7. Do you consume liquor/drugs or smoke cigarettes? (If so, please state the frequency and quantity)"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     liquorUsage:
       type: text
       label: Liquor – quantity/frequency
- 
+
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
     smokeUsage:
       type: text
       label: Smoke – quantity/frequency
-    
+
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
     drugsUsage:
       type: text
       label: Drugs – quantity/frequency
 
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ8:
   type: radio-group
   label: "8. Do you or your relatives have or had any kind of threat on your/their lives or is there any criminal case against you?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ8Details:
       type: textarea
@@ -217,15 +217,15 @@ healthQ8:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ9:
   type: radio-group
   label: "9. For female lives only: Are you pregnant? If so, when is the confinement?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     confinementDate:
       type: date
@@ -233,15 +233,15 @@ healthQ9:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ10:
   type: radio-group
   label: "10. Had any proposal for life or health assurance ever been declined or postponed or been accepted with any extra premium?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ10Details:
       type: textarea
@@ -249,7 +249,7 @@ healthQ10:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 submittedDate:
   type: date
@@ -262,4 +262,3 @@ signature:
   type: file
   label: Signature of the life Assured *
   required: false
-
