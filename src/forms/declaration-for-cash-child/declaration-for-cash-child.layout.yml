@@ -8,8 +8,12 @@
         - field: clientNo
         - field: policyNo
 
-    - field: nameOfChild
-      colspan: 2
+    - row: 12
+      columns:
+        - field: nameTitle
+          colspan: 1
+        - field: nameOfChild
+          colspan: 11
 
     - row: 4
       columns:
@@ -39,6 +43,7 @@
     - field: isChildGoodHealth
 - card:
   items:
+    - text: 2. Is your child ever suffered or is he/she suffering from
     - field: circulatoryDisease
     - field: respiratoryDisease
     - field: genitourinaryDisease
@@ -55,6 +60,7 @@
     - field: disabilityBenefit
     - field: existingPolicy
     - field: declinedProposal
+    - text: "8."
     - field: smokedLast12Months
     - field: smokeNow
     - field: drugsOrNarcotics
@@ -68,8 +74,8 @@
 
 - card: DECLARATION
   items:
-    - text: The foregoing statements and answers are complete and true and we agree that the statements and answers shall be the basis of the contract of this assurance between this chid and Ceylinco Life Insurance Limited, Ceylinco Life Insurance Limited shall not be liable for any claim in the event of death or on account of illness or injury the cause of which was known to the proposer's pnor to acceptance of the proposal or any information or material facto withheld or concealed
-    - text: We hereby authorise any doctor, nurse or hospital official to disclose to Ceylinco Life Insurance Limited. any and all information regarding this child's past medical history, present treatment and the results of any investigation cared out
+    - text: The foregoing statements and answers are complete and true and we agree that the statements and answers shall be the basis of the contract of this assurance between this chid and Ceylinco Life Insurance Limited, Ceylinco Life Insurance Limited shall not be liable for any claim in the event of death or on account of illness or injury the cause of which was known to the proposer's prior to acceptance of the proposal or any information or material facts withheld or concealed
+    - text: We hereby authorise any doctor, nurse or hospital official to disclose to Ceylinco Life Insurance Limited. any and all information regarding this child's past medical history, present treatment and the results of any investigation carried out
     - row: 8
       columns:
         - text: Dated at
@@ -83,10 +89,10 @@
     - row: 2
       columns:
         - field: fathersSignature
-        - field: mothersSignature
+        - field:  fathersNic
     - row: 2
       columns:
-        - field: fathersNic
+        - field: mothersSignature
         - field: mothersNic
     - text: Witnesses 1
     - text: I certify that the signature 1-2 was/were placed in my presence
