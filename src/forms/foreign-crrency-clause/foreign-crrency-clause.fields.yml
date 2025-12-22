@@ -6,7 +6,7 @@ proposersName:
   label: "Proposer's Name"
   required: false
   placeholder: "Proposer's Name"
-  defaultValue: "{{proposers_name}}"
+  defaultValue: "{{client_name}}"
 
 contractNumber:
   type: text
@@ -38,7 +38,7 @@ proposerSignature:
       - jpg
       - jpeg
       - pdf
-  
+
 explainingPersonDate:
   type: date
   label: Date

@@ -1,6 +1,38 @@
 # foreign-crrency-clause form localization
 # Locales: en, si, ta
 
-en: {}
-si: {}
+en:
+  # Field labels
+  proposersName.label: "Proposer's Name"
+  contractNumber.label: "Contract Number"
+  proposerDate.label: "Date"
+  proposerSignature.label: "Proposer's Signature"
+  explainingPersonDate.label: "Date"
+  explainingPersonSignature.label: "Signature of Person Explaining the Form"
+
+  # Layout translations
+  h2.foreign_currency_heading: "PAYMENT TO EXPATRIATE POLICY HOLDERS"
+  text.foreign_currency_clause_body: >-
+    I {{client_name}} the undersigned of _______________________________ Whose life is proposed to be assured, do here by declare that I am fully aware of the prevailing Exchange control Regulations of Sri Lanka that all monies payable in respect of this assurance, either to me or my dependents, whenever such monies become payable will be paid in Sri Lanka, in Sri Lankan currency. Future, I declare, that I am agreeable to these conditions and any changes for additions that may be embodied in the exchange control regulations from time to time; That the payment of all monies in respect of this assurance shall be subject to these conditions, and that this declaration shall form part of the proposal for assurance made by me to the Ceylinco Life Insurance Limited on
+  foreign_currency_clause_body.limited_on_date: "and shall be of the same effect as if contained in the original proposal.cuimer has to Fill."
+  text.form_explained: >-
+    I have explained the contents of this form to the proposer and he has affixed his signature after fully understanding the same thereof
+
+si:
+  # Field labels
+  proposersName.label: "රක්ෂණ යෝජකයාගේ නම"
+  contractNumber.label: "රක්ෂණ යෝජකයාගේ අංකය"
+  proposerDate.label: "දිනය"
+  proposerSignature.label: "(රක්ෂණ යෝජකයාගේ අත්සන)"
+  explainingPersonDate.label: "දිනය"
+  explainingPersonSignature.label: "ඉහත ප්‍රකාශනයෙහි අඩංගු කරුණු රක්ෂණ යෝජකයා වෙත පැහැදිලි කරන ලද පුද්ගලයාගේ අත්සන"
+
+  # Layout translations
+  h2.foreign_currency_heading: "විදේශගත රක්ෂණ ඔප්පු හිමියන් වෙත ගෙවීම්"
+  text.foreign_currency_clause_body: >-
+    _______________________________ හි පදිංචි {{client_name}} නමැති මම, යෝජිත ජීවිත රක්ෂණය සඳහා මෙහි පහත අත්සන් තබන ලද අතර, මෙම රක්ෂණ සහතිකය මත මා වෙත හෝ මාගේ යැපෙන්නන් වෙත හෝ ගෙවීමට නියමිත වන සියලු මුදල් සම්බන්ධයෙන් දැනට ශ්‍රී ලංකාවේ පවතින විනිමය පාලන රෙගුලාසි සහ එවැනි මුදලක් ගෙවිය යුතු වන අවස්ථාවක දී එම මුදල ශ්‍රී ලංකාව තුළ දී, ශ්‍රී ලංකාවේ ව්‍යවහාර මුදලින් ගෙවනු ඇති බවට මම පූර්ණ වශයෙන් දැනුවත් බව මෙමගින් ප්‍රකාශ කරමි.  තවද, මෙකී කොන්දේසි වලට සහ විනිමය පාලන රෙගුලාසි වෙත කලින් කලට ඇතුළත් කරනු ඇති යම් වෙනස් කිරීම් හෝ එකතු කිරීම් වලට මම එකඟ වන බවත්; මෙම රක්ෂණ සහතිකය සම්බන්ධයෙන් ගෙවීමට නියමිත වන සියලු මුදල් මෙකී කොන්දේසි වලට විෂය වන බවත්, සහ මෙම ප්‍රකාශනය මගින්,
+  foreign_currency_clause_body.limited_on_date: "දින දී සෙලින්කෝ ලයිෆ් ඉන්ෂුවරන්ස් ලිමිටඩ් සමාගම වෙත මා විසින් සිදු කරන ලද රක්ෂණ යෝජනාවලියෙහි කොටසක් නිර්මාණය කෙරෙන බවත්, එය මුල් රක්ෂණ යෝජනාවලියෙහි අඩංගු කළ හා සමාන බලපැවැත්වීමකින් යුතු වන බවත් මම ප්‍රකාශ කරමි."
+  text.form_explained: >-
+    මෙම පෝරමයේ අඩංගු කරුණු මා විසින් රක්ෂණ යෝජකයා වෙත පැහැදිලි කරන ලද අතර, එය සම්පූර්ණයෙන්ම අවබෝධ කරගැනීමෙන් අනතුරුව ඔහු විසින් මෙම පෝරමයට අත්සන තබන ලදී.
+
 ta: {}
