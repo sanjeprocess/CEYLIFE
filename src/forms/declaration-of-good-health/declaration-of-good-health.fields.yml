@@ -1,7 +1,7 @@
 # dgh form fields
 
 policyNumber:
-  type: number
+  type: text
   label: Policy Number
   required: true
   placeholder: Enter policy number
