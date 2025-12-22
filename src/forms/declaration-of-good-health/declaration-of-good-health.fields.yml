@@ -1,7 +1,7 @@
 # dgh form fields
 
 policyNumber:
-  type: number
+  type: string
   label: Policy Number
   required: true
   placeholder: Enter policy number
@@ -260,6 +260,6 @@ submittedDate:
 
 signature:
   type: file
-  label: Signature of the life Assured *
+  label: Signature of the life Assured 
   required: false
 
