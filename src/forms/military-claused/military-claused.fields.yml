@@ -38,7 +38,7 @@ assuredName:
 signature:
   type: file
   label: Signature of the life to be assured/Proposer
-  required: true
+  required: false
   defaultValue: ""
   fileOptions:
     maxFileSize: 10485760
