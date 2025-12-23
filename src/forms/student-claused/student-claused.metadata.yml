@@ -2,8 +2,8 @@
 
 formVersion: 1
 formTitle: Student Claused
-formDescription: Form description for Student Claused
-showFormHeader: true
+formDescription: ""
+showFormHeader: false
 availableLocales:
   - en
 defaultLocale: en
