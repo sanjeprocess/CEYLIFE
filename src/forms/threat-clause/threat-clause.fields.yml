@@ -7,11 +7,11 @@ proposerName:
   required: true
   placeholder: Enter Proposer Name
 
-proposerContact:
+proposerContract:
   type: tel
-  label: Contact Number
+  label: Contract Number
   required: true
-  placeholder: Enter Contact Number
+  placeholder: Enter Contract Number
 
 proposerNic:
   type: text
