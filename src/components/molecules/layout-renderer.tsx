@@ -8,6 +8,7 @@ import { AgeField } from "./age-field";
 import { CheckboxField } from "./checkbox-field";
 import { CheckboxGroupField } from "./checkbox-group-field";
 import { ConditionalRenderer } from "./conditional-renderer";
+import { DependsOnRenderer } from "./depends-on-renderer";
 import { FileField } from "./file-field";
 import { RadioGroupField } from "./radio-group-field";
 import { ResetButton } from "./reset-button";
@@ -141,7 +142,7 @@ export function FieldRenderer({
   }
 
   return (
-    <>
+    <DependsOnRenderer field={field} fieldName={name}>
       {Component}
       {/* Rendering Conditional Dependencies */}
       {field.dependencies && (
@@ -150,6 +151,6 @@ export function FieldRenderer({
           dependencies={field.dependencies}
         />
       )}
-    </>
+    </DependsOnRenderer>
   );
 }

@@ -91,23 +91,23 @@ ta:
 
 ## Field Types
 
-| Type             | Description           | Extra Properties          |
-| ---------------- | --------------------- | ------------------------- |
-| `text`           | Single-line text      | -                         |
-| `email`          | Email with validation | -                         |
-| `password`       | Masked input          | -                         |
-| `tel`            | Phone number          | -                         |
-| `url`            | URL input             | -                         |
-| `number`         | Numeric input         | validation: `min`, `max`  |
-| `date`           | Date picker           | -                         |
-| `time`           | Time picker           | -                         |
-| `datetime-local` | Date & time           | -                         |
-| `textarea`       | Multi-line text       | `rows: 4`                 |
-| `select`         | Dropdown              | `options: {value: Label}` |
-| `radio-group`    | Radio buttons         | `options`, `orientation`  |
-| `checkbox`       | Single checkbox       | `checked: false`          |
-| `checkbox-group` | Multiple checkboxes   | `options: {value: Label}` |
-| `file`           | File upload           | `fileOptions`             |
+| Type             | Description           | Extra Properties                       |
+| ---------------- | --------------------- | -------------------------------------- |
+| `text`           | Single-line text      | -                                      |
+| `email`          | Email with validation | -                                      |
+| `password`       | Masked input          | -                                      |
+| `tel`            | Phone number          | -                                      |
+| `url`            | URL input             | -                                      |
+| `number`         | Numeric input         | validation: `min`, `max`               |
+| `date`           | Date picker           | -                                      |
+| `time`           | Time picker           | -                                      |
+| `datetime-local` | Date & time           | -                                      |
+| `textarea`       | Multi-line text       | `rows: 4`                              |
+| `select`         | Dropdown              | `options: {value: Label}`              |
+| `radio-group`    | Radio buttons         | `options`, `orientation`               |
+| `checkbox`       | Single checkbox       | `checked: false`                       |
+| `checkbox-group` | Multiple checkboxes   | `options: {value: Label}`              |
+| `file`           | File upload           | `fileOptions`                          |
 | `age`            | Age calculator        | `dateOfBirthField`, `format`, `toDate` |
 
 ### Field Examples
@@ -189,17 +189,19 @@ age:
   required: false
   placeholder: Automatically calculated
   description: Your age (automatically calculated)
-  dateOfBirthField: dateOfBirth  # Required: name of the date of birth field
-  format: "{y} years, {m} months, {d} days"  # Optional: format string (default: "{y}")
-  toDate: "{{$today}}"  # Optional: target date for calculation (defaults to current date)
+  dateOfBirthField: dateOfBirth # Required: name of the date of birth field
+  format: "{y} years, {m} months, {d} days" # Optional: format string (default: "{y}")
+  toDate: "{{$today}}" # Optional: target date for calculation (defaults to current date)
 ```
 
 **Format String Placeholders:**
+
 - `{y}` - Years
 - `{m}` - Months
 - `{d}` - Days
 
 **Examples:**
+
 - `format: "{y}"` → "25"
 - `format: "{y} years"` → "25 years"
 - `format: "{y} years, {m} months"` → "25 years, 3 months"
@@ -273,6 +275,32 @@ hasInsurance:
       conditionalOptions:
         operator: eq
         value: "yes"
+```
+
+### dependsOn vs dependencies
+
+- `dependencies`: Use when the child field should render **immediately under** the parent field. Define the child inline under the parent's `dependencies` map.
+- `dependsOn`: Use when the conditional field should render **anywhere in the layout**. Define the field normally and reference the controlling field with `dependsOn`.
+
+**Example with `dependsOn` (field can be placed anywhere):**
+
+```yaml
+marketingConsent:
+  type: checkbox
+  label: I consent to receive marketing communications
+  required: false
+
+preferences:
+  type: checkbox-group
+  label: Communication Preferences
+  dependsOn: marketingConsent
+  conditionalOptions:
+    operator: eq
+    value: true
+  options:
+    email: Email
+    sms: SMS
+    phone: Phone Call
 ```
 
 ### Operators

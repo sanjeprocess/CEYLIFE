@@ -94,6 +94,10 @@ preferences:
   label: Communication Preferences
   required: false
   description: Select your preferred communication methods
+  dependsOn: marketingConsent
+  conditionalOptions:
+    operator: eq
+    value: true
   options:
     email: Email
     sms: SMS
