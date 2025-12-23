@@ -102,10 +102,9 @@ export default async function FormPage({
                 />
                 <div className="mt-6 flex flex-col items-center justify-center gap-4 text-center">
                   <p className="text-muted-foreground text-sm">
-                    Ceylinco Life Insurance Limited, Ceylinco Life Tower, 106
-                    Havelock Road, Colombo 5. <br />
-                    <b> Tel:</b> (+94) 11 2461000, 2461461
-                    <b> Fax:</b> (+94) 11 2555959 <br />
+                    Ceylinco Life Tower, 106, Havelock Road, Colombo 05, Sri Lanka. <br />
+                    <b> Tel:</b> (+94) 11 2461461
+                    <b> Fax:</b>  (+94) 11 2555959 <br />
                     <b> Website:</b> www.ceylincolife.com
                     <b> E-mail:</b>
                     <a href="mailto:service@ceylife.lk">
