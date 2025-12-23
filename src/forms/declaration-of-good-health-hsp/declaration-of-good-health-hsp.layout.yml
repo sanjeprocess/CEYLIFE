@@ -28,7 +28,7 @@
 
 - card: 2. Your Health Condition
   items:
-    - text: "Are you at present suffering from any of the following disorders/diseases or have you suffered from the following disorders/diseases during the last 10 years?"
+    - text: "Are you at present suffering from any of the following disorders/diseases or have you suffered from following disorders/diseases during the last 10 years?"
     - field: 21Diabetes
     - field: 22HighBloodPressure
     - field: 23ElevatedCholesterol

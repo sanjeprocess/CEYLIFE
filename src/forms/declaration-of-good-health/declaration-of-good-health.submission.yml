@@ -8,7 +8,7 @@ requiresAccessToken: true
 headers:
   - name: Content-Type
     value: application/json
-  - name: Authorization
+  - name: authorization
     value: Bearer {{$WORKHUB_TOKEN}}
 
 fieldMapping:

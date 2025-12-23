@@ -33,7 +33,7 @@
   align: center
   items:
     - text: "I declare that the foregoing statements and answers given by me are true and I have not withheld any information. I do hereby agree that this statement and this declaration shall form a part of the contract and if any untrue averment be contained, the said contract will be null and void."
-
+      align: center
 - row: 2
   columns:
     - field: declarationDate
