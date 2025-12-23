@@ -1,8 +1,8 @@
 # foreign-crrency-clause form metadata
 
 formVersion: 1
-formTitle: Foreign Crrency Clause
-formDescription: Form description for Foreign Crrency Clause
+formTitle: Foreign Currency Clause
+formDescription: ""
 showFormHeader: true
 availableLocales:
   - en
