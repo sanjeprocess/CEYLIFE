@@ -66,6 +66,15 @@ export async function submitForm(
         )
       : formValues; // Fallback to raw form values if no mapping
 
+    console.log({
+      method: submissionConfig.method,
+      url: baseUrl,
+      headers,
+      params: Object.keys(queryParams).length > 0 ? queryParams : undefined,
+      // Always send body if it exists, even if empty (for POST/PUT requests)
+      data: body,
+    });
+
     // Make the request
     const response = await axios.request({
       method: submissionConfig.method,
