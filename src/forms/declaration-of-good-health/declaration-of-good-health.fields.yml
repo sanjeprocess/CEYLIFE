@@ -2,19 +2,19 @@
 
 policyNumber:
   type: text
-  label: Policy Number
+  label: 1. Policy Number
   required: true
   placeholder: Enter policy number
   defaultValue: "{{policy_no}}"
 fullName:
   type: text
-  label: Full Name
+  label: 2. Full Name
   required: true
   placeholder: Enter full name
   defaultValue: "{{full_name}}"
 gender:
   type: radio-group
-  label: Gender
+  label: 3. Gender
   required: true
   placeholder: Enter gender
   options:
@@ -22,37 +22,37 @@ gender:
     female: "Female"
 address:
   type: text
-  label: Address
+  label: 4. Address
   required: true
   placeholder: Enter address
 telephoneNumber:
   type: tel
-  label: Telephone Number
+  label: 5. Fixed Line No
   required: false
-  placeholder: Enter telephone number
+  placeholder: Enter fixed line number
 mobileNumber:
   type: tel
-  label: Mobile Number
+  label: 6. Mobile Number
   required: true
   placeholder: Enter mobile number
 emailAddress:
   type: email
-  label: Email Address
+  label: 7. Email Address
   required: true
   placeholder: Enter email address
 occupation:
   type: text
-  label: Occupation/Business/Job Title
+  label: 8. Occupation/Business/Job Title
   required: true
   placeholder: Enter occupation
 natureOfOccupation:
   type: text
-  label: Nature of Occupation/Business/Job
+  label: 9. Nature of Occupation/Business/Details of other source of income
   required: true
   placeholder: Enter nature of occupation
 annualIncome:
   type: number
-  label: Annual Income
+  label: 10. Annual Income
   required: true
   placeholder: Enter annual income
 applyTo:
@@ -61,11 +61,11 @@ applyTo:
   required: false
   placeholder: Enter apply to
   options:
-    revive the above certificate under special revival: revive the above certificate under special revival
-    Normal revival: Normal revival
+    revive the above policy under special revival: 1. revive the above policy under special revival
+    revive the above policy under Normal revival: 2. revive the above policy under Normal revival
 applyToBenifit:
   type: checkbox
-  label: benefit
+  label: 3. Include benefit
   required: false
   dependencies:
     include:
@@ -79,7 +79,7 @@ applyToBenifit:
 
 healthQ1:
   type: radio-group
-  label: "1. Do you suffer or have you suffered from diabetes, heart disease, high blood pressure, elevated cholesterol, kidney disease, respiratory disease, liver disease, stroke, cancer?"
+  label: "2.1 Do you suffer or have you suffered from diabetes, heart disease, high blood pressure, elevated cholesterol, kidney disease, respiratory disease, liver disease, stroke, cancer?"
   required: true
   options:
     Yes: "Yes"
@@ -95,7 +95,7 @@ healthQ1:
 
 healthQ2:
   type: radio-group
-  label: "2. Do you suffer or have you suffered from any other disease or undergone any medical investigation or surgery?"
+  label: "2.2 Do you suffer or have you suffered from any other disease or undergone any medical investigation or surgery?"
   required: true
   options:
     Yes: "Yes"
@@ -111,7 +111,7 @@ healthQ2:
 
 healthQ3:
   type: radio-group
-  label: "3. Have you consulted a physician for any reason, including routine examination and blood tests during last past 5 years"
+  label: "2.3 Have you consulted a physician for any reason, including routine examination and blood tests during last past 5 years"
   required: true
   options:
     Yes: "Yes"
@@ -127,7 +127,7 @@ healthQ3:
 
 healthQ4:
   type: radio-group
-  label: "4. Do you suffer from any mental impairment or physical deformity?"
+  label: "2.4 Do you suffer from any mental impairment or physical deformity?"
   required: true
   options:
     Yes: "Yes"
@@ -143,7 +143,7 @@ healthQ4:
 
 healthQ5:
   type: radio-group
-  label: "5. Have you ever hospitalized for COVID-19 infections or its complications or do you have any ongoing to COVID-19 infection related complications"
+  label: "2.5 Have you ever hospitalized for COVID-19 infections or its complications or do you have any ongoing to COVID-19 infection related complications"
   required: true
   options:
     Yes: "Yes"
@@ -159,7 +159,7 @@ healthQ5:
 
 healthQ6:
   type: radio-group
-  label: "6. Are you a Politically Exposed Person (PEP*) or related to a PEP? (*PEP)-Politicians, Senior Government Officers, Judges and judicial Officers, Commissioned Officers of armed forces / police, Members of Commissions/Director Boards/University Councils, Officers of International Organizations.)"
+  label: "2.6 Are you a Politically Exposed Person (PEP*) or related to a PEP? (*PEP)-Politicians, Senior Government Officers, Judges and judicial Officers, Commissioned Officers of armed forces / police, Members of Commissions/Director Boards/University Councils, Officers of International Organizations.)"
   required: true
   options:
     Yes: "Yes"
@@ -175,7 +175,7 @@ healthQ6:
 
 healthQ7:
   type: radio-group
-  label: "7. Do you consume liquor/drugs or smoke cigarettes? (If so, please state the frequency and quantity)"
+  label: "2.7 Do you consume liquor/drugs or smoke cigarettes? (If so, please state the frequency and quantity)"
   required: true
   options:
     Yes: "Yes"
@@ -205,7 +205,7 @@ healthQ7:
 
 healthQ8:
   type: radio-group
-  label: "8. Do you or your relatives have or had any kind of threat on your/their lives or is there any criminal case against you?"
+  label: "2.8 Do you or your relatives have or had any kind of threat on your/their lives or is there any criminal case against you?"
   required: true
   options:
     Yes: "Yes"
@@ -221,7 +221,7 @@ healthQ8:
 
 healthQ9:
   type: radio-group
-  label: "9. For female lives only: Are you pregnant? If so, when is the confinement?"
+  label: "2.9 For female lives only: Are you pregnant? If so, when is the confinement?"
   required: true
   options:
     Yes: "Yes"
@@ -237,7 +237,7 @@ healthQ9:
 
 healthQ10:
   type: radio-group
-  label: "10. Had any proposal for life or health assurance ever been declined or postponed or been accepted with any extra premium?"
+  label: "2.10 Had any proposal for life or health assurance ever been declined or postponed or been accepted with any extra premium?"
   required: true
   options:
     Yes: "Yes"
@@ -260,5 +260,5 @@ submittedDate:
 
 signature:
   type: file
-  label: Signature of the life Assured *
+  label: Signature of the life Assured 
   required: false

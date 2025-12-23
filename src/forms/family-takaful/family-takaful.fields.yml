@@ -25,12 +25,12 @@ revivalType:
   label: "I hereby apply to"
   required: false
   options:
-    special: revive the above certificate under special revival
-    normal: normal revival
+    revive the above certificate under special revival: 1. Revive the above certificate under special revival
+    normal revivall: 2. Normal revival
 
 benefit:
   type: checkbox
-  label: benefit
+  label: 3. benefit
   required: false
   dependencies:
     include:

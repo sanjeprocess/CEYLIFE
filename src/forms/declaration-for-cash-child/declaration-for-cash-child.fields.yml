@@ -14,7 +14,17 @@ policyNo:
   placeholder: Enter Policy / Proposal No.
 
 
-
+nameTitle:
+  type: select
+  label: Name Title
+  required: true
+  options:
+    mr: "Mr."
+    ms: "Ms."
+    dr: "Dr."
+    prof: "Prof."
+    rev: "Rev."
+    other: "Other"
 nameOfChild:
   type: text
   label: Name of Child
@@ -72,7 +82,7 @@ telephone:
 
 familyDigasiriPlus:
   type: checkbox
-  label: Ceylinco Life Family Digasiri Plus (New Benefit)
+  label: Ceylinco Life Family Digasiri Plus (New)
   required: false
   dependencies:
     benefitDetails:
@@ -85,7 +95,7 @@ familyDigasiriPlus:
 
 hospitalCashPlus:
   type: checkbox
-  label: Ceylinco Life Hospital Cash Plus Benefit (Per Day)
+  label: Ceylinco Life Hospital Cash Plus Benefit Per Day
   required: false
   dependencies:
     benefitDetails:
@@ -125,7 +135,7 @@ healthSupportPlus:
 
 isChildGoodHealth:
   type: radio-group
-  label: Is your child in good health and entirely free of any mental or physical impairments or deformities?
+  label: 1. Is your child in good health and entirely free of any mental or physical impairments or deformities?
   required: true
   options:
     yes: "Yes"
@@ -205,7 +215,7 @@ gastrointestinalDisease:
 
 nervousSystemDisease:
   type: radio-group
-  label: 2.5 Disease of the nervous system or mental disorders (e.g. epilepsy, fits or fainting attacks, frequent headaches, nervous breakdown, stroke, paralysis, multiple sclerosis)?
+  label: 2.5 Disease of the nervous system or mental disorders ,(e.g. epilepsy, fits or fainting attacks, frequent headaches, nervous breakdown, stroke, paralysis, multiple sclerosis)?
   required: true
   options:
     yes: "Yes"
@@ -333,7 +343,7 @@ existingPolicy:
 
 declinedProposal:
   type: radio-group
-  label: 7. Has any proposal for child protection or critical illness cover ever been declined or postponed or been accepted with an extra premium with regard to your child's insurance? If yes please state policy number
+  label: 7. Has any proposal for child protection or critical illness cover ever been declined or postponed or been accepted with an extra premium with regard to your child's insurance?
   required: true
   options:
     yes: "Yes"
@@ -436,7 +446,7 @@ pendingLitigation:
         value: "yes"
 
 datedAt: 
-  type: date
+  type: text
   label: ""
   placeholder: ""
   required: false
@@ -473,13 +483,13 @@ mothersSignature:
 
 fathersNic:
   type: text
-  label: ""
+  label: "Fathers NIC"
   placeholder: "Fathers NIC"
   required: false
 
 mothersNic:
   type: text
-  label: ""
+  label: "Mothers NIC"
   placeholder: "Mothers NIC"
   required: false
 
