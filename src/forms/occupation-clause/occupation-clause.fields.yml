@@ -5,7 +5,6 @@ ProposerName:
   label: Proposer's Name
   required: true
   placeholder: Proposer's Name
-  description: Proposer's Name
   defaultValue: "{{client_name}}"
 contractNumber:
   type: text
