@@ -2,7 +2,7 @@
 
 proposerName:
   type: text
-  label: Full Name (as per NIC / Passport)
+  label: 1. Full Name
   required: true
   validation:
     minLength: 3
@@ -10,7 +10,7 @@ proposerName:
   defaultValue: "{{client_name}}"
 contractNum:
   type: tel
-  label: Contract Number
+  label: 2. Contract Number
   required: true
   validation:
     minLength: 3
@@ -18,14 +18,14 @@ contractNum:
   defaultValue: "{{contract_number}}"
 dateDiagnosed:
   type: date
-  label: Date diabetes Diagnosed
+  label: 3. Date diabetes Diagnosed
   required: true
   validation:
     minLength: 3
     maxLength: 100
 nameAndAddressOfTheDoctor:
   type: text
-  label: Name and address of the doctor or clinic now treating you
+  label: 4. Name and address of the doctor or clinic now treating you
   required: true
   validation:
     minLength: 3
@@ -35,7 +35,7 @@ strictDiet:
   options:
     no: No
     yes: Yes
-  label: Do you follow a strict Diet?
+  label: 5. Do you follow a strict Diet?
   required: true
   validation:
     minLength: 3
@@ -59,7 +59,7 @@ oralDrug:
   options:
     no: No
     yes: Yes
-  label: Are you having oral drug treatment? if so, please give the name of the
+  label: 6. Are you now having oral drug treatment? if so, please give the name of the
     drug and dosage
   required: true
   validation:
@@ -84,7 +84,7 @@ insulin:
   options:
     no: No
     yes: Yes
-  label: " Are you now taking Insulin? If so, please give the number of units per day"
+  label: "7. Are you now taking Insulin? If so, please give the number of units per day"
   required: true
   validation:
     minLength: 3
@@ -108,7 +108,7 @@ oralInsulinVaried:
   options:
     no: No
     yes: Yes
-  label: Has your intake of Insulin or oral drugs varied during the last 2 years?
+  label: 8. Has your intake of Insulin or oral drugs varied during the last 2 years?
     If so, please give full details
   required: true
   validation:
@@ -133,7 +133,7 @@ urineCheck:
   options:
     no: No
     yes: Yes
-  label: HDo you check your urine on a regular basis? If so, how often does it
+  label: 9. Do you check your urine on a regular basis? If so, how often does it
     contain sugar?
   required: true
   validation:
@@ -162,8 +162,8 @@ coma:
   options:
     no: No
     yes: Yes
-  label: Since your treatment began have you ever had a diabetic or Insulin Coma?
-    (If so please give details including the dates.)
+  label: 10. Since your treatment began have you ever had a diabetic or Insulin Coma?
+    (If so please give details including dates.)
   required: true
   orientation: horizontal
   dependencies:
@@ -181,7 +181,7 @@ illnesses:
   options:
     no: No
     yes: Yes
-  label: Have you ever had any illness or disease of the Heart, Kidney, Eyes,
+  label: 11. Have you ever had any illness or disease of the Heart, Kidneys, Eyes,
     Circulatory or Nervous System? If so, please give full details.
   required: true
   orientation: horizontal
