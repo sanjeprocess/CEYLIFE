@@ -3,18 +3,19 @@
 
 - field: fullName
 - field: currentResidence
-- text: Please provide details of your previous residence and travel during the last 5 years (excluding holidays of less than 4 weeks )
+- text: 2.)Please provide details of your previous residence and travel during the last 5 years (excluding holidays of less than 4 weeks )
 - field: dateOfStayPreviousResidence
 - field: countryOfPreviousResidence
 - field: reasonForVisitingPreviousResidence
 - field: frequencyOfVisitsPreviousResidence
 - field: durationOfStayPreviousResidence
-- text: Please provide details of your future residence and travel during the next 5 years (excluding holidays of less than 4 weeks )
+- text: 3.) Please provide details of your future residence and travel intentions during the next 5 years (excluding holidays of less than 4 weeks )
 - field: dateOfStayFutureResidence
 - field: countryOfFutureResidence
 - field: reasonForVisitingFutureResidence
 - field: frequencyOfVisitsFutureResidence
 - field: durationOfStayFutureResidence
+- field: occupationalDuties
 - field: majorityOfTimeSpent
 - field: townRegionDetails
 - field: medicalDetails
