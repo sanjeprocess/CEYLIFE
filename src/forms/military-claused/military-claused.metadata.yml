@@ -1,8 +1,8 @@
 # military-claused form metadata
 
 formVersion: 1
-formTitle: Military Claused
-formDescription: Form description for Military Claused
+formTitle: Military Clause
+formDescription: ""
 showFormHeader: true
 availableLocales:
   - en
