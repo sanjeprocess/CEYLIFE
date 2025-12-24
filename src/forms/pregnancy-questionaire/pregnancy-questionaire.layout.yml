@@ -12,14 +12,14 @@
   align: center
   margin: 0 0 25px 0
 
-- card: Prsent pregnancy
+- card: Present pregnancy
   items:
     - field: firstDateOfMenstrualPeriod
     - field: deliveryDate
     - field: medicalDetails
     - field: abnormalitiesPertaining
     
-- card: Previous pregnancy
+- card: Past pregnancy
   items:
     - field: haveChildren
     - field: prematureBirth

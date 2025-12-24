@@ -17,7 +17,7 @@ policyNumber:
 
 signature:
   type: file
-  label: Signature of the life to be assured/Proposer
+  label: Signature of the life to be Assured/Proposer
   required: false
   defaultValue: ""
   fileOptions:

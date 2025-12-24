@@ -3,9 +3,10 @@
 formVersion: 1
 formTitle: Travel And Residence Questionnaire
 formDescription: Form description for Travel And Residence Questionnaire
-showFormHeader: true
+showFormHeader: false
 availableLocales:
   - en
+  - si
 defaultLocale: en
 searchParamsVariables:
   cs: contract_sequence
