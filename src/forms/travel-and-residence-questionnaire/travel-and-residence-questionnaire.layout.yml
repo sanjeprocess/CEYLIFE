@@ -4,12 +4,14 @@
 - field: fullName
 - field: currentResidence
 - text: 2.)Please provide details of your previous residence and travel during the last 5 years (excluding holidays of less than 4 weeks )
+  key: text.previous_residence_and_travel
 - field: dateOfStayPreviousResidence
 - field: countryOfPreviousResidence
 - field: reasonForVisitingPreviousResidence
 - field: frequencyOfVisitsPreviousResidence
 - field: durationOfStayPreviousResidence
 - text: 3.) Please provide details of your future residence and travel intentions during the next 5 years (excluding holidays of less than 4 weeks )
+  key: text.future_residence_and_travel
 - field: dateOfStayFutureResidence
 - field: countryOfFutureResidence
 - field: reasonForVisitingFutureResidence
@@ -22,8 +24,9 @@
 - field: additionalInformation
 
 - text: I declare that the answers I have given are, to the best of my knowledge,true and that I have not withheld any material information that may influence the assessment or acceptance of this application.
+  key: text.declaration
 - text: I agree that this form will constitute part of my application for insurance and that failure to disclose any material fact known to me may invalidate the contract.
-
+  key: text.agreement
 - row: 2 
   columns: 
     - field: signature
