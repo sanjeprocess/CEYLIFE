@@ -24,6 +24,7 @@
     - text: I have read and understood the afore-said clause and hereby give my
         consent to accept the Life Assurance proposal subject to respective
         clause.
+      key: text.consent_body
 - row: 2
   columns:
     - field: date

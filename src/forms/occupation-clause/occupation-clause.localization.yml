@@ -1,0 +1,30 @@
+# occupation-clause form localization
+# Locales: en, si, ta
+
+en:
+  # Field labels
+  ProposerName.label: "Proposer's Name"
+  contractNumber.label: "Contract Number"
+  nicNumber.label: "NIC Number"
+  date.label: "Date"
+  signature.label: "Signature"
+
+  # Layout translations
+  card.occupation_clause: "රැකියාව පිළිබඳ වගන්තිය"
+  text.occupation_clause_body: "**It is hereby declared and agreed, that if the Life Assured / Spouse Assured meets with an accident whilst being engaged in his usual occupation as indicated in the Proposal Form or Declaration of Good Health, the Company will not be liable to pay the supplementary benefits under the Policy, viz. Jeewayathra Accidental Death Benefit, Jeewayathra Monthly Income Benefit, Jeewayathra Partial and Permanent Disability Benefit.**"
+  card.consent.title: "Consent"
+  text.consent_body: "I have read and understood the afore-said clause and hereby give my consent to accept the Life Assurance proposal subject to respective clause."
+
+si:
+  ProposerName.label: "රක්ෂණ යෝජකයාගේ නම:"
+  contractNumber.label: ""
+  nicNumber.label: "ජාහැප අංකය:"
+  date.label: "දිනය:"
+  signature.label: "රක්ෂණ යෝජකයාගේ අත්සන "
+
+  # Layout translations
+  card.occupationClause: "**රැකියාව පිළිබඳ වගන්තිය**"
+  text.occupation_clause_body: "**It is hereby declared and agreed, that if the Life Assured / Spouse Assured meets with an accident whilst being engaged in his usual occupation as indicated in the Proposal Form or Declaration of Good Health, the Company will not be liable to pay the supplementary benefits under the Policy, viz. Jeewayathra Accidental Death Benefit, Jeewayathra Monthly Income Benefit, Jeewayathra Partial and Permanent Disability Benefit.**"
+  card.consent: " "
+  text.consent_body: "ඉහත වගන්තිය මා විසින් කියවා, තේරුම් ගෙන, එකී අදාළ වගන්තියට යටත් ව ජීවිත රක්ෂණ යෝජනාවලිය පිළිගැනීමට මා විසින් මෙමගින් මාගේ කැමැත්ත ලබා දෙමි."
+ta: {}
