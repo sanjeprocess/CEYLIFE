@@ -1,0 +1,174 @@
+# declaration-of-good-health.localization.yml
+# Locales: en, si, ta
+
+en:
+  # Field labels
+  policyNumber.label: "1. Policy Number"
+  fullName.label: "2. Full Name"
+  gender.label: "3. Gender"
+  gender.options.male: "Male"
+  gender.options.female: "Female"
+  address.label: "4. Address"
+  telephoneNumber.label: "5. Fixed Line No"
+  mobileNumber.label: "6. Mobile Number"
+  emailAddress.label: "7. Email Address"
+  occupation.label: "8. Occupation/Business/Job Title"
+  natureOfOccupation.label: "9. Nature of Occupation/Business/Details of other source of income"
+  annualIncome.label: "10. Annual Income"
+  applyTo.label: "I hereby apply to:"
+  applyTo.options.revive the above policy under special revival: "1. revive the above policy under special revival"
+  applyTo.options.revive the above policy under Normal revival: "2. revive the above policy under Normal revival"
+  applyToBenifit.label: "3. Include benefit"
+  include.label: "Include"
+  
+  # Health Questions
+  healthQ1.label: "2.1 Do you suffer or have you suffered from diabetes, heart disease, high blood pressure, elevated cholesterol, kidney disease, respiratory disease, liver disease, stroke, cancer?"
+  healthQ1.options.Yes: "Yes"
+  healthQ1.options.No: "No"
+  healthQ1Details.label: "Please provide details"
+
+  healthQ2.label: "2.2 Do you suffer or have you suffered from any other disease or undergone any medical investigation or surgery?"
+  healthQ2.options.Yes: "Yes"
+  healthQ2.options.No: "No"
+  healthQ2Details.label: "Please provide details"
+
+  healthQ3.label: "2.3 Have you consulted a physician for any reason, including routine examination and blood tests during last past 5 years"
+  healthQ3.options.Yes: "Yes"
+  healthQ3.options.No: "No"
+  healthQ3Details.label: "Please provide details"
+
+  healthQ4.label: "2.4 Do you suffer from any mental impairment or physical deformity?"
+  healthQ4.options.Yes: "Yes"
+  healthQ4.options.No: "No"
+  healthQ4Details.label: "Please provide details"
+
+  healthQ5.label: "2.5 Have you ever hospitalized for COVID-19 infections or its complications or do you have any ongoing to COVID-19 infection related complications"
+  healthQ5.options.Yes: "Yes"
+  healthQ5.options.No: "No"
+  healthQ5Details.label: "Please provide details"
+
+  healthQ6.label: "2.6 Are you a Politically Exposed Person (PEP*) or related to a PEP? (*PEP)-Politicians, Senior Government Officers, Judges and judicial Officers, Commissioned Officers of armed forces / police, Members of Commissions/Director Boards/University Councils, Officers of International Organizations.)"
+  healthQ6.options.Yes: "Yes"
+  healthQ6.options.No: "No"
+  healthQ6Details.label: "Please provide details"
+
+  healthQ7.label: "2.7 Do you consume liquor/drugs or smoke cigarettes? (If so, please state the frequency and quantity)"
+  healthQ7.options.Yes: "Yes"
+  healthQ7.options.No: "No"
+  liquorUsage.label: "Liquor – quantity/frequency"
+  smokeUsage.label: "Smoke – quantity/frequency"
+  drugsUsage.label: "Drugs – quantity/frequency"
+
+  healthQ8.label: "2.8 Do you or your relatives have or had any kind of threat on your/their lives or is there any criminal case against you?"
+  healthQ8.options.Yes: "Yes"
+  healthQ8.options.No: "No"
+  healthQ8Details.label: "Please provide details"
+
+  healthQ9.label: "2.9 For female lives only: Are you pregnant? If so, when is the confinement?"
+  healthQ9.options.Yes: "Yes"
+  healthQ9.options.No: "No"
+  confinementDate.label: "Confinement Date"
+
+  healthQ10.label: "2.10 Had any proposal for life or health assurance ever been declined or postponed or been accepted with any extra premium?"
+  healthQ10.options.Yes: "Yes"
+  healthQ10.options.No: "No"
+  healthQ10Details.label: "Please provide details"
+
+  submittedDate.label: "Submitted Date"
+  signature.label: "Signature of the life Assured "
+
+  # Layout Keys
+  h1.personal_information: "Personal Information"
+  card.declaration: "Declaration"
+  text.declaration: "I declare that the foregoing statements and answers given by me are true and I have not withheld any information. I do hereby agree that this statement and this declaration shall form a part of the contract of insurance and if any untrue averment be contained, the said contract will be null and void."
+  text.consent: "I hereby give my consent to Ceylinco Life Insurance Limited to verify (Online/ Manual) my National Identity Card particulars with the department of Registration of Persons."
+  text.agree: "I agree and consent to Ceylinco Life Insurance Ltd as well as their respective representatives, agents, the Companies' authorised service providers and relevant third parties whether within or outside Sri Lanka for collecting, using and/or disclosing my personal data for purpose reasonably required by the companies to evaluate my proposal and to provide the products or services which I am applying for."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"
+
+si:
+  # Field labels
+  policyNumber.label: "ඔප්පු අංකය:"
+  fullName.label: "සම්පූර්ණ නම"
+  gender.label: ""
+  gender.options.male: "Male"
+  gender.options.female: "Female"
+  address.label: "ලිපිනය :"
+  telephoneNumber.label: "දුරකථන අංකය (ස්ථාවර):"
+  mobileNumber.label: "දුරකථන අංකය (ජංගම):"
+  emailAddress.label: "ඊ - මේල් ලිපිනය :"
+  occupation.label: "රැකියාව/ව්‍යාපාරය/තනතුර :"
+  natureOfOccupation.label: "රැකියාවේ/ව්‍යාපාරයේ ස්වභාවය සහ වෙනත් ආදායම් පිළිබඳ විස්තර:"
+  annualIncome.label: "වාර්ෂික ආදායම:"
+  applyTo.label: "මම/අපි ඉහත සඳහන් රක්ෂණ ඔප්පුව"
+  applyTo.options.revive the above policy under special revival: "1. විශේෂ ප්‍රාණවත් කිරීම යටතේ"
+  applyTo.options.revive the above policy under Normal revival: "2. සාමාන්‍ය ප්‍රාණවත් කිරීම යටතේ ප්‍රාණවත් කිරීම සඳහා"
+  applyToBenifit.label: "3. ප්‍රතිලාභය/ප්‍රතිලාභ ඇතුළත් කිරීමට, ඉල්ලුම් කරමි/ කරමු."
+  include.label: "විස්තර"
+  
+  # Health Questions
+  healthQ1.label: "2.1 ඔබ දැනට හෝ මීට පෙර කවර කලෙක හෝ දියවැඩියාව, හෘද රෝග, අධික රුධිර පීඩනය, කොලෙස්ටරෝල් අධික වීම, වකුගඩු රෝග, ශ්වසන රෝග, අක්මා රෝග, ආඝාතය, පිළිකාව වැනි රෝග වලින් පෙළෙන්නේද? පෙළුනේද?"
+  healthQ1.options.Yes: "ඔව්"
+  healthQ1.options.No: "නැත"
+  healthQ1Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  healthQ2.label: "2.2 ඔබ දැනට හෝ මීට පෙර වෙනත් රෝගාබාධයකින් පෙළෙන්නේද? පෙළුනේද? හෝ වෛද්‍ය පරීක්ෂණයකට හෝ ශල්‍යකර්මයකට භාජනය වූයේද?"
+  healthQ2.options.Yes: "ඔව්"
+  healthQ2.options.No: "නැත"
+  healthQ2Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  healthQ3.label: "2.3 පසුගිය වසර 5 තුළදී කුමක් හෝ හේතුවක් සඳහා වෛද්‍යවරයෙකු හමුවූයේද? ලේ පරීක්ෂාවක් කරනු ලැබුවේද? වෛද්‍ය පරීක්ෂණ වලට පෙනී සිටියේද"
+  healthQ3.options.Yes: "ඔව්"
+  healthQ3.options.No: "නැත"
+  healthQ3Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  healthQ4.label: "2.4 ඔබ මානසික හෝ ශාර්ථක අබලතාවයකින් පෙළෙන්නේද? පෙළුනේද?"
+  healthQ4.options.Yes: "ඔව්"
+  healthQ4.options.No: "නැත"
+  healthQ4Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  healthQ5.label: "2.5 ඔබ කෙදිනක හෝ කොවිඩ් - 19 රෝගී තත්ත්වය හෝ එහි සංකූලතා සඳහා රෝහල්ගත වූයේද ? ඔබට කොඩ්-19 රෝගීභාවය නිසා ඇති වූ සංකූලතා තවමත් පවතින්නේද?"
+  healthQ5.options.Yes: "ඔව්"
+  healthQ5.options.No: "නැත"
+  healthQ5Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  healthQ6.label: "2.6 ඔබ දේශපාලන වශයෙන් අනාවරණය වූ තැනැත්තෙක්ද? (*PEP) නැතහොත් එවන් පුද්ගලයකුගේ සමීප ඥාතියෙකු වීද?  *PEP - දේශපාලන වශයෙන් අනාවරණය වූ පුද්ගලයෙක් යනු දේශපාලනඥයන් හා ඔවුන්ගේ සමීපතමයන්, රජයේ උසස් නිලධාරීන්, විනිශ්චයකාරවරුන් හා අධිකරණ නිලධාරීන්, ත්‍රිවිධ හමුදා බලයලත් නිලධාරීන්, උසස් පොලිස් නිලධාරීන්, කොමිෂන් සභාවල අධ්‍යක්ෂ මණ්ඩල හෝ විශ්ව විද්‍යාල පර්පාලන සභා සාමාජිකයන් සහ අන්තර්ජාතික සංවිධානවල සේවකයන් වේ."
+  healthQ6.options.Yes: "ඔව්"
+  healthQ6.options.No: "නැත"
+  healthQ6Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  healthQ7.label: "2.7 ඔබ මත්පැන්/මත්ද්‍රව්‍ය හෝ සිගරට් භාවිත කරන්නේ ද (පිළිතුර 'ඔව්' නම් භාවිත කරන ප්‍රමාණය හෝ වාර ගණන සඳහන් කරන්න.)"
+  healthQ7.options.Yes: "ඔව්"
+  healthQ7.options.No: "නැත"
+  liquorUsage.label: "මත්පැන් භාවිත කරන ප්‍රමාණය"
+  smokeUsage.label: "දුම් පානය කරන ප්‍රමාණය"
+  drugsUsage.label: "මත්ද්‍රව්‍ය භාවිත කරන ප්‍රමාණය"
+
+  healthQ8.label: "2.8 ඔබගේ හෝ ඔබගේ ඥාතීන්ගේ ජීවිත වලට කිසියම් තර්ජනයක් තිබෙන්නේද? තිබුණේද? හෝ ඔබට එරෙහිව කිසියම් සාපරාධී ක්‍රියාවක් සම්බන්ධයෙන් නඩුවක් පවරා තිබුණේද? නැතහොත් දැනට විභාග වෙමින් පවතීද?"
+  healthQ8.options.Yes: "ඔව්"
+  healthQ8.options.No: "නැත"
+  healthQ8Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  healthQ9.label: "2.9 කාන්තාවන් සඳහා පමණි. ඔබ ගර්භණීව සිටීද? එසේ නම් ප්‍රසූත දිනය කවදාද?"
+  healthQ9.options.Yes: "ඔව්"
+  healthQ9.options.No: "නැත"
+  confinementDate.label: "ප්‍රසූත දිනය කවදාද?"
+
+  healthQ10.label: "2.10 ඔබ ඉදිරිපත් කළ ජීවිත හෝ සෞඛ්‍ය රක්ෂණ යෝජනා පත්‍රයක් කල් දැමීම, ප්‍රතික්ෂේප කිරීම හෝ අතිරේක වාරිකයකට යටත්ව පිළිගනු ලැබීද?"
+  healthQ10.options.Yes: "ඔව්"
+  healthQ10.options.No: "නැත"
+  healthQ10Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  submittedDate.label: "දිනය"
+  signature.label: "ජීවිත රක්ෂිතයාගේ අත්සන "
+
+  # Layout Keys
+  h1.personal_information: "පුද්ගලික තොරතුරු"
+  card.declaration: "ප්‍රකාශය"
+  text.declaration: "ඉහත සඳහන් සියලු ප්‍රකාශන හා පිළිතුරු සත්‍ය බවත් කිසිම කරුණක් වසන් නොකළ බවත් මෙයින් ප්‍රකාශ කරමි / කරමු. මෙම පිළිතුරු හා ප්‍රකාශනය රක්ෂණ ගිවිසුමේ කොටසක් බවත් මෙහි අසත්‍ය කරුණක් සඳහන් කර ඇත්නම් මෙම ගිවිසුම අවලංගු හා ශුන්‍ය වන බවත් ප්‍රකාශ කරමි/කරමු"
+  text.consent: "පුද්ගලයන් ලියාපදිංචි කිරීමේ දෙපාර්තමේන්තුව වෙතින් මාගේ/අපගේ ජාතික හැඳුනුම්පතේ තොරතුරු පරික්ෂා කිරීමට සෙලින්කෝ ජීවිත රක්ෂණ සමාගමට මෙයින් මාගේ/ අපගේ කැමැත්ත ලබා දෙමි/ දෙමු."
+  text.agree: "මම/අප විසින් ඉදිරිපත් කර ඇති මෙම යෝජනා පත්‍රය තක්සේරු කිරීමේදී හා ඒ හා සම්බන්ධ රක්ෂණාවරණ හා අනෙකුත් සේවා සැපයීමට අදාළ අවශ්‍යතාවන් වෙනුවෙන් මාගේ/අපගේ පුද්ගලික තොරතුරු ලබා ගැනීමට, භාවිත කිරීමට හෝ හෙළිකිරීමට සෙලින්කෝ ලයිෆ් රක්ෂණ සමාගමට, ඔවුන්ගේ නියෝජිතයන්ට හා ශ්‍රී ලංකාව තුළ හෝ පිටත සිටින එකී සේවා සැපයීමට බලයලත් ආයතන වෙත මෙයින් අවසරය දෙමි/දෙමු."
+  submit.button: "පෝරමය පුරවන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"
+
+ta: {}

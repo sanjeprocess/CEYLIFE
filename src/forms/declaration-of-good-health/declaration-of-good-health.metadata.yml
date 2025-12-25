@@ -5,6 +5,8 @@ formTitle: DECLARATION OF GOOD HEALTH
 formDescription: ALL ANSWERS TO BE FILLED LEGIBLY, ANSWERS MUST BE GIVEN IN WORDS. IF YOU ARE IN DOUBT AS TO WHETHER ANY FACTS WOULD BE MATERIAL, IT IS IN YOUR INTEREST TO DECLARE THEM
 availableLocales:
   - en
+  - si
+  - ta
 defaultLocale: en
 otpRequired: false
 searchParamsVariables:
