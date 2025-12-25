@@ -2,8 +2,10 @@
 
 - field: policyNo
 - card: Important <br><br> Please make full disclosure of your health, occupation, habits and pursuits. Non-disclosure or misrepresentation will render your policy NULL and VOID. If you are in doubt as to whether any facts would be material, it is in your interest to disclose them.
+  key: card.important
 
 - card: 1. Life Assured
+  key: card.life_assured
   items:
     - field: 11FullName
     - field: gender
@@ -27,8 +29,10 @@
     - field: 16AnnualIncome
 
 - card: 2. Your Health Condition
+  key: card.your_health_condition
   items:
     - text: "Are you at present suffering from any of the following disorders/diseases or have you suffered from following disorders/diseases during the last 10 years?"
+      key: text.suffering_from_disorders
     - field: 21Diabetes
     - field: 22HighBloodPressure
     - field: 23ElevatedCholesterol
@@ -50,6 +54,7 @@
 
 
 - card: Other Information
+  key: card.other_information
   items:
     - field: 31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years
     - field: 32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity
@@ -58,12 +63,17 @@
     - field: 35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP
 
 - card: DECLARATION
+  key: card.declaration
   align: center
   items:
     - text: "I declare that the foregoing statements and answers given by me are true and accurate. I agree that these statements shall be the basis of the insurance policy between myself and Ceylinco Life Insurance Limited. Ceylinco Life Insurance Limited shall not be liable for any claims on account of illness or injury, the cause of which was known prior to approval of my request for this assurance."
+      key: text.declaration
     - text: "I authorise any representative or a medical officer of Ceylinco Life Insurance Limited to peruse or obtain the Bed Head Ticket (BHT) or any other clinical notes from any Government / Private Hospital, Clinic, Nursing home, Asylum or sanatorium and authorise to obtain information from any other insurer."
+      key: text.authorise
     - text: "I hereby give my consent to Ceylinco Life Insurance Limited to verify (Online / Manual) my National Identity Card particulars with the department of Registration of Persons."
+      key: text.consent
     - text: "I agree and consent to Ceylinco Life Insurance Limited as well as their respective representatives, agents, the company's authorized service providers and relevant third parties whether within or outside Sri Lanka for collecting, using and / or disclosing my personal data for purposes reasonably required by the company to evaluate my proposal and provide the products or services which I am applying for."
+      key: text.agree
 
 - row: 2
   columns:
