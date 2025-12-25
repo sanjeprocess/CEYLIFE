@@ -90,9 +90,9 @@ si:
   # Field labels
   policyNumber.label: "ඔප්පු අංකය:"
   fullName.label: "සම්පූර්ණ නම"
-  gender.label: ""
-  gender.options.male: "Male"
-  gender.options.female: "Female"
+  gender.label: "ස්ත්‍රී/පුරුෂ භාවය"
+  gender.options.male: "පුරුෂ"
+  gender.options.female: "ස්ත්‍රී"
   address.label: "ලිපිනය :"
   telephoneNumber.label: "දුරකථන අංකය (ස්ථාවර):"
   mobileNumber.label: "දුරකථන අංකය (ජංගම):"
