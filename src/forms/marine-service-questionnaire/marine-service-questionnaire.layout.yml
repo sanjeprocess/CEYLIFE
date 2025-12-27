@@ -3,6 +3,7 @@
 - field: ProposerName
 - field: proposalNum
 - h1: Marine Service Questionnaire
+  key: h1.title
   align: center
 - field: vesselName
 - field: vesselOwner
@@ -21,12 +22,11 @@
     - text: <b>I declare that the answers I have given are to the best of my knowledge
         true and that I have not withheld any material information that may
         influence the assessment or acceptance of the proposal.</b>
-- card: ""
-  key: card.agree
-  items:
+      key: text.declare
     - text: <b>I agree that this form will constitute part of my proposal for life
         assurance and that failure to disclose any material fact known to me may
         invalidate the contract.</b>
+      key: text.agree
 - row: 2
   columns:
     - field: date
