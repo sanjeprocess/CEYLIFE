@@ -6,12 +6,12 @@ ProposerName:
   required: true
   placeholder: Proposer's Name
   defaultValue: "{{client_name}}"
-contractNumber:
-  type: text
-  label: Contract Number
+contactNumber:
+  type: tel
+  label: Contact Number
   required: true
-  placeholder: Contract Number
-  defaultValue: "{{contract_number}}"
+  placeholder: Contact Number
+
 nicNumber:
   type: text
   label: NIC Number
