@@ -6,13 +6,13 @@
     - field: proposersName
     - field: contractNumber
 - h1: Pregnancy Questionaire
+  key: h1.title
   align: center
   margin: 0 0 -10px 0
-- text: Form description for Pregnancy Questionaire
-  align: center
-  margin: 0 0 25px 0
+
 
 - card: Present pregnancy
+  key: card.presentPregnancy
   items:
     - field: firstDateOfMenstrualPeriod
     - field: deliveryDate
@@ -20,12 +20,13 @@
     - field: abnormalitiesPertaining
     
 - card: Past pregnancy
+  key: card.pastPregnancy
   items:
     - field: haveChildren
     - field: prematureBirth
     - field: treatedforPregnancyRelatedComplications
 - text: I declare that the above answers I have given are to the best of my knowledge true and correct. I agree that this form will constitute part of my proposal for life assurance and that failure to disclose any material fact known to me may invalidate the said contract.
- 
+  key: text.declaration 
 - row: 2
   columns:
     - field: date
