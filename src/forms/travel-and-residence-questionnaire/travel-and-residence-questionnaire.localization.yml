@@ -1,6 +1,97 @@
 # travel-and-residence-questionnaire form localization
 # Locales: en, si, ta
 
-en: {}
-si: {}
-ta: {}
+en:
+  # Field labels
+  fullName.label: "Full Name"
+  currentResidence.label: "1.) Please provide details of your current residency and your residency status including information of length of stay by visa etc,if appropriate"
+  dateOfStayPreviousResidence.label: "a) Dates of stay"
+  countryOfPreviousResidence.label: "b) Country and region of residence"
+  reasonForVisitingPreviousResidence.label: "c) Reason for visiting"
+  frequencyOfVisitsPreviousResidence.label: "d) Frequency (number of trips per year)"
+  durationOfStayPreviousResidence.label: "e) Duration of each stay"
+  dateOfStayFutureResidence.label: "a) Date of stay"
+  countryOfFutureResidence.label: "b) Country and region of residence"
+  reasonForVisitingFutureResidence.label: "c) Reason for visiting"
+  frequencyOfVisitsFutureResidence.label: "d) Frequency (number of trips per year)"
+  durationOfStayFutureResidence.label: "e) Duration of each stay"
+  occupationalDuties.label: "4.) Please providea brief description of your occupational duties and/ or any other activities you will participate in whilst travelling or residing abroad"
+  majorityOfTimeSpent.label: "5. Do you expect to spend the majority of your time in major / large cities? If NO, please provide the name of the town/ region and details of your likely accommodation, availability of medical facilities and your internal travel arrangements (e.g. light aircraft, boat etc.)"
+  majorityOfTimeSpent.options.no: "No"
+  majorityOfTimeSpent.options.yes: "Yes"
+  townRegionDetails.label: "Town/Region Details"
+  medicalDetails.label: "6. Please give details of any medical treatment or surgery youhave received whilst resideny overseas"
+  additionalInformation.label: "7. Please provide any additional information on your residence and travel which you feel may be helpful in processing your application"
+  signature.label: "Signature of Proposer"
+  date.label: "Date"
+
+  # Layout translations
+  text.previous_residence_and_travel: "2.)Please provide details of your previous residence and travel during the last 5 years (excluding holidays of less than 4 weeks )"
+  text.future_residence_and_travel: "3.) Please provide details of your future residence and travel intentions during the next 5 years (excluding holidays of less than 4 weeks )"
+  text.declaration: "I declare that the answers I have given are, to the best of my knowledge,true and that I have not withheld any material information that may influence the assessment or acceptance of this application."
+  text.agreement: "I agree that this form will constitute part of my application for insurance and that failure to disclose any material fact known to me may invalidate the contract."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"
+
+si: 
+  fullName.label: "සම්පූර්ණ නම"
+  currentResidence.label: "1.) කරුණාකර, ඔබගේ වත්මන් පදිංචිය සහ වීසා මත වාසය කරන කාලවකවානුව පිළිබඳ තොරතුරු ද ඇතුළුව ඔබගේ පදිංචිය පිළිබඳ තත්ත්වය සම්බන්ධ තොරතුරු, අදාළ පරිදි සපයන්න."
+  dateOfStayPreviousResidence.label: "a) එහි රැඳෙන දිනයන්"
+  countryOfPreviousResidence.label: "b) පදිංචිව සිටි රට සහ කලාපය"
+  reasonForVisitingPreviousResidence.label: "c) එහි යාමට හේතුව"
+  frequencyOfVisitsPreviousResidence.label: "d) කාලාන්තරයන් (වසරකට වාර ගණන)  "
+  durationOfStayPreviousResidence.label: "e) නතර වූ එක් එක්  වාරයේ කාලසීමාව"
+  dateOfStayFutureResidence.label: "a) එහි රැඳෙන දිනයන්"
+  countryOfFutureResidence.label: "b) පදිංචිව සිටි රට සහ කලාපය"
+  reasonForVisitingFutureResidence.label: "c) එහි යාමට හේතුව"
+  frequencyOfVisitsFutureResidence.label: "d) කාලාන්තරයන් (වසරකට වාර ගණන)  "
+  durationOfStayFutureResidence.label: "e) නතර වූ එක් එක්  වාරයේ කාලසීමාව"
+  occupationalDuties.label: "4.) කරුණාකර, ඔබගේ වෘත්තීමය රාජකාරි සහ/හෝ සංචාරය හෝ විදේශයක පදිංචිව සිටින අතරතුරදී ඔබ සහභාගි වනු ඇති වෙනත් ක්‍රියාකාරකම් පිළිබඳ කෙටි විස්තරයක් සපයන්න. "
+  majorityOfTimeSpent.label: "5.)ඔබගේ කාලයෙන් වැඩි කොටසක් ප්‍රධාන /විශාල නගර වල ගත කිරීමට අපේක්ෂිත ද? ‘නැත’ නම්, කරුණාකර, ඔබ නවාතැන් ගනු ඇති නගරයේ/කලාපයේ නම සහ වෛද්‍ය පහසුකම් ලබාගැනීමේ හැකියාව සහ එම රට අභ්‍යන්තරයේ සංචාරය සඳහා යොදා ගැනීමට අදහස් කරන ක්‍රමවේද (උදා: සැහැල්ලු ගුවන්යානා, බෝට්ටු ආදී) පිළිබඳ විස්තර සපයන්න. "
+  majorityOfTimeSpent.options.no: "නැත"
+  majorityOfTimeSpent.options.yes: "ඔව්"
+  townRegionDetails.label: " "
+  medicalDetails.label: "6.)	කරුණාකර, විදේශයක පදිංචිව සිටින අතරවාරයේ ඔබ ලබාගත් වෛද්‍ය ප්‍රතිකාර හෝ සිදු කළ ශල්‍යකර්ම හෝ පිළිබඳ විස්තර ලබාදෙන්න."
+  additionalInformation.label: "7.)කරුණාකර, ඔබේ අයදුම්පත සම්බන්ධ සැකසුම් කටයුතු වලට සහය වනු ඇතැයි ඔබ සිතන, ඔබේ පදිංචිය සහ සංචාර සම්බන්ධයෙන් වන වෙනත් අතිරේක තොරතුරු සපයන්න."
+  signature.label: "අත්සන:"
+  date.label: "දිනය:"
+
+  # Layout translations
+  text.previous_residence_and_travel: "2.)	කරුණාකර, ඔබගේ පසුගිය පදිංචිය පිළිබඳ තොරතුරු සහ පසුගිය වසර 5 තුළ ඔබගේ සංචාර (සති 4ට අඩු සංචාර වල හැරෙන්නට) පිළිබඳ තොරතුරු සපයන්න:"
+  text.future_residence_and_travel: "3.) කරුණාකර, ඔබගේ අනාගත පදිංචිය සහ ඉදිරි වසර 5 සඳහා අපේක්ෂිත සංචාර (සති 4ට අඩු සංචාර වල හැරෙන්නට) පිළිබඳ තොරතුරු සපයන්න. "
+  text.declaration: "මා විසින් දී ඇති පිළිතුරු මාගේ උපරිම දැනීමේ හැටියට සත්‍ය හා නිවැරදි බවත්, මෙම අයදුම්පත තක්සේරු කිරීම හෝ පිළිගැනීම සම්බන්ධයෙන් බලපෑ හැකි කිසිදු වැදගත් තොරතුරක් මා විසින් රඳවා නොගත් බවත් මම ප්‍රකාශ කරමි."
+  text.agreement: "රක්ෂණය සඳහා වන මාගේ අයදුම්පතෙහි කොටසක් මෙම පෝරමය මගින් නිර්මාණය කෙරෙන බවට මම පිළිගන්නා අතර, මා විසින් දැන සිටින කිසියම් වැදගත් තොරතුරක් හෙළිදරව් කිරීමට මම අපොහොසත් වුවහොත් ඒ හේතුවෙන් මෙම ගිවිසුම අවලංගු විය හැකි බවට මම එකඟ වෙමි. "
+  submit.button: "පෝරමය පුරවන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"
+
+
+ta: 
+  fullName.label: "முழுப் பெயர்"
+  currentResidence.label: "1.) உங்கள் தற்போதைய வதிவிடம் மற்றும் விசா மூலம் தங்கியிருக்கும் காலம் உள்ளிட்ட உங்கள் வதிவிட நிலை பற்றிய விபரங்களை வழங்கவும், ஏற்புடையதாயின்."
+  dateOfStayPreviousResidence.label: "a) தங்கியிருக்கும் நாட்கள்"
+  countryOfPreviousResidence.label: "b) வதியும் நாடு மற்றும் பிராந்தியம் "
+  reasonForVisitingPreviousResidence.label: "c) பயணத்திற்கான காரணம் "
+  frequencyOfVisitsPreviousResidence.label: "d) பயணங்களின் தடவைகள் (ஆண்டுக்கு பயணங்களின் எண்ணிக்கை)   "
+  durationOfStayPreviousResidence.label: "e) ஒவ்வொரு முறையும் தங்கி நிற்கும் காலப்பகுதி "
+  dateOfStayFutureResidence.label: "a) தங்கியிருக்கும் நாட்கள்"
+  countryOfFutureResidence.label: "b) வதியும் நாடு மற்றும் பிராந்தியம்"
+  reasonForVisitingFutureResidence.label: "c) பயணத்திற்கான காரணம்"
+  frequencyOfVisitsFutureResidence.label: "d) பயணங்களின் தடவைகள் (ஆண்டுக்கு பயணங்களின் எண்ணிக்கை)   "
+  durationOfStayFutureResidence.label: "e) ஒவ்வொரு முறையும் தங்கி நிற்கும் காலப்பகுதி "
+  occupationalDuties.label: "4.) உங்கள் தொழில்சார்ந்த கடமைகள் மற்றும்/அல்லது வெளிநாட்டிற்கு பயணம் செய்யும் போது அல்லது வதியும் போது நீங்கள் பங்கேற்கும் வேறு ஏதேனும் செயற்பாடுகள் பற்றிய சுருக்கமான விளக்கத்தை வழங்கவும். "
+  majorityOfTimeSpent.label: "5.)உங்கள் பெரும்பாலான நேரத்தை முக்கிய / பெரிய நகரங்களில் செலவிட எதிர்பார்க்கிறீர்களா?	ஆம் 	இல்லை. இல்லை என்றால், நகரம்/பிராந்தியத்தின் பெயர் மற்றும் உங்கள் தங்குமிடம், மருத்துவ வசதிகள் கிடைக்கும் தன்மை மற்றும் உங்கள் உள்ளக பயண ஏற்பாடுகள் (உ-ம்: இலகுரக விமானம், படகு போன்றவை) பற்றிய விபரங்களை வழங்கவும். "
+  majorityOfTimeSpent.options.no: "නැත"
+  majorityOfTimeSpent.options.yes: "ඔව්"
+  townRegionDetails.label: " "
+  medicalDetails.label: "6.)வெளிநாட்டில் வசிக்கும் போது நீங்கள் பெற்ற மருத்துவ சிகிச்சை அல்லது அறுவை சிகிச்சை பற்றிய விபரங்களைத் தரவும்:"
+  additionalInformation.label: "7.)உங்கள் விண்ணப்பத்தைச் செயன்முறைப்படுத்துவதில் உதவியாக இருக்கும் என்று நீங்கள் நினைக்கும் உங்கள் வதிவிட மற்றும் பயணம் பற்றிய மேலதிக தகவல்களை வழங்கவும்."
+  signature.label: "கையொப்பம்:"
+  date.label: "திகதி:"
+
+  # Layout translations
+  text.previous_residence_and_travel: "2.)	கடந்த 5 ஆண்டுகளில் (4 வாரங்களுக்கும் குறைவான விடுமுறை நாட்கள் நீங்களாக) உங்கள் முன்னைய வதிவிடம் மற்றும் பயண விபரங்களை வழங்கவும்:"
+  text.future_residence_and_travel: "3.)	அடுத்த 5 ஆண்டுகளுக்கு (4 வாரங்களுக்கும் குறைவான விடுமுறை நாட்கள் நீங்களாக) உங்கள் எதிர்கால வதிவிடம் மற்றும் பயண நோக்கங்களின் விபரங்களை வழங்கவும்:"
+  text.declaration: "நான் அளித்த பதில்கள் எனக்குத் தெரிந்தவரை சரியானவையும் உண்மையானவையுமாகும் என்றும், இந்த விண்ணப்பத்தின் மதிப்பீடு அல்லது ஏற்றுக்கொள்ளலைப் பாதிக்கக்கூடிய எந்தவொரு முக்கிய தகவலையும் நான் மறைக்கவில்லை என்றும் நான் வெளிப்படுத்துகிறேன்."
+  text.agreement: "இந்த விண்ணப்பம் எனது காப்புறுதித் திட்டத்தின் ஒரு பகுதியாக இருக்கும் என்பதையும், எனக்குத் தெரிந்த எந்தவொரு முக்கிய உண்மைகளையும் வெளியிடத் தவறினால் ஒப்பந்தம் செல்லுபடியற்றதாகிவிடும் என்பதையும் நான் ஏற்றுக்கொள்கிறேன்."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"

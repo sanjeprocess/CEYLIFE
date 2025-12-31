@@ -1,0 +1,58 @@
+# student-clause form localization
+# Locales: en, si, ta
+
+en:
+  # Field labels
+  proposerName.label: "Proposer Name"
+  proposerNic.label: "Proposer NIC"
+  proposerContract.label: "Proposer Contract"
+  signature.label: "Signature of Proposer"
+  date.label: "Date"
+
+  # Layout translations
+  h1.title: "STUDENT CLAUSE"
+  text.description: "(TO BE ACCEPTED BY THE PROPOSER)"
+  text.declaration: "It is hereby declared and agreed that the Life Assured / Spouse Assured undertakes to inform the Company immediately after taking up an occupation or a profession, the nature of duties involved in that occupation or profession. Upon receipt of such information, the Company may impose an extra premium or restrictions on this Assurance, if deemed necessary, Failure to inform the Company of the occupation or profession taken up and the nature of duties involved in such occupation or profession and/or pay any extra premium imposed by the Company will result in the amount payable under this Assurance being limited to a sum equal to either;"
+  text.totalPremium: " 1.) the total premium paid excluding any extra premium (without interest), less any sums paid hereunder as the cash value of bonuses, advance payments and loans on the Policy together with accrued interest thereon or"
+  text.netSurrenderValue: " 2.) the net Surrender Value of the Policy, whichever shall be greater, but such sum shall not exceed the Death Benefit on the Basic Policy"
+  text.consent: "<b>consent</b>"
+  text.consentDescription: "I have read and understood the afore-said clause and hereby give my consent to accept the Life Assurance proposal subject to the respective clause."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"
+
+si:
+  # Field labels
+  proposerName.label: "යෝජකයාගේ නම:"
+  proposerNic.label: "යෝජකයාගේ ජාහැප අංකය:"
+  proposerContract.label: "යෝජනාපත්‍ර / ඔප්පු අංකය:"
+  signature.label: "අත්සන:"
+  date.label: "දිනය: "
+
+  # Layout translations
+  h1.title: "ශිෂ්‍ය වගන්තිය"
+  text.description: "(යෝජකයා විසින් පිළිගැනිම සඳහා)"
+  text.declaration: "රැකියාවක හෝ වෘතියක තමා නිරත වූ වහාම ඊට අදාළ කාර්ය භාරයේ ස්වභාවය පිළිබඳ පුර්ණ විස්තරයක් සැපයීමට ජිවිත රක්ෂිතයා එකඟත්වය ප්‍රකාශ කරන අතර, එසේ කිරීමට එකඟ වේ.එබඳු විස්තර ලැබීමෙන් පසු අවශ්‍ය බව පෙනී යන අවස්ථාවල දී මෙම රක්ෂණය වෙනුවෙන් අමතර වාරිකයක් අය කිරීම හෝ සීමා කිරීම් පැනවීම සමාගම සිදු කරනු ලැබේ.රැකියාවක හෝ වෘතියක නිරත වූ බව හා අදාළ කාර්ය භාරයේ ස්වභාවය පිළිබඳ විස්තර සමාගමට සැපයීම හා / හෝ සමාගම විසින් නියම කරන යම් අමතර වාර මුදලක් වේ නම් එය ගෙවීම් පැහැර හැරීමෙන් සමාගවේ වගකීම් :"
+  text.totalPremium: "1.) අතිරේක වාර මුදලක් වේ නම් එය ඉවත් කර (පොලියක් රහිතව ගත් විට) ගෙවා ඇති මුළු වාර මුදලින්, මෙම ඔප්පුව යටතේ කරන ලද ප්‍රසාද දීමනා වල මුදල් අගය, පූර්ව ගෙවීම් ණය මුදල් හා ඊට එකතු වී ඇති පොලියද ආදී ගෙවීම් අඩු කිරීමෙන් පසු ඇති වන ශේෂය"
+  text.netSurrenderValue: "2.) ඔප්පුවේ පවාරණ අගය යන ප්‍රමාණ දෙකින් වැඩි ප්‍රමාණය ගෙවීමට සීමාවන අතර එම ප්‍රමාණය මූලික ඔප්පුව යටතේ යෙදෙන මරණ ප්‍රතිලාභය කිසි විටෙක නොයික්ම විය යුතුය."
+  text.consent: " "
+  text.consentDescription: "ඉහත සඳහන් වගන්තිය කියවා තේරුම් ගත් අතර, එම වගන්තියට යටත්ව යෝජනාපත්‍රය පිළිගැනීමට මාගේ කැමැත්ත මෙයින් ප්‍රකාශ කර සිටිමි"
+  submit.button: "පෝරමය පුරවන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"
+
+ta:
+  proposerName.label: "முன்மொழிபவரின் பெயர்:"
+  proposerNic.label: "தே.அ.அ. இலக்கம்:"
+  proposerContract.label: "தொடர்பு இலக்கம்:"
+  signature.label: "முன்மொழிபவரின் கையொப்பம்:"
+  date.label: "திகதி: "
+
+  # Layout translations
+  h1.title: "மாணவர் விதிப்பிரிவு"
+  text.description: "(முன்மொழிபவரால் ஏற்றுக்கொள்ளப்பட வேண்டும்)"
+  text.declaration: "ஆயுள் காப்புறுதி செய்யப்பட்டவர் / வாழ்க்கைத் துணை ஒரு உத்தியோகத்தை அல்லது வாழ்க்கைத்தொழிலை ஏற்றுக்கொண்டவுடன், அந்தத் உத்தியோகம் அல்லது வாழ்க்கைத் தொழிலில் உள்ள கடமைகளின் தன்மையை நிறுவனத்திற்குத் தெரிவிக்க பொறுப்பேற்கிறார் என்று இதன் மூலம் அறிவிக்கப்பட்டு ஒப்புக் கொள்ளப்படுகிறது. அத்தகைய தகவலைப் பெற்றவுடன், தேவைப்பட்டால், நிறுவனம் இந்த காப்புறுதியின் மீது மேலதிக தவணைக் கட்டணம் அல்லது கட்டுப்பாடுகளை விதிக்கலாம். பொறுப்பேற்ற உத்தியோகம் அல்லது வாழ்க்கைத்தொழில் மற்றும் அத்தகைய உத்தியோகம் அல்லது வாழ்க்கைத் தொழிலில் உள்ள கடமைகளின் தன்மை பற்றி நிறுவனத்திற்கு அறிவிக்க மற்றும்/அல்லது நிறுவனத்தால் விதிக்கப்படும் மேலதிக தவணைக் கட்டணத்தை செலுத்தத் தவறினால், இந்த காப்புறுதியின் கீழ் செலுத்த வேண்டிய தொகை இரண்டிற்கும் சமமான தொகைக்கு மட்டுப்படுத்தப்படும்."
+  text.totalPremium: "1.) i.	ஏதேனும் மேலதிக தவணைக் கட்டணம் நீங்கலாக (வட்டி இல்லாமல்) செலுத்தப்பட்ட மொத்த தவணைக்க கட்டணத்தின் அளவு, காப்புறுதி ஒப்பந்தத்தில் போனஸ், முற்பணங்கள் மற்றும் கடன்களின் பணப்பெறுமதி மற்றும் அதன் மீதான திரட்டப்பட்ட வட்டியுடன் இங்கு செலுத்தப்பட்ட ஏதேனும் தொகைகளைக் குறைத்தல், அல்லது"
+  text.netSurrenderValue: "2.) ii.	காப்புறுதி ஒப்பந்தத்தின் நிகர ஒப்புவிப்பு பெறுமதி, எது அதிகமாக உள்ளதோ அது, ஆனால் அத்தகைய தொகை அடிப்படை காப்புறுதி ஒப்பந்தத்தின் இறப்பு நன்மையை பார்க்கிலும் அதிகமாக இருத்தலாகாது."
+  text.consent: " "
+  text.consentDescription: "மேற்படி விதிப்பிரிவை நான் வாசித்து விளங்கிக்கொண்டேன், மேலும் அந்தந்த விதிப்பிரிவிற்கு உட்பட்டு ஆயுள் காப்புறுதித் திட்டத்தை ஏற்க இதன் மூலம் எனது சம்மதத்தை அளிக்கிறேன்."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"

@@ -21,10 +21,6 @@ nameTitle:
   options:
     mr: "Mr."
     ms: "Ms."
-    dr: "Dr."
-    prof: "Prof."
-    rev: "Rev."
-    other: "Other"
 nameOfChild:
   type: text
   label: Name of Child

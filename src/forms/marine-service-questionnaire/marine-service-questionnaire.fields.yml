@@ -5,14 +5,12 @@ ProposerName:
   label: Proposer's Name
   required: true
   placeholder: Proposer's Name
-  description: Proposer's Name
   defaultValue: "{{proposers_name}}"
 proposalNum:
   type: number
   label: Proposal Number
   required: true
   placeholder: Proposal Number
-  description: Proposal Number
   defaultValue: "{{proposal_number}}"
 vesselName:
   type: text
@@ -22,7 +20,7 @@ vesselName:
   defaultValue: ""
 vesselOwner:
   type: text
-  label: a.2) Who is the owner of the Vessel?
+  label: a.2) Who are its owners?
   required: true
   placeholder: Vessel Owner
   defaultValue: ""
@@ -61,9 +59,9 @@ vesselType:
   label: f.) What is the type of the vessel?
   required: true
   options:
-    barge_boat: Is the boat a barge?
+    barge_boat: Is the boat a barge
     tug_boat: Tug Boat
-    launch_first: Launch First - class passenger steamship?
+    launch_first: Launch First - class passenger steamship
     freight_steamship: Freight steamship
     sailing_vessel: Sailing vessel
 position:

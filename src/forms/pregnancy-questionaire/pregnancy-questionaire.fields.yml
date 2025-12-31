@@ -2,36 +2,36 @@
 # Types: text, number, email, password, date, time, datetime-local, checkbox, radio-group, checkbox-group, select, textarea, file, url, tel
 proposersName:
   type: text
-  label: "Proposer's Name"
+  label: "1. Proposer's Name"
   required: false
   placeholder: "Proposer's Name"
   defaultValue: "{{client_name}}"
 
 contractNumber:
   type: text
-  label: "Contract Number"
+  label: "2. Contract Number"
   required: false
   placeholder: "Contract Number"
   defaultValue: "{{contract_number}}"
 
 firstDateOfMenstrualPeriod:
   type: date
-  label: Date of First Date of the last Menstrual Period
+  label: "3. Date of first date of the last menstrual period"
   required: false
 
 deliveryDate:
   type: date
-  label: Expected Date of Delivery
+  label: "4. Expected date of delivery"
   required: false
 
 medicalDetails:
   type: textarea
-  label: Are you being-treated or closely monitored due to elevated blood pressure, diabetes or any other pregnet related complications? if so,pleasegive details and forward related medical reports. 
+  label: "5. Are you being-treated or closely monitored due to elevated blood pressure, diabetes or for any other pregnant related complications? if so,please give details and forward related medical reports."
   required: false
 
 abnormalitiesPertaining: 
   type: radio-group
-  label: Are there any abnormalities pertaining to the pregnancy? 
+  label: "6. Are you aware of any abnormalities pertaining to current pregnancy? If so, please give details. "
   required: false
   options:
     yes: Yes
@@ -48,7 +48,7 @@ abnormalitiesPertaining:
 
 haveChildren:
   type: radio-group
-  label: Do you have any children? 
+  label: 1. Do you have  children? If yes, state the number. 
   required: false
   options:
     yes: Yes
@@ -65,12 +65,12 @@ haveChildren:
 
 prematureBirth:
   type: textarea
-  label: Were there any premature births? 
+  label: 2. Were there any premature births? 
   required: false
 
 treatedforPregnancyRelatedComplications:
   type: radio-group
-  label: During past pregnancy/ies, were you treated for elevated blood pressure, blood sugar or any adverse urine / blood reports or other illness/es? If so, please give details. 
+  label: 3. During past pregnancy/ies, were you treated for elevated blood pressure, blood sugar or any adverse urine / blood reports or other illness/es? If so, please give details. 
   required: false
   options:
     yes: Yes

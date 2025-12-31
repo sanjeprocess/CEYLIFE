@@ -2,10 +2,12 @@
 
 formVersion: 1
 formTitle: Pregnancy Questionaire
-formDescription: Form description for Pregnancy Questionaire
+formDescription: ""
 showFormHeader: false
 availableLocales:
   - en
+  - si
+  - ta
 defaultLocale: en
 searchParamsVariables:
   cs: contract_sequence

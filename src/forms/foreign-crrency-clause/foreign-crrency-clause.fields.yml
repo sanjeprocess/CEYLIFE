@@ -47,7 +47,7 @@ explainingPersonDate:
   defaultValue: ""
 explainingPersonSignature:
   type: file
-  label: Signature of the explaining person the content of the above declaration to the proposer
+  label: Signature of the person explaining the content of the above declaration to the proposer
   required: false
   defaultValue: ""
   fileOptions:

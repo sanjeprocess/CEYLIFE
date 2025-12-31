@@ -6,4 +6,6 @@ formDescription: ""
 showFormHeader: true
 availableLocales:
   - en
+  - si
+  - ta
 defaultLocale: en

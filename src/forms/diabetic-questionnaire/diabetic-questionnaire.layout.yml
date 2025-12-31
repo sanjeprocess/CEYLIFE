@@ -1,6 +1,7 @@
 # diabetic-questionnaire form layout
 
 - text: (To be completed by the Proposer)
+  key: text.to_be_completed_by_the_proposer
 - divider: true
 - field: proposerName
 - field: contractNum
@@ -16,12 +17,14 @@
 - card: Declaration
   key: card.declaration
   items:
-    - text: >-
+    - text:
         I declare that the answers I have given are to the best of my knowledge
         true and that I have not withheld any material information that may
         influence the assessment or acceptance of the proposal. 
+      key: text.declare_answers
          
-         I agree that this form will constitute part of my proposal for life assurance and that liable to disclose any material fact known to me may invalidate the contract
+    - text: I agree that this form will constitute part of my proposal for life assurance and that liable to disclose any material fact known to me may invalidate the contract
+      key: text.agree_to_constitute_part_of_proposal
 - row: 2
   columns:
     - field: date
