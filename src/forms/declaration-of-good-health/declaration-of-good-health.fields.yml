@@ -14,47 +14,39 @@ fullName:
   placeholder: Enter full name
   defaultValue: "{{full_name}}"
   readOnly: true
-gender:
-  type: radio-group
-  label: 3. Gender
-  required: true
-  placeholder: Enter gender
-  options:
-    male: "Male"
-    female: "Female"
 address:
   type: text
-  label: 4. Address
+  label: 3. Address
   required: true
   placeholder: Enter address
 telephoneNumber:
   type: tel
-  label: 5. Fixed Line No
+  label: 1. Fixed Line No
   required: false
   placeholder: Enter fixed line number
 mobileNumber:
   type: tel
-  label: 6. Mobile Number
+  label: 2. Mobile Number
   required: true
   placeholder: Enter mobile number
 emailAddress:
   type: email
-  label: 7. Email Address
+  label: 5. Email Address
   required: true
   placeholder: Enter email address
 occupation:
   type: text
-  label: 8. Occupation/Business/Job Title
+  label: 6. Occupation/Business/Job Title
   required: true
   placeholder: Enter occupation
 natureOfOccupation:
   type: text
-  label: 9. Nature of Occupation/Business/Details of other source of income
+  label: 7. Nature of Occupation/Business/Details of other source of income
   required: true
   placeholder: Enter nature of occupation
 annualIncome:
-  type: number
-  label: 10. Annual Income
+  type: currency
+  label: 8. Annual Income
   required: true
   placeholder: Enter annual income
 applyTo:
@@ -67,7 +59,7 @@ applyTo:
     revive the above policy under Normal revival: 2. revive the above policy under Normal revival
 applyToBenifit:
   type: checkbox
-  label: 3. Include benefit
+  label: 9. Include benefit
   required: false
   dependencies:
     include:
@@ -113,7 +105,7 @@ healthQ2:
 
 healthQ3:
   type: radio-group
-  label: "2.3 Have you consulted a physician for any reason, including routine examination and blood tests during last past 5 years"
+  label: "2.3 Have you consulted a physician for any reason, including routine examination and blood tests during last 5 years"
   required: true
   options:
     Yes: "Yes"
@@ -145,7 +137,7 @@ healthQ4:
 
 healthQ5:
   type: radio-group
-  label: "2.5 Have you ever hospitalized for COVID-19 infections or its complications or do you have any ongoing to COVID-19 infection related complications"
+  label: "2.5 Have you ever hospitalized for COVID-19 infections or its complications or do you have any ongoing treatment to COVID-19 infection related complications"
   required: true
   options:
     Yes: "Yes"
@@ -186,21 +178,21 @@ healthQ7:
     liquorUsage:
       type: text
       label: Liquor – quantity/frequency
-
+      required: true
       conditionalOptions:
         operator: eq
         value: "Yes"
     smokeUsage:
       type: text
       label: Smoke – quantity/frequency
-
+      required: true
       conditionalOptions:
         operator: eq
         value: "Yes"
     drugsUsage:
       type: text
       label: Drugs – quantity/frequency
-
+      required: true
       conditionalOptions:
         operator: eq
         value: "Yes"
@@ -228,6 +220,7 @@ healthQ9:
   options:
     Yes: "Yes"
     No: "No"
+    notApplicable: "Not Applicable"
   dependencies:
     confinementDate:
       type: date
