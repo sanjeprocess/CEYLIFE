@@ -1,0 +1,69 @@
+# marine-service-questionnaire form localization
+# Locales: en, si, ta
+
+en:
+  # Field labels
+  ProposerName.label: "Proposer's Name"
+  proposalNum.label: "Proposal Number"
+  vesselName.label: "a.1) What is the name of the Vessel?"
+  vesselOwner.label: "a.2) Who are its owners?"
+  vesselLine.label: "a.3) To what line does it belong?"
+  motivePower.label: "b.) What is its motive power, rating and gross tonnage?"
+  vesselBusiness.label: "c.) In what business is it engaged?"
+  businessPly.label: "d.) In what waters does it ply?"
+  ports.label: "e.) Between what ports?"
+  vesselType.label: "f.) What is the type of the vessel?"
+  vesselType.options.barge_boat: "Is the boat a barge"
+  vesselType.options.tug_boat: "Tug Boat"
+  vesselType.options.launch_first: "Launch First - class passenger steamship"
+  vesselType.options.freight_steamship: "Freight steamship"
+  vesselType.options.sailing_vessel: "Sailing vessel"
+  position.label: "g.)  What is the title of your position?"
+  serviceYears.label: "h.) How long have you been engaged in a sea-faring occupation?"
+  insurable.label: "i.) Is the vessel seaworthy and insurable?"
+  insurable.options.yes: "Yes"
+  insurable.options.no: "No"
+  Details.label: "If so, is the vessel now insured?"
+  date.label: "Date"
+  signature.label: "Signature"
+
+  # Layout translations
+  h1.title: "Marine Service Questionnaire"
+  text.declare: "<b>I declare that the answers I have given are to the best of my knowledge true and that I have not withheld any material information that may influence the assessment or acceptance of the proposal.</b>"
+  text.agree: "<b>I agree that this form will constitute part of my proposal for life assurance and that failure to disclose any material fact known to me may invalidate the contract.</b>"
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"
+
+si: 
+  # Field labels
+  ProposerName.label: "යෝජකයාගේ නම :"
+  proposalNum.label: "යෝජනාපත්‍ර / ඔප්පු අංකය :"
+  vesselName.label: "a.1) නෞකාවේ නම කුමක්ද?"
+  vesselOwner.label: "a.2) එහි අයිතිකරුවන් කවුද?"
+  vesselLine.label: "a.3) එය කුමන නැව් සමාගමකට අයත්ද?"
+  motivePower.label: "b.) එහි ධාවන බලය, වේගය සහ නැවේ බඩු පැටවිය හැකි ප්‍රමාණය (ධාරිතාව ) කවරේද?"
+  vesselBusiness.label: "c.) එය කුමන ව්‍යාපාරයක් සඳහා යොදවා තිබේද?"
+  businessPly.label: "d.) කුමන ආකාරයේ සාගරවල එය යාත්‍රා කරයි ද?"
+  ports.label: "e.) යාත්‍රා කෙරෙනුයේ කුමන වරායන් අතරද?"
+  vesselType.label: "f.) යාත්‍රාව පාරු වර්ගයකට අයත්ද?"
+  vesselType.options.barge_boat: "යාත්‍රාව පාරු වර්ගයකට අයත්ද?"
+  vesselType.options.tug_boat: "විශාල නැව් ඇදගෙන යාමට භාවිතා කරන කුඩා දුම් බෝට්ටුවක්ක්ද?"
+  vesselType.options.launch_first: "පළමු පංතියට අයත් මගීන් ප්‍රවාහනය කරන දුම් නැවක්ද?"
+  vesselType.options.freight_steamship: "බඩු ප්‍රවාහනය කරන දුම් නැවක්ද?"
+  vesselType.options.sailing_vessel: "රුවල් නෞකාවක්ද ?"
+  position.label: "g.)  ඔබ දරණ පදවියේ නම කුමක්ද ?"
+  serviceYears.label: "h.) මුහුදු සම්බන්ධ රැකියාවක ඔබ නිතර වී සිටින්නේ කවර කාලයක සිටද?"
+  insurable.label: "i.) නෞකාව මුහුදෙහි යාත්‍රා කරවීමට සුදුසු තත්ත්වයක පවතීද?"
+  insurable.options.yes: "ඔව්"
+  insurable.options.no: "නැත"
+  Details.label: "එසේ නම් රක්ෂණය කර ඇත් ද?"
+  date.label: "දිනය"
+  signature.label: "යෝජකයාගේ අත්සන :"
+
+  # Layout translations
+  h1.title: "මුහුදු යාත්‍රාවන්හි සේවයේ නියුතු වූවන් සඳහා වූ ප්‍රශ්ණාවලිය"
+  text.declare: "<b>ඉහත සපයා ඇති ප්‍රශ්ණ වලට මා විසින් සපයන ලද පිළිතුරු සත්‍ය බව ප්‍රකාශ කරමි. තවද, මෙම ආකෘති පත්‍රය මා විසින් සෙලින්කෝ ලයිෆ් ඉන්ෂුවරන්ස් ලිමිටඩ් වෙත ඉදිරිපත් කළ ජීවිත රක්ෂණ යෝජනා පත්‍රයේම කොටසක් බවත්, කිසියම් වටිනා තොරතුරක් වසන් කිරීමෙන් එම ගිවිසුම අහෝසි වන බවත්, මා දන්නා බව ප්‍රකාශ කරමි.</b>"
+  text.agree: " "
+  submit.button: "පෝරමය පුරවන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"
+ta: {}

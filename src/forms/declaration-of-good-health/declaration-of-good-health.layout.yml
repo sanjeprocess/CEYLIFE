@@ -1,6 +1,7 @@
 # dgh form layout
 
 - h1: Personal Information
+  key: h1.personal_information
 - field: policyNumber
 - field: fullName
 - field: gender
@@ -43,10 +44,14 @@
     - field: healthQ10Details
 - card: DECLARATION
   align: center
+  key: card.declaration
   items:
     - text: "I declare that the foregoing statements and answers given by me are true and I have not withheld any information. I do hereby agree that this statement and this declaration shall form a part of the contract of insurance and if any untrue averment be contained, the said contract will be null and void."
+      key: text.declaration
     - text: "I hereby give my consent to Ceylinco Life Insurance Limited to verify (Online/ Manual) my National Identity Card particulars with the department of Registration of Persons."
+      key: text.consent
     - text: "I agree and consent to Ceylinco Life Insurance Ltd as well as their respective representatives, agents, the Companies' authorised service providers and relevant third parties whether within or outside Sri Lanka for collecting, using and/or disclosing my personal data for purpose reasonably required by the companies to evaluate my proposal and to provide the products or services which I am applying for."
+      key: text.agree
 - row: 2
   columns:
     - field: submittedDate

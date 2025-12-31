@@ -1,6 +1,81 @@
 # pregnancy-questionaire form localization
 # Locales: en, si, ta
 
-en: {}
-si: {}
+en:
+  # Field labels
+  proposersName.label: "1. Proposer's Name"
+  contractNumber.label: "2. Contract Number"
+  firstDateOfMenstrualPeriod.label: "3. Date of first date of the last menstrual period"
+  deliveryDate.label: "4. Expected date of delivery"
+  medicalDetails.label: "5. Are you being-treated or closely monitored due to elevated blood pressure, diabetes or for any other pregnant related complications? if so,please give details and forward related medical reports."
+  
+  abnormalitiesPertaining.label: "6. Are you aware of any abnormalities pertaining to current pregnancy? If so, please give details. "
+  abnormalitiesPertaining.options.yes: "Yes"
+  abnormalitiesPertaining.options.no: "No"
+  
+  abnormalitiesDetails.label: "Details"
+
+  haveChildren.label: "1. Do you have  children? If yes, state the number. "
+  haveChildren.options.yes: "Yes"
+  haveChildren.options.no: "No"
+
+  childrenNo.label: "Number of Children"
+
+  prematureBirth.label: "2. Were there any premature births? "
+
+  treatedforPregnancyRelatedComplications.label: "3. During past pregnancy/ies, were you treated for elevated blood pressure, blood sugar or any adverse urine / blood reports or other illness/es? If so, please give details. "
+  treatedforPregnancyRelatedComplications.options.yes: "Yes"
+  treatedforPregnancyRelatedComplications.options.no: "No"
+
+  complicationsDetails.label: "Details"
+
+  date.label: "Date"
+  signature.label: "Signature of the life to be assured"
+
+  # Layout translations
+  h1.title: "Pregnancy Questionaire"
+  card.presentPregnancy: "Present pregnancy"
+  card.pastPregnancy: "Past pregnancy"
+  text.declaration: "I declare that the above answers I have given are to the best of my knowledge true and correct. I agree that this form will constitute part of my proposal for life assurance and that failure to disclose any material fact known to me may invalidate the said contract."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"
+
+si:
+  # Field labels
+  proposersName.label: "1. යෝජකයාගේ නම"
+  contractNumber.label: "2. යෝජනාපත්‍ර / ඔප්පු අංකය"
+  firstDateOfMenstrualPeriod.label: "3. අවසන් වරට ඇති වූ මාසික ශුද්ධියේ ප්‍රථම දිනය :"
+  deliveryDate.label: "4. ප්‍රසුතිය නියමිත දිනය :"
+  medicalDetails.label: "5. අධිරුධිර පීඩනය, දියවැඩියාව හෝ වෙනයම් ගර්භනි සංකූලතාවයක් සඳහා ප්‍රතිකාර ලබා ගත්තේද? / ගන්නේද? නැතිනම් සුපරීක්ෂාවෙන් සිටින්නේද?"
+  
+  abnormalitiesPertaining.label: "6. පවතින ගර්භයේ යම් අසාමාන්‍යතාවයක් පවතින්නේද? එසේ නම් ඒ පිළිබඳ විස්තර සපයන්න. "
+  abnormalitiesPertaining.options.yes: "ඔව්"
+  abnormalitiesPertaining.options.no: "නැත"
+  
+  abnormalitiesDetails.label: "කරුණාකර විස්තර දක්වන්න."
+
+  haveChildren.label: "1. ඔබට දරුවකු/ දරුවන් සිටින්නේද? "
+  haveChildren.options.yes: "ඔව්"
+  haveChildren.options.no: "නැත"
+
+  childrenNo.label: "එසේ නම් කී දෙනෙක්ද?"
+
+  prematureBirth.label: "2. නොමේරු දරු උපත් සිදුව තිබේද? "
+
+  treatedforPregnancyRelatedComplications.label: "3. පසුගිය ගර්භය /න්හිදී අධිරුධිර පීඩනය, දියවැඩියාව හෝ අසාමාණය මුත්‍රා/ රුධිර වාර්තා හෝ රෝගාබාධයන් පැවතුනිද? "
+  treatedforPregnancyRelatedComplications.options.yes: "ඔව්"
+  treatedforPregnancyRelatedComplications.options.no: "නැත"
+
+  complicationsDetails.label: "කරුණාකර විස්තර දක්වන්න."
+
+  date.label: "දිනය"
+  signature.label: "යෝජකයාගේ අත්සන"
+
+  # Layout translations
+  h1.title: "ගර්භනි තත්ත්වය පිළිබඳ ප්‍රශ්නාවලිය"
+  card.presentPregnancy: "දැනට පවතින ගර්භයේ තත්ත්වය"
+  card.pastPregnancy: "පසුගිය ගර්භනී අවස්ථා පිළිබඳ විස්තර"
+  text.declaration: "ඉහත පිළිතුරු මාගේ දැනුමේ ප්‍රකාර සත්‍ය හා නිවැරදි බව ප්‍රකාශ කර සිටිමි.තවද මෙම ආකෘති පත්‍රය යෝජනා පත්‍රයේම කොටසක් බවත්, කිසියම් වැදගත් තොරතුරක් වසන් කිරීමෙන් මෙම ගිවිසුම අහෝසි වීමට හේතු වන බව මා දන්නා බවත් ප්‍රකාශ කරමි."
+  submit.button: "පෝරමය පුරවන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"
 ta: {}

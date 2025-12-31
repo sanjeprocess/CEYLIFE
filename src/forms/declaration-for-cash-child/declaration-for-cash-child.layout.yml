@@ -34,6 +34,7 @@
           colspan: 1
 
     - text: Benefits Required
+      key: text.benefitsRequired
     - field: familyDigasiriPlus
     - field: hospitalCashPlus
     - field: majorSurgeryPlus
@@ -44,6 +45,7 @@
 - card:
   items:
     - text: 2. Is your child ever suffered or is he/she suffering from
+      key: text.isChildEverSuffered
     - field: circulatoryDisease
     - field: respiratoryDisease
     - field: genitourinaryDisease
@@ -60,7 +62,7 @@
     - field: disabilityBenefit
     - field: existingPolicy
     - field: declinedProposal
-    - text: "8."
+    - text: " 8.) "
     - field: smokedLast12Months
     - field: smokeNow
     - field: drugsOrNarcotics
@@ -73,18 +75,25 @@
     - field: pendingLitigation
 
 - card: DECLARATION
+  key: card.declaration
   items:
     - text: The foregoing statements and answers are complete and true and we agree that the statements and answers shall be the basis of the contract of this assurance between this chid and Ceylinco Life Insurance Limited, Ceylinco Life Insurance Limited shall not be liable for any claim in the event of death or on account of illness or injury the cause of which was known to the proposer's prior to acceptance of the proposal or any information or material facts withheld or concealed
+      key: text.foregoingStatements
     - text: We hereby authorise any doctor, nurse or hospital official to disclose to Ceylinco Life Insurance Limited. any and all information regarding this child's past medical history, present treatment and the results of any investigation carried out
+      key: text.authoriseDisclosure
     - row: 8
       columns:
         - text: Dated at
+          key: text.datedAt
         - field: datedAt
         - text: On this
+          key: text.onThis
         - field: onThis
         - text: day of
+          key: text.dayOf
         - field: dayOf
         - text: "20"
+          key: text.yearOf
         - field: yearOf
     - row: 2
       columns:
@@ -95,7 +104,9 @@
         - field: mothersSignature
         - field: mothersNic
     - text: Witnesses 1
+      key: text.witnesses1
     - text: I certify that the signature 1-2 was/were placed in my presence
+      key: text.certifySignature1
     - row: 2 
       columns:
         - field: witness1Signature
@@ -105,7 +116,9 @@
         - field: witness1Address
         - field: witness1Nic
     - text: Witnesses 2
+      key: text.witnesses2
     - text: I certify that the signature 1-2 and witness 1 were placed in my presence
+      key: text.certifySignature2
     - row: 2
       columns:
         - field: witness2Signature

@@ -1,6 +1,315 @@
-# dgh-hsp form localization
+# declaration-of-good-health-hsp form localization
 # Locales: en, si, ta
 
-en: {}
-si: {}
+en:
+  # Layout translations
+  card.important: "Important <br><br> Please make full disclosure of your health, occupation, habits and pursuits. Non-disclosure or misrepresentation will render your policy NULL and VOID. If you are in doubt as to whether any facts would be material, it is in your interest to disclose them."
+  card.life_assured: "1. Life Assured"
+  card.your_health_condition: "2. Your Health Condition"
+  text.suffering_from_disorders: "Are you at present suffering from any of the following disorders/diseases or have you suffered from following disorders/diseases during the last 10 years?"
+  card.other_information: "Other Information"
+  card.declaration: "DECLARATION"
+  text.declaration: "I declare that the foregoing statements and answers given by me are true and accurate. I agree that these statements shall be the basis of the insurance policy between myself and Ceylinco Life Insurance Limited. Ceylinco Life Insurance Limited shall not be liable for any claims on account of illness or injury, the cause of which was known prior to approval of my request for this assurance."
+  text.authorise: "I authorise any representative or a medical officer of Ceylinco Life Insurance Limited to peruse or obtain the Bed Head Ticket (BHT) or any other clinical notes from any Government / Private Hospital, Clinic, Nursing home, Asylum or sanatorium and authorise to obtain information from any other insurer."
+  text.consent: "I hereby give my consent to Ceylinco Life Insurance Limited to verify (Online / Manual) my National Identity Card particulars with the department of Registration of Persons."
+  text.agree: "I agree and consent to Ceylinco Life Insurance Limited as well as their respective representatives, agents, the company's authorized service providers and relevant third parties whether within or outside Sri Lanka for collecting, using and / or disclosing my personal data for purposes reasonably required by the company to evaluate my proposal and provide the products or services which I am applying for."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"
+
+  # Section 1: Life Assured
+  policyNo.label: "Policy No"
+  11FullName.label: "1.1 Full Name"
+  gender.label: "Gender"
+  gender.options.male: "Male"
+  gender.options.female: "Female"
+  gender.options.other: "Other / Prefer not to say"
+  12CurrentAddress.label: "1.2 Current Address"
+  
+  country.label: "Country"
+  city.label: "City"
+  emailAddress.label: "Email Address"
+  telephoneFixed.label: "Telephone Fixed line"
+  mobile.label: "Mobile"
+  13DateOfBirth.label: "1.3 Date of Birth"
+  14Height.label: "1.4 Height"
+  weight.label: "Weight"
+  15OccupationJobTitleBusinessAndItsNature.label: "1.5 Occupation / Job Title / Business and its Nature"
+  nameOfTheEmployee.label: "Name of the Employer"
+  16AnnualIncome.label: "1.6 Annual Income – Rs"
+
+  # Section 2: Your Health Condition
+  21Diabetes.label: "2.1 Diabetes"
+  21Diabetes.options.yes: "Yes"
+  21Diabetes.options.no: "No"
+  21Details.label: "Please provide details"
+
+  22HighBloodPressure.label: "2.2 High blood pressure(Hypertension)"
+  22HighBloodPressure.options.yes: "Yes"
+  22HighBloodPressure.options.no: "No"
+  22Details.label: "Please provide details"
+
+  23ElevatedCholesterol.label: "2.3 Elevated cholesterol"
+  23ElevatedCholesterol.options.yes: "Yes"
+  23ElevatedCholesterol.options.no: "No"
+  23Details.label: "Please provide details"
+
+  24CardiovascularSystemDiseaseASDVSD.label: "2.4 Any Disease of the Cardio Vascular System e.g.: Heart disease, Shortness of breath, Chest pain, Hole in the heart (ASD, VSD)"
+  24CardiovascularSystemDiseaseASDVSD.options.yes: "Yes"
+  24CardiovascularSystemDiseaseASDVSD.options.no: "No"
+  24Details.label: "Please provide details"
+
+  25CystNoduleTumorGrowthOrAnyTypeOfCancer.label: "2.5 Cyst, Nodule, Tumour, growth or any type of cancer"
+  25CystNoduleTumorGrowthOrAnyTypeOfCancer.options.yes: "Yes"
+  25CystNoduleTumorGrowthOrAnyTypeOfCancer.options.no: "No"
+  25Details.label: "Please provide details"
+
+  26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc.label: "2.6 Disorders of the blood such as Aneamia, Leukaemia, Thalassaemia, etc."
+  26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc.options.yes: "Yes"
+  26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc.options.no: "No"
+  26Details.label: "Please provide details"
+
+  27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.label: "2.7 Any disease of the brain or nervous system e.g.: Epilepsy or fits, Convulsion, Paralysis, Stroke, etc."
+  27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.options.yes: "Yes"
+  27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.options.no: "No"
+  27Details.label: "Please provide details"
+
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.label: "2.8 Any disease of the lungs e.g.: frequent Cough, Asthma, Bronchitis, spitting of blood, Tuberculosis, etc."
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.options.yes: "Yes"
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.options.no: "No"
+  healthQ2_8Details.label: "Please provide details"
+
+  29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc.label: "2.9 Any diseases of the Gastrointestinal or Digestive system e.g.: Gastric ulcer, Chronic indigestion / Diarrhea / Abdominal pain, Piles Fistula, Rupture, Hernia or Liver disease, Jaundice, Hepatitis or Gallbladder disease, etc."
+  29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc.options.yes: "Yes"
+  29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc.options.no: "No"
+  29Details.label: "Please provide details"
+
+  210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc.label: "2.10 Any disorder of the Genito-urinary system – e.g.: fibroids, ovarian cyst, endometriosis, heavy or irregular menstruation, prostate disorder, Kidney / Bladder stones, Kidney failure or any other urinary disease, etc."
+  210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc.options.yes: "Yes"
+  210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc.options.no: "No"
+  210Details.label: "Please provide details"
+
+  211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.label: "2.11 Any disease of the eyes, ears, nose or throat -e.g.: Cataract, Goiter, etc."
+  211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.options.yes: "Yes"
+  211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.options.no: "No"
+  211Details.label: "Please provide details"
+
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.label: "2.12 Any disease / disorder of the Spine, Bones, Joints or Gout, Rheumatism / Rheumatic fever, Arthritis"
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.options.yes: "Yes"
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.options.no: "No"
+  212Details.label: "Please provide details"
+
+  213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge.label: "2.13 Any sexually transmitted disease e.g.: Gonorrhoea, Syphilis, AIDS or any Genital sore or discharge."
+  213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge.options.yes: "Yes"
+  213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge.options.no: "No"
+  213Details.label: "Please provide details"
+
+  214ChronicOrCongenitalSkinCondition.label: "2.14 Chronic or Congenital skin conditions"
+  214ChronicOrCongenitalSkinCondition.options.yes: "Yes"
+  214ChronicOrCongenitalSkinCondition.options.no: "No"
+  214Details.label: "Please provide details"
+
+  215AnyMentalImpairmentsDisorderOrIllness.label: "2.15 Any Mental impairments, disorder or illness"
+  215AnyMentalImpairmentsDisorderOrIllness.options.yes: "Yes"
+  215AnyMentalImpairmentsDisorderOrIllness.options.no: "No"
+  215Details.label: "Please provide details"
+
+  216AnyCongenitalDisordersDeformitiesOrAnomalies.label: "2.16 Any Congenital disorders, deformities or anomalies"
+  216AnyCongenitalDisordersDeformitiesOrAnomalies.options.yes: "Yes"
+  216AnyCongenitalDisordersDeformitiesOrAnomalies.options.no: "No"
+  216Details.label: "Please provide details"
+
+  217ACovid19InfectionOrItsComplication.label: "2.17 A covid-19 infection or its complications"
+  217ACovid19InfectionOrItsComplication.options.yes: "Yes"
+  217ACovid19InfectionOrItsComplication.options.no: "No"
+  217Details.label: "Please provide details"
+
+  218AnyOtherDiseaseNotMentionedHerein.label: "2.18 Any other disease not mentioned herein"
+  218AnyOtherDiseaseNotMentionedHerein.options.yes: "Yes"
+  218AnyOtherDiseaseNotMentionedHerein.options.no: "No"
+  218Details.label: "Please provide details"
+
+  # Section 3: Other Information
+  31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years.label: "3.1 Have you consulted a physician / surgeon for any reason including routine examinations or investigations and blood tests in the past 5 years?"
+  31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years.options.yes: "Yes"
+  31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years.options.no: "No"
+  31Details.label: "Please provide details"
+
+  32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity.label: "3.2 Do you consume liquor/drugs or smoke cigarettes? (if so, please state the frequency and quantity)"
+  32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity.options.yes: "Yes"
+  32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity.options.no: "No"
+  32Details.label: "Please state the frequency and quantity"
+
+  33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium.label: "3.3 Has any of your proposal for insurance ever been declined or postponed or been accepted with an extra premium."
+  33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium.options.yes: "Yes"
+  33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium.options.no: "No"
+  33Details.label: "Please provide details"
+
+  34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou.label: "3.4 Do you or your relatives have or had any kind of threat on your/their lives or is there any criminal case against you?"
+  34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou.options.yes: "Yes"
+  34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou.options.no: "No"
+  34Details.label: "Please provide details"
+
+  35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP.label: "3.5 Are you a politically exposed person (PEP) or related to a PEP? (PEP-Politicians, Senior Government Officers, Judges and judicial Officers, Commissioned Officers of Armed forces / police, Members of Commissions / Director Boards / University Councils, Officers of International Organizations.)"
+  35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP.options.yes: "Yes"
+  35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP.options.no: "No"
+  35Details.label: "Please provide details"
+
+  date.label: "Date"
+  signatureOfLifeAssured.label: "Signature of Life Assured"
+
+si: 
+  # Layout translations
+  card.important: "වැදගත්: <br><br> කරුණාකර ඔබේ සෞඛ්‍ය තත්ත්වය, රැකියාට, විනෝදාංශ හා පුරුදු පිළිබඳ සම්පූර්ණ විස්තරයක් සපයන්න.සත්‍ය තොරතුරක් වසන්කිරීම හෝ වැරදි ආකාරයෙන් සැපයීම, ඔබගේ රක්ෂණ ඔප්පුව ශුන්‍ය හා අවලංගු බවට පත්කිරීමට හේතු වේ.යම් තොරතුරක් වැදගත්ද යන්න පිළිබඳ සැකයක් වේ නම්, එවැන්නක් හෙළිදරව් කිරීම ඔබේ යහපත පිණිසම හේතු වේ."
+  card.life_assured: "1. රක්ෂිතයා"
+  card.your_health_condition: "2. ඔබේ සෞඛ්‍ය තත්ත්වය"
+  text.suffering_from_disorders: "ඔබ දැනට පහත සඳහන් අබලතාවයකින් හෝ රෝගයකින් පෙළෙන්නේද නැතහොත් ඔබ පසුගිය වසර 10 තුළ එවැන්නකින් පෙළුනේද? නොඑසේ නම් එවැන්නක් වැළඳුනේද?"
+  card.other_information: "3. වෙනත් තොරතුරු"
+  card.declaration: "ප්‍රකාශනය"
+  text.declaration: "මා විසින් ලබා දී ඇති ඉහත ප්‍රකාශන සහ පිළිතුරු සත්‍ය හා නිවැරදි බවට මම ප්‍රකාශ කරමි.මෙම ප්‍රකාශන මා සහ සීමාසහිත සෙලින්කෝ ජීවීත රක්ෂණ සමාගම අතර රක්ෂණ ගිවිසුමේ කොටසක් වන බවට මම එකඟ වෙමි.මෙම සහනිකය සඳහා මාගේ ඉල්ලීම අනුමත කිරීමට පෙර හේතුව දැන සිට රෝග හෝ තුවාල සම්බන්ධ කිසිදු හිමිකම් පෑමක් සඳහා සෙලින්කෝ ජීවිත රක්ෂණ සමාගම වගකියනු නොලැබේ."
+  text.authorise: "මම සෙලින්කෝ ජීවිත රක්ෂණ සමාගමේ කිසියම් නියෝජිතයෙකුට හෝ වෛද්‍ය නිලධාරියෙකුට කිසියම් රජයේ /පෞද්ගලික රෝහලක, සායනයක, නේවාසික රෝහලක, උපස්ථානාගාරයක හෝ ස්ටාස්ථාලයක ඇඳ ඉහ ටිකට්පත හෝ වෙනත් කිසියම් සොයනික සටහන් කියවා ගැනීමට හෝ ලබා ගැනීමට හෝ වෙනත් කිසියම් රක්ෂකයෙකුගෙන් තොරතුරු ලබා ගැනීමට අවසරය ලබා දෙමි."
+  text.consent: "පුද්ගලයින් ලියාපදිංචි කිරීමේ දෙපර්තමේන්තුව වෙතින් මාගේ/අපගේ ජාතික හැඳුනුම්පතේ තොරතුරු පරීක්ෂා කිරීමට සෙලින්කෝ ජීවන රක්ෂණ සමාගමට මෙයින් මාගේ/අපගේ කැමත්ත ලබා දෙමි/දෙමු."
+  text.agree: "මම/ අප විසින් ඉදිරිපත් කර ඇති මෙම යෝජනා පත්‍රය තක්සේරු කිරීමේ දී හා ඒ හා සම්බන්ධ රක්ෂණාවරණ හා අනෙකුත් සේවා සැපයීමට අදාළ අවශ්‍යතාවන් වෙනුවෙන් මාගේ/අපගේ පුද්ගලික තොරතුරු ලබා ගැනීමට, භාවිත කිරීමට හෝ හෙලි කිරීමට සෙලින්කෝ ලයිෆ් රක්ෂණ සමාගමට, ඔවුන්ගේ නියෝජිතයන්ට හා ශ්‍රී ලංකාව තුළ හෝ පිටත සිටින එකී සේවා සැපයීමට බලයලත් ආයතන වෙත මෙයින් අවසර දෙමි/දෙමු."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"
+
+  # Section 1: Life Assured
+  policyNo.label: "ගිවිසුම් අංකය:"
+  11FullName.label: "1.1 සම්පුර්ණ නම :"
+  gender.label: "Gender"
+  gender.options.male: "Male"
+  gender.options.female: "Female"
+  gender.options.other: "Other / Prefer not to say"
+  12CurrentAddress.label: "1.2 වර්තමාන ලිපිනය :"
+  
+  country.label: "රට:"
+  city.label: "නගරය :"
+  emailAddress.label: "විද්‍යුත් තැපැල් ලිපිනය:"
+  telephoneFixed.label: "දුරකථන අංකය ස්ථාවර :"
+  mobile.label: "ජංගම:"
+  13DateOfBirth.label: "1.3 උපන් දිනය :"
+  14Height.label: "1.4 උස :
+  weight.label: "බර"
+  15OccupationJobTitleBusinessAndItsNature.label: "1.5 රැකියාව / තනතුර / ව්‍යාපාරය සහ ස්වභාවය :"
+  nameOfTheEmployee.label: "සේවායෝජකයාගේ නම :"
+  16AnnualIncome.label: "1.6 වාර්ෂික ආදායම :"
+
+  # Section 2: Your Health Condition
+  21Diabetes.label: "2.1 දිය වැඩියාව"
+  21Diabetes.options.yes: "ඔව්"
+  21Diabetes.options.no: "නැත"
+  21Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  22HighBloodPressure.label: "2.2 අධි රුධිර පීඩනය"
+  22HighBloodPressure.options.yes: "ඔව්"
+  22HighBloodPressure.options.no: "නැත"
+  22Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  23ElevatedCholesterol.label: "2.3 කොලෙස්ටරෝල් අධිකතාව"
+  23ElevatedCholesterol.options.yes: "ඔව්"
+  23ElevatedCholesterol.options.no: "නැත"
+  23Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  24CardiovascularSystemDiseaseASDVSD.label: "2.4 හෘදය හා රුධිරවාහිනී පද්ධතියේ කිසියම් රෝග උදා: හෘදයාබාධ, හුස්ම ගැනීමේ අපහසුතාව, පපුවේ වේදනාව, හෘදයේ සිදුරක් (ASD, VSD)"
+  24CardiovascularSystemDiseaseASDVSD.options.yes: "ඔව්"
+  24CardiovascularSystemDiseaseASDVSD.options.no: "නැත"
+  24Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  25CystNoduleTumorGrowthOrAnyTypeOfCancer.label: "2.5 කෝෂ්ඨ, ගැටිති, ගෙඩි වර්ධනයක් හෝ ඕනෑම වර්ගයක පිළිකාවක්"
+  25CystNoduleTumorGrowthOrAnyTypeOfCancer.options.yes: "ඔව්"
+  25CystNoduleTumorGrowthOrAnyTypeOfCancer.options.no: "නැත"
+  25Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc.label: "2.6 රක්තහීනතාව, ලියුකේමියාව, තැලසීමියාව ආදී රුධිරගත රෝග"
+  26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc.options.yes: "ඔව්"
+  26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc.options.no: "නැත"
+  26Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.label: "2.7 මොළයේ හෝ ස්නායු පද්ධතියේ කිසියම් රෝග උදා.: අපස්මාරය හෝ සිහි මුර්ජාව, වලිප්පුව, අංශභාගය, ආඝාතය ආදිය"
+  27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.options.yes: "ඔව්"
+  27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.options.no: "නැත"
+  27Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.label: "2.8 පෙනහථවල කිසියම් රෝග, උදා: නිතර ඇතිවන කැස්ස, ඇදුම, ශ්වාසනාලිකා ප්‍රදාහය, ඛේටය සමඟ රුධිරය පිටවීම, ක්ෂය රෝගය ආදිය"
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.options.yes: "ඔව්"
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.options.no: "නැත"
+  healthQ2_8Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc.label: "2.9 ආමාශය, බඩවැල් ආශ්‍රිත හෝ ආහාර ජීර්ණ පද්ධතියේ රෝග. උදා: ආමාශගත වණ, නිදන්ගත අජීර්ණ /අතීසාරය /උදරයේ වේදනාව, අර්ශස් වණ, අණ්ඩවායුව, හර්නියා හෝ අක්මාවේ රෝග, කහ උණ, සෙංගමාලය හෝ පිත්තාශ රෝග ආදිය"
+  29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc.options.yes: "ඔව්"
+  29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc.options.no: "නැත"
+  29Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc.label: "2.10 ප්‍රජනක - මුත්‍රා පද්ධනියේ කිසියම් ආබාධ. උදා: තත්වාහ, ඩිම්බාධාර කෝෂ්ඨය, එන්ඩොමෙට්‍රියෝසිස්, අධික හෝ අක්‍රමවත් ආර්තවය, පුරස්ථික ආබාධ / වකුගඩු / මුත්‍රාශ ගල්, වකුගඩු අක්‍රීයවීම හෝ වෙනත් කිසියම් මුත්‍රා රෝග ආදිය"
+  210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc.options.yes: "ඔව්"
+  210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc.options.no: "නැත"
+  210Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.label: "2.11 ඇසේ, කනේ, නාසයේ හෝ උගුරේ කිසියම් රෝග. උදා: ඇසේ සුද ගලගණ්ඩය ආදිය"
+  211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.options.yes: "ඔව්"
+  211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.options.no: "නැත"
+  211Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.label: "2.12 අස්ථි, සන්ධි ආශ්‍රිත රෝග / ආබාධ හෝ රක්තවානය, වාත රක්තය /වාන රක්ත උණ, සන්ධි ප්‍රදාහය"
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.options.yes: "ඔව්"
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.options.no: "නැත"
+  212Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge.label: "2.13 ලිංගිකව බෝවන රෝග කිසිවක්. උදා.: ගොනෝරියා, සිපිලිස්, ඒඩ්ස්, හෝ ලිංගාශ්‍රිත තුවාල හෝ ශ්‍රාවයන්"
+  213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge.options.yes: "ඔව්"
+  213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge.options.no: "නැත"
+  213Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  214ChronicOrCongenitalSkinCondition.label: "2.14 නිදන්ගත හෝ සහජ සමේ රෝග තත්ත්වයන්"
+  214ChronicOrCongenitalSkinCondition.options.yes: "ඔව්"
+  214ChronicOrCongenitalSkinCondition.options.no: "නැත"
+  214Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  215AnyMentalImpairmentsDisorderOrIllness.label: "2.15 කිසියම් මානසික ආබාධයක් හෝ රෝග තත්ත්වයක්"
+  215AnyMentalImpairmentsDisorderOrIllness.options.yes: "ඔව්"
+  215AnyMentalImpairmentsDisorderOrIllness.options.no: "නැත"
+  215Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  216AnyCongenitalDisordersDeformitiesOrAnomalies.label: "2.16 කිසියම් සහජ ආබාධයක්, විකෘතිතා හෝ අක්‍රමිකතා"
+  216AnyCongenitalDisordersDeformitiesOrAnomalies.options.yes: "ඔව්"
+  216AnyCongenitalDisordersDeformitiesOrAnomalies.options.no: "නැත"
+  216Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  217ACovid19InfectionOrItsComplication.label: "2.17 කොවිඩ් - 19 රෝගී තත්ත්වය හෝ එහි සංකූලතා"
+  217ACovid19InfectionOrItsComplication.options.yes: "ඔව්"
+  217ACovid19InfectionOrItsComplication.options.no: "නැත"
+  217Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  218AnyOtherDiseaseNotMentionedHerein.label: "2.18 මෙහි සඳහන් නොකළ වෙනත් කිසියම් රෝග තත්ත්වයන්"
+  218AnyOtherDiseaseNotMentionedHerein.options.yes: "ඔව්"
+  218AnyOtherDiseaseNotMentionedHerein.options.no: "නැත"
+  218Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  # Section 3: Other Information
+  31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years.label: "3.1 ඔබ පසුගිය වසර 5 තුළ කිසියම් සාමාන්‍ය පරීක්ෂණ සහ රුධිර පරීක්ෂණ සඳහා වෛද්‍යවරයෙක් / ශල්‍ය වෛද්‍යවරයෙක් හමුවී තිබේද?"
+  31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years.options.yes: "ඔව්"
+  31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years.options.no: "නැත"
+  31Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity.label: "3.2 ඔබ මත්පැන්/මත්ද්‍රව්‍ය භාවිත කරන්නේ ද? නැතහොත් දුම් පානය කරන්නේ ද? (එසේ නම්, කරුණාකර වාර ගණන හා ප්‍රමාණය සඳහන් කරන්න)"
+  32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity.options.yes: "ඔව්"
+  32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity.options.no: "නැත"
+  32Details.label: "කරුණාකර වාර ගණන සහ ප්‍රමාණය සඳහන් කරන්න."
+
+  33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium.label: "3.3 රක්ෂනය සඳහා වූ ඔබේ කිසියම් යෝජනාවක් ප්‍රතික්ෂේප කර හෝ කල් දමා හෝ අතිරේක වාරිකයක් සමඟ පිළිගැනීමක් සිදුකර තිබේද?"
+  33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium.options.yes: "ඔව්"
+  33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium.options.no: "නැත"
+  33Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou.label: "3.4 ඔබේ / ඔබගේ ඥාතියෙක් හට ජීවිත තර්ජනයක් තිබේද? නැතහොත් ඔබට විරුද්ධව කිසියම් සාපරාධී නඩුවක් ගොනුකර තිබේද? නැතහොත් නඩුවක් විභාග වෙමින් පවතින්නේ ද?"
+  34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou.options.yes: "ඔව්"
+  34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou.options.no: "නැත"
+  34Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP.label: "3.5 ඔබ දේශපාලන වශයෙන් අනාවරණය වූ තැනැත්තෙක්ද ? (PEP*) නැතහොත් එවන් පුද්ගලයෙකුගේ සමීප ඥාතියෙකු වේද? *PEP - දේශපාලන වශයෙන් අනාවරණ පුද්ගලයන් යනු දේශපාලනඥයින් හා ඔවුන්ගේ සමීපතයින්, රජයේ උසස් නිලධාරීන්, විනිශ්චයකාරවරුන් හා අධිකරණ නිලධාරීන්, ත්‍රිවිධ හමුදා බලයලත් නිලධාරීන්, උසස් පොලිස් නිලධාරීන්, කොමිෂන් සභාවල අධ්‍යක්ෂ මණ්ඩල හෝ විශ්ව විද්‍යාල පරිපාලන සභා සාමාජිකයින් සහ අන්තර් ජාතික සංවිධානවල සේවකයන්"
+  35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP.options.yes: "ඔව්"
+  35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP.options.no: "නැත"
+  35Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  date.label: "දිනය"
+  signatureOfLifeAssured.label: "රක්ෂිතයාගේ අත්සන"
 ta: {}

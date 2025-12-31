@@ -1,6 +1,36 @@
 # health-support-benefit-90-days-clause form localization
 # Locales: en, si, ta
 
-en: {}
-si: {}
-ta: {}
+en:
+  # Field labels
+  proposersName.label: "Proposer's Name"
+  policyNumber.label: "Life Insurance Policy Number"
+  signature.label: "Signature of the life to be Assured/Proposer"
+  date.label: "Date"
+
+  # Layout translations
+  text.first: "Firstly, we thank you for submitting the above proposal form to our Company.<br/> We have noted that you have requested to obtain the Ceylinco Life Health Support Plus Benefit, as a supplementary benefit. This benefit is offered only to resident Sri Lankans. Since it was mentioned by you that you are currently employed overseas, the Company has decided to offer the Health Support Plus Benefit subject to the following condition.<br><br><b>'The Health Support Plus Benefit included in this policy, will terminate if the insured will reside outside of Sri Lanka for a period of 90 days and above. However, the Health Support Plus Benefit will be activated and will resume as per original terms and conditions once the policyholder returns back to Sri Lanka'.</b><br><br><b>Consent</b><br>I hereby confirm having read and understood the above condition, whilst also accepting to obtain the policy under the above condition."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"
+
+si: 
+  # Field labels
+  proposersName.label: "නම:"
+  policyNumber.label: "ජීවිත රක්ෂණ ඔප්පු අංකය:"
+  signature.label: "රක්ෂණය වීමට සිටින අයගේ අත්සන"
+  date.label: "දිනය"
+
+  # Layout translations
+  text.first: "ඉහත රක්ෂණ යෝජනා පත්‍රය අප සමාගම වෙත ලබාදීම පිළිබඳව ස්තූතිවන්ත වෙමු.<br/><br/>මෙම රක්ෂණ ඔප්පුව යටතේ අතිරේක ප්‍රතිලාභ ලෙස සෙලින්කෝ හෙල්ත් සපෝර්ට් ප්ලස් ප්‍රතිලාභය ඔබ විසින් අයදුම් කර ඇත.අප සමාගම මෙම ප්‍රතිලාභය ලබාදෙනුයේ ශ්‍රී ලංකාවේ පදිංචි අයට පමණි.ඔබ දැනට විදේශ රටක සේවය කරන බව සඳහන් කර ඇති බැවින් හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය පහත සඳහන් වගන්තිය යටතේ පිළිගැනීමට සමාගම තීරණය කර ඇති බව දන්වා සිටිමු.<br/><br/><b>'මෙම හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය ශ්‍රී ලාංකික පුරවැසියන්ට පමණක් නිකුත් කරනු ලැබේ. දින 90ක් සහ ඊට වැඩි කාලයක් රක්ෂිතයා ශ්‍රී ලංකාවෙන් පිටත රැදී සිටියහොත් රක්ෂණ ඔප්පුවේ ඇතුළත් වන හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය අවසන් වනු ඇත. කෙසේ වෙතත් රක්ෂණ ඔප්පුහිමියා නැවත ශ්‍රී ලංකාවට පැමිණි විට හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය සක්‍රීය වනු ඇති අතර මුල් නියමයන් සහ කොන්දේසිවලට අනුව ඉහත ප්‍රතිලාභය නැවත ආරම්භ වනු ඇත.'</b><br/><br/>මා විසින් ඉහත සඳහන් කොන්දේසිය කියවා තේරුම් ගත් අතර එම කොන්දේසියට යටත්ව රක්ෂණ ඔප්පුව ලබා ගැනීමට කැමැත්ත ප්‍රකාශ කරමි."
+  submit.button: "පෝරමය පුරවන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"
+ta: 
+  proposersName.label: "பெயர்: "
+  policyNumber.label: "ஆயுள் காப்புறுதி காப்புறுதி ஒப்பந்த இல.: "
+  signature.label: "ஆயுள் காப்பீடு செய்யப்பட வேண்டியவர்/முன்மொழிபவரின் கையொப்பம்."
+  date.label: "திகதி"
+
+  # Layout translations
+  text.first: "முதலில், மேற்படி முன்மொழிவு படிவத்தை எங்கள் நிறுவனத்திற்கு சமர்ப்பித்ததற்கு நன்றி.<br/><br/>நீங்கள் ஒரு துணை நன்மையாக செலிங்கோ லைஃப் ஹெல்த் சப்போர்ட் பிளஸ் நன்மையைப் பெறக் கோரியிருப்பதை நாங்கள் கவனித்தோம். இந்த நன்மை இலங்கை வாழ் மக்களுக்கு மட்டுமே வழங்கப்படுகிறது. நீங்கள் தற்போது வெளிநாட்டில் வேலை செய்கிறீர்கள் என்று நீங்கள் குறிப்பிட்டுள்ளதால், நிறுவனம் பின்வரும் நிபந்தனைகளுக்கு உட்பட்டு ஹெல்த் சப்போர்ட் பிளஸ் நன்மையை வழங்க முடிவு செய்துள்ளது.<br/><br/><b>'காப்புறுதி செய்யப்பட்டவர் இலங்கைக்கு வெளியே 90 நாட்கள் அல்லது அதற்கு மேல் வசிப்பவராக இருந்தால், இந்த காப்புறுதி ஒப்பந்தத்தில் சேர்க்கப்பட்டுள்ள ஹெல்த் சப்போர்ட் பிளஸ் நன்மை நிறுத்தப்படும். இருப்பினும், காப்புறுதிதாரர் இலங்கைக்குத் திரும்பியதும் ஹெல்த் சப்போர்ட் பிளஸ் நன்மை செயற்படுத்தப்படுவதுடன், மூல விதிமுறைகள் மற்றும் நிபந்தனைகளின்படி மீண்டும் தொடங்கும்.'</b><br/><br/>மேற்கூறிய நிபந்தனையை வாசித்து விளங்கிக்கொண்டேன் என்பதை இதன் மூலம் உறுதிப்படுத்துகின்ற அதே நேரத்தில், மேற்கூறிய நிபந்தனையின் கீழ் காப்புறுதித் திட்டத்தைப் பெறவும் ஒப்புக்கொள்கிறேன்."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"

@@ -84,8 +84,8 @@ majorityOfTimeSpent:
   label: 5. Do you expect to spend the majority of your time in major / large cities? If NO, please provide the name of the town/ region and details of your likely accommodation, availability of medical facilities and your internal travel arrangements (e.g. light aircraft, boat etc.) 
   required: false
   options:
-    no: No
     yes: Yes
+    no: No
   dependencies:
     townRegionDetails:
       type: textarea

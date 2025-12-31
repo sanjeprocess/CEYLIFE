@@ -1,0 +1,132 @@
+# diabetic-questionnaire form localization
+# Locales: en, si, ta
+
+en:
+  # Field labels and options
+  proposerName.label: "1. Full Name"
+  contractNum.label: "2. Contract Number"
+  dateDiagnosed.label: "3. Date diabetes Diagnosed"
+  nameAndAddressOfTheDoctor.label: "4. Name and address of the doctor or clinic now treating you"
+
+  strictDiet.label: "5. Do you follow a strict Diet?"
+  strictDiet.options.no: "No"
+  strictDiet.options.yes: "Yes"
+
+  strictDietDetails.label: "Details"
+
+  oralDrug.label: "6. Are you now having oral drug treatment? if so, please give the name of the drug and dosage"
+  oralDrug.options.no: "No"
+  oralDrug.options.yes: "Yes"
+
+  oralDrugDetails.label: "Details"
+
+  insulin.label: "7. Are you now taking Insulin? If so, please give the number of units per day"
+  insulin.options.no: "No"
+  insulin.options.yes: "Yes"
+
+  insulinDetails.label: "Details"
+
+  oralInsulinVaried.label: "8. Has your intake of Insulin or oral drugs varied during the last 2 years? If so, please give full details"
+  oralInsulinVaried.options.no: "No"
+  oralInsulinVaried.options.yes: "Yes"
+
+  oralInsulinVariedDetails.label: "Details"
+
+  urineCheck.label: "9. Do you check your urine on a regular basis? If so, how often does it contain sugar?"
+  urineCheck.options.no: "No"
+  urineCheck.options.yes: "Yes"
+
+  urineCheckDetails.label: "Details"
+  urineCheckDetails.options.never: "a.)Never"
+  urineCheckDetails.options.Rarely: "b.)Rarely"
+  urineCheckDetails.options.occasionally: "c.)Occasionally"
+  urineCheckDetails.options.Often: "d.)Often"
+
+  coma.label: "10. Since your treatment began have you ever had a diabetic or Insulin Coma? (If so please give details including dates.)"
+  coma.options.no: "No"
+  coma.options.yes: "Yes"
+
+  comaDetails.label: "Details"
+
+  illnesses.label: "11. Have you ever had any illness or disease of the Heart, Kidneys, Eyes, Circulatory or Nervous System? If so, please give full details."
+  illnesses.options.no: "No"
+  illnesses.options.yes: "Yes"
+
+  illnessesDetails.label: "Details"
+
+  date.label: "Date"
+  signature.label: "Signature"
+
+  # Layout translations
+  text.to_be_completed_by_the_proposer: "(To be completed by the Proposer)"
+  card.declaration: "Declaration"
+  text.declare_answers: "I declare that the answers I have given are to the best of my knowledge true and that I have not withheld any material information that may influence the assessment or acceptance of the proposal."
+  text.agree_to_constitute_part_of_proposal: "I agree that this form will constitute part of my proposal for life assurance and that liable to disclose any material fact known to me may invalidate the contract"
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"
+
+si: 
+  # Field labels and options
+  proposerName.label: "1. සම්පූර්ණ නම"
+  contractNum.label: "2. ඔප්පු අංකය"
+  dateDiagnosed.label: "3. පළමුවරට රෝගය සොයා ගත්තේ කවදා ද?"
+  nameAndAddressOfTheDoctor.label: "4. දැනට ඔබ ප්‍රතිකාර ගන්නා විකිත්සාගාරය හෝ වෛද්‍යවරයාගේ නම සහ ලිපිනය"
+
+  strictDiet.label: "5. ඔබ දැනට පාලන කරන ලද ආහාර වේලක් ගත්තේ ද?"
+  strictDiet.options.no: "නැත"
+  strictDiet.options.yes: "ඔව්"
+
+  strictDietDetails.label: "විස්තර"
+
+  oralDrug.label: "6. ඔබ දැනට මුඛය තුලින් ශරීර ගත වන ඖෂධ වර්ග වලින් ප්‍රතිකාර ලබන්නේ ද?"
+  oralDrug.options.no: "නැත"
+  oralDrug.options.yes: "ඔව්"
+
+  oralDrugDetails.label: "එසේ නම් ලබා ගන්නා ඖෂධ වර්ගයේ නම් සහ ප්‍රමාණයන් සදහන් කරන්න"
+
+  insulin.label: "7. ඔබ දැනට ඉන්සියුලින් භාවිතා කරන්නේ ද?"
+  insulin.options.no: "නැත"
+  insulin.options.yes: "ඔව්"
+
+  insulinDetails.label: "විස්තර"
+
+  oralInsulinVaried.label: "8. පසු ගිය අවුරුදු දෙක ඇතුලත ඔබ ගන්නා ලද ඉන්සියුලින් හෝ ඖෂධ වර්ග වෙනස් වී ඇත්ද?"
+  oralInsulinVaried.options.no: "නැත"
+  oralInsulinVaried.options.yes: "ඔව්"
+
+  oralInsulinVariedDetails.label: "විස්තර"
+
+  urineCheck.label: "9. ඔබ ඔබේ මුත්‍රා ක්‍රමානුකූල ලෙස පරික්ෂා කරන්නේද?"
+  urineCheck.options.no: "නැත"
+  urineCheck.options.yes: "ඔව්"
+
+  urineCheckDetails.label: "එසේ නම්, සීනි අඩංගු බව හෙලි වන්නේ පහත සඳහන් කුමන ආකාරයෙන්ද?"
+  urineCheckDetails.options.never: "a.)කිසිසේත් නැත"
+  urineCheckDetails.options.Rarely: "b.)කලාතුරකිනි"
+  urineCheckDetails.options.occasionally: "c.)ඇතැම් විට"
+  urineCheckDetails.options.Often: "d.)බොහෝ විට"
+
+  coma.label: "10. ඔබ ප්‍රතිකාර ගැනීම ආරම්භ කිරීමෙන් පසු ඔබට යම් දිනක දිය වැඩියා හෝ ඉන්සියුලින් මුර්ජාවක් (කෝමාවක්) ඇති වී තිබේද?"
+  coma.options.no: "නැත"
+  coma.options.yes: "ඔව්"
+
+  comaDetails.label: "විස්තර"
+
+  illnesses.label: "11. ඔබට කෙදිනක හෝ හෘදයේ, වකුගඩුවල, ඇස්වල, රුධිර සංසරණ හෝ ස්නායු පද්ධතිවල ආබාධ ඇති වී තිබේද?"
+  illnesses.options.no: "නැත"
+  illnesses.options.yes: "ඔව්"
+
+  illnessesDetails.label: "විස්තර"
+
+  date.label: "දිනය"
+  signature.label: "යෝජකයාගේ අත්සන"
+
+  # Layout translations
+  text.to_be_completed_by_the_proposer: "(යෝජකයා විසින් සම්පූර්ණ කිරීම සඳහා)"
+  card.declaration: "ප්‍රකාශනය"
+  text.declare_answers: "ඉහත අසා ඇති ප්‍රශ්න වලට මා විසින් සපයන ලද පිළිතුරු සත්‍ය බව ප්‍රකාශ කරමි. තවද, මෙම ආකෘති පත්‍රය මා විසින් සෙලින්කෝ ඉන්ෂුවරන්ස් පී.එල්.සී වෙත ඉදිරිපත් කළ ජීවිත රක්ෂණ යෝජනා පත්‍රයේම කොටසක් බවත්, කිසියම් වටිනා තොරතුරක් වසන් කිරීමෙන් එම ගිවිසුම අහෝසි වන බවත්, මා දන්නා බව ප්‍රකාශ කරමි."
+  text.agree_to_constitute_part_of_proposal: " "
+  submit.button: "පෝරමය පුරවන්න"
+  reset.button: "පෝටරමයේ දත්ත මකන්න"
+
+ta: {}
