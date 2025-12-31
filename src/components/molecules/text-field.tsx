@@ -2,6 +2,10 @@ import { IFormField } from "@/common/interfaces/form.interfaces";
 import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
 import {
+  formatCurrencyDisplay,
+  parseCurrencyInput,
+} from "@/utils/currency.utils";
+import {
   getFieldDescriptionKey,
   getFieldLabelKey,
   getFieldPlaceholderKey,
@@ -25,16 +29,34 @@ export function TextField({
   const { computedValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
 
-  const value =
-    computedValue !== undefined && computedValue !== null ? computedValue : "";
+  const isCurrency = field.type === "currency";
+
+  // For currency: format display value with commas
+  // For other types: use value as-is
+  const displayValue = isCurrency
+    ? formatCurrencyDisplay(
+        typeof computedValue === "number" ? computedValue : null
+      )
+    : computedValue !== undefined && computedValue !== null
+      ? computedValue
+      : "";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue =
-      field.type === "number"
-        ? e.target.value === ""
-          ? null
-          : Number(e.target.value)
-        : e.target.value;
+    const inputValue = e.target.value;
+
+    let newValue: string | number | null;
+
+    if (isCurrency) {
+      // Parse currency input (remove commas) and convert to number
+      newValue = parseCurrencyInput(inputValue);
+    } else if (field.type === "number") {
+      // Handle regular number type
+      newValue = inputValue === "" ? null : Number(inputValue);
+    } else {
+      // Handle text and other types
+      newValue = inputValue;
+    }
+
     updateValue(newValue);
   };
 
@@ -56,9 +78,9 @@ export function TextField({
       </FieldLabel>
       <FieldContent>
         <Input
-          type={field.type}
+          type={isCurrency ? "text" : field.type}
           name={name}
-          value={value as string | number}
+          value={displayValue as string | number}
           placeholder={placeholder}
           required={field.required}
           min={field.validation?.min}

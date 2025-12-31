@@ -109,6 +109,7 @@ export function FieldRenderer({
     case "datetime-local":
     case "tel":
     case "url":
+    case "currency":
       Component = <TextField field={field} name={name} />;
       break;
     case "select":

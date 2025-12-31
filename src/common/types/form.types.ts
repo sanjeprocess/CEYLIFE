@@ -18,7 +18,8 @@ export type FieldType =
   | "file"
   | "url"
   | "tel"
-  | "age";
+  | "age"
+  | "currency";
 
 export type FormConditionalOperator =
   | "eq"
