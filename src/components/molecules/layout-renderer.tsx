@@ -9,6 +9,7 @@ import { CheckboxField } from "./checkbox-field";
 import { CheckboxGroupField } from "./checkbox-group-field";
 import { ConditionalRenderer } from "./conditional-renderer";
 import { DependsOnRenderer } from "./depends-on-renderer";
+import { FieldError } from "./field-error";
 import { FileField } from "./file-field";
 import { RadioGroupField } from "./radio-group-field";
 import { ResetButton } from "./reset-button";
@@ -145,6 +146,7 @@ export function FieldRenderer({
   return (
     <DependsOnRenderer field={field} fieldName={name}>
       {Component}
+      <FieldError fieldName={name} />
       {/* Rendering Conditional Dependencies */}
       {field.dependencies && (
         <ConditionalRenderer

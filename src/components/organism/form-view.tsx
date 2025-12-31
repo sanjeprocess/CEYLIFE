@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { IForm } from "@/common/interfaces/form.interfaces";
 import { SubmissionDialog } from "@/components/molecules/submission-dialog";
@@ -10,7 +10,13 @@ import { useLocalizationStore } from "@/stores/localization.store";
 import { LayoutRenderer } from "../molecules/layout-renderer";
 
 export function FormView({ form }: { form: IForm }) {
-  const { initializeForm, submissionSuccess, submissionError, submissionErrorReason, resetSubmissionState } = useFormStore();
+  const {
+    initializeForm,
+    submissionSuccess,
+    submissionError,
+    submissionErrorReason,
+    resetSubmissionState,
+  } = useFormStore();
   const { initializeLocalization } = useLocalizationStore();
 
   useEffect(() => {

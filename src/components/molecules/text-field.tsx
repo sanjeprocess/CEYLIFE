@@ -1,6 +1,7 @@
 import { IFormField } from "@/common/interfaces/form.interfaces";
 import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
+import useFormStore from "@/stores/form.store";
 import {
   formatCurrencyDisplay,
   parseCurrencyInput,
@@ -28,6 +29,8 @@ export function TextField({
 }) {
   const { computedValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
+  const getFieldError = useFormStore((state) => state.getFieldError);
+  const hasError = !!getFieldError(name);
 
   const isCurrency = field.type === "currency";
 
@@ -90,6 +93,7 @@ export function TextField({
           pattern={field.validation?.pattern}
           onChange={handleChange}
           readOnly={field.readOnly}
+          aria-invalid={hasError}
         />
         {description && <FieldDescription>{description}</FieldDescription>}
       </FieldContent>

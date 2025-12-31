@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { IFormFileField } from "@/common/interfaces/form.interfaces";
 import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
+import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -33,6 +34,8 @@ export function FileField({
 }) {
   const { rawValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
+  const getFieldError = useFormStore((state) => state.getFieldError);
+  const hasError = !!getFieldError(name);
   const storedFile = rawValue as File | null | undefined;
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -103,6 +106,7 @@ export function FileField({
             required={field.required}
             onChange={handleFileChange}
             className="cursor-pointer"
+            aria-invalid={hasError}
           />
           {storedFile && (
             <div className="text-muted-foreground text-sm">

@@ -1,4 +1,4 @@
-import { IForm, IFormField, IFormFieldValidation } from "@/common/interfaces/form.interfaces";
+import { IForm, IFormField } from "@/common/interfaces/form.interfaces";
 import { FormValue } from "@/common/types/common.types";
 
 export interface FieldValidationError {
@@ -31,10 +31,7 @@ function isEmpty(value: FormValue): boolean {
 /**
  * Validates required field
  */
-function validateRequired(
-  value: FormValue,
-  fieldLabel: string
-): string | null {
+function validateRequired(value: FormValue, fieldLabel: string): string | null {
   if (isEmpty(value)) {
     return `${fieldLabel} is required`;
   }
@@ -122,7 +119,7 @@ function validatePattern(
     if (!regex.test(value)) {
       return `${fieldLabel} format is invalid`;
     }
-  } catch (error) {
+  } catch {
     // Invalid regex pattern, skip validation
     console.warn(`Invalid regex pattern for ${fieldLabel}: ${pattern}`);
     return null;
@@ -428,4 +425,3 @@ export function validateForm(
     errors,
   };
 }
-

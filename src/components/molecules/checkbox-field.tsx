@@ -1,6 +1,7 @@
 import { IFormCheckboxField } from "@/common/interfaces/form.interfaces";
 import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
+import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -23,6 +24,8 @@ export function CheckboxField({
 }) {
   const { rawValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
+  const getFieldError = useFormStore((state) => state.getFieldError);
+  const hasError = !!getFieldError(name);
 
   const value =
     rawValue !== undefined
@@ -48,6 +51,7 @@ export function CheckboxField({
             checked={value}
             onCheckedChange={handleCheckedChange}
             required={field.required}
+            aria-invalid={hasError}
           />
           <FieldLabel htmlFor={name} className="cursor-pointer font-normal">
             {label}

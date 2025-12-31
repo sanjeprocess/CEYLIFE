@@ -30,6 +30,7 @@ export function SubmitButton({ layout, submitText }: SubmitButtonProps) {
     setSubmitting,
     setSubmissionError,
     setSubmissionSuccess,
+    setFieldErrors,
   } = useFormStore();
   const { variables } = useVariableStore();
 
@@ -56,14 +57,19 @@ export function SubmitButton({ layout, submitText }: SubmitButtonProps) {
     const validationResult = validateForm(form, formValues);
 
     if (!validationResult.isValid) {
-      // Format validation errors for display
-      const errorMessages = validationResult.errors.map(
-        (err) => `${err.fieldLabel}: ${err.error}`
-      );
+      // Store field errors in form store
+      const fieldErrorsMap: Record<string, string> = {};
+      validationResult.errors.forEach((err) => {
+        fieldErrorsMap[err.fieldKey] = err.error;
+      });
+      setFieldErrors(fieldErrorsMap);
+
+      // Show short, user-friendly error message
+      const errorCount = validationResult.errors.length;
       const errorMessage =
-        errorMessages.length === 1
-          ? `Please fix the following error: ${errorMessages[0]}`
-          : `Please fix the following errors: ${errorMessages.join(", ")}`;
+        errorCount === 1
+          ? "Please fix the error below and try again."
+          : `Please fix the ${errorCount} errors below and try again. Look for fields marked in red for details.`;
       setSubmissionError("Validation failed", errorMessage);
       return;
     }

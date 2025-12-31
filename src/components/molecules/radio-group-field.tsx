@@ -1,6 +1,7 @@
 import { IFormRadioGroupField } from "@/common/interfaces/form.interfaces";
 import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
+import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -25,6 +26,8 @@ export function RadioGroupField({
 }) {
   const { computedValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
+  const getFieldError = useFormStore((state) => state.getFieldError);
+  const hasError = !!getFieldError(name);
 
   const value =
     computedValue !== undefined && computedValue !== null
@@ -54,6 +57,7 @@ export function RadioGroupField({
           value={value}
           onValueChange={handleValueChange}
           className={orientation === "horizontal" ? "flex flex-row gap-4" : ""}
+          aria-invalid={hasError}
         >
           {options &&
             Object.entries(options).map(([optionValue, optionLabel]) => {

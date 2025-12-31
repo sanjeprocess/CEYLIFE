@@ -1,6 +1,7 @@
 import { IFormCheckboxGroupField } from "@/common/interfaces/form.interfaces";
 import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
+import useFormStore from "@/stores/form.store";
 import {
   getFieldDescriptionKey,
   getFieldLabelKey,
@@ -25,6 +26,8 @@ export function CheckboxGroupField({
 }) {
   const { rawValue, computedValue, updateValue } = useFormValue(name);
   const translate = useTranslation();
+  const getFieldError = useFormStore((state) => state.getFieldError);
+  const hasError = !!getFieldError(name);
 
   const defaultParsed =
     typeof computedValue === "string" && computedValue
@@ -81,6 +84,7 @@ export function CheckboxGroupField({
                     onCheckedChange={(checked) =>
                       handleCheckedChange(optionValue, checked === true)
                     }
+                    aria-invalid={hasError}
                   />
                   <Label
                     htmlFor={`${name}-${optionValue}`}

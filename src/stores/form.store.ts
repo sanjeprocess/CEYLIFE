@@ -6,6 +6,7 @@ import {
   buildFieldDependencyMap,
   FieldVariableDeps,
 } from "@/services/form-dependency.service";
+import { validateField } from "@/services/form-validation.service";
 import { parseFormToFormData } from "@/services/parsing.service";
 import { replaceVariablesInText } from "@/services/variable-replacement.service";
 import { useVariableStore } from "@/stores/variable.store";
@@ -19,6 +20,7 @@ interface FormStore {
   submissionErrorReason: string | null;
   submissionSuccess: boolean;
   submissionData: Record<string, unknown> | null;
+  fieldErrors: Record<string, string>;
   initializeForm: (form: IForm) => void;
   updateValue: (key: string, value: FormValue) => void;
   getRawValue: (key: string) => FormValue;
@@ -35,6 +37,10 @@ interface FormStore {
     data?: Record<string, unknown>
   ) => void;
   resetSubmissionState: () => void;
+  setFieldErrors: (errors: Record<string, string>) => void;
+  clearFieldErrors: () => void;
+  clearFieldError: (fieldKey: string) => void;
+  getFieldError: (fieldKey: string) => string | undefined;
 }
 
 function computeValue(
@@ -59,6 +65,7 @@ const useFormStore = create<FormStore>((set, get) => ({
   submissionErrorReason: null,
   submissionSuccess: false,
   submissionData: null,
+  fieldErrors: {},
 
   initializeForm: (form: IForm) => {
     const rawValues = parseFormToFormData(form);
@@ -66,8 +73,39 @@ const useFormStore = create<FormStore>((set, get) => ({
     set({ form, rawValues, fieldVariableDeps });
   },
 
-  updateValue: (key: string, value: FormValue) =>
-    set((state) => ({ rawValues: { ...state.rawValues, [key]: value } })),
+  updateValue: (key: string, value: FormValue) => {
+    const state = get();
+    const newRawValues = { ...state.rawValues, [key]: value };
+
+    // If this field has an error, validate it and clear if valid
+    if (state.fieldErrors[key] && state.form) {
+      const field = state.form.fields[key];
+      if (field) {
+        // Compute the value for validation (with variable replacement)
+        const variables = useVariableStore.getState().variables;
+        const computedValue = computeValue(value, variables);
+        const fieldLabel = field.label || key;
+
+        // Validate the field
+        const validationError = validateField(
+          field,
+          key,
+          computedValue,
+          fieldLabel
+        );
+
+        // If validation passes (no error), clear the error for this field
+        if (!validationError) {
+          const newFieldErrors = { ...state.fieldErrors };
+          delete newFieldErrors[key];
+          set({ rawValues: newRawValues, fieldErrors: newFieldErrors });
+          return;
+        }
+      }
+    }
+
+    set({ rawValues: newRawValues });
+  },
 
   getRawValue: (key: string) => get().rawValues[key],
 
@@ -99,7 +137,7 @@ const useFormStore = create<FormStore>((set, get) => ({
   },
 
   setSubmitting: (isSubmitting: boolean) =>
-    set({ isSubmitting, submissionError: null }),
+    set({ isSubmitting, submissionError: null, fieldErrors: {} }),
 
   setSubmissionError: (error: string | null, errorReason?: string | null) =>
     set({
@@ -115,6 +153,7 @@ const useFormStore = create<FormStore>((set, get) => ({
       submissionData: data || null,
       isSubmitting: false,
       submissionError: null,
+      fieldErrors: {}, // Clear errors on successful submission
     }),
 
   resetSubmissionState: () =>
@@ -124,7 +163,25 @@ const useFormStore = create<FormStore>((set, get) => ({
       submissionErrorReason: null,
       submissionSuccess: false,
       submissionData: null,
+      // Don't clear fieldErrors here - keep them visible after dialog closes
     }),
+
+  setFieldErrors: (errors: Record<string, string>) =>
+    set({ fieldErrors: errors }),
+
+  clearFieldErrors: () => set({ fieldErrors: {} }),
+
+  clearFieldError: (fieldKey: string) =>
+    set((state) => {
+      const newFieldErrors = { ...state.fieldErrors };
+      delete newFieldErrors[fieldKey];
+      return { fieldErrors: newFieldErrors };
+    }),
+
+  getFieldError: (fieldKey: string) => {
+    const { fieldErrors } = get();
+    return fieldErrors[fieldKey];
+  },
 }));
 
 export default useFormStore;

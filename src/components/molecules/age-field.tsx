@@ -34,6 +34,8 @@ export function AgeField({
   const translate = useTranslation();
   const rawValues = useFormStore((state) => state.rawValues);
   const getComputedValue = useFormStore((state) => state.getComputedValue);
+  const getFieldError = useFormStore((state) => state.getFieldError);
+  const hasError = !!getFieldError(name);
   const variables = useVariableStore((state) => state.variables);
 
   // Get date of birth value from the referenced field
@@ -105,7 +107,7 @@ export function AgeField({
       updateValue(formattedAge);
       previousComputedValueRef.current = formattedAge;
     }
-  }, [dateOfBirthValue, toDateString, field.format, updateValue]);
+  }, [dateOfBirthValue, toDateString, field.format, updateValue, toDateValue]);
 
   const value =
     computedValue !== undefined && computedValue !== null
@@ -137,10 +139,10 @@ export function AgeField({
           required={field.required}
           readOnly
           className="bg-muted cursor-not-allowed"
+          aria-invalid={hasError}
         />
         {description && <FieldDescription>{description}</FieldDescription>}
       </FieldContent>
     </Field>
   );
 }
-
