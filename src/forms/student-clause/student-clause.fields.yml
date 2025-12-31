@@ -7,6 +7,7 @@ proposerName:
   required: false
   placeholder: "Enter Proposer Name"
   defaultValue: "{{client_name}}"
+  readOnly: true
 
 proposerNic:
   type: text
@@ -21,6 +22,7 @@ proposerContract:
   required: false
   placeholder: "Enter Proposer Contract"
   defaultValue: "{{policy_no}}"
+  readOnly: true
 
 signature:
   type: file
@@ -39,3 +41,5 @@ date:
   label: Date
   required: true
   placeholder: Date
+  defaultValue: "{{$today}}"
+  readOnly: true

@@ -13,6 +13,8 @@ name:
   label: ""
   required: false
   placeholder: Enter Name
+  defaultValue: "{{client_name}}"
+  readOnly: true
 
 
 address:
@@ -27,6 +29,7 @@ policyNo:
   required: false
   placeholder: Enter Policy No
   defaultValue: "{{policy_no}}"
+  readOnly: true
 
 assuredName:
   type: text
@@ -49,3 +52,5 @@ date:
   label: Date
   required: true
   placeholder: Date
+  defaultValue: "{{$today}}"
+  readOnly: true
