@@ -67,6 +67,7 @@ export function TextField({
           maxLength={field.validation?.maxLength}
           pattern={field.validation?.pattern}
           onChange={handleChange}
+          readOnly={field.readOnly}
         />
         {description && <FieldDescription>{description}</FieldDescription>}
       </FieldContent>

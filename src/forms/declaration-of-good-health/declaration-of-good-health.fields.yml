@@ -6,12 +6,14 @@ policyNumber:
   required: true
   placeholder: Enter policy number
   defaultValue: "{{policy_no}}"
+  readOnly: true
 fullName:
   type: text
   label: 2. Full Name
   required: true
   placeholder: Enter full name
   defaultValue: "{{full_name}}"
+  readOnly: true
 gender:
   type: radio-group
   label: 3. Gender
@@ -260,5 +262,5 @@ submittedDate:
 
 signature:
   type: file
-  label: Signature of the life Assured 
+  label: Signature of the life Assured
   required: false

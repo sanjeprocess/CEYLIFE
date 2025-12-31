@@ -60,6 +60,7 @@ export function TextareaField({
           minLength={field.validation?.minLength}
           maxLength={field.validation?.maxLength}
           onChange={handleChange}
+          readOnly={field.readOnly}
         />
         {description && <FieldDescription>{description}</FieldDescription>}
       </FieldContent>

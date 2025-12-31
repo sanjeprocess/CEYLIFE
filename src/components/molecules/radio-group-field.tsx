@@ -69,6 +69,7 @@ export function RadioGroupField({
                   <RadioGroupItem
                     value={optionValue}
                     id={`${name}-${optionValue}`}
+                    disabled={field.readOnly}
                   />
                   <Label
                     htmlFor={`${name}-${optionValue}`}

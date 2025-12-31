@@ -71,7 +71,11 @@ export function SelectField({
                 optionLabel
               );
               return (
-                <SelectItem key={optionValue} value={optionValue}>
+                <SelectItem
+                  key={optionValue}
+                  value={optionValue}
+                  disabled={field.readOnly}
+                >
                   {optionLabelWithVars}
                 </SelectItem>
               );

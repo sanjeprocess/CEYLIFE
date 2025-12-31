@@ -171,6 +171,7 @@ export interface IFormFieldBase {
   dependencies?: Record<string, IFormField>; // for conditional rendering (If the dependant fields render right below the parent field)
   dependsOn?: string; // for conditional rendering (If the fields can render anywhere of the form)
   conditionalOptions?: IFormConditionalFieldOptions; // for conditional fields
+  readOnly?: boolean; // for readonly fields
 }
 
 export interface IFormTextareaField extends IFormFieldBase {
