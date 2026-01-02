@@ -7,6 +7,7 @@ proposersName:
   required: false
   placeholder: "Proposer's Name"
   defaultValue: "{{client_name}}"
+  readOnly: true
 
 policyNumber:
   type: text
@@ -14,6 +15,7 @@ policyNumber:
   required: false
   placeholder: "Life Insurance Policy Number"
   defaultValue: "{{policy_number}}"
+  readOnly: true
 
 signature:
   type: file
@@ -28,5 +30,7 @@ date:
   label: Date
   required: true
   placeholder: Date
+  readOnly: true
+  defaultValue: "{{$today}}"
   
   

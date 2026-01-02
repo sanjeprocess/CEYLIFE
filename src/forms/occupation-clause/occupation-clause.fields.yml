@@ -6,6 +6,7 @@ ProposerName:
   required: true
   placeholder: Proposer's Name
   defaultValue: "{{client_name}}"
+  readOnly: true
 contactNumber:
   type: tel
   label: Contact Number
@@ -23,12 +24,12 @@ date:
   label: Date
   required: true
   placeholder: Date
-  defaultValue: ""
+  defaultValue: "{{$today}}"
+  readOnly: true
 signature:
   type: file
   label: Signature
   required: false
-  defaultValue: ""
   fileOptions:
     maxFileSize: 10485760
     allowedExtensions:

@@ -6,6 +6,7 @@ formDescription: (HSP/Customers living abroad)
 showFormHeader: true
 availableLocales:
   - en
+  - si
 defaultLocale: en
 searchParamsVariables:
   cs: contract_sequence
