@@ -1,5 +1,6 @@
 import { IForm, IFormField } from "@/common/interfaces/form.interfaces";
 import { FormValue } from "@/common/types/common.types";
+import { evaluateCondition } from "@/services/conditinonal.service";
 
 export interface FieldValidationError {
   fieldKey: string;
@@ -402,6 +403,137 @@ export function validateField(
 }
 
 /**
+ * Checks if a field should be validated based on its conditional visibility
+ * Returns true if field should be validated (visible or no conditional logic), false otherwise
+ */
+function shouldValidateField(
+  field: IFormField,
+  fieldKey: string,
+  form: IForm,
+  formValues: Record<string, FormValue>
+): boolean {
+  // If field doesn't have dependsOn, always validate (backward compatible)
+  if (!field.dependsOn || !field.conditionalOptions) {
+    return true;
+  }
+
+  const { operator, value: expectedValue } = field.conditionalOptions;
+
+  // If missing operator or expected value, skip validation (safe default)
+  if (!operator || expectedValue === undefined || expectedValue === null) {
+    console.warn(
+      `validateForm: No operator or expected value found for field: ${fieldKey}`
+    );
+    return false;
+  }
+
+  // Get parent field
+  const parentField = form.fields[field.dependsOn];
+  if (!parentField) {
+    console.warn(
+      `validateForm: Parent field not found for dependsOn: ${field.dependsOn}`
+    );
+    return false;
+  }
+
+  // Get parent field value
+  const actualValue = formValues[field.dependsOn];
+
+  // Evaluate condition using same logic as DependsOnRenderer
+  return evaluateCondition(
+    operator,
+    actualValue,
+    expectedValue,
+    parentField.type
+  );
+}
+
+/**
+ * Validates dependency fields (nested under a parent field's dependencies property)
+ * Only validates fields that are conditionally visible
+ */
+function validateDependencyFields(
+  parentField: IFormField,
+  parentKey: string,
+  form: IForm,
+  formValues: Record<string, FormValue>,
+  errors: FieldValidationError[]
+): void {
+  if (!parentField.dependencies) {
+    return;
+  }
+
+  for (const [dependencyKey, dependencyField] of Object.entries(
+    parentField.dependencies
+  )) {
+    // Check if dependency field should be visible
+    const { operator, value: expectedValue } =
+      dependencyField.conditionalOptions ?? {};
+
+    // If no conditional options, always validate
+    if (!operator || expectedValue === undefined || expectedValue === null) {
+      // Validate the dependency field
+      const value = formValues[dependencyKey];
+      const fieldLabel = dependencyField.label || dependencyKey;
+      const error = validateField(
+        dependencyField,
+        dependencyKey,
+        value,
+        fieldLabel
+      );
+      if (error) {
+        errors.push(error);
+      }
+      // Recursively process nested dependencies
+      validateDependencyFields(
+        dependencyField,
+        dependencyKey,
+        form,
+        formValues,
+        errors
+      );
+      continue;
+    }
+
+    // Get parent field value (the field that this dependency depends on)
+    const parentFieldValue = formValues[parentKey];
+    const parentFieldType = parentField.type;
+
+    // Evaluate condition using same logic as DependencyRenderer
+    const shouldValidate = evaluateCondition(
+      operator,
+      parentFieldValue,
+      expectedValue,
+      parentFieldType
+    );
+
+    // Only validate if condition is met (field is visible)
+    if (shouldValidate) {
+      const value = formValues[dependencyKey];
+      const fieldLabel = dependencyField.label || dependencyKey;
+      const error = validateField(
+        dependencyField,
+        dependencyKey,
+        value,
+        fieldLabel
+      );
+      if (error) {
+        errors.push(error);
+      }
+    }
+
+    // Recursively process nested dependencies
+    validateDependencyFields(
+      dependencyField,
+      dependencyKey,
+      form,
+      formValues,
+      errors
+    );
+  }
+}
+
+/**
  * Validates an entire form based on field configurations and values
  */
 export function validateForm(
@@ -411,6 +543,12 @@ export function validateForm(
   const errors: FieldValidationError[] = [];
 
   for (const [fieldKey, field] of Object.entries(form.fields)) {
+    // Check if field should be validated based on conditional visibility
+    if (!shouldValidateField(field, fieldKey, form, formValues)) {
+      // Skip validation if field is conditionally hidden
+      continue;
+    }
+
     const value = formValues[fieldKey];
     const fieldLabel = field.label || fieldKey;
 
@@ -418,6 +556,9 @@ export function validateForm(
     if (error) {
       errors.push(error);
     }
+
+    // Process dependency fields (nested under this field's dependencies property)
+    validateDependencyFields(field, fieldKey, form, formValues, errors);
   }
 
   return {
