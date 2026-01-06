@@ -8,7 +8,7 @@ si:
   policyNumber.label: "ඔප්පු අංකය:"
   fullName.label: "සම්පූර්ණ නම"
   address.label: "ලිපිනය :"
-  h4.telephone_number: "දුරකථන අංකය"
+  h4.telephone_number: "4.  දුරකථන අංකය"
   telephoneNumber.label: "ස්ථාවර දුරකථන අංකය:"
   mobileNumber.label: "ජංගම දුරකථන අංකය:"
   emailAddress.label: "ඊ - මේල් ලිපිනය :"
