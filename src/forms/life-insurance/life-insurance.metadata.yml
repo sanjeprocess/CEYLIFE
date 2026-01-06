@@ -6,7 +6,6 @@ formDescription: Apply for comprehensive life insurance cover with optional
   riders and beneficiary nominations.
 availableLocales:
   - en
-  - si
-  - ta
+
 otpRequired: true
 showFormHeader: false

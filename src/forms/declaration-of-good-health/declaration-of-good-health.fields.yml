@@ -32,7 +32,7 @@ mobileNumber:
 emailAddress:
   type: email
   label: 5. Email Address
-  required: true
+  required: false
   placeholder: Enter email address
 occupation:
   type: text
@@ -256,4 +256,4 @@ submittedDate:
 signature:
   type: file
   label: Signature of the life Assured
-  required: false
+  required: true
