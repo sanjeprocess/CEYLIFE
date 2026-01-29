@@ -1,6 +1,39 @@
-# diabetic-questionnaire form otp
+# otp form otp
 
 enabled: true
+
+# OTP Request Configuration (on-demand OTP sending)
+# When this section is present, user must click "Proceed" to request OTP before entering it
+request:
+  method: POST
+  baseUrl: https://app.workhub24.com
+  endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wc30def1bfc/cards
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Authorization
+      value: Bearer {{$WORKHUB_TOKEN}}
+    - name: Content-Type
+      value: application/json
+  body:
+    - name: contractSequenceNo
+      value: "{{contract_sequence}}"
+      type: string
+    - name: recordCardID
+      value: "{{card_id}}"
+      type: number
+    - name: title
+      value: "OTP Request"
+      type: string
+
+# UI configuration for the OTP request step
+requestDialog:
+  title: Request OTP
+  content: Thank you for accessing the digital forms of Ceylinco Life. Click the
+    button below to receive your One-Time Password (OTP) via SMS.
+  button: Proceed
+
+# UI configuration for OTP verification step
 dialog:
   title: OTP Verification
   content: Thank you for accessing the digital forms of Ceylinco Life. In order to
@@ -8,6 +41,8 @@ dialog:
   button: Verify OTP
   inputLabel: OTP
   inputPlaceholder: Enter OTP
+
+# OTP Verification API Configuration
 verification:
   method: GET
   baseUrl: https://app.workhub24.com

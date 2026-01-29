@@ -4,16 +4,110 @@ import axios from "axios";
 import { cookies } from "next/headers";
 
 import { COOKIES } from "@/common/constants/cookie.constants";
-import { IFormOtp } from "@/common/interfaces/form.interfaces";
+import {
+  IFormOtp,
+  IFormOtpBodyField,
+  IFormOtpHeader,
+  IFormOtpQueryParam,
+  IFormOtpRequest,
+} from "@/common/interfaces/form.interfaces";
 import { convertToString, getValueByPath } from "@/utils/path.utils";
 
 import { replaceVariablesInTextWithRuntime } from "./variable-replacement.service";
 import { getWorkhubToken } from "./workhub-auth.service";
 
+export interface OtpRequestResult {
+  success: boolean;
+  error?: string;
+}
+
 export interface OtpVerificationResult {
   success: boolean;
   variables?: Record<string, string>;
   error?: string;
+}
+
+/**
+ * Requests OTP to be sent to the customer via Workhub API.
+ * This is the first step in the on-demand OTP flow.
+ */
+export async function requestOtp(
+  requestConfig: IFormOtpRequest,
+  currentVariables: Record<string, string>
+): Promise<OtpRequestResult> {
+  const baseUrl = `${requestConfig.baseUrl.replace(/\/$/, "")}/${requestConfig.endpoint.replace(/^\//, "")}`;
+
+  try {
+    const workhubToken = await getWorkhubToken();
+
+    const runtimeVariables = {
+      $WORKHUB_TOKEN: workhubToken,
+    };
+
+    const headers = buildHeaders(
+      requestConfig.headers,
+      currentVariables,
+      runtimeVariables
+    );
+
+    // Build query params if configured
+    const queryParams = requestConfig.queryParams
+      ? buildParams(requestConfig.queryParams, currentVariables, runtimeVariables)
+      : undefined;
+
+    // Build request body if configured (for POST/PUT requests)
+    const requestBody = requestConfig.body
+      ? buildBody(requestConfig.body, currentVariables, runtimeVariables)
+      : undefined;
+
+    const response = await axios.request({
+      method: requestConfig.method,
+      url: baseUrl,
+      headers,
+      params: queryParams,
+      data: requestBody,
+    });
+
+    // Consider request successful if we get a response (status 2xx)
+    // The API should return success if OTP was sent
+    if (response.status >= 200 && response.status < 300) {
+      return {
+        success: true,
+      };
+    }
+
+    return {
+      success: false,
+      error: "Failed to send OTP. Please try again.",
+    };
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      const statusText = error.response?.statusText || "Unknown error";
+      const status = error.response?.status || "N/A";
+
+      console.error("[OTP Request] Network request failed:", {
+        status,
+        statusText,
+        url: baseUrl,
+        method: requestConfig.method,
+        errorData: error.response?.data,
+        message: error.message,
+      });
+
+      return {
+        success: false,
+        error: `Failed to send OTP: ${status} ${statusText}`,
+      };
+    }
+
+    console.error("[OTP Request] Unexpected error:", error);
+
+    return {
+      success: false,
+      error:
+        error instanceof Error ? error.message : "Unknown error requesting OTP",
+    };
+  }
 }
 
 export async function verifyOtp(
@@ -35,14 +129,14 @@ export async function verifyOtp(
       otp,
     };
 
-    const headers = buildRequestHeaders(
-      otpConfig.verification,
+    const headers = buildHeaders(
+      otpConfig.verification.headers,
       allVariables,
       runtimeVariables
     );
 
-    const queryParams = buildQueryParams(
-      otpConfig.verification,
+    const queryParams = buildParams(
+      otpConfig.verification.queryParams,
       allVariables,
       runtimeVariables
     );
@@ -117,14 +211,14 @@ export async function verifyOtp(
   }
 }
 
-function buildQueryParams(
-  verification: IFormOtp["verification"],
+function buildParams(
+  queryParams: IFormOtpQueryParam[],
   variables: Record<string, string>,
   runtimeVariables: Record<string, string>
 ): Record<string, string> {
   const params: Record<string, string> = {};
 
-  for (const param of verification.queryParams) {
+  for (const param of queryParams) {
     const interpolatedValue = replaceVariablesInTextWithRuntime(
       param.value,
       variables,
@@ -136,14 +230,14 @@ function buildQueryParams(
   return params;
 }
 
-function buildRequestHeaders(
-  verification: IFormOtp["verification"],
+function buildHeaders(
+  headerConfigs: IFormOtpHeader[],
   variables: Record<string, string>,
   runtimeVariables: Record<string, string>
 ): Record<string, string> {
   const headers: Record<string, string> = {};
 
-  for (const header of verification.headers) {
+  for (const header of headerConfigs) {
     const interpolatedValue = replaceVariablesInTextWithRuntime(
       header.value,
       variables,
@@ -153,6 +247,40 @@ function buildRequestHeaders(
   }
 
   return headers;
+}
+
+function buildBody(
+  bodyFields: IFormOtpBodyField[],
+  variables: Record<string, string>,
+  runtimeVariables: Record<string, string>
+): Record<string, unknown> {
+  const body: Record<string, unknown> = {};
+
+  for (const field of bodyFields) {
+    const interpolatedValue = replaceVariablesInTextWithRuntime(
+      field.value,
+      variables,
+      runtimeVariables
+    );
+
+    // Convert value to the specified type
+    switch (field.type) {
+      case "number":
+        body[field.name] = Number(interpolatedValue);
+        break;
+      case "boolean":
+        body[field.name] =
+          interpolatedValue.toLowerCase() === "true" ||
+          interpolatedValue === "1";
+        break;
+      case "string":
+      default:
+        body[field.name] = interpolatedValue;
+        break;
+    }
+  }
+
+  return body;
 }
 
 function extractVariablesFromResponse(

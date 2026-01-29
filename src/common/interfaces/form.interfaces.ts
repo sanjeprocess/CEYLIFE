@@ -37,6 +37,23 @@ export interface IFormOtpVariableMapping {
   required: boolean; // If true, verification fails if this field is missing
 }
 
+// OTP request body field configuration (for POST requests)
+export interface IFormOtpBodyField {
+  name: string;
+  value: string;
+  type?: "string" | "number" | "boolean"; // Converts the value to the specified type
+}
+
+// OTP request API configuration (for on-demand OTP sending)
+export interface IFormOtpRequest {
+  method: HttpMethod;
+  baseUrl: string;
+  endpoint: string;
+  headers: IFormOtpHeader[];
+  queryParams?: IFormOtpQueryParam[]; // Optional for POST requests
+  body?: IFormOtpBodyField[]; // Optional: for POST/PUT requests with JSON body
+}
+
 // OTP verification API request configuration
 export interface IFormOtpVerification {
   method: HttpMethod;
@@ -49,7 +66,14 @@ export interface IFormOtpVerification {
   };
 }
 
-// OTP dialog UI configuration
+// OTP request dialog UI configuration (shown before OTP is sent)
+export interface IFormOtpRequestDialog {
+  title?: string;
+  content?: string;
+  button?: string;
+}
+
+// OTP dialog UI configuration (shown for OTP verification)
 export interface IFormOtpDialog {
   title?: string;
   content?: string;
@@ -61,6 +85,8 @@ export interface IFormOtpDialog {
 // Main OTP configuration interface
 export interface IFormOtp {
   enabled: boolean;
+  request?: IFormOtpRequest; // Optional: if present, OTP is sent on-demand
+  requestDialog?: IFormOtpRequestDialog; // Optional: UI config for request step
   dialog?: IFormOtpDialog;
   verification: IFormOtpVerification;
 }

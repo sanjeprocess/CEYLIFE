@@ -67,9 +67,40 @@ function generateMetadata(formName, titleCase) {
 
 /**
  * Generate otp.yml content (boilerplate from otp form)
+ * Includes commented-out request configuration for on-demand OTP feature
  */
 function generateOtp(formName) {
   const comment = `# ${formName} form otp
+# 
+# On-Demand OTP: To enable on-demand OTP (user must click "Proceed" to receive OTP),
+# uncomment the 'request' and 'requestDialog' sections below and configure the endpoint.
+#
+# request:
+#   method: POST
+#   baseUrl: https://app.workhub24.com
+#   endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wc30def1bfc/cards
+#   headers:
+#     - name: Accept
+#       value: application/json
+#     - name: Authorization
+#       value: Bearer {{$WORKHUB_TOKEN}}
+#     - name: Content-Type
+#       value: application/json
+#   body:
+#     - name: contractSequenceNo
+#       value: "{{contract_sequence}}"
+#       type: string
+#     - name: recordCardID
+#       value: "{{card_id}}"
+#       type: number
+#     - name: title
+#       value: "OTP Request"
+#       type: string
+#
+# requestDialog:
+#   title: Request OTP
+#   content: Thank you for accessing the digital forms of Ceylinco Life. Click the button below to receive your One-Time Password (OTP) via SMS.
+#   button: Proceed
 
 `;
 
@@ -267,6 +298,9 @@ function main() {
     );
     console.log(
       `5. If OTP is not needed, set enabled: false in ${formName}.otp.yml`
+    );
+    console.log(
+      `6. For on-demand OTP, uncomment 'request' section in ${formName}.otp.yml`
     );
   } catch (error) {
     console.error("Error:", error.message);
