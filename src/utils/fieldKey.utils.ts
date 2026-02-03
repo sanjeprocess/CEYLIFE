@@ -58,6 +58,20 @@ export function getFormDescriptionKey(): string {
   return "formDescription";
 }
 
+// OTP Request Dialog keys (for on-demand OTP sending)
+export function getOtpRequestDialogTitleKey(): string {
+  return "otp.requestDialog.title";
+}
+
+export function getOtpRequestDialogContentKey(): string {
+  return "otp.requestDialog.content";
+}
+
+export function getOtpRequestDialogButtonKey(): string {
+  return "otp.requestDialog.button";
+}
+
+// OTP Verification Dialog keys
 export function getOtpDialogTitleKey(): string {
   return "otp.dialog.title";
 }
