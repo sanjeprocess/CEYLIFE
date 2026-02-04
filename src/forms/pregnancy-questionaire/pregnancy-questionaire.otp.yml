@@ -6,7 +6,7 @@ enabled: true
 # When this section is present, user must click "Proceed" to request OTP before entering it
 request:
   method: POST
-  baseUrl: https://app.workhub24.com
+  baseUrl: https://beta.workhub24.com
   endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wc30def1bfc/cards
   headers:
     - name: Accept
