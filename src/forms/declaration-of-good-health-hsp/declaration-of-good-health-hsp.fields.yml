@@ -18,7 +18,7 @@ policyNo:
 gender:
   type: radio-group
   label: Gender
-  required: true
+  required: false
   options:
     male: Male
     female: Female

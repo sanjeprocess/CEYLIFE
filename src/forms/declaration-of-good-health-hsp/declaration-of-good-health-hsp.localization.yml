@@ -12,7 +12,7 @@ en:
   text.declaration: "I declare that the foregoing statements and answers given by me are true and accurate. I agree that these statements shall be the basis of the insurance policy between myself and Ceylinco Life Insurance Limited. Ceylinco Life Insurance Limited shall not be liable for any claims on account of illness or injury, the cause of which was known prior to approval of my request for this assurance."
   text.authorise: "I authorise any representative or a medical officer of Ceylinco Life Insurance Limited to peruse or obtain the Bed Head Ticket (BHT) or any other clinical notes from any Government / Private Hospital, Clinic, Nursing home, Asylum or sanatorium and authorise to obtain information from any other insurer."
   text.consent: "I hereby give my consent to Ceylinco Life Insurance Limited to verify (Online / Manual) my National Identity Card particulars with the department of Registration of Persons."
-  text.agree: "I agree and consent to Ceylinco Life Insurance Limited as well as their respective representatives, agents, the company's authorized service providers and relevant third parties whether within or outside Sri Lanka for collecting, using and / or disclosing my personal data for purposes reasonably required by the company to evaluate my proposal and provide the products or services which I am applying for."
+  text.agree: "I agree and consent to Ceylinco Life Insurance Limited as well as their respective representatives, agents, the company's authorized service providers and relevant third parties whether within or outside Sri Lanka for collecting, using and / or disclosing my personal data for purposes reasonably required by the company to evaluate my proposal and to provide the products or services which I am applying for."
   submit.button: "Submit Form"
   reset.button: "Reset Form"
 
@@ -159,16 +159,17 @@ en:
 
 si: 
   # Layout translations
-  card.important: "වැදගත්: <br><br> කරුණාකර ඔබේ සෞඛ්‍ය තත්ත්වය, රැකියාට, විනෝදාංශ හා පුරුදු පිළිබඳ සම්පූර්ණ විස්තරයක් සපයන්න.සත්‍ය තොරතුරක් වසන්කිරීම හෝ වැරදි ආකාරයෙන් සැපයීම, ඔබගේ රක්ෂණ ඔප්පුව ශුන්‍ය හා අවලංගු බවට පත්කිරීමට හේතු වේ.යම් තොරතුරක් වැදගත්ද යන්න පිළිබඳ සැකයක් වේ නම්, එවැන්නක් හෙළිදරව් කිරීම ඔබේ යහපත පිණිසම හේතු වේ."
+  formTitle: “යහපත් සෞඛ්‍ය තත්ත්වය පිළිබඳ ප්‍රකාශනය (හෙල්ත් සපෝර්ට් ප්‍රතිලාභය / විදේශගත ගනුදෙනුකරුවන් සඳහා)”
+  card.important: "වැදගත්: <br><br> කරුණාකර ඔබේ සෞඛ්‍ය තත්ත්වය, රැකියාව, විනෝදාංශ හා පුරුදු පිළිබඳ සම්පූර්ණ විස්තරයක් සපයන්න. සත්‍ය තොරතුරක් වසන්කිරීම හෝ වැරදි ආකාරයෙන් සැපයීම, ඔබගේ රක්ෂණ ඔප්පුව ශුන්‍ය හා අවලංගු බවට පත්කිරීමට හේතු වේ. යම් තොරතුරක් වැදගත්ද යන්න පිළිබඳ සැකයක් වේ නම්, එවැන්නක් හෙළිදරව් කිරීම ඔබේ යහපත පිණිසම හේතු වේ."
   card.life_assured: "1. රක්ෂිතයා"
   card.your_health_condition: "2. ඔබේ සෞඛ්‍ය තත්ත්වය"
   text.suffering_from_disorders: "ඔබ දැනට පහත සඳහන් අබලතාවයකින් හෝ රෝගයකින් පෙළෙන්නේද නැතහොත් ඔබ පසුගිය වසර 10 තුළ එවැන්නකින් පෙළුනේද? නොඑසේ නම් එවැන්නක් වැළඳුනේද?"
   card.other_information: "3. වෙනත් තොරතුරු"
   card.declaration: "ප්‍රකාශනය"
-  text.declaration: "මා විසින් ලබා දී ඇති ඉහත ප්‍රකාශන සහ පිළිතුරු සත්‍ය හා නිවැරදි බවට මම ප්‍රකාශ කරමි.මෙම ප්‍රකාශන මා සහ සීමාසහිත සෙලින්කෝ ජීවීත රක්ෂණ සමාගම අතර රක්ෂණ ගිවිසුමේ කොටසක් වන බවට මම එකඟ වෙමි.මෙම සහනිකය සඳහා මාගේ ඉල්ලීම අනුමත කිරීමට පෙර හේතුව දැන සිට රෝග හෝ තුවාල සම්බන්ධ කිසිදු හිමිකම් පෑමක් සඳහා සෙලින්කෝ ජීවිත රක්ෂණ සමාගම වගකියනු නොලැබේ."
-  text.authorise: "මම සෙලින්කෝ ජීවිත රක්ෂණ සමාගමේ කිසියම් නියෝජිතයෙකුට හෝ වෛද්‍ය නිලධාරියෙකුට කිසියම් රජයේ /පෞද්ගලික රෝහලක, සායනයක, නේවාසික රෝහලක, උපස්ථානාගාරයක හෝ ස්ටාස්ථාලයක ඇඳ ඉහ ටිකට්පත හෝ වෙනත් කිසියම් සොයනික සටහන් කියවා ගැනීමට හෝ ලබා ගැනීමට හෝ වෙනත් කිසියම් රක්ෂකයෙකුගෙන් තොරතුරු ලබා ගැනීමට අවසරය ලබා දෙමි."
-  text.consent: "පුද්ගලයින් ලියාපදිංචි කිරීමේ දෙපර්තමේන්තුව වෙතින් මාගේ/අපගේ ජාතික හැඳුනුම්පතේ තොරතුරු පරීක්ෂා කිරීමට සෙලින්කෝ ජීවන රක්ෂණ සමාගමට මෙයින් මාගේ/අපගේ කැමත්ත ලබා දෙමි/දෙමු."
-  text.agree: "මම/ අප විසින් ඉදිරිපත් කර ඇති මෙම යෝජනා පත්‍රය තක්සේරු කිරීමේ දී හා ඒ හා සම්බන්ධ රක්ෂණාවරණ හා අනෙකුත් සේවා සැපයීමට අදාළ අවශ්‍යතාවන් වෙනුවෙන් මාගේ/අපගේ පුද්ගලික තොරතුරු ලබා ගැනීමට, භාවිත කිරීමට හෝ හෙලි කිරීමට සෙලින්කෝ ලයිෆ් රක්ෂණ සමාගමට, ඔවුන්ගේ නියෝජිතයන්ට හා ශ්‍රී ලංකාව තුළ හෝ පිටත සිටින එකී සේවා සැපයීමට බලයලත් ආයතන වෙත මෙයින් අවසර දෙමි/දෙමු."
+  text.declaration: "මා විසින් ලබා දී ඇති ඉහත ප්‍රකාශන සහ පිළිතුරු සත්‍ය හා නිවැරදි බවට මම ප්‍රකාශ කරමි.  මෙම ප්‍රකාශන මා සහ සීමාසහිත සෙලින්කෝ ජීවිත රක්ෂණ සමාගම අතර රක්ෂණ ගිවිසුමේ කොටසක් වන බවට මම එකඟ වෙමි.  මෙම සහතිකය සඳහා මාගේ ඉල්ලීම අනුමත කිරීමට පෙර හේතුව දැන සිටි රෝග හෝ තුවාල සම්බන්ධ කිසිදු හිමිකම්පෑමක් සඳහා සෙලින්කෝ ජීවිත රක්ෂන සමාගම වගකියනු නොලැබේ."
+  text.authorise: "මම සෙලින්කෝ ජීවිත රක්ෂණ සමාගමේ කිසියම් නියෝජිතයෙකුට හෝ වෛද්‍ය නිලධාරියෙකුට කිසියම් රජයේ/පෞද්ගලික රෝහලක, සායනයක, නේවාසික රෝහලක, උපස්ථානාගාරයක හෝ ස්වාස්ථාලයක ඇඳ ඉහ ටිකට්පත හෝ වෙනත් කිසියම් සායනික සටහන් කියවා ගැනීමට හෝ ලබාගැනීමට හෝ වෙනත් කිසියම් රක්ෂකයෙකුගෙන් තොරතුරු ලබාගැනීමට අවසරය ලබාදෙමි."
+  text.consent: "පුද්ගලයන් ලියාපදිංචි කිරීමේ දෙපාර්තමේන්තුව වෙතින් මාගේ ජාතික හැඳුනුම්පතේ තොරතුරු පරීක්ෂා කිරීමට සෙලින්කෝ ජීවිත රක්ෂණ සමාගමට මෙයින් මාගේ කැමැත්ත ලබාදෙමි."
+  text.agree: "මම විසින් ඉදිරිපත් කර ඇති මෙම යෝජනා පත්‍රය තක්සේරු කිරීමේ දී හා ඒ හා සම්බන්ධ රක්ෂණාවරණ හා අනෙකු සේවා සැපයීමට අදාළ අවශ්‍යතාවන් වෙනුවෙන් මාගේ පුද්ගලික තොරතුරු ලබාගැනීමට, භාවිත කිරීමට හෝ හෙළි කිරීමට සෙලින්කෝ ලයිෆ් රක්ෂණ සමාගමට, ඔවුන්ගේ නියෝජිතයන්ට හා ශ්‍රී ලංකාව තුළ හෝ පිටත සිටින එකී සේවා සැපයීමට බලයලත් ආයතන වෙත මෙයින් අවසරය දෙමි."
   submit.button: "පෝරමය පුරවන්න"
   reset.button: "පෝරමයේ දත්ත මකන්න"
 
@@ -194,7 +195,7 @@ si:
   16AnnualIncome.label: "1.6 වාර්ෂික ආදායම :"
 
   # Section 2: Your Health Condition
-  21Diabetes.label: "2.1 දිය වැඩියාව"
+  21Diabetes.label: "2.1 දියවැඩියාව"
   21Diabetes.options.yes: "ඔව්"
   21Diabetes.options.no: "නැත"
   21Details.label: "කරුණාකර විස්තර දක්වන්න"
@@ -229,7 +230,7 @@ si:
   27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.options.no: "නැත"
   27Details.label: "කරුණාකර විස්තර දක්වන්න"
 
-  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.label: "2.8 පෙනහථවල කිසියම් රෝග, උදා: නිතර ඇතිවන කැස්ස, ඇදුම, ශ්වාසනාලිකා ප්‍රදාහය, ඛේටය සමඟ රුධිරය පිටවීම, ක්ෂය රෝගය ආදිය"
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.label: "2.8 පෙනහළු වල කිසියම් රෝග, උදා: නිතර ඇතිවන කැස්ස, ඇදුම, ශ්වාසනාලිකා ප්‍රදාහය, ඛේටය සමඟ රුධිරය පිටවීම, ක්ෂය රෝගය ආදිය"
   28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.options.yes: "ඔව්"
   28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.options.no: "නැත"
   healthQ2_8Details.label: "කරුණාකර විස්තර දක්වන්න"
@@ -249,7 +250,7 @@ si:
   211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.options.no: "නැත"
   211Details.label: "කරුණාකර විස්තර දක්වන්න"
 
-  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.label: "2.12 අස්ථි, සන්ධි ආශ්‍රිත රෝග / ආබාධ හෝ රක්තවානය, වාත රක්තය /වාන රක්ත උණ, සන්ධි ප්‍රදාහය"
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.label: "2.12 කොඳුඇටපෙළ, අස්ථි, සන්ධි ආශ්‍රීත රෝග / ආබාධ හෝ රක්තවාතය, වාතරක්තය / වාතරක්ත උණ, සන්ධි ප්‍රදාහය"
   212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.options.yes: "ඔව්"
   212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.options.no: "නැත"
   212Details.label: "කරුණාකර විස්තර දක්වන්න"
