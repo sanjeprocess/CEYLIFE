@@ -3,8 +3,8 @@
 
 en:
   # Field labels
-  proposersName.label: "1. Proposer's Name"
-  contractNumber.label: "2. Contract Number"
+  proposersName.label: "Proposer's Name"
+  contractNumber.label: "Contract Number"
   firstDateOfMenstrualPeriod.label: "3. Date of first date of the last menstrual period"
   deliveryDate.label: "4. Expected date of delivery"
   medicalDetails.label: "5. Are you being-treated or closely monitored due to elevated blood pressure, diabetes or for any other pregnant related complications? if so,please give details and forward related medical reports."
@@ -42,8 +42,8 @@ en:
 
 si:
   # Field labels
-  proposersName.label: "1. යෝජකයාගේ නම"
-  contractNumber.label: "2. යෝජනාපත්‍ර / ඔප්පු අංකය"
+  proposersName.label: "යෝජකයාගේ නම"
+  contractNumber.label: "යෝජනාපත්‍ර / ඔප්පු අංකය"
   firstDateOfMenstrualPeriod.label: "3. අවසන් වරට ඇති වූ මාසික ශුද්ධියේ ප්‍රථම දිනය :"
   deliveryDate.label: "4. ප්‍රසුතිය නියමිත දිනය :"
   medicalDetails.label: "5. අධිරුධිර පීඩනය, දියවැඩියාව හෝ වෙනයම් ගර්භනි සංකූලතාවයක් සඳහා ප්‍රතිකාර ලබා ගත්තේද? / ගන්නේද? නැතිනම් සුපරීක්ෂාවෙන් සිටින්නේද?"
