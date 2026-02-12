@@ -64,21 +64,25 @@ vesselType:
     launch_first: Launch First - class passenger steamship
     freight_steamship: Freight steamship
     sailing_vessel: Sailing vessel
+tropicalPorts:
+  type: text
+  label: 7) Which tropical ports will the ship call at?
+  required: true
 position:
   type: text
-  label: 7) What is the title of your position?
+  label: 8) What is the title of your position?
   required: true
   placeholder: Enter  position
   defaultValue: ""
 serviceYears:
   type: text
-  label: 8) How long have you been engaged in a sea-faring occupation?
+  label: 9) How long have you been engaged in a sea-faring occupation?
   required: true
   placeholder: Enter  years
   defaultValue: ""
 insurable:
   type: radio-group
-  label: 9) Is the vessel seaworthy and insurable?
+  label: 10) Is the vessel seaworthy and insurable?
   required: true
   options:
     yes: Yes
