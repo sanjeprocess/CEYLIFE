@@ -26,7 +26,7 @@ revivalType:
   required: false
   options:
     revive the above certificate under special revival: 1. Revive the above certificate under special revival
-    normal revivall: 2. Normal revival
+    normal revivall: 2. Review the above certificate under normal revival
 
 benefit:
   type: checkbox
@@ -161,14 +161,14 @@ healthQ8:
   options:
     yes: "Yes"
     no: "No"
-  dependencies:
-    confinementDate:
-      type: date
-      label: Confinement Date
-      required: true
-      conditionalOptions:
-        operator: eq
-        value: "yes"
+  # dependencies:
+  #   confinementDate:
+  #     type: date
+  #     label: Confinement Date
+  #     required: true
+  #     conditionalOptions:
+  #       operator: eq
+  #       value: "yes"
 
 healthQ9:
   type: radio-group

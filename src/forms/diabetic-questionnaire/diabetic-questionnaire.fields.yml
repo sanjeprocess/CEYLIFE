@@ -33,8 +33,8 @@ nameAndAddressOfTheDoctor:
 strictDiet:
   type: radio-group
   options:
-    no: No
     yes: Yes
+    no: No
   label: 5. Do you follow a strict Diet?
   required: true
   validation:
@@ -57,8 +57,8 @@ strictDiet:
 oralDrug:
   type: radio-group
   options:
-    no: No
     yes: Yes
+    no: No
   label: 6. Are you now having oral drug treatment? if so, please give the name of the
     drug and dosage
   required: true
@@ -82,8 +82,8 @@ oralDrug:
 insulin:
   type: radio-group
   options:
-    no: No
     yes: Yes
+    no: No
   label: "7. Are you now taking Insulin? If so, please give the number of units per day"
   required: true
   validation:
@@ -106,8 +106,8 @@ insulin:
 oralInsulinVaried:
   type: radio-group
   options:
-    no: No
     yes: Yes
+    no: No
   label: 8. Has your intake of Insulin or oral drugs varied during the last 2 years?
     If so, please give full details
   required: true
@@ -131,8 +131,8 @@ oralInsulinVaried:
 urineCheck:
   type: radio-group
   options:
-    no: No
     yes: Yes
+    no: No
   label: 9. Do you check your urine on a regular basis? If so, how often does it
     contain sugar?
   required: true
@@ -160,8 +160,8 @@ urineCheck:
 coma:
   type: radio-group
   options:
-    no: No
     yes: Yes
+    no: No
   label: 10. Since your treatment began have you ever had a diabetic or Insulin Coma?
     (If so please give details including dates.)
   required: true
@@ -179,8 +179,8 @@ coma:
 illnesses:
   type: radio-group
   options:
-    no: No
     yes: Yes
+    no: No
   label: 11. Have you ever had any illness or disease of the Heart, Kidneys, Eyes,
     Circulatory or Nervous System? If so, please give full details.
   required: true

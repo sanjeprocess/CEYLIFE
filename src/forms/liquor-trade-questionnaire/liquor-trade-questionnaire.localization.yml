@@ -6,8 +6,8 @@ en:
   ProposerName.label: "Proposer's Name"
   proposalNum.label: "Proposal Number"
   occupation.label: "1. What is your occupation? if more than one, State all occupations."
-  dutyInvolve.label: "2. Do your duties involve (give details) :"
-  teetotaler.label: "3. Are you a teetotaler?"
+  dutyInvolve.label: "2. Which of the following duties are part of your role?"
+  teetotaler.label: "3. Are you a teetotaler? If so, have you always been so? "
   teetotalerDetails.label: "Details"
   liquorType.label: "(a) Type of liquor consumed"
   avgDailyIntake.label: "(b) Average daily intake in units. (One unit represents: 1 ounce spirits, or 4 ounces wine, or 10 ounces beer.)"
@@ -20,11 +20,11 @@ en:
   signature.label: "Signature"
 
   # Options
-  dutyInvolve.options.Regular attendance at a bar: "(a) Regular attendance at a bar?"
-  dutyInvolve.options.Part time attendance at a bar: "(b) Part time attendance at a bar?"
-  dutyInvolve.options.Supervisory duties only: "(c) Supervisory duties only?"
-  dutyInvolve.options.A regular shift or changeable working hours: "(d) A regular shift or changeable working hours?"
-  dutyInvolve.options.Working in a brewery, distillery or winery: "(e) Working in a brewery, distillery or winery?"
+  dutyInvolve.options.Regular attendance at a bar: "(a) Regular attendance at a bar"
+  dutyInvolve.options.Part time attendance at a bar: "(b) Part time attendance at a bar"
+  dutyInvolve.options.Supervisory duties only: "(c) Supervisory duties only"
+  dutyInvolve.options.A regular shift or changeable working hours: "(d) A regular shift or changeable working hours"
+  dutyInvolve.options.Working in a brewery, distillery or winery: "(e) Working in a brewery, distillery or winery"
   
   teetotaler.options.yes: "Yes"
   teetotaler.options.no: "No"
@@ -42,15 +42,16 @@ en:
   reset.button: "Reset Form"
 
 si: 
+  formTitle: මත්පැන් වෙළඳාම පිළිබඳ ප්‍රශ්නාවලිය
   # Field Labels
   ProposerName.label: "යෝජකයාගේ නම :"
   proposalNum.label: "යෝජනාපත්‍ර / ඔප්පු අංකය :"
   occupation.label: "1. ඔබගේ රැකියාව කුමක්ද? රැකියාවන් එකකට වඩා තිබේ නම්, සියළු රැකියාවන් සඳහන් කරන්න."
-  dutyInvolve.label: "2. ඔබගේ කාර්යයන් පහත දැක්වෙන කාණ්ඩයන්ට අයත්ද ? (විස්තර දක්වන්න) :"
+  dutyInvolve.label: "2. ඔබගේ රාජකාරි පහත දැක්වෙන කුමන කාණ්ඩයන්ට අයත් ද? (විස්තර දක්වන්න)"
   teetotaler.label: "3. ඔබ මත්පැන් පානයෙන් සම්පුර්ණයෙන්ම වෙන් වූ තැනැත්තෙක්ද? එසේ නම් ඔබ හැම විටම ඒ තත්වය පවත්වා ගෙන සිටියේද?"
   teetotalerDetails.label: "විස්තර දක්වන්න."
   liquorType.label: "(a) භාවිතා කළ මත්පැන් වර්ගය කුමක්ද?"
-  avgDailyIntake.label: "(b)සාමාන්‍ය වශයෙන් දිනපතා ගන්නා ප්‍රමාණය ඒකක වලින් දක්වන්න.එක් ඒකකයක් වනුයේ,(ස්ප්‍රිතු අවුන්ස 01 ක් හෝ,වයින් අවුන්ස 04 ක් හෝ,බියර් අවුන්ස 10 ක් හෝ වේ.)"
+  avgDailyIntake.label: "(b)සාමාන්‍ය වශයෙන් දිනපතා ගන්නා ප්‍රමාණය ඒකකවලින් දක්වන්න.එක් ඒකකයක් වනුයේ,(ස්ප්‍රිතු අවුන්ස 01ක් හෝ වයින් අවුන්ස 04 ක් හෝ බියර් අවුන්ස 10ක් හෝ වේ.)"
   health.label: "4. මත්පැන් භාවිතය කෙදිනක හෝ ඔබගේ සෞඛ්‍ය තත්ත්වය මත හෝ වැඩ කිරීමේ හැකියාව මත හෝ බලපෑමක් ඇති කළේද?"
   smoker.label: "5. ඔබ දුම් පානය කරන්නේ ද? එසේ නම් දිනකට පානය කරන සංඛ්‍යාව දක්වන්න."
   smokerDetails.label: "විස්තර දක්වන්න."
@@ -60,11 +61,11 @@ si:
   signature.label: "යෝජකයාගේ අත්සන :"
 
   # Options
-  dutyInvolve.options.Regular attendance at a bar: "(a) තැබෑරුමක කාර්යයන්හි දිනපතා නිරත වේද?"
-  dutyInvolve.options.Part time attendance at a bar: "(b) තැබෑරුමක කාර්යයන්හි අර්ධකාලීනව නිරත වේ ද?"
-  dutyInvolve.options.Supervisory duties only: "(c) වැඩ පරීක්ෂක කටයුතු වල පමණක් නිරත වේද?"
-  dutyInvolve.options.A regular shift or changeable working hours: "(d) ඒකාකාරී වූ වැඩ මුරයකට හෝ වෙනස් වන්නා වූ වැඩ මුරයකට යටත් ද?"
-  dutyInvolve.options.Working in a brewery, distillery or winery: "(e) ඔබ සේවය කරන්නේ මද්‍ය පෙරන ස්ථානයකද? ස්කාගාරයකද? වයින් සාදන ස්ථානයකද?"
+  dutyInvolve.options.Regular attendance at a bar: "(a) තැබෑරුමක කාර්යයන්හි දිනපතා නිරත වේද"
+  dutyInvolve.options.Part time attendance at a bar: "(b) තැබෑරුමක කාර්යයන්හි අර්ධකාලීනව නිරත වේ ද"
+  dutyInvolve.options.Supervisory duties only: "(c) වැඩ පරීක්ෂක කටයුතු වල පමණක් නිරත වේද"
+  dutyInvolve.options.A regular shift or changeable working hours: "(d) ඒකාකාරී වූ වැඩ මුරයකට හෝ වෙනස් වන්නා වූ වැඩ මුරයකට යටත් ද"
+  dutyInvolve.options.Working in a brewery, distillery or winery: "(e) සේවය කරන්නේ මධ්‍ය පෙරන ස්ථානයක, ස්කාගාරයක, වයින් සාදන ස්ථානයක"
   
   teetotaler.options.yes: "ඔව්"
   teetotaler.options.no: "නැත"

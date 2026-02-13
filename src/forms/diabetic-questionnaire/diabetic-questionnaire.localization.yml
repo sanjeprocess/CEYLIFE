@@ -67,30 +67,31 @@ en:
 
 si: 
   # Field labels and options
+  formTitle: "දියවැඩියා රෝගය පිළිබඳ ප්‍රශ්නාවලිය"
   proposerName.label: "1. සම්පූර්ණ නම"
   contractNum.label: "2. ඔප්පු අංකය"
   dateDiagnosed.label: "3. පළමුවරට රෝගය සොයා ගත්තේ කවදා ද?"
   nameAndAddressOfTheDoctor.label: "4. දැනට ඔබ ප්‍රතිකාර ගන්නා විකිත්සාගාරය හෝ වෛද්‍යවරයාගේ නම සහ ලිපිනය"
 
-  strictDiet.label: "5. ඔබ දැනට පාලන කරන ලද ආහාර වේලක් ගත්තේ ද?"
+  strictDiet.label: "5. ඔබ දැනට පාලනය කරන ලද ආහාර වේලක් ගන්නේ ද?"
   strictDiet.options.no: "නැත"
   strictDiet.options.yes: "ඔව්"
 
   strictDietDetails.label: "විස්තර"
 
-  oralDrug.label: "6. ඔබ දැනට මුඛය තුලින් ශරීර ගත වන ඖෂධ වර්ග වලින් ප්‍රතිකාර ලබන්නේ ද?"
+  oralDrug.label: "6. ඔබ දැනට මුඛය තුලින් ශරීර ගතවන ඖෂධ වර්ග වලින් ප්‍රතිකාර ලබන්නේ ද? එසේ නම් ලබා ගන්නා ඖෂධ වර්ගයේ නම් සහ ප්‍රමාණයන් සඳහන් කරන්න."
   oralDrug.options.no: "නැත"
   oralDrug.options.yes: "ඔව්"
 
   oralDrugDetails.label: "එසේ නම් ලබා ගන්නා ඖෂධ වර්ගයේ නම් සහ ප්‍රමාණයන් සදහන් කරන්න"
 
-  insulin.label: "7. ඔබ දැනට ඉන්සියුලින් භාවිතා කරන්නේ ද?"
+  insulin.label: "7. ඔබ දැනට ඉන්සියුලින් භාවිත කරන්නේ ද? භාවිත කරන්නේ නම්, දිනකට ලබා ගන්නා එ්කක ප්‍රමාණය සඳහන් කරන්න."
   insulin.options.no: "නැත"
   insulin.options.yes: "ඔව්"
 
   insulinDetails.label: "විස්තර"
 
-  oralInsulinVaried.label: "8. පසු ගිය අවුරුදු දෙක ඇතුලත ඔබ ගන්නා ලද ඉන්සියුලින් හෝ ඖෂධ වර්ග වෙනස් වී ඇත්ද?"
+  oralInsulinVaried.label: "8. පසුගිය අවුරුදු දෙක ඇතුලත ඔබ ගන්නා ලද ඉන්සියුලින් හෝ ඖෂධ වර්ග වෙනස් වී ඇත්ද? පිළිතුර ‘ඔව්’ නම්, සම්පූර්ණ විස්තරය සඳහන් කරන්න."
   oralInsulinVaried.options.no: "නැත"
   oralInsulinVaried.options.yes: "ඔව්"
 
@@ -106,13 +107,13 @@ si:
   urineCheckDetails.options.occasionally: "c.)ඇතැම් විට"
   urineCheckDetails.options.Often: "d.)බොහෝ විට"
 
-  coma.label: "10. ඔබ ප්‍රතිකාර ගැනීම ආරම්භ කිරීමෙන් පසු ඔබට යම් දිනක දිය වැඩියා හෝ ඉන්සියුලින් මුර්ජාවක් (කෝමාවක්) ඇති වී තිබේද?"
+  coma.label: "10. ඔබ ප්‍රතිකාර ගැනීම ආරම්භ කිරීමෙන් පසු ඔබට යම් දිනක දියවැඩියා හෝ ඉන්සියුලින් මුර්ජාවක් (කෝමාවක්) ඇති වී තිබේද?එසේ නම් දින සහිතව විස්තර කරන්න."
   coma.options.no: "නැත"
   coma.options.yes: "ඔව්"
 
   comaDetails.label: "විස්තර"
 
-  illnesses.label: "11. ඔබට කෙදිනක හෝ හෘදයේ, වකුගඩුවල, ඇස්වල, රුධිර සංසරණ හෝ ස්නායු පද්ධතිවල ආබාධ ඇති වී තිබේද?"
+  illnesses.label: "11. ඔබට කෙදිනක හෝ හෘදයේ, වකුගඩුවල, ඇස්වල, රුධිර සංසරණ හෝ ස්නායු පද්ධතිවල ආබාධ ඇති වී තිබේ ද? එසේ නම් සම්පූර්ණ විස්තර සඳහන් කරන්න."
   illnesses.options.no: "නැත"
   illnesses.options.yes: "ඔව්"
 
