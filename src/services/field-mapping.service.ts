@@ -70,18 +70,24 @@ export async function mapFieldsToBody(
       const fromPath = mapping.from;
       
       // Check for wildcard pattern: fieldName[*].columnKey
-      const wildcardMatch = fromPath.match(/^(.+)\[(\*)\]\.(.+)$/);
+      // Use non-greedy match to ensure we capture the field name correctly
+      const wildcardMatch = fromPath.match(/^([^[\]]+)\[(\*)\]\.(.+)$/);
       if (wildcardMatch) {
         const [, fieldName, , columnKey] = wildcardMatch;
         const tableValue = formValues[fieldName];
         
-        if (Array.isArray(tableValue)) {
+        if (Array.isArray(tableValue) && tableValue.length > 0) {
           // Extract all values of the specified column
           sourceValue = (tableValue as Record<string, unknown>[])
-            .map((row) => row[columnKey])
+            .map((row) => row?.[columnKey])
             .filter((val) => val !== undefined && val !== null);
         } else {
-          continue;
+          // Empty table or not an array - return empty array for array returnType, otherwise skip
+          if (mapping.returnType === "array") {
+            sourceValue = [];
+          } else {
+            continue;
+          }
         }
       } else if (fromPath.includes("[") && fromPath.includes("]")) {
         // Handle indexed path: fieldName[0].columnKey
@@ -92,6 +98,10 @@ export async function mapFieldsToBody(
         
         if (fieldValue !== undefined && fieldValue !== null) {
           sourceValue = getValueByPath(fieldValue, restOfPath);
+          // If path resolution returns undefined, skip this mapping
+          if (sourceValue === undefined) {
+            continue;
+          }
         } else {
           continue;
         }
@@ -107,18 +117,48 @@ export async function mapFieldsToBody(
     }
 
     // Apply transformations if provided
-    if (sourceValue !== undefined) {
-      const transformedValue = await applyTransformation(
-        mapping.transform,
-        mapping.script,
-        sourceValue,
-        variables,
-        mapping.returnType
-      );
+    if (sourceValue !== undefined && sourceValue !== null) {
+      try {
+        // Basic type check before transformation - if returnType is specified and source is clearly wrong type, skip
+        if (mapping.returnType && mapping.returnType !== "any") {
+          const sourceType = Array.isArray(sourceValue) 
+            ? "array" 
+            : typeof sourceValue;
+          
+          // If source is an object/array but returnType expects a primitive, and no script/transform to convert it, warn
+          if (
+            (mapping.returnType === "string" || mapping.returnType === "number" || mapping.returnType === "boolean") &&
+            (sourceType === "object" && !Array.isArray(sourceValue)) &&
+            !mapping.script &&
+            !mapping.transform
+          ) {
+            console.warn(
+              `[Field Mapping] Type mismatch for "${mapping.from}" -> "${mapping.to}": source is object but returnType is ${mapping.returnType}. Skipping.`
+            );
+            continue;
+          }
+        }
 
-      // Set value at the specified path in the body
-      // setValueByPath returns a new object with all previous values + the new value at the path
-      body = setValueByPath(body, mapping.to, transformedValue);
+        const transformedValue = await applyTransformation(
+          mapping.transform,
+          mapping.script,
+          sourceValue,
+          variables,
+          mapping.returnType
+        );
+
+        // Set value at the specified path in the body
+        // setValueByPath returns a new object with all previous values + the new value at the path
+        body = setValueByPath(body, mapping.to, transformedValue);
+      } catch (error) {
+        // Log error but don't fail entire submission
+        console.error(
+          `[Field Mapping] Failed to map field "${mapping.from}" to "${mapping.to}":`,
+          error instanceof Error ? error.message : error
+        );
+        // Skip this mapping and continue with others
+        continue;
+      }
     }
   }
 

@@ -287,24 +287,32 @@ export async function executeCustomScript(
       );
     }
 
-    // Validate return type if specified
-    if (expectedReturnType && expectedReturnType !== "any") {
-      let validatedResult = result;
+      // Validate return type if specified
+      if (expectedReturnType && expectedReturnType !== "any") {
+        let validatedResult = result;
 
-      // Try to coerce to expected type if not already matching
-      if (!validateReturnType(result, expectedReturnType)) {
-        validatedResult = coerceToType(result, expectedReturnType);
+        // Try to coerce to expected type if not already matching
+        if (!validateReturnType(result, expectedReturnType)) {
+          validatedResult = coerceToType(result, expectedReturnType);
 
-        // If coercion didn't work, throw error
-        if (!validateReturnType(validatedResult, expectedReturnType)) {
-          throw new Error(
-            `Transformation result type mismatch. Expected ${expectedReturnType}, got ${typeof result}${Array.isArray(result) ? " (array)" : ""}`
-          );
+          // If coercion didn't work, throw error with more context
+          if (!validateReturnType(validatedResult, expectedReturnType)) {
+            const valueType = Array.isArray(result) 
+              ? "array" 
+              : result === null 
+                ? "null" 
+                : typeof result;
+            const valuePreview = typeof result === "object" && result !== null
+              ? JSON.stringify(result).substring(0, 100)
+              : String(result).substring(0, 100);
+            throw new Error(
+              `Transformation result type mismatch. Expected ${expectedReturnType}, got ${valueType}. Value: ${valuePreview}${valuePreview.length >= 100 ? "..." : ""}`
+            );
+          }
         }
-      }
 
-      return validatedResult;
-    }
+        return validatedResult;
+      }
 
     return result;
   } catch (error) {

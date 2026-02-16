@@ -281,9 +281,16 @@ fieldMapping:
       return notesStr.trim().replace(/\n{3,}/g, '\n\n'); // Max 2 consecutive newlines
 
   # Table field - Dependents/Beneficiaries
-  # Send entire table as array
+  # Send entire table as array (preserves original array structure)
   - from: dependents
     to: customer.dependents
+    returnType: array
+
+  # Send entire table as array directly (as-is, no transformation)
+  # The array will be sent exactly as stored: [{name: "...", relationship: "...", ...}, ...]
+  # returnType is optional - if omitted, it still sends as array but without type validation
+  - from: dependents
+    to: customer.dependents_array
     returnType: array
 
   # Send entire table as JSON string (for Workhub API)
