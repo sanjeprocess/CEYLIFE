@@ -398,7 +398,7 @@ export function validateField(
     case "table": {
       const tableField = field as IFormTableField;
       const tableValue = Array.isArray(value)
-        ? (value as Record<string, FormValue>[])
+        ? (value as unknown as Record<string, FormValue>[])
         : [];
 
       // Validate row count
@@ -629,7 +629,7 @@ export function validateForm(
     if (field.type === "table") {
       const tableField = field as IFormTableField;
       const tableValue = Array.isArray(value)
-        ? (value as Record<string, FormValue>[])
+        ? (value as unknown as Record<string, FormValue>[])
         : [];
 
       // Validate row count

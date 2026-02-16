@@ -7,6 +7,7 @@ export type FormValue =
   | string[]
   | number[]
   | boolean[]
+  | Record<string, FormValue>[]
   | null
   | undefined
   | File

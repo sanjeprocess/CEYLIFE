@@ -1,21 +1,21 @@
 "use client";
 
-import { IFormTableField, IFormTableColumn } from "@/common/interfaces/form.interfaces";
+import { IFormTableField } from "@/common/interfaces/form.interfaces";
 import { FormValue } from "@/common/types/common.types";
 import { useFormValue } from "@/hooks/useFormValue.hook";
 import { useTranslation } from "@/hooks/useTranslation.hook";
 import useFormStore from "@/stores/form.store";
 import { getFieldLabelKey } from "@/utils/fieldKey.utils";
 
+import { TableCell } from "./table-cell";
+import { Button } from "../atoms/button";
 import {
   Field,
   FieldContent,
   FieldDescription,
-  FieldLabel,
   FieldError,
+  FieldLabel,
 } from "../atoms/field";
-import { Button } from "../atoms/button";
-import { TableCell } from "./table-cell";
 
 interface TableFieldProps {
   field: IFormTableField;
@@ -28,9 +28,21 @@ export function TableField({ field, name }: TableFieldProps) {
   const getFieldError = useFormStore((state) => state.getFieldError);
 
   // Get table data as array of objects
-  const tableData = Array.isArray(computedValue)
-    ? (computedValue as Record<string, FormValue>[])
-    : [];
+  // Type guard to ensure it's an array of objects (not primitives or File arrays)
+  const isTableDataArray = (value: unknown): value is Record<string, FormValue>[] => {
+    if (!Array.isArray(value)) return false;
+    if (value.length === 0) return true; // Empty array is valid
+    // Check first element is an object (not File, not primitive)
+    const first = value[0];
+    return (
+      typeof first === "object" &&
+      first !== null &&
+      !(first instanceof File) &&
+      !Array.isArray(first)
+    );
+  };
+
+  const tableData = isTableDataArray(computedValue) ? computedValue : [];
 
   // Ensure columns exist - check both field.columns and handle potential parsing issues
   const columns = (field.columns && Array.isArray(field.columns) && field.columns.length > 0)
@@ -71,7 +83,8 @@ export function TableField({ field, name }: TableFieldProps) {
     if (!newData[rowIndex]) {
       newData[rowIndex] = {};
     }
-    newData[rowIndex] = { ...newData[rowIndex], [columnKey]: value };
+    const currentRow = newData[rowIndex] as Record<string, FormValue>;
+    newData[rowIndex] = { ...currentRow, [columnKey]: value };
     updateValue(newData);
   };
 
@@ -81,7 +94,6 @@ export function TableField({ field, name }: TableFieldProps) {
     : undefined;
 
   const fieldError = getFieldError(name);
-  const hasError = !!fieldError;
 
   // If no columns defined, show error message
   if (columns.length === 0) {
@@ -141,7 +153,7 @@ export function TableField({ field, name }: TableFieldProps) {
                         colSpan={columns.length + 1}
                         className="px-4 py-8 text-center text-sm text-muted-foreground"
                       >
-                        No rows added yet. Click "Add Row" to get started.
+                        No rows added yet. Click &quot;Add Row&quot; to get started.
                       </td>
                     </tr>
                   ) : (
@@ -184,7 +196,7 @@ export function TableField({ field, name }: TableFieldProps) {
         <div className="md:hidden space-y-4">
           {tableData.length === 0 ? (
             <div className="text-center text-sm text-muted-foreground py-8 border rounded-lg">
-              No rows added yet. Click "Add Row" to get started.
+              No rows added yet. Click &quot;Add Row&quot; to get started.
             </div>
           ) : (
             tableData.map((row, rowIndex) => (
