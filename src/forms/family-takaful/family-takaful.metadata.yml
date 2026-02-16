@@ -6,6 +6,7 @@ formDescription: (ALL ANSWERS TO BE FILLED LEGIBLY, ANSWERS MUST BE GIVEN IN WOR
 showFormHeader: true
 availableLocales:
   - en
+  - ta
 defaultLocale: en
 searchParamsVariables:
   cs: contract_sequence

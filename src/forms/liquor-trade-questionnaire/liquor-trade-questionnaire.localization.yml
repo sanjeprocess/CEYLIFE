@@ -81,4 +81,46 @@ si:
   text.agree: " "
   submit.button: "පෝරමය පුරවන්න"
   reset.button: "පෝරමයේ දත්ත මකන්න"
-ta: {}
+
+
+
+ta: 
+  formTitle: மதுவிற்பனை சம்பந்தமான வினாக்கொத்து
+  # Field Labels
+  ProposerName.label: "பிரேரிப்பவரின் பெயர்  :"
+  proposalNum.label: "பிரேரணை இல :"
+  occupation.label: "1.	உமது தொழில் என்ன? ஒன்றிற்கு மேற்பட்டிருப்பின் எல்லாவற்றையும் குறிப்பிடுக."
+  dutyInvolve.label: "2.	உமது கடமைகள் சம்பந்தமான தகவல்களைத் தரவும்."
+  teetotaler.label: "3.	நீர் மதுபான விரோதியா? அவ்வாறாயின் எப்போதும் மதுபான விரோதியாகவே இருந்தீரா? இல்லாவிடில் குறிப்பிடவும்."
+  teetotalerDetails.label: "வිස්තර දක්වන්න."
+  liquorType.label: "அ. நீர் அருந்திய மதுபான வகை?"
+  avgDailyIntake.label: "ஆ. தினமும் உட்கொள்ளும் சராசரி அலகுகள்,(இங்கு ஒரு அலகு என்பது ஒரு அவுன்ஸ் 'ஸ்பிரிட்' அல்லது 4 அவுன்ஸ் திராட்சை இரசம் அல்லது 10 அவுன்ஸ் பியர் பானத்தைக் குறிக்கும்)"
+  health.label: "4.	நீர் மதுபானம் அருந்தியமை எப்போதாவது உமது உடல் நலத்தை அல்லது உமது வேலைத் திறனைப் பாதித்துள்ளதா?"
+  smoker.label: "5.	நீர் புகைபிடிப்பவரா? அவ்வாறாயின் விவரங்களைக் குறிப்பிடவும்."
+  smokerDetails.label: "විස්තර දක්වන්න."
+  changeTheNature.label: "6.	அடுத்து வரும் 12 மாதங்களுக்குள் உமது சேவையின் தன்மையை மாற்ற உத்தேசித்துள்ளீரா? அவ்வாறாயின் விவரங்களைக் குறிப்பிடவும்."
+  changeTheNatureDetails.label: "විස්තර දක්වන්න."
+  date.label: "திகதி :"
+  signature.label: "பிரேரிப்பவரின் கையொப்பம் :"
+
+  # Options
+  dutyInvolve.options.Regular attendance at a bar: "அ. மதுபானசாலைக்கு தினமும் சமூகமளிக்க வேண்டுமா"
+  dutyInvolve.options.Part time attendance at a bar: "ஆ. மதுபானசாலைக்கு பகுதி நேரம் சமூகமளிக்க வேண்டுமா"
+  dutyInvolve.options.Supervisory duties only: "இ. மேற்பார்வை வேலைகள் மாத்திரமா?"
+  dutyInvolve.options.A regular shift or changeable working hours: "ஈ. வேலை நேரம் நிலையானதா அல்லது மாறக்கூடியதா"
+  dutyInvolve.options.Working in a brewery, distillery or winery: "உ. மதுபானம் காய்ச்சி, வடிக்கும் பகுதியிலா வேலை செய்கிறீர்"
+  
+  teetotaler.options.yes: "ஆம்"
+  teetotaler.options.no: "இல்லை"
+  
+  smoker.options.yes: "ஆம்"
+  smoker.options.no: "இல்லை"
+  
+  changeTheNature.options.yes: "ஆம்"
+  changeTheNature.options.no: "இல்லை"
+
+  # Layout Texts
+  text.declare: "எனது அறிவுக்கெட்டிய வகையில் என்னால் கொடுக்கப்பட்ட விடைகள் அனைத்தும் உண்மை எனவும், இப்பிரேரணையை மதிப்பிடுவதற்கோ அல்லது ஏற்றுக் கொள்வதற்கோ தூண்டக்கூடிய எந்தவொரு மூலத்தகவல்களையும் நான் மறைக்கவில்லை எனவும் இத்தால் உறுதி கூறுகிறேன்."
+  text.agree: "எனது ஆயுள் காப்புறுதி பிரேரணைக்கு இப்பத்திரம் ஒரு பகுதியாக அமையும் எனவும் இதில் எனக்குத் தெரிந்து என்னால் கொடுக்கப்படத் தவறும் எவ்வித மூலத்தகவல்களும் இவ் ஒப்பந்தத்தைச் செல்லுபடியற்றதாக்கும் என்பதற்கும் உடன்படுகின்றேன் "
+  submit.button: "பෝරමය පුරවන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"
