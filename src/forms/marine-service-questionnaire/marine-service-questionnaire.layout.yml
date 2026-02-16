@@ -13,6 +13,7 @@
 - field: businessPly
 - field: ports
 - field: vesselType
+- field: tropicalPorts
 - field: position
 - field: serviceYears
 - field: insurable

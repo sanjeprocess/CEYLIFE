@@ -32,8 +32,16 @@
 - field: policyNo  
 - field: assuredName
 
-- text: "I do hereby declare and agreed that I have read and understood the clause given below, and my life insurance policy is issued subject to the conditions stipulated therein.<br><br>'If the death of the Life Assured should occur as a result of engaging or participating in any way or any manner in any war or war like operation (whether war be declared or not), civil war, rebellion, insurrection, any terrorist activity, civil commotion, military or usurped power, riot, mutiny, invasion, act of foreign enemies or any act against any lawfully constituted authority the Company shall not be liable to make any payment whatsoever under the policy'.<br><br>As per the policy conditions and exclusions of the Supplementary Benefits, I further agreed that the Company is not liable to make any payment under the said benefits as defined in the Policy Schedule including Family Hospital Cash benefit on occurrence of an insured event under the said supplementary benefits." 
+# - text: "I do hereby declare and agreed that I have read and understood the clause given below, and my life insurance policy is issued subject to the conditions stipulated therein.<br><br>'If the death of the Life Assured should occur as a result of engaging or participating in any way or any manner in any war or war like operation (whether war be declared or not), civil war, rebellion, insurrection, any terrorist activity, civil commotion, military or usurped power, riot, mutiny, invasion, act of foreign enemies or any act against any lawfully constituted authority the Company shall not be liable to make any payment whatsoever under the policy'.<br><br>As per the policy conditions and exclusions of the Supplementary Benefits, I further agreed that the Company is not liable to make any payment under the said benefits as defined in the Policy Schedule including Family Hospital Cash benefit on occurrence of an insured event under the said supplementary benefits." 
+#   key: text.clause
+- text: "I do hereby declare and agreed that I have read and understood the clause given below, and my life insurance policy is issued subject to the conditions stipulated therein." 
+  key: text.first
+- text: "clause"
   key: text.clause
+- text: "**'If the death of the Life Assured should occur as a result of engaging or participating in any way or any manner in any war or war like operation (whether war be declared or not), civil war, rebellion, insurrection, any terrorist activity, civil commotion, military or usurped power, riot, mutiny, invasion, act of foreign enemies or any act against any lawfully constituted authority the Company shall not be liable to make any payment whatsoever under the policy'**" 
+  key: text.second
+- text: "As per the policy conditions and exclusions of the Supplementary Benefits, I further agreed that the Company is not liable to make any payment under the said benefits as defined in the Policy Schedule including Family Hospital Cash benefit on occurrence of an insured event under the said supplementary benefits." 
+  key: text.third
 - text: Your Faithfully,
   key: text.faithfully
 - field: signature

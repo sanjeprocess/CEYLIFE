@@ -51,6 +51,10 @@ fieldMapping:
     to: eBetweenWhatPorts
     returnType: string
 
+  - from: tropicalPorts
+    to: gWhichTropicalPortsWillTheShipCallAt
+    returnType: string
+
   # --- Personal/Job Information ---
   - from: position
     to: gWhatIsTheTitleOfYourPosition

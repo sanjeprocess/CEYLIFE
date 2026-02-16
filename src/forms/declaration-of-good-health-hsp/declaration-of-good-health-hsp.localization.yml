@@ -12,7 +12,7 @@ en:
   text.declaration: "I declare that the foregoing statements and answers given by me are true and accurate. I agree that these statements shall be the basis of the insurance policy between myself and Ceylinco Life Insurance Limited. Ceylinco Life Insurance Limited shall not be liable for any claims on account of illness or injury, the cause of which was known prior to approval of my request for this assurance."
   text.authorise: "I authorise any representative or a medical officer of Ceylinco Life Insurance Limited to peruse or obtain the Bed Head Ticket (BHT) or any other clinical notes from any Government / Private Hospital, Clinic, Nursing home, Asylum or sanatorium and authorise to obtain information from any other insurer."
   text.consent: "I hereby give my consent to Ceylinco Life Insurance Limited to verify (Online / Manual) my National Identity Card particulars with the department of Registration of Persons."
-  text.agree: "I agree and consent to Ceylinco Life Insurance Limited as well as their respective representatives, agents, the company's authorized service providers and relevant third parties whether within or outside Sri Lanka for collecting, using and / or disclosing my personal data for purposes reasonably required by the company to evaluate my proposal and provide the products or services which I am applying for."
+  text.agree: "I agree and consent to Ceylinco Life Insurance Limited as well as their respective representatives, agents, the company's authorized service providers and relevant third parties whether within or outside Sri Lanka for collecting, using and / or disclosing my personal data for purposes reasonably required by the company to evaluate my proposal and to provide the products or services which I am applying for."
   submit.button: "Submit Form"
   reset.button: "Reset Form"
 
@@ -159,16 +159,17 @@ en:
 
 si: 
   # Layout translations
-  card.important: "වැදගත්: <br><br> කරුණාකර ඔබේ සෞඛ්‍ය තත්ත්වය, රැකියාට, විනෝදාංශ හා පුරුදු පිළිබඳ සම්පූර්ණ විස්තරයක් සපයන්න.සත්‍ය තොරතුරක් වසන්කිරීම හෝ වැරදි ආකාරයෙන් සැපයීම, ඔබගේ රක්ෂණ ඔප්පුව ශුන්‍ය හා අවලංගු බවට පත්කිරීමට හේතු වේ.යම් තොරතුරක් වැදගත්ද යන්න පිළිබඳ සැකයක් වේ නම්, එවැන්නක් හෙළිදරව් කිරීම ඔබේ යහපත පිණිසම හේතු වේ."
+  formTitle: “යහපත් සෞඛ්‍ය තත්ත්වය පිළිබඳ ප්‍රකාශනය (හෙල්ත් සපෝර්ට් ප්‍රතිලාභය / විදේශගත ගනුදෙනුකරුවන් සඳහා)”
+  card.important: "වැදගත්: <br><br> කරුණාකර ඔබේ සෞඛ්‍ය තත්ත්වය, රැකියාව, විනෝදාංශ හා පුරුදු පිළිබඳ සම්පූර්ණ විස්තරයක් සපයන්න. සත්‍ය තොරතුරක් වසන්කිරීම හෝ වැරදි ආකාරයෙන් සැපයීම, ඔබගේ රක්ෂණ ඔප්පුව ශුන්‍ය හා අවලංගු බවට පත්කිරීමට හේතු වේ. යම් තොරතුරක් වැදගත්ද යන්න පිළිබඳ සැකයක් වේ නම්, එවැන්නක් හෙළිදරව් කිරීම ඔබේ යහපත පිණිසම හේතු වේ."
   card.life_assured: "1. රක්ෂිතයා"
   card.your_health_condition: "2. ඔබේ සෞඛ්‍ය තත්ත්වය"
   text.suffering_from_disorders: "ඔබ දැනට පහත සඳහන් අබලතාවයකින් හෝ රෝගයකින් පෙළෙන්නේද නැතහොත් ඔබ පසුගිය වසර 10 තුළ එවැන්නකින් පෙළුනේද? නොඑසේ නම් එවැන්නක් වැළඳුනේද?"
   card.other_information: "3. වෙනත් තොරතුරු"
   card.declaration: "ප්‍රකාශනය"
-  text.declaration: "මා විසින් ලබා දී ඇති ඉහත ප්‍රකාශන සහ පිළිතුරු සත්‍ය හා නිවැරදි බවට මම ප්‍රකාශ කරමි.මෙම ප්‍රකාශන මා සහ සීමාසහිත සෙලින්කෝ ජීවීත රක්ෂණ සමාගම අතර රක්ෂණ ගිවිසුමේ කොටසක් වන බවට මම එකඟ වෙමි.මෙම සහනිකය සඳහා මාගේ ඉල්ලීම අනුමත කිරීමට පෙර හේතුව දැන සිට රෝග හෝ තුවාල සම්බන්ධ කිසිදු හිමිකම් පෑමක් සඳහා සෙලින්කෝ ජීවිත රක්ෂණ සමාගම වගකියනු නොලැබේ."
-  text.authorise: "මම සෙලින්කෝ ජීවිත රක්ෂණ සමාගමේ කිසියම් නියෝජිතයෙකුට හෝ වෛද්‍ය නිලධාරියෙකුට කිසියම් රජයේ /පෞද්ගලික රෝහලක, සායනයක, නේවාසික රෝහලක, උපස්ථානාගාරයක හෝ ස්ටාස්ථාලයක ඇඳ ඉහ ටිකට්පත හෝ වෙනත් කිසියම් සොයනික සටහන් කියවා ගැනීමට හෝ ලබා ගැනීමට හෝ වෙනත් කිසියම් රක්ෂකයෙකුගෙන් තොරතුරු ලබා ගැනීමට අවසරය ලබා දෙමි."
-  text.consent: "පුද්ගලයින් ලියාපදිංචි කිරීමේ දෙපර්තමේන්තුව වෙතින් මාගේ/අපගේ ජාතික හැඳුනුම්පතේ තොරතුරු පරීක්ෂා කිරීමට සෙලින්කෝ ජීවන රක්ෂණ සමාගමට මෙයින් මාගේ/අපගේ කැමත්ත ලබා දෙමි/දෙමු."
-  text.agree: "මම/ අප විසින් ඉදිරිපත් කර ඇති මෙම යෝජනා පත්‍රය තක්සේරු කිරීමේ දී හා ඒ හා සම්බන්ධ රක්ෂණාවරණ හා අනෙකුත් සේවා සැපයීමට අදාළ අවශ්‍යතාවන් වෙනුවෙන් මාගේ/අපගේ පුද්ගලික තොරතුරු ලබා ගැනීමට, භාවිත කිරීමට හෝ හෙලි කිරීමට සෙලින්කෝ ලයිෆ් රක්ෂණ සමාගමට, ඔවුන්ගේ නියෝජිතයන්ට හා ශ්‍රී ලංකාව තුළ හෝ පිටත සිටින එකී සේවා සැපයීමට බලයලත් ආයතන වෙත මෙයින් අවසර දෙමි/දෙමු."
+  text.declaration: "මා විසින් ලබා දී ඇති ඉහත ප්‍රකාශන සහ පිළිතුරු සත්‍ය හා නිවැරදි බවට මම ප්‍රකාශ කරමි.  මෙම ප්‍රකාශන මා සහ සීමාසහිත සෙලින්කෝ ජීවිත රක්ෂණ සමාගම අතර රක්ෂණ ගිවිසුමේ කොටසක් වන බවට මම එකඟ වෙමි.  මෙම සහතිකය සඳහා මාගේ ඉල්ලීම අනුමත කිරීමට පෙර හේතුව දැන සිටි රෝග හෝ තුවාල සම්බන්ධ කිසිදු හිමිකම්පෑමක් සඳහා සෙලින්කෝ ජීවිත රක්ෂන සමාගම වගකියනු නොලැබේ."
+  text.authorise: "මම සෙලින්කෝ ජීවිත රක්ෂණ සමාගමේ කිසියම් නියෝජිතයෙකුට හෝ වෛද්‍ය නිලධාරියෙකුට කිසියම් රජයේ/පෞද්ගලික රෝහලක, සායනයක, නේවාසික රෝහලක, උපස්ථානාගාරයක හෝ ස්වාස්ථාලයක ඇඳ ඉහ ටිකට්පත හෝ වෙනත් කිසියම් සායනික සටහන් කියවා ගැනීමට හෝ ලබාගැනීමට හෝ වෙනත් කිසියම් රක්ෂකයෙකුගෙන් තොරතුරු ලබාගැනීමට අවසරය ලබාදෙමි."
+  text.consent: "පුද්ගලයන් ලියාපදිංචි කිරීමේ දෙපාර්තමේන්තුව වෙතින් මාගේ ජාතික හැඳුනුම්පතේ තොරතුරු පරීක්ෂා කිරීමට සෙලින්කෝ ජීවිත රක්ෂණ සමාගමට මෙයින් මාගේ කැමැත්ත ලබාදෙමි."
+  text.agree: "මම විසින් ඉදිරිපත් කර ඇති මෙම යෝජනා පත්‍රය තක්සේරු කිරීමේ දී හා ඒ හා සම්බන්ධ රක්ෂණාවරණ හා අනෙකු සේවා සැපයීමට අදාළ අවශ්‍යතාවන් වෙනුවෙන් මාගේ පුද්ගලික තොරතුරු ලබාගැනීමට, භාවිත කිරීමට හෝ හෙළි කිරීමට සෙලින්කෝ ලයිෆ් රක්ෂණ සමාගමට, ඔවුන්ගේ නියෝජිතයන්ට හා ශ්‍රී ලංකාව තුළ හෝ පිටත සිටින එකී සේවා සැපයීමට බලයලත් ආයතන වෙත මෙයින් අවසරය දෙමි."
   submit.button: "පෝරමය පුරවන්න"
   reset.button: "පෝරමයේ දත්ත මකන්න"
 
@@ -194,7 +195,7 @@ si:
   16AnnualIncome.label: "1.6 වාර්ෂික ආදායම :"
 
   # Section 2: Your Health Condition
-  21Diabetes.label: "2.1 දිය වැඩියාව"
+  21Diabetes.label: "2.1 දියවැඩියාව"
   21Diabetes.options.yes: "ඔව්"
   21Diabetes.options.no: "නැත"
   21Details.label: "කරුණාකර විස්තර දක්වන්න"
@@ -229,7 +230,7 @@ si:
   27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.options.no: "නැත"
   27Details.label: "කරුණාකර විස්තර දක්වන්න"
 
-  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.label: "2.8 පෙනහථවල කිසියම් රෝග, උදා: නිතර ඇතිවන කැස්ස, ඇදුම, ශ්වාසනාලිකා ප්‍රදාහය, ඛේටය සමඟ රුධිරය පිටවීම, ක්ෂය රෝගය ආදිය"
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.label: "2.8 පෙනහළු වල කිසියම් රෝග, උදා: නිතර ඇතිවන කැස්ස, ඇදුම, ශ්වාසනාලිකා ප්‍රදාහය, ඛේටය සමඟ රුධිරය පිටවීම, ක්ෂය රෝගය ආදිය"
   28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.options.yes: "ඔව්"
   28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.options.no: "නැත"
   healthQ2_8Details.label: "කරුණාකර විස්තර දක්වන්න"
@@ -249,7 +250,7 @@ si:
   211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.options.no: "නැත"
   211Details.label: "කරුණාකර විස්තර දක්වන්න"
 
-  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.label: "2.12 අස්ථි, සන්ධි ආශ්‍රිත රෝග / ආබාධ හෝ රක්තවානය, වාත රක්තය /වාන රක්ත උණ, සන්ධි ප්‍රදාහය"
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.label: "2.12 කොඳුඇටපෙළ, අස්ථි, සන්ධි ආශ්‍රීත රෝග / ආබාධ හෝ රක්තවාතය, වාතරක්තය / වාතරක්ත උණ, සන්ධි ප්‍රදාහය"
   212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.options.yes: "ඔව්"
   212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.options.no: "නැත"
   212Details.label: "කරුණාකර විස්තර දක්වන්න"
@@ -312,4 +313,160 @@ si:
 
   date.label: "දිනය"
   signatureOfLifeAssured.label: "රක්ෂිතයාගේ අත්සන"
-ta: {}
+ta: 
+
+# Layout translations
+  formTitle: “நல்லாரோக்கியம் பற்றிய வெளிப்படுத்துகை<br>(HSP / வெளிநாடுகளில் வசிக்கும் வாடிக்கையாளர்கள்)”
+  card.important: "முக்கியம்: <br><br> தயவு செய்து உங்கள் உடல் ஆரோக்கியம், தொழில், பழக்கவழக்கங்கள் மற்றும் நாட்டங்கள் பற்றிய முழமையான வெளிப்படுத்துகையை செய்யவும். வெளிப்படுத்தாமை அல்லது பிறழ்கூற்று உங்கள் காப்புறதியை வெற்று வெறிதாக்கும் ஏதாவது முக்கிய அம்சங்கள் தரப்படல் வேண்டுமென நீங்கள் நினைத்தால் அவற்றை வெளிப்படுத்துவது உங்கள் கடமையாகும்."
+  card.life_assured: "1.	ஆயுட் காப்புறுதி செய்யப்பட்டவர்"
+  card.your_health_condition: "2.	உங்கள் உடல் ஆரோக்கிய நிலைமை "
+  text.suffering_from_disorders: "உங்களுக்கு தற்சமயம் கீழ்குறிப்பிட்டுள்ள குறைபாடுகள் / நோய்கள் காணப்படுகின்றனவா? அல்லது கடந்த 10 வருட காலத்தினுள் அக்குறைபாடுகள் / நோய்கள் காணப்பட்டதா?"
+  card.other_information: "3.	ஏனைய தகவல்கள்"
+  card.declaration: "வெளிப்படுத்துகை"
+  text.declaration: "என்னால் மேலே தரப்பட்ட கூற்றுக்கள் மற்றும் பதில்கள் உண்மையானவை மற்றும் சரியானவை என நாம் வெளிப்படுத்துகின்றேன். இக் கூற்றுக்கள் எனக்கும் செலிங்கோ லைஃப் இன்சூரன்ஸ் லிமிட்டட்டிற்கும் இடையிலான காப்புறதியின் அடிப்படையாகும் என்பதையும் ஏற்றுக் கொள்கின்றேன். இந்தப் காப்புறுதியினை ஏற்றுக் கொள்வதற்கான எனது வேண்டுகோளிற்கு முன்னராக அறியப்பட்ட ஏதாவது நோய்கள் அல்லது காயங்கள் சம்பந்தமான எந்தவொரு கோரிக்கைக்கும் செலிங்கோ லைஃப் இன்சூரன்ஸ் லிமிட்டட் பொறுப்புடையதாகாது."
+  text.authorise: "செலிங்கோ லைஃப் இன்சூரன்ஸ் லிமிட்டட் கம்பனியின் எந்தவொரு பிரதிநிதியோ அல்லது வைத்திய அதிகாரியொருவர் எனது தலைமாட்டுத் துண்டு (BHT) அல்லது ஏதாவது மருத்துவ குறிப்புகளை ஏதாவது அரசினர் / தனியார் வைத்தியசாலை மருத்துவமனை சிகிச்சையகம் அல்லது அடைக்கல நிலையம் இவற்றிலிருந்து பெறவும் பரிசீலனை செய்யவும் மற்றும் வேறொரு காப்புறுதி கம்பனியிலிருந்து தகவல்களைப் பெறுவதற்கும் நான் அதிகாரமளிக்கின்றேன்."
+  text.consent: "ஆட்பதிவு திணைக்களத்திலிருந்து எனது / எமது தேசிய அடையாள அட்டை விபரங்களை சரிபார்க்க (நிகழ்நிலை / நேரடியாக) செலிங்கோ லைஃப் இன்சூரன்ஸ் லிமிட்டட் கம்பனிக்கு எனது / எமது சம்மதத்தை வழங்குகின்றோம்."
+  text.agree: "நான் விண்ணப்பித்திருக்கும் திட்டங்கள் மற்றும் சேவைகளை வழங்குவதற்காக நான் / நாம் விண்ணப்பித்துள்ள பிரேரணையில் உள்ள எனது / எமது தனிப்பட்ட தகவல்களை பொருத்தமான காரணங்களிற்காக இலங்கைக்குள் அல்லது இலங்கைக்கு வெளியில் செலிங்கோ லைஃப் இன்சூரன்ஸ் லிமிட்டட் கம்பனிக்கு அதன் பிரதிநிதிகளுக்கு, முகவர்களுக்கு, கம்பனியின் அதிகாரமளிக்கப்பட்ட சேவை வழங்குநர்கள் மற்றும் மூன்றாம் தரப்பினர்களுக்கு வெளியிடவும், தகவல்களை சேகரிக்கவும் நான் / நாம் ஏற்றுக் கொள்வதுடன் சம்மதத்தையும் வழங்குகின்றேன் / வழங்குகிறோம்."
+  submit.button: "පෝරමය පුරවන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"
+
+  # Section 1: Life Assured
+  policyNo.label: "காப்புறுதி இல:"
+  11FullName.label: "1.1	முழுப்பெயர்  :"
+  gender.label: "ස්ත්‍රී පුරුෂ භාවය:"
+  gender.options.male: "පුරුෂ"
+  gender.options.female: "ස්ත්‍රී"
+  gender.options.other: " වෙනත්/ප්‍රකාශ කිරීමට කැමත්තක් නොදක්වයි"
+  12CurrentAddress.label: "1.2	தற்போதைய முகவரி"
+  
+  country.label: "நாடு:"
+  city.label: "நகரம் :"
+  emailAddress.label: "மின் அஞ்சல் முகவரி :"
+  telephoneFixed.label: "நிலையான தொ. பேசி   :"
+  mobile.label: "கைத்தொலைபேசி இல  :"
+  13DateOfBirth.label: "1.3	பிறந்த திகதி :"
+  14Height.label: "1.4 உயரம் :"
+  weight.label: "நிறை"
+  15OccupationJobTitleBusinessAndItsNature.label: "1.5 தொழில் / உத்தியோகத் தலைப்பு / வியாபாரமும் அதன் தன்மையும்  :"
+  nameOfTheEmployee.label: "தொழில் தருநரின் பெயர் :"
+  16AnnualIncome.label: "1.6 வருடாந்த வருமானம்  :"
+
+  # Section 2: Your Health Condition
+  21Diabetes.label: "2.1 நீரிழிவு	"
+  21Diabetes.options.yes: "ஆம்"
+  21Diabetes.options.no: "இல்லை"
+  21Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  22HighBloodPressure.label: "2.2 உயர் கருதி அமுக்கம்"
+  22HighBloodPressure.options.yes: "ஆம்"
+  22HighBloodPressure.options.no: "இல்லை"
+  22Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  23ElevatedCholesterol.label: "2.3 உயர் கொலஸ்ரோல்"
+  23ElevatedCholesterol.options.yes: "ஆம்"
+  23ElevatedCholesterol.options.no: "இல்லை"
+  23Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  24CardiovascularSystemDiseaseASDVSD.label: "2.4 இதய சுற்றோட்ட தொகுதியில் ஏற்படும் ஏதாவது நோய்கள் உ+ம்: இதய நோய், மூச்செடுப்பதில் சிரமம், நெஞ்சு வலி, இதயத்தில் துவாரம் (ASD/VSD)"
+  24CardiovascularSystemDiseaseASDVSD.options.yes: "ஆம்"
+  24CardiovascularSystemDiseaseASDVSD.options.no: "இல்லை"
+  24Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  25CystNoduleTumorGrowthOrAnyTypeOfCancer.label: "2.5 கட்டிகள், முடிச்சுகள், கொப்பளங்கள் அல்லது ஏதாவது வகையான புற்றுநோய்"
+  25CystNoduleTumorGrowthOrAnyTypeOfCancer.options.yes: "ஆம்"
+  25CystNoduleTumorGrowthOrAnyTypeOfCancer.options.no: "இல்லை"
+  25Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc.label: "2.6 குருதிச் சோகை, குருதிப் புற்றுநொய், தலசீமியா போன்ற குரதியில் ஏற்படும் நோய்கள்"
+  26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc.options.yes: "ஆம்"
+  26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc.options.no: "இல்லை"
+  26Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.label: "2.7 குருதிச் சோகை, குருதிப் புற்றுநொய், தலசீமியா போன்ற குரதியில் ஏற்படும் நோய்கள்"
+  27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.options.yes: "ஆம்"
+  27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc.options.no: "இல்லை"
+  27Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.label: "2.8	சுவாசப்பை நோய்கள் உ+ம்: தொடர்ச்சியான இருமல், ஆஸ்துமா, புரொங்கைற்ரிஸ், இரத்தம் கக்குதல், கசம் தொடர்பான ஏதாவது நோய்கள்."
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.options.yes: "ஆம்"
+  28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc.options.no: "இல்லை"
+  healthQ2_8Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc.label: "2.9	குடல் அல்லது இரைப்பைத் தொகுதி சம்பந்தமான ஏதாவது நோய்கள் உ+ம்: குடல் புண், நீண்ட கால சமிபாட்டுக் குறைபாடு / வயிற்றோட்டம் / வயிற்று வலி / மூல வியாதி / பிளவு, குடல் இறக்கம் அல்லது ஈரல் நோய், மஞ்சள் காமாலை, ஈரல் அழற்சி அல்லது பித்தப்பை நோய்கள். "
+  29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc.options.yes: "ஆம்"
+  29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc.options.no: "இல்லை"
+  29Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc.label: "2.10	பிறப்புறுப்பு சிறுநீர்த் தொகுதி சம்பந்தமான ஏதாவது நோய்கள் உ+ம்: கருப்பைக் கட்டி, சூலகக் கட்டி என்டோமற்றியோசிஸ், அதிகரித்த அல்லது ஒழுங்கில்லாத மாதவிடாய், முன்னிற்கும் சுரப்பி நோய், சிறுநீரக / சிறுநீர்ப்பை கற்கள், சிறுநீரக செயலிழப்பு அல்லது வேறு ஏதாவது சிறுநீரக நோய்கள்."
+  210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc.options.yes: "ஆம்"
+  210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc.options.no: "இல்லை"
+  210Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.label: "2.11	கண், காது, மூக்கு அல்லது தொண்டை சம்பந்தமான ஏதாவது நோய்கள் உ+ம்: கண் புரை, தொண்டைக் கழலை போன்றவை."
+  211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.options.yes: "ஆம்"
+  211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc.options.no: "இல்லை"
+  211Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.label: "2.12	முள்ளத்தண்டு, எலும்புகள், மூட்டுகள் சம்பந்தமான நோய்கள் ஏதாவது / கோளாறுகள் அல்லது கீல் வாதம், வாத நோய் / வாதக் காய்ச்சல் அல்லது ஆத்திரைட்டிஸ்"
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.options.yes: "ஆம்"
+  212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis.options.no: "இல்லை"
+  212Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge.label: "2.13	ஏதாவது பாலியல் ரீதியாகக் கடத்தப்படும் நோய்கள் உ+ம்: கொனோரியா, சிபிலிஸ், எமிட்ஸ் அல்லது ஏதாவது பிறப்புறுப்பு புண்கள் அல்லது சீழ் வெளியேற்றம்"
+  213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge.options.yes: "ஆம்"
+  213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge.options.no: "இல்லை"
+  213Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  214ChronicOrCongenitalSkinCondition.label: "2.14	நாட்பட்ட அல்லது பிறப்பில் இருந்தான தோல் நிலைமைகள்"
+  214ChronicOrCongenitalSkinCondition.options.yes: "ஆம்"
+  214ChronicOrCongenitalSkinCondition.options.no: "இல்லை"
+  214Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  215AnyMentalImpairmentsDisorderOrIllness.label: "2.15	ஏதாவது மனரீதியான குறைபாடுகள், கோளாறுகள் அல்லது நோய்கள் "
+  215AnyMentalImpairmentsDisorderOrIllness.options.yes: "ஆம்"
+  215AnyMentalImpairmentsDisorderOrIllness.options.no: "இல்லை"
+  215Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  216AnyCongenitalDisordersDeformitiesOrAnomalies.label: "2.16	பிறவிக் குறைபாடுகள், இயலாமைகள் அல்லது கோளாறுகள் "
+  216AnyCongenitalDisordersDeformitiesOrAnomalies.options.yes: "ஆம்"
+  216AnyCongenitalDisordersDeformitiesOrAnomalies.options.no: "இல்லை"
+  216Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  217ACovid19InfectionOrItsComplication.label: "2.17	கொவிட்-19 தொற்று அல்லது அதன் சிக்கல்கள்"
+  217ACovid19InfectionOrItsComplication.options.yes: "ஆம்"
+  217ACovid19InfectionOrItsComplication.options.no: "இல்லை"
+  217Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  218AnyOtherDiseaseNotMentionedHerein.label: "2.18	மேலே குறிப்பிடப்படாத ஏதாவது நோய்கள்"
+  218AnyOtherDiseaseNotMentionedHerein.options.yes: "ஆம்"
+  218AnyOtherDiseaseNotMentionedHerein.options.no: "இல்லை"
+  218Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  # Section 3: Other Information
+  31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years.label: "3.1	கடந்த 5 வருடங்களிற்குள்ளாக வழமையான சோதனைகள் அல்லது புலனாய்வு மற்றும் இரத்தப் பரிசோதனை என்பவற்றிற்காக நீங்கள் ஒரு வைத்தியரின் /  அறுவைச் சிகிச்சை நிபுணரின் ஆலொசனையைப் பெற்றீரா?"
+  31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years.options.yes: "ஆம்"
+  31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years.options.no: "இல்லை"
+  31Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity.label: "3.2	நீங்கள் மது /  போதைவஸ்து அருந்துபவரா அல்லது புகைப்பிடிப்பவரா? (அப்படியாயின், பாவிக்கும் அளவையையும் தடவைகளையும் தரவும்)"
+  32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity.options.yes: "ஆம்"
+  32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity.options.no: "இல்லை"
+  32Details.label: "කරුණාකර වාර ගණන සහ ප්‍රමාණය සඳහන් කරන්න."
+
+  33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium.label: "3.3	உங்கள் ஏதாவது காப்புறுதிப் பிரேரணைகள் எப்போதாவது மறுக்கப்பட்டோ அல்லது பின்போடப்பட்டோ அல்லது மேலதிக கட்டுப்பணத்துடன் ஏற்கப்பட்டுள்ளதா?"
+  33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium.options.yes: "ஆம்"
+  33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium.options.no: "இல்லை"
+  33Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou.label: "3.4	நீங்கள் அல்லது உங்கள் உறவினர்கள் ஏதாவது வகையிலான உயிர் அச்சுறுத்தலை கொண்டிருந்தீர்களா அல்லது கொண்டுள்ளீர்களா அல்லது உங்களுக்கு எதிராக ஏதாவது குற்றவியல் வழக்குகள் உள்ளனவா?  "
+  34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou.options.yes: "ஆம்"
+  34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou.options.no: "இல்லை"
+  34Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP.label: "3.5	நீங்கள் ஒரு அரசியல் ஆபத்துக்களை எதிர்கொள்ளும் (Politically Exposed Person (*PEP) நபரா அல்லது அவர்களுடன் தொடர்புடையவரா? (*PEP – அரசியல்வாதகிள், சிரேஷ்ட அரசாங்க உத்தியோகத்தர்கள், நீதிபதிகள் மற்றும் நீதித்துறை உத்தியோகத்தர்கள், இராணுவ / பொலிஸ் படைகளின் உயர்அதிகாரிகள், ஆணைக்குழக்கள் / பணிப்பாளர் சபை, பல்கலைக்கழக ஆலோசனை சபை என்பவற்றின் உறுப்பினர்கள் மற்றும் சர்வதேச நிறுவனங்களின் அதிகாரிகள்) ஏதாவது ஒரு வினாவிற்கு 'ஆம்' என விடையளிக்கப்பட்டிருந்தால் தயவு செய்து கீழே முழு விபரமும் தருக."
+  35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP.options.yes: "ஆம்"
+  35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP.options.no: "இல்லை"
+  35Details.label: "කරුණාකර විස්තර දක්වන්න"
+
+  date.label: "திகதி"
+  signatureOfLifeAssured.label: "துணையின் கையொப்பம்"

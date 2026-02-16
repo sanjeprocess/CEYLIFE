@@ -3,8 +3,8 @@
 
 en:
   # Field labels
-  proposersName.label: "1. Proposer's Name"
-  contractNumber.label: "2. Contract Number"
+  proposersName.label: "Proposer's Name"
+  contractNumber.label: "Contract Number"
   firstDateOfMenstrualPeriod.label: "3. Date of first date of the last menstrual period"
   deliveryDate.label: "4. Expected date of delivery"
   medicalDetails.label: "5. Are you being-treated or closely monitored due to elevated blood pressure, diabetes or for any other pregnant related complications? if so,please give details and forward related medical reports."
@@ -42,8 +42,8 @@ en:
 
 si:
   # Field labels
-  proposersName.label: "1. යෝජකයාගේ නම"
-  contractNumber.label: "2. යෝජනාපත්‍ර / ඔප්පු අංකය"
+  proposersName.label: "යෝජකයාගේ නම"
+  contractNumber.label: "යෝජනාපත්‍ර / ඔප්පු අංකය"
   firstDateOfMenstrualPeriod.label: "3. අවසන් වරට ඇති වූ මාසික ශුද්ධියේ ප්‍රථම දිනය :"
   deliveryDate.label: "4. ප්‍රසුතිය නියමිත දිනය :"
   medicalDetails.label: "5. අධිරුධිර පීඩනය, දියවැඩියාව හෝ වෙනයම් ගර්භනි සංකූලතාවයක් සඳහා ප්‍රතිකාර ලබා ගත්තේද? / ගන්නේද? නැතිනම් සුපරීක්ෂාවෙන් සිටින්නේද?"
@@ -78,4 +78,44 @@ si:
   text.declaration: "ඉහත පිළිතුරු මාගේ දැනුමේ ප්‍රකාර සත්‍ය හා නිවැරදි බව ප්‍රකාශ කර සිටිමි.තවද මෙම ආකෘති පත්‍රය යෝජනා පත්‍රයේම කොටසක් බවත්, කිසියම් වැදගත් තොරතුරක් වසන් කිරීමෙන් මෙම ගිවිසුම අහෝසි වීමට හේතු වන බව මා දන්නා බවත් ප්‍රකාශ කරමි."
   submit.button: "පෝරමය පුරවන්න"
   reset.button: "පෝරමයේ දත්ත මකන්න"
-ta: {}
+
+
+
+ta:
+  # Field labels
+  proposersName.label: "பிரேரிப்பவரின் பெயர்"
+  contractNumber.label: "பிரேரணை இல"
+  firstDateOfMenstrualPeriod.label: "3. 	கடைசி மாதவிடாய் ஆரம்பித்த திகதி :"
+  deliveryDate.label: "4.	மகப்பேறு எதிர்பார்க்கப்படும் திகதி :"
+  medicalDetails.label: "5. உங்களுக்கு உயர் குருதியமுக்கம், நீரிழிவு அல்லது வேறேதும் கர்ப்ப கால சிகிச்சை அளிக்கப்படுகின்றதா? அல்லது தொடர்ச்சியான மருத்துவக் கண்காணிப்பில் உள்ளீரா? 'ஆம்' எனில், விபரங்கள் தருவதுடன் தொடர்புடைய மருத்துவ அறிக்கைகளையும் சமர்ப்பிக்கவும்"
+  
+  abnormalitiesPertaining.label: "6.	தற்போதைய கர்ப்பம் தொடர்புடைய எதுவிதமான சிக்கல்கள் பற்றி நீங்கள் அறிந்துள்ளீர்களா? 'ஆம்' எனில் தயவுசெய்து விபரங்களைத் தரவும். "
+  abnormalitiesPertaining.options.yes: "ஆம்"
+  abnormalitiesPertaining.options.no: "இல்லை"
+  
+  abnormalitiesDetails.label: "කරුණාකර විස්තර දක්වන්න."
+
+  haveChildren.label: "1.	உங்களுக்கு பிள்ளைகள் உண்டா?  "
+  haveChildren.options.yes: "ஆம்"
+  haveChildren.options.no: "இல்லை"
+
+  childrenNo.label: "'ஆம்' எனில், எத்தனை பேர்?"
+
+  prematureBirth.label: "2.	இவற்றுள் குறைமாதப் பிள்ளைகள் உள்ளனரா? "
+
+  treatedforPregnancyRelatedComplications.label: "3.	கடந்த பிரசவங்களின் போது உயர் குருதியமுக்கம், நீரிழிவு, அல்லது அசாதாரண சிறுநீர் / குருதிப் பரிசோதனை அறிக்கைகள் அல்லது வேறேதாவது சுகயீனங்களினால் பாதிக்கப்பட்டிருந்தீர்களா? 'ஆம்' எனில், விபரங்கள் தருக. "
+  treatedforPregnancyRelatedComplications.options.yes: "ஆம்"
+  treatedforPregnancyRelatedComplications.options.no: "இல்லை"
+
+  complicationsDetails.label: "කරුණාකර විස්තර දක්වන්න."
+
+  date.label: "திகதி"
+  signature.label: "ஆயுட்காப்புறுதி செய்யப்பட்டவரின் கையொப்பம்"
+
+  # Layout translations
+  h1.title: "கர்ப்பம் தொடர்பான வினாக்கொத்து"
+  card.presentPregnancy: "தற்போதைய கர்ப்பம்"
+  card.pastPregnancy: "முன்னைய கர்ப்பம்"
+  text.declaration: "மேற்குறிப்பிட்ட விடைகள் எனது அறிவுக்கெட்டிய வரையில் உண்மை எனவும் சரியானவை எனவும் வெளிப்படுத்துகின்றேன். இந்த வினாக்கொத்து எனது ஆயுள்காப்புறுதி பிரேரணையின் பகுதி என்பதையும், எனக்கு தெரிந்த முக்கியமான தகவல்களை வெளிப்படுத்தாமை எனது காப்புறுதியை செல்லுபடியற்றதாக்கலாம் என்பதற்கு நான் உடன்படுகின்றேன்."
+  submit.button: "පෝරමය පුරවන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"

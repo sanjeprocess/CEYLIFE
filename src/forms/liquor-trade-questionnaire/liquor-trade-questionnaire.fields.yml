@@ -20,18 +20,18 @@ occupation:
   defaultValue: ""
 dutyInvolve:
   type: checkbox-group
-  label: "2. Do your duties involve (give details) :"
+  label: "2. Which of the following duties are part of your role?"
   required: false
   defaultValue: ""
   options:
-    Regular attendance at a bar: (a) Regular attendance at a bar?
-    Part time attendance at a bar: (b) Part time attendance at a bar?
-    Supervisory duties only: (c) Supervisory duties only?
-    A regular shift or changeable working hours: (d) A regular shift or changeable working hours?
-    Working in a brewery, distillery or winery: (e) Working in a brewery, distillery or winery?
+    Regular attendance at a bar: (a) Regular attendance at a bar
+    Part time attendance at a bar: (b) Part time attendance at a bar
+    Supervisory duties only: (c) Supervisory duties only
+    A regular shift or changeable working hours: (d) A regular shift or changeable working hours
+    Working in a brewery, distillery or winery: (e) Working in a brewery, distillery or winery
 teetotaler:
   type: radio-group
-  label: 3. Are you a teetotaler?
+  label: 3. Are you a teetotaler? If so, have you always been so? 
   required: false
   defaultValue: ""
   options:

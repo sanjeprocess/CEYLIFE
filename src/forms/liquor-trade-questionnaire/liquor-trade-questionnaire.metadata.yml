@@ -7,6 +7,7 @@ showFormHeader: true
 availableLocales:
   - en
   - si
+  - ta
 otpRequired: true
 searchParamsVariables:
   cs: contract_sequence
