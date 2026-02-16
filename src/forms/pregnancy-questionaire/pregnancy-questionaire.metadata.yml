@@ -7,6 +7,7 @@ showFormHeader: false
 availableLocales:
   - en
   - si
+  - ta
 defaultLocale: en
 searchParamsVariables:
   cs: contract_sequence

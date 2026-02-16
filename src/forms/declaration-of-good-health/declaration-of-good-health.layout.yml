@@ -21,6 +21,7 @@
     - field: applyTo
     - field: applyToBenifit
 - card: Your Health/Other Details
+  key: card.your_health_other_details
   items:
     - field: healthQ1
     - field: healthQ1Details
