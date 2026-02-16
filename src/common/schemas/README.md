@@ -31,7 +31,7 @@ You can also manually reference the schema in your JSON files by adding this at 
 The schema validates:
 
 - ✅ **Form Structure**: metadata, submission, fields, layout, localization
-- ✅ **Field Types**: All 15 field types (text, number, email, password, date, time, datetime-local, checkbox, radio-group, checkbox-group, select, textarea, file, url, tel)
+- ✅ **Field Types**: All 18 field types (text, number, email, password, date, time, datetime-local, checkbox, radio-group, checkbox-group, select, textarea, file, url, tel, age, currency, table)
 - ✅ **Validation Rules**: minLength, maxLength, min, max, pattern
 - ✅ **Conditional Fields**: Dependencies and conditional options
 - ✅ **Layout Items**: All layout types (field, h1-h6, text, spacer, divider, card, row, submit, reset)

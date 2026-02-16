@@ -54,6 +54,8 @@ function validateReturnType(value: unknown, expectedType: string): boolean {
       return (
         typeof value === "object" && value !== null && !Array.isArray(value)
       );
+    case "json":
+      return typeof value === "string";
     default:
       return false;
   }
@@ -115,6 +117,15 @@ function coerceToType(value: unknown, targetType: string): unknown {
       }
       if (!Array.isArray(value)) {
         return [value];
+      }
+      break;
+    case "json":
+      // Serialize value to JSON string
+      try {
+        return JSON.stringify(value);
+      } catch (error) {
+        console.warn("[Form Transformation] Failed to serialize value to JSON:", error);
+        return String(value);
       }
       break;
   }
@@ -187,6 +198,13 @@ const builtInTransformations: Record<
       throw new Error(`Cannot parse "${value}" as date`);
     }
     return date.toISOString();
+  },
+  toJson: (value: unknown) => {
+    try {
+      return JSON.stringify(value);
+    } catch (error) {
+      throw new Error(`Cannot serialize value to JSON: ${error instanceof Error ? error.message : "Unknown error"}`);
+    }
   },
   formatDate: (value: unknown, options?: Record<string, unknown>) => {
     const date = value instanceof Date ? value : new Date(String(value));

@@ -1,5 +1,5 @@
 import { IFormSubmissionFieldMapping } from "@/common/interfaces/form.interfaces";
-import { setValueByPath } from "@/utils/path.utils";
+import { setValueByPath, getValueByPath } from "@/utils/path.utils";
 
 import { applyTransformation } from "./form-transformation.service";
 import { replaceVariablesInTextWithRuntime } from "./variable-replacement.service";
@@ -66,13 +66,44 @@ export async function mapFieldsToBody(
         runtimeVariables
       );
     } else {
-      // Form field value - keep original type
-      const formValue = formValues[mapping.from];
-      if (formValue === undefined || formValue === null) {
-        // Skip if field value is not present
-        continue;
+      // Form field value - handle table field paths with wildcards
+      const fromPath = mapping.from;
+      
+      // Check for wildcard pattern: fieldName[*].columnKey
+      const wildcardMatch = fromPath.match(/^(.+)\[(\*)\]\.(.+)$/);
+      if (wildcardMatch) {
+        const [, fieldName, , columnKey] = wildcardMatch;
+        const tableValue = formValues[fieldName];
+        
+        if (Array.isArray(tableValue)) {
+          // Extract all values of the specified column
+          sourceValue = (tableValue as Record<string, unknown>[])
+            .map((row) => row[columnKey])
+            .filter((val) => val !== undefined && val !== null);
+        } else {
+          continue;
+        }
+      } else if (fromPath.includes("[") && fromPath.includes("]")) {
+        // Handle indexed path: fieldName[0].columnKey
+        // Use getValueByPath to extract the value
+        const fieldName = fromPath.split("[")[0];
+        const restOfPath = fromPath.substring(fieldName.length);
+        const fieldValue = formValues[fieldName];
+        
+        if (fieldValue !== undefined && fieldValue !== null) {
+          sourceValue = getValueByPath(fieldValue, restOfPath);
+        } else {
+          continue;
+        }
+      } else {
+        // Regular field value - keep original type
+        const formValue = formValues[fromPath];
+        if (formValue === undefined || formValue === null) {
+          // Skip if field value is not present
+          continue;
+        }
+        sourceValue = formValue;
       }
-      sourceValue = formValue;
     }
 
     // Apply transformations if provided

@@ -2,6 +2,7 @@ import {
   IFormAgeField,
   IFormField,
   IFormLayoutItem,
+  IFormTableField,
 } from "@/common/interfaces/form.interfaces";
 
 import { AgeField } from "./age-field";
@@ -16,6 +17,7 @@ import { ResetButton } from "./reset-button";
 import { RowLayout } from "./row-layout";
 import { SelectField } from "./select-field";
 import { SubmitButton } from "./submit-button";
+import { TableField } from "./table-field";
 import { TextCard } from "./text-card";
 import { TextField } from "./text-field";
 import { TextareaField } from "./textarea-field";
@@ -133,6 +135,9 @@ export function FieldRenderer({
       break;
     case "age":
       Component = <AgeField field={field as IFormAgeField} name={name} />;
+      break;
+    case "table":
+      Component = <TableField field={field as IFormTableField} name={name} />;
       break;
     default:
       Component = (
