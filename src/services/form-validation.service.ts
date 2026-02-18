@@ -1,4 +1,9 @@
-import { IForm, IFormField } from "@/common/interfaces/form.interfaces";
+import {
+  IForm,
+  IFormField,
+  IFormTableField,
+  IFormTableColumn,
+} from "@/common/interfaces/form.interfaces";
 import { FormValue } from "@/common/types/common.types";
 import { evaluateCondition } from "@/services/conditinonal.service";
 
@@ -389,6 +394,74 @@ export function validateField(
         }
       }
       break;
+
+    case "table": {
+      const tableField = field as IFormTableField;
+      const tableValue = Array.isArray(value)
+        ? (value as unknown as Record<string, FormValue>[])
+        : [];
+
+      // Validate row count
+      const minRows = tableField.minRows ?? 0;
+      const maxRows = tableField.maxRows;
+
+      if (tableValue.length < minRows) {
+        errors.push(
+          `${fieldLabel} must have at least ${minRows} row${minRows !== 1 ? "s" : ""}`
+        );
+      }
+
+      if (maxRows !== undefined && tableValue.length > maxRows) {
+        errors.push(
+          `${fieldLabel} must have at most ${maxRows} row${maxRows !== 1 ? "s" : ""}`
+        );
+      }
+
+      // Validate each cell in each row
+      tableValue.forEach((row, rowIndex) => {
+        tableField.columns.forEach((column) => {
+          const cellValue = row[column.key];
+          const cellFieldName = `${fieldKey}[${rowIndex}].${column.key}`;
+          const cellLabel = `${fieldLabel} - Row ${rowIndex + 1} - ${column.label}`;
+
+          // Create a field object for the cell to reuse validation logic
+          const cellField: IFormField = {
+            type: column.type,
+            label: column.label,
+            required: column.required,
+            validation: column.validation,
+            ...(column.type === "textarea" && { rows: column.rows }),
+            ...(column.type === "checkbox" && { checked: column.checked }),
+            ...(column.type === "select" && { options: column.options }),
+            ...(column.type === "radio-group" && {
+              orientation: column.orientation,
+              options: column.options,
+            }),
+            ...(column.type === "checkbox-group" && { options: column.options }),
+            ...(column.type === "file" && { fileOptions: column.fileOptions }),
+            ...(column.type === "age" && {
+              dateOfBirthField: column.dateOfBirthField || "",
+              format: column.format,
+              toDate: column.toDate,
+            }),
+          } as IFormField;
+
+          // Validate the cell using the same validation logic
+          const cellError = validateField(
+            cellField,
+            cellFieldName,
+            cellValue,
+            cellLabel
+          );
+
+          if (cellError) {
+            errors.push(cellError.error);
+          }
+        });
+      });
+
+      break;
+    }
   }
 
   if (errors.length > 0) {
@@ -552,9 +625,81 @@ export function validateForm(
     const value = formValues[fieldKey];
     const fieldLabel = field.label || fieldKey;
 
-    const error = validateField(field, fieldKey, value, fieldLabel);
-    if (error) {
-      errors.push(error);
+    // Special handling for table fields - validate cells separately
+    if (field.type === "table") {
+      const tableField = field as IFormTableField;
+      const tableValue = Array.isArray(value)
+        ? (value as unknown as Record<string, FormValue>[])
+        : [];
+
+      // Validate row count
+      const minRows = tableField.minRows ?? 0;
+      const maxRows = tableField.maxRows;
+
+      if (tableValue.length < minRows) {
+        errors.push({
+          fieldKey,
+          fieldLabel,
+          error: `${fieldLabel} must have at least ${minRows} row${minRows !== 1 ? "s" : ""}`,
+        });
+      }
+
+      if (maxRows !== undefined && tableValue.length > maxRows) {
+        errors.push({
+          fieldKey,
+          fieldLabel,
+          error: `${fieldLabel} must have at most ${maxRows} row${maxRows !== 1 ? "s" : ""}`,
+        });
+      }
+
+      // Validate each cell
+      tableValue.forEach((row, rowIndex) => {
+        tableField.columns.forEach((column) => {
+          const cellValue = row[column.key];
+          const cellFieldName = `${fieldKey}[${rowIndex}].${column.key}`;
+          const cellLabel = `${fieldLabel} - Row ${rowIndex + 1} - ${column.label}`;
+
+          // Create a field object for the cell to reuse validation logic
+          const cellField: IFormField = {
+            type: column.type,
+            label: column.label,
+            required: column.required,
+            validation: column.validation,
+            ...(column.type === "textarea" && { rows: column.rows }),
+            ...(column.type === "checkbox" && { checked: column.checked }),
+            ...(column.type === "select" && { options: column.options }),
+            ...(column.type === "radio-group" && {
+              orientation: column.orientation,
+              options: column.options,
+            }),
+            ...(column.type === "checkbox-group" && { options: column.options }),
+            ...(column.type === "file" && { fileOptions: column.fileOptions }),
+            ...(column.type === "age" && {
+              dateOfBirthField: column.dateOfBirthField || "",
+              format: column.format,
+              toDate: column.toDate,
+            }),
+          } as IFormField;
+
+          // Validate the cell
+          const cellError = validateField(
+            cellField,
+            cellFieldName,
+            cellValue,
+            cellLabel
+          );
+
+          if (cellError) {
+            errors.push(cellError);
+          }
+        });
+      });
+    } else {
+      // Regular field validation
+      const error = validateField(field, fieldKey, value, fieldLabel);
+      if (error) {
+        errors.push(error);
+      }
     }
 
     // Process dependency fields (nested under this field's dependencies property)

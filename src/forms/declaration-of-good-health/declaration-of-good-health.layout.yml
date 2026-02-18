@@ -6,8 +6,9 @@
 - field: fullName
 - field: gender
 - field: address
-- h5: "4.Telephone Number"
-  key: h5.telephone_number
+- text: "**4.Telephone Number**"
+  fontSize: 14
+  key: text.telephone_number
 - row: 2
   columns:
     - field: telephoneNumber
@@ -16,10 +17,11 @@
 - field: occupation
 - field: natureOfOccupation
 - field: annualIncome
-- row: 1
-  columns:
-    - field: applyTo
-    - field: applyToBenifit
+- field: applyTo
+- text: "**9. Include benefit**"
+  fontSize: 14
+  key: text.include_benefit
+- field: applyToBenifit
 - card: Your Health/Other Details
   key: card.your_health_other_details
   items:

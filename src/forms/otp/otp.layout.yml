@@ -50,6 +50,9 @@
 - h2: Additional Information
 - field: notes
 - spacer: 20
+- h2: Dependents / Beneficiaries
+- field: dependents
+- spacer: 20
 - h2: Consent & Preferences
 - field: termsAccepted
 - spacer: 10

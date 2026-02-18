@@ -123,7 +123,7 @@ export interface IFormSubmissionFieldMapping {
   options?: Record<string, unknown>;
   script?: string; // transformation script to be executed
   value?: string;
-  returnType?: "string" | "number" | "boolean" | "array" | "object" | "any"; // expected return type for strong type validation
+  returnType?: "string" | "number" | "boolean" | "array" | "object" | "json" | "any"; // expected return type for strong type validation
 }
 
 export interface IFormSubmissionSuccessCheck {
@@ -231,6 +231,35 @@ export interface IFormAgeField extends IFormFieldBase {
   toDate?: string;
 }
 
+// Table column definition - each column can have its own field type and properties
+export interface IFormTableColumn {
+  key: string; // Column key (property name in row object)
+  label: string; // Column label
+  type: FieldType; // Field type for this column
+  required?: boolean;
+  placeholder?: string;
+  description?: string;
+  defaultValue?: string;
+  validation?: IFormFieldValidation;
+  readOnly?: boolean;
+  // Field-specific properties
+  rows?: number; // for textarea
+  checked?: boolean; // for checkbox
+  options?: Record<string, string>; // for select, radio-group, checkbox-group
+  orientation?: FormRadioGroupOrientation; // for radio-group
+  fileOptions?: IFormFileOptions; // for file
+  dateOfBirthField?: string; // for age
+  format?: string; // for age
+  toDate?: string; // for age
+}
+
+export interface IFormTableField extends IFormFieldBase {
+  columns: IFormTableColumn[];
+  minRows?: number; // Minimum number of rows (default: 0)
+  maxRows?: number; // Maximum number of rows (optional, no limit if undefined)
+  defaultRows?: number; // Initial number of rows (default: 0 or minRows)
+}
+
 export type IFormField =
   | IFormSelectField
   | IFormRadioGroupField
@@ -238,7 +267,8 @@ export type IFormField =
   | IFormFileField
   | IFormCheckboxField
   | IFormTextareaField
-  | IFormAgeField;
+  | IFormAgeField
+  | IFormTableField;
 
 // Layout styling options for form layout items
 export interface IFormLayoutStyles {

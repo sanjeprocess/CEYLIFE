@@ -133,6 +133,7 @@
         { "$ref": "#/definitions/IFormCheckboxField" },
         { "$ref": "#/definitions/IFormTextareaField" },
         { "$ref": "#/definitions/IFormAgeField" },
+        { "$ref": "#/definitions/IFormTableField" },
         { "$ref": "#/definitions/IFormFieldBase" }
       ]
     },
@@ -158,7 +159,9 @@
             "file",
             "url",
             "tel",
-            "age"
+            "age",
+            "currency",
+            "table"
           ],
           "description": "Field type"
         },
@@ -337,6 +340,144 @@
             "toDate": {
               "type": "string",
               "description": "Target date to calculate age up to (supports variables like {{$today}}). Defaults to current date if not specified"
+            }
+          }
+        }
+      ]
+    },
+    "IFormTableColumn": {
+      "type": "object",
+      "required": ["key", "label", "type"],
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "Column key (property name in row object)"
+        },
+        "label": {
+          "type": "string",
+          "description": "Column label"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "text",
+            "number",
+            "email",
+            "password",
+            "date",
+            "time",
+            "datetime-local",
+            "checkbox",
+            "radio-group",
+            "checkbox-group",
+            "select",
+            "textarea",
+            "file",
+            "url",
+            "tel",
+            "age",
+            "currency"
+          ],
+          "description": "Field type for this column"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Whether the column is required",
+          "default": false
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "Placeholder text for the column"
+        },
+        "description": {
+          "type": "string",
+          "description": "Help text or description for the column"
+        },
+        "defaultValue": {
+          "type": "string",
+          "description": "Default value for the column"
+        },
+        "validation": {
+          "$ref": "#/definitions/IFormFieldValidation"
+        },
+        "readOnly": {
+          "type": "boolean",
+          "description": "Whether the column is read-only",
+          "default": false
+        },
+        "rows": {
+          "type": "integer",
+          "description": "Number of visible rows for textarea columns",
+          "minimum": 1
+        },
+        "checked": {
+          "type": "boolean",
+          "description": "Default checked state for checkbox columns",
+          "default": false
+        },
+        "options": {
+          "type": "object",
+          "description": "Options for select, radio-group, or checkbox-group columns",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "orientation": {
+          "type": "string",
+          "enum": ["vertical", "horizontal"],
+          "description": "Orientation for radio-group columns",
+          "default": "vertical"
+        },
+        "fileOptions": {
+          "$ref": "#/definitions/IFormFileOptions"
+        },
+        "dateOfBirthField": {
+          "type": "string",
+          "description": "Name of the field containing the date of birth (for age columns)"
+        },
+        "format": {
+          "type": "string",
+          "description": "Format string for age display (for age columns)"
+        },
+        "toDate": {
+          "type": "string",
+          "description": "Target date to calculate age up to (for age columns)"
+        }
+      }
+    },
+    "IFormTableField": {
+      "allOf": [
+        { "$ref": "#/definitions/IFormFieldBase" },
+        {
+          "type": "object",
+          "required": ["columns"],
+          "properties": {
+            "type": {
+              "const": "table"
+            },
+            "columns": {
+              "type": "array",
+              "description": "Array of column definitions",
+              "items": {
+                "$ref": "#/definitions/IFormTableColumn"
+              },
+              "minItems": 1
+            },
+            "minRows": {
+              "type": "integer",
+              "description": "Minimum number of rows (default: 0)",
+              "minimum": 0,
+              "default": 0
+            },
+            "maxRows": {
+              "type": "integer",
+              "description": "Maximum number of rows (optional, no limit if undefined)",
+              "minimum": 1
+            },
+            "defaultRows": {
+              "type": "integer",
+              "description": "Initial number of rows (default: 0 or minRows)",
+              "minimum": 0
             }
           }
         }

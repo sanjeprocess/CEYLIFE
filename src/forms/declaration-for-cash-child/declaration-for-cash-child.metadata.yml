@@ -9,3 +9,6 @@ availableLocales:
   - si
   - ta
 defaultLocale: en
+searchParamsVariables:
+  cs: contract_sequence
+  id: card_id

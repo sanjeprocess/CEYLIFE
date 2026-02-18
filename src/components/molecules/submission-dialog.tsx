@@ -24,7 +24,7 @@ interface SubmissionDialogProps {
 }
 
 const DEFAULT_SUCCESS_TITLE = "Success";
-const DEFAULT_SUCCESS_CONTENT = "Form submitted successfully!";
+const DEFAULT_SUCCESS_CONTENT = "Form submitted successfully! You can now close this window safely.";
 const DEFAULT_ERROR_TITLE = "Error";
 const DEFAULT_ERROR_GENERIC_MESSAGE =
   "Something went wrong while submitting the form";

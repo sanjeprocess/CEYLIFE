@@ -109,6 +109,8 @@ ta:
 | `checkbox-group` | Multiple checkboxes   | `options: {value: Label}`              |
 | `file`           | File upload           | `fileOptions`                          |
 | `age`            | Age calculator        | `dateOfBirthField`, `format`, `toDate` |
+| `currency`       | Currency input         | -                                      |
+| `table`          | Dynamic table         | `columns`, `minRows`, `maxRows`, `defaultRows` |
 
 ### Field Examples
 
@@ -199,6 +201,116 @@ age:
 - `{y}` - Years
 - `{m}` - Months
 - `{d}` - Days
+
+**Table Field (Dynamic Table):**
+
+The table field allows you to create dynamic tables where users can add/remove rows. Each column can have its own field type and validation rules.
+
+```yaml
+employees:
+  type: table
+  label: Employee List
+  required: true
+  minRows: 1
+  maxRows: 10
+  defaultRows: 1
+  description: Add employees to the list
+  columns:
+    - key: name
+      label: Full Name
+      type: text
+      required: true
+      placeholder: Enter full name
+      validation:
+        minLength: 2
+        maxLength: 100
+    - key: age
+      label: Age
+      type: number
+      required: true
+      validation:
+        min: 18
+        max: 100
+    - key: email
+      label: Email Address
+      type: email
+      required: true
+      placeholder: employee@example.com
+    - key: department
+      label: Department
+      type: select
+      required: true
+      options:
+        it: IT
+        hr: HR
+        finance: Finance
+        sales: Sales
+    - key: startDate
+      label: Start Date
+      type: date
+      required: false
+    - key: isActive
+      label: Active
+      type: checkbox
+      required: false
+      checked: true
+```
+
+**Table Field Properties:**
+
+- `columns` (required): Array of column definitions. Each column must have:
+  - `key` (required): Property name in the row object
+  - `label` (required): Display label for the column
+  - `type` (required): Field type for the column (supports all field types except `table` and `age`)
+  - Other field properties: `required`, `placeholder`, `validation`, `options`, etc. (depending on field type)
+- `minRows` (optional): Minimum number of rows (default: 0)
+- `maxRows` (optional): Maximum number of rows (no limit if undefined)
+- `defaultRows` (optional): Initial number of rows (default: 0 or minRows)
+
+**Table Field Submission Mapping:**
+
+Table fields can be mapped in various ways for submission:
+
+```yaml
+fieldMapping:
+  # Send entire table as array
+  - from: employees
+    to: employeeList
+    returnType: array
+  
+  # Send entire table as JSON string
+  - from: employees
+    to: employeeDataJson
+    returnType: json
+  
+  # Alternative: Use transform to convert to JSON
+  - from: employees
+    to: employeeDataJson
+    transform: toJson
+    returnType: string
+  
+  # Access specific cell
+  - from: employees[0].name
+    to: firstEmployeeName
+    returnType: string
+  
+  # Extract all values of a column as array
+  - from: employees[*].email
+    to: employeeEmails
+    returnType: array
+  
+  # Access nested path in table
+  - from: employees[0].department
+    to: firstEmployeeDepartment
+    returnType: string
+```
+
+**Table Field Path Syntax:**
+
+- `tableField` - Access entire table array
+- `tableField[0]` - Access first row object
+- `tableField[0].columnKey` - Access specific cell
+- `tableField[*].columnKey` - Extract all values of a column as array
 
 **Examples:**
 

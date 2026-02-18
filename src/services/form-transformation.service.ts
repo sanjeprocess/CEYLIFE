@@ -54,6 +54,8 @@ function validateReturnType(value: unknown, expectedType: string): boolean {
       return (
         typeof value === "object" && value !== null && !Array.isArray(value)
       );
+    case "json":
+      return typeof value === "string";
     default:
       return false;
   }
@@ -115,6 +117,15 @@ function coerceToType(value: unknown, targetType: string): unknown {
       }
       if (!Array.isArray(value)) {
         return [value];
+      }
+      break;
+    case "json":
+      // Serialize value to JSON string
+      try {
+        return JSON.stringify(value);
+      } catch (error) {
+        console.warn("[Form Transformation] Failed to serialize value to JSON:", error);
+        return String(value);
       }
       break;
   }
@@ -187,6 +198,13 @@ const builtInTransformations: Record<
       throw new Error(`Cannot parse "${value}" as date`);
     }
     return date.toISOString();
+  },
+  toJson: (value: unknown) => {
+    try {
+      return JSON.stringify(value);
+    } catch (error) {
+      throw new Error(`Cannot serialize value to JSON: ${error instanceof Error ? error.message : "Unknown error"}`);
+    }
   },
   formatDate: (value: unknown, options?: Record<string, unknown>) => {
     const date = value instanceof Date ? value : new Date(String(value));
@@ -269,24 +287,32 @@ export async function executeCustomScript(
       );
     }
 
-    // Validate return type if specified
-    if (expectedReturnType && expectedReturnType !== "any") {
-      let validatedResult = result;
+      // Validate return type if specified
+      if (expectedReturnType && expectedReturnType !== "any") {
+        let validatedResult = result;
 
-      // Try to coerce to expected type if not already matching
-      if (!validateReturnType(result, expectedReturnType)) {
-        validatedResult = coerceToType(result, expectedReturnType);
+        // Try to coerce to expected type if not already matching
+        if (!validateReturnType(result, expectedReturnType)) {
+          validatedResult = coerceToType(result, expectedReturnType);
 
-        // If coercion didn't work, throw error
-        if (!validateReturnType(validatedResult, expectedReturnType)) {
-          throw new Error(
-            `Transformation result type mismatch. Expected ${expectedReturnType}, got ${typeof result}${Array.isArray(result) ? " (array)" : ""}`
-          );
+          // If coercion didn't work, throw error with more context
+          if (!validateReturnType(validatedResult, expectedReturnType)) {
+            const valueType = Array.isArray(result) 
+              ? "array" 
+              : result === null 
+                ? "null" 
+                : typeof result;
+            const valuePreview = typeof result === "object" && result !== null
+              ? JSON.stringify(result).substring(0, 100)
+              : String(result).substring(0, 100);
+            throw new Error(
+              `Transformation result type mismatch. Expected ${expectedReturnType}, got ${valueType}. Value: ${valuePreview}${valuePreview.length >= 100 ? "..." : ""}`
+            );
+          }
         }
-      }
 
-      return validatedResult;
-    }
+        return validatedResult;
+      }
 
     return result;
   } catch (error) {

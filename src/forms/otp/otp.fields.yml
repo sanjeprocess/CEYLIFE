@@ -189,3 +189,62 @@ notes:
   placeholder: Enter any additional information
   description: Any additional notes or comments
   rows: 4
+dependents:
+  type: table
+  label: Dependents / Beneficiaries
+  required: false
+  description: Add dependents or beneficiaries associated with this contract
+  minRows: 0
+  maxRows: 10
+  defaultRows: 0
+  columns:
+    - key: name
+      label: Full Name
+      type: text
+      required: true
+      placeholder: Enter full name
+      validation:
+        minLength: 2
+        maxLength: 100
+    - key: relationship
+      label: Relationship
+      type: select
+      required: true
+      placeholder: Select relationship
+      options:
+        spouse: Spouse
+        child: Child
+        parent: Parent
+        sibling: Sibling
+        other: Other
+    - key: dateOfBirth
+      label: Date of Birth
+      type: date
+      required: true
+      placeholder: Select date of birth
+    - key: age
+      label: Age
+      type: number
+      required: false
+      placeholder: Age
+      validation:
+        min: 0
+        max: 150
+    - key: idNumber
+      label: ID Number
+      type: text
+      required: false
+      placeholder: National ID or Passport
+      validation:
+        minLength: 5
+        maxLength: 50
+    - key: contactNumber
+      label: Contact Number
+      type: tel
+      required: false
+      placeholder: Contact number
+    - key: isPrimary
+      label: Primary Beneficiary
+      type: checkbox
+      required: false
+      checked: false

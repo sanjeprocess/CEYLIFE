@@ -19,7 +19,8 @@ export type FieldType =
   | "url"
   | "tel"
   | "age"
-  | "currency";
+  | "currency"
+  | "table";
 
 export type FormConditionalOperator =
   | "eq"

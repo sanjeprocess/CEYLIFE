@@ -280,6 +280,58 @@ fieldMapping:
       const notesStr = typeof value === 'string' ? value : String(value);
       return notesStr.trim().replace(/\n{3,}/g, '\n\n'); // Max 2 consecutive newlines
 
+  # Table field - Dependents/Beneficiaries
+  # Send entire table as array (preserves original array structure)
+  - from: dependents
+    to: customer.dependents
+    returnType: array
+
+  # Send entire table as array directly (as-is, no transformation)
+  # The array will be sent exactly as stored: [{name: "...", relationship: "...", ...}, ...]
+  # returnType is optional - if omitted, it still sends as array but without type validation
+  - from: dependents
+    to: customer.dependents_array
+    returnType: array
+
+  # Send entire table as JSON string (for Workhub API)
+  - from: dependents
+    to: customer.dependents_json
+    returnType: json
+
+  # Alternative: Use transform to convert to JSON
+  - from: dependents
+    to: customer.dependents_json_alt
+    transform: toJson
+    returnType: string
+
+  # Extract all names from dependents table
+  - from: dependents[*].name
+    to: customer.dependent_names
+    returnType: array
+
+  # Extract all relationships from dependents table
+  - from: dependents[*].relationship
+    to: customer.dependent_relationships
+    returnType: array
+
+  # Access specific dependent (first one)
+  - from: dependents[0].name
+    to: customer.primary_dependent_name
+    returnType: string
+
+  # Get primary beneficiary
+  - from: dependents[*].name
+    to: customer.primary_beneficiary
+    returnType: string
+    script: |
+      // Find the name of the dependent marked as primary beneficiary
+      if (Array.isArray(value) && value.length > 0) {
+        // We need to check the isPrimary field, but we only have names here
+        // This is a simplified example - in practice, you'd want to filter by isPrimary
+        return value[0] || '';
+      }
+      return '';
+
 response:
   successCheck:
     - type: status
