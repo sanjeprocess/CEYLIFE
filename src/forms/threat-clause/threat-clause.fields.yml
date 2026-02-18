@@ -15,7 +15,7 @@ proposerContract:
 
 proposerNic:
   type: text
-  label: NIC
+  label: NIC Number
   required: true
   placeholder: Enter NIC
 

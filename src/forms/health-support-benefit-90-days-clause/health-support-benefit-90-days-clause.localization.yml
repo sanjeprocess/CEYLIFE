@@ -9,19 +9,25 @@ en:
   date.label: "Date"
 
   # Layout translations
-  text.first: "Firstly, we thank you for submitting the above proposal form to our Company.<br/> We have noted that you have requested to obtain the Ceylinco Life Health Support Plus Benefit, as a supplementary benefit. This benefit is offered only to resident Sri Lankans. Since it was mentioned by you that you are currently employed overseas, the Company has decided to offer the Health Support Plus Benefit subject to the following condition.<br><br><b>'The Health Support Plus Benefit included in this policy, will terminate if the insured will reside outside of Sri Lanka for a period of 90 days and above. However, the Health Support Plus Benefit will be activated and will resume as per original terms and conditions once the policyholder returns back to Sri Lanka'.</b><br><br><b>Consent</b><br>I hereby confirm having read and understood the above condition, whilst also accepting to obtain the policy under the above condition."
+  text.first: "Firstly, we thank you for submitting the above proposal form to our Company.<br/><br/> We have noted that you have requested to obtain the Ceylinco Life Health Support Plus Benefit, as a supplementary benefit. This benefit is offered only to resident Sri Lankans. Since it was mentioned by you that you are currently employed overseas, the Company has decided to offer the Health Support Plus Benefit subject to the following condition."
   submit.button: "Submit Form"
   reset.button: "Reset Form"
 
 si: 
   # Field labels
-  proposersName.label: "නම:"
+  proposersName.label: "යෝජනා කරන්නාගේ නම:"
   policyNumber.label: "ජීවිත රක්ෂණ ඔප්පු අංකය:"
   signature.label: "රක්ෂණය වීමට සිටින අයගේ අත්සන"
   date.label: "දිනය"
 
   # Layout translations
-  text.first: "ඉහත රක්ෂණ යෝජනා පත්‍රය අප සමාගම වෙත ලබාදීම පිළිබඳව ස්තූතිවන්ත වෙමු.<br/><br/>මෙම රක්ෂණ ඔප්පුව යටතේ අතිරේක ප්‍රතිලාභ ලෙස සෙලින්කෝ හෙල්ත් සපෝර්ට් ප්ලස් ප්‍රතිලාභය ඔබ විසින් අයදුම් කර ඇත.අප සමාගම මෙම ප්‍රතිලාභය ලබාදෙනුයේ ශ්‍රී ලංකාවේ පදිංචි අයට පමණි.ඔබ දැනට විදේශ රටක සේවය කරන බව සඳහන් කර ඇති බැවින් හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය පහත සඳහන් වගන්තිය යටතේ පිළිගැනීමට සමාගම තීරණය කර ඇති බව දන්වා සිටිමු.<br/><br/><b>'මෙම හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය ශ්‍රී ලාංකික පුරවැසියන්ට පමණක් නිකුත් කරනු ලැබේ. දින 90ක් සහ ඊට වැඩි කාලයක් රක්ෂිතයා ශ්‍රී ලංකාවෙන් පිටත රැදී සිටියහොත් රක්ෂණ ඔප්පුවේ ඇතුළත් වන හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය අවසන් වනු ඇත. කෙසේ වෙතත් රක්ෂණ ඔප්පුහිමියා නැවත ශ්‍රී ලංකාවට පැමිණි විට හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය සක්‍රීය වනු ඇති අතර මුල් නියමයන් සහ කොන්දේසිවලට අනුව ඉහත ප්‍රතිලාභය නැවත ආරම්භ වනු ඇත.'</b><br/><br/>මා විසින් ඉහත සඳහන් කොන්දේසිය කියවා තේරුම් ගත් අතර එම කොන්දේසියට යටත්ව රක්ෂණ ඔප්පුව ලබා ගැනීමට කැමැත්ත ප්‍රකාශ කරමි."
+  text.first: "ඉහත රක්ෂණ යෝජනා පත්‍රය අප සමාගම වෙත ලබාදීම පිළිබඳව ස්තූතිවන්ත වෙමු.<br/><br/>මෙම රක්ෂණ ඔප්පුව යටතේ අතිරේක ප්‍රතිලාභ ලෙස සෙලින්කෝ හෙල්ත් සපෝර්ට් ප්ලස් ප්‍රතිලාභය ඔබ විසින් අයදුම් කර ඇත.අප සමාගම මෙම ප්‍රතිලාභය ලබාදෙනුයේ ශ්‍රී ලංකාවේ පදිංචි අයට පමණි.ඔබ දැනට විදේශ රටක සේවය කරන බව සඳහන් කර ඇති බැවින් හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය පහත සඳහන් වගන්තිය යටතේ පිළිගැනීමට සමාගම තීරණය කර ඇති බව දන්වා සිටිමු.<br/>සෙලින්කොලයිෆ් ජීවිත රක්ෂණ සමාගම"
+  
+  text.clause_consent_title: "<b>වගන්තිය</b>"
+  text.clause_consent: "<b>'මෙම හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය ශ්‍රී ලාංකික පුරවැසියන්ට පමණක් නිකුත් කරනු ලැබේ. දින 90ක් සහ ඊට වැඩි කාලයක් රක්ෂිතයා ශ්‍රී ලංකාවෙන් පිටත රැදී සිටියහොත් රක්ෂණ ඔප්පුවේ ඇතුළත් වන හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය අවසන් වනු ඇත. කෙසේ වෙතත් රක්ෂණ ඔප්පුහිමියා නැවත ශ්‍රී ලංකාවට පැමිණි විට හෙල්ත් සපෝට් ප්ලස් ප්‍රතිලාභය සක්‍රීය වනු ඇති අතර මුල් නියමයන් සහ කොන්දේසිවලට අනුව ඉහත ප්‍රතිලාභය නැවත ආරම්භ වනු ඇත.'</b>"
+  text.consent_title: "**ප්‍රකාශනය**"
+  text.consent: "මා විසින් ඉහත සඳහන් කොන්දේසිය කියවා තේරුම් ගත් අතර එම කොන්දේසියට යටත්ව රක්ෂණ ඔප්පුව ලබා ගැනීමට කැමැත්ත ප්‍රකාශ කරමි."
+  
   submit.button: "පෝරමය පුරවන්න"
   reset.button: "පෝරමයේ දත්ත මකන්න"
 ta: 

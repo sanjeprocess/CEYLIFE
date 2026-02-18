@@ -16,8 +16,6 @@
         under the Policy, viz. Jeewayathra Accidental Death Benefit, Jeewayathra
         Monthly Income Benefit, Jeewayathra Partial and Permanent Disability
         Benefit.**"
-      fontSize: 18
-      align: center
       key: text.occupation_clause_body
 - card: Consent
   key: card.consent

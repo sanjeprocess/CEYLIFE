@@ -1,6 +1,7 @@
 # family-takaful form layout
 
 - card: PARTICIPANT INFORMATION
+  key: card.participantInformation
   items:
     - field: certificateNo
     - field: participantName
@@ -8,7 +9,8 @@
     - field: revivalType
     - field: benefit
 
-- card: HEALTH DECLARATION QUESTIONS
+- card: Health/Other details
+  key: card.healthOtherDetails
   items:
     - field: healthQ1
     - field: healthQ1Details
@@ -30,14 +32,27 @@
     - field: healthQ9Details
 
 - card: DECLARATION
+  key: card.declaration_title
   align: center
   items:
     - text: "I declare that the foregoing statements and answers given by me are true and I have not withheld any information. I do hereby agree that this statement and this declaration shall form a part of the contract and if any untrue averment be contained, the said contract will be null and void."
-      align: center
+      key: text.declaration
+
 - row: 2
   columns:
     - field: declarationDate
     - field: signature
 
 - spacer: 20
-- submit: Submit
+- row: 12
+  columns:
+    - submit: Submit Form
+      key: submit.button
+      align: center
+      margin: 30px 0 0 0
+      variant: default
+    - reset: Reset Form
+      key: reset.button
+      align: center
+      margin: 30px 0 0 0
+      variant: outline

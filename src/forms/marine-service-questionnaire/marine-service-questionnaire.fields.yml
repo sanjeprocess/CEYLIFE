@@ -14,49 +14,49 @@ proposalNum:
   defaultValue: "{{proposal_number}}"
 vesselName:
   type: text
-  label: a.1) What is the name of the Vessel?
+  label: 1) a) What is the name of the Vessel?
   required: true
   placeholder: Vessel Name
   defaultValue: ""
 vesselOwner:
   type: text
-  label: a.2) Who are its owners?
+  label: b) Who are its owners?
   required: true
   placeholder: Vessel Owner
   defaultValue: ""
 vesselLine:
   type: text
-  label: a.3) To what line does it belong?
+  label: c) To what line does it belong?
   required: true
   placeholder: Vessel Line
   defaultValue: ""
 motivePower:
   type: text
-  label: b.) What is its motive power, rating and gross tonnage?
+  label: 2) What is its motive power, rating and gross tonnage?
   required: true
   placeholder: Enter Motive Power ,rating and gross tonnage
   defaultValue: ""
 vesselBusiness:
   type: text
-  label: c.) In what business is it engaged?
+  label: 3) In what business is it engaged?
   required: true
   placeholder: Enter  Business type
   defaultValue: ""
 businessPly:
   type: text
-  label: d.) In what waters does it ply?
+  label: 4) In what waters does it ply?
   required: true
   placeholder: Enter  waters
   defaultValue: ""
 ports:
   type: text
-  label: e.) Between what ports?
+  label: 5) Between what ports?
   required: true
   placeholder: Enter  ports
   defaultValue: ""
 vesselType:
   type: radio-group
-  label: f.) What is the type of the vessel?
+  label: 6) What is the type of the vessel?
   required: true
   options:
     barge_boat: Is the boat a barge
@@ -64,21 +64,25 @@ vesselType:
     launch_first: Launch First - class passenger steamship
     freight_steamship: Freight steamship
     sailing_vessel: Sailing vessel
+tropicalPorts:
+  type: text
+  label: 7) Which tropical ports will the ship call at?
+  required: true
 position:
   type: text
-  label: g.)  What is the title of your position?
+  label: 8) What is the title of your position?
   required: true
   placeholder: Enter  position
   defaultValue: ""
 serviceYears:
   type: text
-  label: h.) How long have you been engaged in a sea-faring occupation?
+  label: 9) How long have you been engaged in a sea-faring occupation?
   required: true
   placeholder: Enter  years
   defaultValue: ""
 insurable:
   type: radio-group
-  label: i.) Is the vessel seaworthy and insurable?
+  label: 10) Is the vessel seaworthy and insurable?
   required: true
   options:
     yes: Yes

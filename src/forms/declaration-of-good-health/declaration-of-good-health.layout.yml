@@ -6,8 +6,8 @@
 - field: fullName
 - field: gender
 - field: address
-- h4: "4. Telephone Number"
-  key: h4.telephone_number
+- h5: "4.Telephone Number"
+  key: h5.telephone_number
 - row: 2
   columns:
     - field: telephoneNumber
@@ -21,6 +21,7 @@
     - field: applyTo
     - field: applyToBenifit
 - card: Your Health/Other Details
+  key: card.your_health_other_details
   items:
     - field: healthQ1
     - field: healthQ1Details

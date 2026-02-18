@@ -9,7 +9,7 @@
 - h2: PAYMENT TO EXPATRIATE POLICY HOLDERS
   align: center
   key: h2.foreign_currency_heading
-- text: "I {{client_name}} the undersigned of _______________________________ Whose life is proposed to be assured, do here by declare that I am fully aware of the prevailing **Exchange control Regulations of Sri Lanka **that all monies payable in respect of this assurance, either to me or my dependents, whenever such monies become payable will be paid in Sri Lanka, in Sri Lankan currency. Further, I declare, that I am agreeable to these conditions and any changes for additions that may be embodied in the exchange control regulations from time to time; That the payment of all monies in respect of this assurance shall be subject to these conditions, and that this declaration shall form part of the proposal for assurance made by me to the Ceylinco Life Insurance Limited on"
+- text: "I {{client_name}} the undersigned of _______________________________ Whose life is proposed to be assured, do here by declare that I am fully aware of the prevailing Exchange control Regulations of Sri Lanka that all monies payable in respect of this assurance, either to me or my dependents, whenever such monies become payable will be paid in Sri Lanka, in Sri Lankan currency. Further, I declare, that I am agreeable to these conditions and any changes for additions that may be embodied in the exchange control regulations from time to time; That the payment of all monies in respect of this assurance shall be subject to these conditions, and that this declaration shall form part of the proposal for assurance made by me to the Ceylinco Life Insurance Limited on"
   key: text.foreign_currency_clause_body
 - row: 12
   columns:
