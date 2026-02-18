@@ -5,6 +5,7 @@ endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w1fd6da45a6/cards
 method: POST
 requiresAccessToken: true
 
+
 headers:
   - name: Content-Type
     value: application/json
@@ -164,7 +165,10 @@ fieldMapping:
   - from: confinementDate
     to: confinementDate
     returnType: string
-    transform: toDate
+    transform: 
+      name: formatDate
+      options:
+        format:"YYYY-MM-DD"
 
   # 10. Declined Proposal
   - from: healthQ10
