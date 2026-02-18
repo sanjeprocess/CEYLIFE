@@ -7,3 +7,6 @@ showFormHeader: false
 availableLocales:
   - en
 defaultLocale: en
+searchParamsVariables:
+  cs: contract_sequence
+  id: card_id

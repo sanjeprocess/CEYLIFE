@@ -21,12 +21,12 @@ address:
   placeholder: Enter address
 telephoneNumber:
   type: tel
-  label: 1. Fixed Line No
+  label: i. Fixed Line No
   required: false
   placeholder: Enter fixed line number
 mobileNumber:
   type: tel
-  label: 2. Mobile Number
+  label: ii. Mobile Number
   required: true
   placeholder: Enter mobile number
 emailAddress:
@@ -59,7 +59,7 @@ applyTo:
     revive the above policy under Normal revival: 2. revive the above policy under Normal revival
 applyToBenifit:
   type: checkbox
-  label: 9. Include benefit
+  label: Include benefit
   required: false
   dependencies:
     include:
