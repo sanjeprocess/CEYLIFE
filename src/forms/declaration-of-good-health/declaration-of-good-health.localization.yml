@@ -3,12 +3,13 @@
 
 en:
 
+
 si:
   # Field labels
   policyNumber.label: "ඔප්පු අංකය:"
   fullName.label: "සම්පූර්ණ නම"
   address.label: "ලිපිනය :"
-  h4.telephone_number: "4.  දුරකථන අංකය"
+  h6.telephone_number: "4.  දුරකථන අංකය"
   telephoneNumber.label: "ස්ථාවර දුරකථන අංකය:"
   mobileNumber.label: "ජංගම දුරකථන අංකය:"
   emailAddress.label: "ඊ - මේල් ලිපිනය :"
@@ -92,7 +93,7 @@ ta:
   policyNumber.label: "1.1.	காப்பறுதி இலக்கம் :"
   fullName.label: "	முழுப்பெயர்(கள்)"
   address.label: "முகவரி :"
-  h4.telephone_number: "தொ.பே.இல: நிலையானது "
+  h6.telephone_number: "தொ.பே.இல: நிலையானது "
   telephoneNumber.label: "	 நிலையானது:"
   mobileNumber.label: "கைத்தொலைபேசி:"
   emailAddress.label: "	மின்னஞ்சல் முகவரி :"
@@ -110,7 +111,7 @@ ta:
   healthQ1.label: "2.1.	நீங்கள் நீரிழிவு, இதய நோய், உயர் குருதி அமுக்கம், உயர் கொலஸ்ரோல், சிறுநீரக நோய், சுவாச தொகுதி நோய், ஈரல் நோய், பக்கவாதம், புற்று நோய் என்பவற்றால் பாதிக்கப்பட்டுள்ளீரா அல்லது தற்போது பாதிக்கப்படுகிறீரா?   "
   healthQ1.options.Yes: "ஆம் "
   healthQ1.options.No: "இல்லை"
-  healthQ1Details.label: "කරුණාකර විස්තර දක්වන්න"
+  healthQ1Details.label: "Please provide details"
 
   healthQ2.label: "2.2.	நீங்கள் வேறு ஏதாவது நோயினால் பாதிக்கப்பட்டுள்ளீரா அல்லது தற்சமயம் பாதிக்கப்படுகிறீரா அல்லது ஏதாவது மருத்துவ பரிசோதனை அல்லது அறுவைச் சிகிச்சைக்கு உட்பட்டுள்ளீரா?"
   healthQ2.options.Yes: "ஆம்"
