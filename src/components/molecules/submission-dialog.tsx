@@ -94,7 +94,20 @@ export function SubmissionDialog({
 
   return (
     <Dialog open={isOpen && !isClosing}>
-      <DialogContent className="sm:max-w-3xl">
+      <DialogContent
+        className="sm:max-w-3xl"
+        showCloseButton={!isSuccess}
+        onInteractOutside={(e) => {
+          if (isSuccess) {
+            e.preventDefault();
+          }
+        }}
+        onEscapeKeyDown={(e) => {
+          if (isSuccess) {
+            e.preventDefault();
+          }
+        }}
+      >
         <DialogHeader>
           <div className="flex items-center gap-3">
             {isSuccess ? (
@@ -125,11 +138,13 @@ export function SubmissionDialog({
           )}
         </div>
 
-        <DialogFooter>
-          <Button onClick={handleClose} variant="default">
-            {isSuccess ? "Close" : "OK"}
-          </Button>
-        </DialogFooter>
+        {!isSuccess && (
+          <DialogFooter>
+            <Button onClick={handleClose} variant="default">
+              OK
+            </Button>
+          </DialogFooter>
+        )}
       </DialogContent>
     </Dialog>
   );
