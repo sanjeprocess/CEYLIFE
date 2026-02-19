@@ -130,4 +130,67 @@ si:
   submit.button: "පෝරමය පුරවන්න"
   reset.button: "පෝටරමයේ දත්ත මකන්න"
 
-ta: {}
+ta: 
+  # Field labels and options
+  formTitle: "நீரிழிவு தொடர்பான கேள்விக்கொத்து"
+  proposerName.label: "1. முன்மொழிபவர் பெயர் "
+  contractNum.label: "2. முன்மொழிபவர் இலக்கம்"
+  dateDiagnosed.label: "3. நீரிழிவு நோய் கண்டறியப்பட்ட திகதி"
+  nameAndAddressOfTheDoctor.label: "4. உங்களுக்கு தற்போது சிகிச்சை அளிக்கும் மருத்துவர் அல்லது மருத்துவமனையின் பெயர் மற்றும் முகவரி"
+
+  strictDiet.label: "5.நீங்கள் கண்டிப்பான உணவு முறையைப் பின்பற்றுகிறீர்களா? "
+  strictDiet.options.no: "இல்லை"
+  strictDiet.options.yes: "ஆம்"
+
+  strictDietDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  oralDrug.label: "6.நீங்கள் இப்போது வாய்வழி மருந்து சிகிச்சை பெறுகிறீர்களா? அப்படியானால், மருந்தின் பெயர் மற்றும் அளவைக் குறிப்பிடவும்."
+  oralDrug.options.no: "இல்லை"
+  oralDrug.options.yes: "	ஆம் "
+
+  oralDrugDetails.label: "அப்படியானால், நீங்கள் எடுத்துக்கொண்டிருக்கும் மருந்துகளின் பெயர்கள் மற்றும் அளவுகளைக் குறிப்பிடவும்."
+
+  insulin.label: "7.நீங்கள் இப்போது இன்சுலின் எடுத்துக்கொள்கிறீர்களா? அப்படியானால், ஒரு நாளைக்கு எத்தனை அலகுகள் தேவை என்பதைக் குறிப்பிடவும்."
+  insulin.options.no: "இல்லை"
+  insulin.options.yes: "	ஆம் "
+
+  insulinDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  oralInsulinVaried.label: "8. கடந்த 2 ஆண்டுகளில் நீங்கள் உட்கொள்ளும் இன்சுலின் அல்லது வாய்வழி மருந்துகள் வேறுபட்டுள்ளதா? அப்படியானால், முழு விவரங்களையும் தரவும்."
+  oralInsulinVaried.options.no: "இல்லை"
+  oralInsulinVaried.options.yes: "ஆம்"
+
+  oralInsulinVariedDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  urineCheck.label: "9. நீங்கள் உங்கள் சிறுநீரை வழக்கமாகப் பரிசோதிக்கிறீர்களா?"
+  urineCheck.options.no: "இல்லை"
+  urineCheck.options.yes: "ஆம்"
+
+  urineCheckDetails.label: "அப்படியானால், அதில் எத்தனை முறை சர்க்கரை உள்ளது?"
+  urineCheckDetails.options.never: "a.)ஒருபோதும் இல்லை"
+  urineCheckDetails.options.Rarely: "b.)அரிதாக "
+  urineCheckDetails.options.occasionally: "c.)எப்போதாவது "
+  urineCheckDetails.options.Often: "d.)அடிக்கடி"
+
+  coma.label: "10. உங்கள் சிகிச்சை தொடங்கியதிலிருந்து உங்களுக்கு நீரிழிவு நோய் அல்லது இன்சுலின் கோமா ஏற்பட்டிருக்கிறதா? அப்படியானால், திகதிகள் உள்ளிட்ட விவரங்களைத் தரவும்."
+  coma.options.no: "இல்லை"
+  coma.options.yes: "ஆம்"
+
+  comaDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  illnesses.label: "11. உங்களுக்கு எப்போதாவது இதயம், சிறுநீரகம், கண்கள், இரத்த ஓட்டம் அல்லது நரம்பு மண்டலத்தில் ஏதேனும் நோய் ஏற்பட்டிருக்கிறதா? அப்படியானால், முழு விவரங்களையும் தரவும்"
+  illnesses.options.no: "இல்லை"
+  illnesses.options.yes: "ஆம்"
+
+  illnessesDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  date.label: "திகதி "
+  signature.label: "முன்மொழிபவரின் கையொப்பம்"
+
+  # Layout translations
+  text.to_be_completed_by_the_proposer: "(முன்மொழிபவரினால் பூரணப்படுத்தப்படவேண்டும்)"
+  card.declaration: "பிரகடனம்"
+  text.declare_answers: "நான் அளித்த பதில்கள் எனக்குத் தெரிந்தவரை உண்மையானவை என்றும், முன்மொழிவின் மதிப்பீடு அல்லது ஏற்றுக்கொள்ளலைப் பாதிக்கக்கூடிய எந்தவொரு முக்கிய தகவலையும் நான் மறைக்கவில்லை என்றும் நான் வெளிப்படுத்துகிறேன்."
+  text.agree_to_constitute_part_of_proposal: "இந்தப் படிவம் எனது ஆயுள் காப்புறுதித் திட்டத்தின் ஒரு பகுதியாக இருக்கும் என்பதையும், எனக்குத் தெரிந்த எந்தவொரு முக்கிய உண்மைகளையும் வெளியிடத் தவறினால் ஒப்பந்தம் செல்லுபடியற்றதாகிவிடும் என்பதையும் நான் ஏற்றுக்கொள்கிறேன் "
+  submit.button: "படிவத்தை நிரப்பவும்"
+  reset.button: "படிவத் தரவை நீக்கு"
