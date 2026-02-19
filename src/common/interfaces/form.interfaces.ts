@@ -114,6 +114,11 @@ export interface IFormMetadata {
    * Defaults to 120 seconds (2 minutes) when omitted.
    */
   requestIdTimeoutSeconds?: number;
+
+  // Based on the query key, form will expire after the specified number of days.
+  formExpiration?: boolean; 
+  formExpirationDays?: number;
+  formExpirationQueryKey?: string; // The creation timestamp in format XXX-{timestamp}
 }
 
 export interface IFormSubmissionHeader {
@@ -295,12 +300,12 @@ export interface IFormLayoutStyles {
 // Submit button specific properties
 export interface IFormLayoutSubmitButton {
   variant?:
-    | "default"
-    | "destructive"
-    | "outline"
-    | "secondary"
-    | "ghost"
-    | "link"; // Button variant (defaults to "default")
+  | "default"
+  | "destructive"
+  | "outline"
+  | "secondary"
+  | "ghost"
+  | "link"; // Button variant (defaults to "default")
   loadingText?: string; // Text to show while submitting (for future use)
   loadingTextKey?: string; // Translation key for loading text (for future use)
 }
@@ -323,7 +328,7 @@ export type IFormLayoutItem = IFormLayoutStyles & {
   columns?: IFormLayoutItem[];
   colspan?: number; // Only for "row" layout column items
 } & IFormLayoutSubmitButton & {
-    // For every layout item type, optionally store associated value:
-    // e.g., field: true, h1: "Heading", divider: true, submit: "Submit Form", etc.
-    [K in FormLayoutItemType]?: string | number | boolean;
-  };
+  // For every layout item type, optionally store associated value:
+  // e.g., field: true, h1: "Heading", divider: true, submit: "Submit Form", etc.
+  [K in FormLayoutItemType]?: string | number | boolean;
+};
