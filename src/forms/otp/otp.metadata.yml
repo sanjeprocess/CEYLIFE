@@ -8,6 +8,9 @@ availableLocales:
   - si
   - ta
 defaultLocale: en
-searchParamsVariables:
-  cs: contract_sequence
-  id: card_id
+# searchParamsVariables:
+#   cs: contract_sequence
+#   id: card_id
+listenToRedirectLink: true
+requestIdFieldName: requestId
+requestIdTimeoutSeconds: 300

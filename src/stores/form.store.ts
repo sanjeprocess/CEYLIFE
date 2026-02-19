@@ -16,6 +16,8 @@ interface FormStore {
   rawValues: Record<string, FormValue>;
   fieldVariableDeps: FieldVariableDeps;
   isSubmitting: boolean;
+  isWaitingForRedirect: boolean;
+  redirectError: string | null;
   submissionError: string | null;
   submissionErrorReason: string | null;
   submissionSuccess: boolean;
@@ -28,6 +30,9 @@ interface FormStore {
   getComputedValues: () => Record<string, FormValue>;
   resetForm: () => void;
   setSubmitting: (isSubmitting: boolean) => void;
+  setWaitingForRedirect: (waiting: boolean) => void;
+  setRedirectError: (error: string | null) => void;
+  clearRedirectState: () => void;
   setSubmissionError: (
     error: string | null,
     errorReason?: string | null
@@ -61,6 +66,8 @@ const useFormStore = create<FormStore>((set, get) => ({
   rawValues: {},
   fieldVariableDeps: {},
   isSubmitting: false,
+  isWaitingForRedirect: false,
+  redirectError: null,
   submissionError: null,
   submissionErrorReason: null,
   submissionSuccess: false,
@@ -139,12 +146,31 @@ const useFormStore = create<FormStore>((set, get) => ({
   setSubmitting: (isSubmitting: boolean) =>
     set({ isSubmitting, submissionError: null, fieldErrors: {} }),
 
+  setWaitingForRedirect: (waiting: boolean) =>
+    set({
+      isWaitingForRedirect: waiting,
+      // don't touch submission dialog state here
+    }),
+
+  setRedirectError: (error: string | null) =>
+    set({
+      redirectError: error,
+    }),
+
+  clearRedirectState: () =>
+    set({
+      isWaitingForRedirect: false,
+      redirectError: null,
+    }),
+
   setSubmissionError: (error: string | null, errorReason?: string | null) =>
     set({
       submissionError: error,
       submissionErrorReason: errorReason || null,
       isSubmitting: false,
       submissionSuccess: false,
+      isWaitingForRedirect: false,
+      redirectError: null,
     }),
 
   setSubmissionSuccess: (success: boolean, data?: Record<string, unknown>) =>
