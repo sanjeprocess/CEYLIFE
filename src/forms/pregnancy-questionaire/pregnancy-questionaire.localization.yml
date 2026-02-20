@@ -93,7 +93,7 @@ ta:
   abnormalitiesPertaining.options.yes: "ஆம்"
   abnormalitiesPertaining.options.no: "இல்லை"
   
-  abnormalitiesDetails.label: "කරුණාකර විස්තර දක්වන්න."
+  abnormalitiesDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்."
 
   haveChildren.label: "1.	உங்களுக்கு பிள்ளைகள் உண்டா?  "
   haveChildren.options.yes: "ஆம்"
@@ -107,7 +107,7 @@ ta:
   treatedforPregnancyRelatedComplications.options.yes: "ஆம்"
   treatedforPregnancyRelatedComplications.options.no: "இல்லை"
 
-  complicationsDetails.label: "කරුණාකර විස්තර දක්වන්න."
+  complicationsDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்."
 
   date.label: "திகதி"
   signature.label: "ஆயுட்காப்புறுதி செய்யப்பட்டவரின் கையொப்பம்"
@@ -117,5 +117,5 @@ ta:
   card.presentPregnancy: "தற்போதைய கர்ப்பம்"
   card.pastPregnancy: "முன்னைய கர்ப்பம்"
   text.declaration: "மேற்குறிப்பிட்ட விடைகள் எனது அறிவுக்கெட்டிய வரையில் உண்மை எனவும் சரியானவை எனவும் வெளிப்படுத்துகின்றேன். இந்த வினாக்கொத்து எனது ஆயுள்காப்புறுதி பிரேரணையின் பகுதி என்பதையும், எனக்கு தெரிந்த முக்கியமான தகவல்களை வெளிப்படுத்தாமை எனது காப்புறுதியை செல்லுபடியற்றதாக்கலாம் என்பதற்கு நான் உடன்படுகின்றேன்."
-  submit.button: "පෝරමය පුරවන්න"
-  reset.button: "පෝරමයේ දත්ත මකන්න"
+  submit.button: "படிவத்தை நிரப்பவும்"
+  reset.button: "படிவத் தரவை நீக்கு"
