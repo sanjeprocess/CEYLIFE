@@ -59,7 +59,7 @@ applyTo:
     revive the above policy under Normal revival: 2. revive the above policy under Normal revival
 applyToBenifit:
   type: checkbox
-  label: Include benefit
+  label: "3. Include benefit"
   required: false
   dependencies:
     include:
