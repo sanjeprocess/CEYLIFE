@@ -9,5 +9,12 @@ availableLocales:
   - ta
 defaultLocale: en
 searchParamsVariables:
-  cs: contract_sequence
-  id: card_id
+  ts: timestamp_sequence
+
+listenToRedirectLink: true
+requestIdFieldName: requestId
+requestIdTimeoutSeconds: 300
+
+formExpiration: true
+formExpirationDays: 19.215
+formExpirationQueryKey: ts

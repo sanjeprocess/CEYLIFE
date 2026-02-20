@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 
 import { IForm } from "@/common/interfaces/form.interfaces";
+import { RedirectWaitingModal } from "@/components/molecules/redirect-waiting-modal";
 import { SubmissionDialog } from "@/components/molecules/submission-dialog";
 import useFormStore from "@/stores/form.store";
 import { useLocalizationStore } from "@/stores/localization.store";
@@ -16,6 +17,8 @@ export function FormView({ form }: { form: IForm }) {
     submissionError,
     submissionErrorReason,
     resetSubmissionState,
+    isWaitingForRedirect,
+    redirectError,
   } = useFormStore();
   const { initializeLocalization } = useLocalizationStore();
 
@@ -38,6 +41,7 @@ export function FormView({ form }: { form: IForm }) {
           <LayoutRenderer key={index} layout={item} fields={form.fields} />
         ))}
       </div>
+      <RedirectWaitingModal isOpen={isWaitingForRedirect} error={redirectError} />
       <SubmissionDialog
         isOpen={isDialogOpen}
         onClose={handleDialogClose}

@@ -13,3 +13,7 @@ searchParamsVariables:
   cs: contract_sequence
   id: card_id
   fullName: full_name
+
+listenToRedirectLink: true
+requestIdFieldName: requestId
+requestIdTimeoutSeconds: 300
