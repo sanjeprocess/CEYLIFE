@@ -28,7 +28,11 @@ export interface FormSubmissionResult {
 export async function submitForm(
   submissionConfig: IFormSubmission,
   formValues: Record<string, unknown>,
-  currentVariables: Record<string, string>
+  currentVariables: Record<string, string>,
+  options?: {
+    requestId?: string;
+    requestIdFieldName?: string;
+  }
 ): Promise<FormSubmissionResult> {
   const baseUrl = submissionConfig.baseUrl
     ? `${submissionConfig.baseUrl.replace(/\/$/, "")}/${submissionConfig.endpoint.replace(/^\//, "")}`
@@ -57,7 +61,7 @@ export async function submitForm(
     );
 
     // Build request body from field mapping
-    const body = submissionConfig.fieldMapping
+    const baseBody = submissionConfig.fieldMapping
       ? await mapFieldsToBody(
           submissionConfig.fieldMapping,
           formValues,
@@ -65,6 +69,30 @@ export async function submitForm(
           runtimeVariables
         )
       : formValues; // Fallback to raw form values if no mapping
+
+    // Optionally inject requestId for WebSocket redirect-link flows
+    const requestId = options?.requestId;
+    const requestIdFieldName = options?.requestIdFieldName || "requestId";
+    
+    // Build final body with requestId if provided
+    let body = baseBody;
+    if (requestId) {
+      if (baseBody && typeof baseBody === "object" && !Array.isArray(baseBody)) {
+        // Merge requestId into existing object
+        body = { ...(baseBody as Record<string, unknown>), [requestIdFieldName]: requestId };
+      } else {
+        // Create new object with requestId (baseBody might be null, undefined, array, or primitive)
+        body = { [requestIdFieldName]: requestId };
+        // If baseBody exists but isn't a plain object, try to include it
+        if (baseBody !== null && baseBody !== undefined && Array.isArray(baseBody)) {
+          // For arrays, wrap in an object with requestId
+          body = { [requestIdFieldName]: requestId, data: baseBody };
+        } else if (baseBody !== null && baseBody !== undefined) {
+          // For primitives, wrap in an object
+          body = { [requestIdFieldName]: requestId, value: baseBody };
+        }
+      }
+    }
 
     console.log({
       method: submissionConfig.method,

@@ -1,6 +1,59 @@
 # threat-clause form localization
 # Locales: en, si, ta
 
-en: {}
-si: {}
-ta: {}
+en:
+  # Field labels
+  proposerName.label: "Proposer Name"
+  proposerContract.label: "Contract Number"
+  proposerNic.label: "NIC Number"
+  date.label: "Date"
+  signature.label: "Signature of Life Assured"
+
+  # Layout translations
+  card.threat_clause: "THREAT CLAUSE"
+  text.proposer_acceptance: "(To be accepted by the proposer)"
+  text.threat_clause_intro: "The Proposer having declared In the Proposal Form that he had been subject to threats to his life, it is hereby declared and agreed that in the event of death, disability, sickness or injury resulting in consequence of such threat, the liability of the Company will be limited to"
+  text.threat_clause_point_1: "i.) A refund of the total premium paid excluding any extra premium (without interest), subject to the deduction of any sums paid hereunder as the cash value of bonuses, advance payments and loans on the Policy together with accrued interest on any such payment."
+  text.threat_clause_or: "Or"
+  text.threat_clause_point_2: "ii.) Payment of the net Surrender Value of the Basic Policy, whichever shall be the greater, provided that such amount shall not exceed the Death Benefit on the Basic Policy."
+  text.consent_body: "I have read and understood the afore-said clause and hereby give my consent to accept the Life Assurance proposal subject to respective clause."
+  submit.button: "Submit"
+  reset.button: "Reset"
+
+si:
+  # Field labels
+  proposerName.label: "රක්ෂණ යෝජකයාගේ නම:"
+  proposerContract.label: "දුරකථන අංකය:"
+  proposerNic.label: "ජාහැප අංකය:"
+  date.label: "දිනය:"
+  signature.label: "රක්ෂණ යෝජකයාගේ අත්සන "
+
+  # Layout translations
+  card.threat_clause: "තර්ජන පිළිබඳ වගන්තිය"
+  text.proposer_acceptance: "(රක්ෂණ යෝජකයා විසින් පිළිගත යුතුය)"
+  text.threat_clause_intro: "යෝජනා පෝරමයෙහි තමාගේ ජීවිතයට තර්ජන එල්ල වී ඇති බව රක්ෂණ යෝජකයා විසින් ප්‍රකාශ කර ඇති බැවින්, එවැනි තර්ජනයක ප්‍රතිඵලයක් ලෙස සිදුවන මරණය, ආබාධිතභාවය, අසනීප හෝ තුවාල සිදුවීමේදී, සමාගමේ වගකීම පහත සඳහන් දේට සීමා වන බව මෙයින් ප්‍රකාශ කර එකඟ වේ."
+  text.threat_clause_point_1: "i.) ගෙවන ලද මුළු වාරිකයම ආපසු ගෙවීම (කිසිදු අමතර වාරිකයක් නොමැතිව) (පොලිය රහිතව), මෙහි දක්වා ඇති පරිදි බෝනස්වල මුදල් වටිනාකම, අත්තිකාරම් ගෙවීම් සහ ඔප්පුව මත ලබාගත් ණය සහ එවැනි ඕනෑම ගෙවීමක් සඳහා එකතු වූ පොලිය අඩු කිරීමට යටත්ව."
+  text.threat_clause_or: "හෝ"
+  text.threat_clause_point_2: "ii.) මූලික ඔප්පුවේ ශුද්ධ අත්හැරීමේ අගය ගෙවීම, එයින් වැඩි අගය ගෙවනු ලැබේ, එසේ වුවද එම මුදල මූලික ඔප්පුවේ මරණ ප්‍රතිලාභය නොඉක්මවිය යුතුය."
+  text.consent_body: "ඉහත වගන්තිය මා විසින් කියවා, තේරුම් ගෙන, එකී අදාළ වගන්තියට යටත් ව ජීවිත රක්ෂණ යෝජනාවලිය පිළිගැනීමට මා විසින් මෙමගින් මාගේ කැමැත්ත ලබා දෙමි."
+  submit.button: "පෝරමය පුරවන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"
+
+ta:
+  # Field labels
+  proposerName.label: "முன்மொழிபவரின் பெயர்"
+  proposerContract.label: "தொடர்பு இலக்கம்:"
+  proposerNic.label: "தே.அ.அ. இலக்கம்:"
+  date.label: "திகதி:"
+  signature.label: "முன்மொழிபவரின் கையொப்பம்"
+
+  # Layout translations
+  card.threat_clause: "அச்சுறுத்தல் விதிப்பிரிவு"
+  text.proposer_acceptance: "(முன்மொழிபவரால் ஏற்றுக்கொள்ளப்பட வேண்டும்)"
+  text.threat_clause_intro: "முன்மொழிபவர் தனது உயிருக்கு அச்சுறுத்தல் இருப்பதாக முன்மொழிவு படிவத்தில் அறிவித்துள்ளதால், அத்தகைய அச்சுறுத்தலின் விளைவாக மரணம், அங்கவீனம், நோய் அல்லது காயம் ஏற்பட்டால், நிறுவனத்தின் பொறுப்பு பின்வருவனவற்றுக்கு மட்டுமே என்று இதன் மூலம் அறிவிக்கப்பட்டு ஒப்புக் கொள்ளப்படுகிறது:"
+  text.threat_clause_point_1: "i.) எந்தவொரு மேலதிக தவணைக்கட்டணத்தையும் (வட்டி இல்லாமல்) தவிர்த்து செலுத்தப்பட்ட மொத்த தவணைக்கட்டணத்தின் பணத்தை மீளப் பெறுதல், இதன் கீழ் காப்புறுதி ஒப்பந்தத்தில் உள்ள போனஸ்கள், முற்பண கொடுப்பனவுகள் மற்றும் கடன்களின் பணப் பெறுமதியாக செலுத்தப்பட்ட எந்தவொரு தொகையும் அத்தகைய எந்தவொரு கட்டணத்திற்கும் திரட்டப்பட்ட வட்டியுடன் கழிக்கப்படுவதற்கு உட்பட்டதாகும்."
+  text.threat_clause_or: "அல்லது"
+  text.threat_clause_point_2: "ii.) அடிப்படை காப்புறுதி ஒப்பந்தத்தின் நிகர ஒப்புவிப்பு பெறுமதியை செலுத்துதல், எது அதிகமாக இருந்தாலும், அந்த தொகை அடிப்படை காப்புறுதி ஒப்பந்தத்தின் இறப்பு நன்மையை விட அதிகமாக இருத்தலாகாது."
+  text.consent_body: "மேற்படி விதிப்பிரிவை நான் வாசித்து விளங்கிக்கொண்டேன், மேலும் அந்தந்த விதிப்பிரிவிற்கு உட்பட்டு ஆயுள் காப்புறுதித் திட்டத்தை ஏற்க இதன் மூலம் எனது சம்மதத்தை அளிக்கிறேன்."
+  submit.button: "படிவத்தை நிரப்பவும்"
+  reset.button: "படிவத் தரவை நீக்கு"
