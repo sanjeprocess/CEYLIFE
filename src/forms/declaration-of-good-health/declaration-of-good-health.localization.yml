@@ -19,8 +19,8 @@ si:
   applyTo.label: "මම/අපි ඉහත සඳහන් රක්ෂණ ඔප්පුව"
   applyTo.options.revive the above policy under special revival: "1. විශේෂ ප්‍රාණවත් කිරීම යටතේ"
   applyTo.options.revive the above policy under Normal revival: "2. සාමාන්‍ය ප්‍රාණවත් කිරීම යටතේ ප්‍රාණවත් කිරීම සඳහා"
-  text.include_benefit: "**9. ප්‍රතිලාභය ඇතුළත් කිරීම**"
-  applyToBenifit.label: "ප්‍රතිලාභය/ප්‍රතිලාභ ඇතුළත් කිරීමට, ඉල්ලුම් කරමි/ කරමු."
+  # text.include_benefit: "**3. ප්‍රතිලාභය ඇතුළත් කිරීම**"
+  applyToBenifit.label: "3. ප්‍රතිලාභය/ප්‍රතිලාභ ඇතුළත් කිරීමට, ඉල්ලුම් කරමි/ කරමු."
   include.label: "විස්තර"
   card.your_health_other_details: "ඔබගේ සෞඛ්‍ය තත්වය / අනෙකුත් තොරතුරු"
 
@@ -105,8 +105,8 @@ ta:
   applyTo.label: "நான் / நாம் இத்தால் விண்ணப்பிப்பது"
   applyTo.options.revive the above policy under special revival: "1. விசேட மீள் புதுப்பித்தலுக்கு"
   applyTo.options.revive the above policy under Normal revival: "2. சாதாரண மீள் புதுப்பித்தலுக்கு"
-  text.include_benefit: "**9. அனுகூலத்தினை உள்ளிணைக்கவும்**"
-  applyToBenifit.label: "அனுகூலத்தினை உள்ளிணைக்கவும்"
+  # text.include_benefit: "**3. அனுகூலத்தினை உள்ளிணைக்கவும்**"
+  applyToBenifit.label: "3. அனுகூலத்தினை உள்ளிணைக்கவும்"
   include.label: "விபரங்கள்"
   card.your_health_other_details: "உங்கள் உடல் நலம் / ஏனைய விபரங்கள்"
 
@@ -165,7 +165,7 @@ ta:
   healthQ10Details.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
 
   submittedDate.label: "திகதி "
-  signature.label: "ஆயுட்காப்புறுதி செய்யப்பட்டவரின் கையொப்பம்	வாழ்க்கைத்  "
+  signature.label: "ஆயுட்காப்புறுதி செய்யப்பட்டவரின் கையொப்பம்"
 
   # Layout Keys
   h1.personal_information: "பிரத்தியேகத் தகவல்கள் "

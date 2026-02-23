@@ -114,7 +114,7 @@ additionalInformation:
 signature:
   type: file
   label: Signature of Proposer
-  required: true
+  required: false
   defaultValue: ""
   fileOptions:
     maxFileSize: 10485760

@@ -1,5 +1,143 @@
 # travel-and-residence-questionnaire form submission
 
-endpoint: /api/forms/travel-and-residence-questionnaire
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wb8ec06469e/cards
 method: POST
 requiresAccessToken: true
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Basic Information ---
+  - from: fullName
+    to: fullName
+    returnType: string
+
+  - from: currentResidence
+    to: 1PleaseProvideDetailsOfYourCurrentResidencyAndYourResidencyStatusIncludingInformationOfLengthOfStayByVisaEtcIfAppropriate
+    returnType: string
+
+  # --- Previous Residence (Section 2) ---
+  - from: dateOfStayPreviousResidence
+    to: aDatesOfStay
+    returnType: string
+
+  - from: countryOfPreviousResidence
+    to: bCountryAndRegionOfResidence
+    returnType: string
+
+  - from: reasonForVisitingPreviousResidence
+    to: cReasonForVisiting
+    returnType: string
+
+  - from: frequencyOfVisitsPreviousResidence
+    to: dFrequencynumberOfTripsPerYear
+    returnType: string
+
+  - from: durationOfStayPreviousResidence
+    to: eDurationOfEachStay
+    returnType: string
+
+  # --- Future Residence (Section 3) ---
+  - from: dateOfStayFutureResidence
+    to: 3aDatesOfStay
+    returnType: string
+
+  - from: countryOfFutureResidence
+    to: 3bCountryAndRegionOfResidence
+    returnType: string
+
+  - from: reasonForVisitingFutureResidence
+    to: 3cReasonForVisiting
+    returnType: string
+
+  - from: frequencyOfVisitsFutureResidence
+    to: 3dFrequencynumberOfTripsPerYear
+    returnType: string
+
+  - from: durationOfStayFutureResidence
+    to: 3eDurationOfEachStay
+    returnType: string
+
+  # --- Occupational & Travel Details ---
+  - from: occupationalDuties
+    to: 4PleaseProvideABriefDescriptionOfYourOccupationalDutiesAndOrAnyOtherActivitiesYouWillParticipateInWhilstTravelingOrResidingAbroad
+    returnType: string
+
+  - from: majorityOfTimeSpent
+    to: 5DoYouExceptToSpendTheMajorityOfYourTimeInMajorLargeCitiesIfNoPleaseProvideTheNameOfTheTownRegionAndDetailsOfYourLikelyAccommodationAvailabilityOfMedicalFacilitiesAndYourInternalTravelArrangementseGLightAircraftBoatEtc
+    returnType: string
+    script: |
+      // Convert radio-group value to Yes/No string
+      if (value === 'yes' || value === 'Yes') {
+        return 'Yes';
+      } else if (value === 'no' || value === 'No') {
+        return 'No';
+      }
+      return value ? String(value) : '';
+
+  - from: townRegionDetails
+    to: 5Details
+    returnType: string
+
+  - from: medicalDetails
+    to: 6PleaseGiveDetailsOfAnyMedicalTreatmentOrSurgeryYouHaveReceivedWhilstResidentOverseas
+    returnType: string
+
+  - from: additionalInformation
+    to: 7PleaseProvideAnyAdditionalInformationOnYourResidenceAndTravelWhichYouFeelMaybeHelpfulInProcessingYouApplication
+    returnType: string
+
+  # --- Signature & Date ---
+  - from: signature
+    to: signature
+    returnType: string
+
+  - from: date
+    to: date
+    returnType: string
+    transform: toDate
+
+  # --- Metadata & Variables ---
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+  # --- Title Generation ---
+  - from: fullName
+    to: title
+    returnType: string
+    script: |
+      // Generate title in format: ContractNo_Name_Mobile
+      const contractNumber = variables.contract_number || '';
+      const fullNameValue = value || '';
+      const mobile = variables.contact_1 || '';
+      
+      // Clean and format each part - replace spaces with underscores
+      const cleanContract = String(contractNumber).trim().replace(/\s+/g, '_');
+      const cleanName = String(fullNameValue).trim().replace(/\s+/g, '_');
+      const cleanMobile = String(mobile).trim().replace(/\s+/g, '_');
+      
+      // Build title parts
+      const parts = [];
+      if (cleanContract) parts.push(cleanContract);
+      if (cleanName) parts.push(cleanName);
+      if (cleanMobile) parts.push(cleanMobile);
+      
+      return parts.length > 0 ? parts.join('_') : 'Travel_Residence_Questionnaire';
