@@ -100,7 +100,10 @@ fieldMapping:
   - from: date
     to: date
     returnType: string
-    transform: toDate
+    transform: 
+      name: formatDate
+      options:
+        format:"YYYY-MM-DD"
 
   # --- Metadata & Variables ---
   - from: $variable
