@@ -14,3 +14,6 @@ searchParamsVariables:
   id: card_id
   policyNo: policy_no
   fullName: full_name
+listenToRedirectLink: true
+requestIdFieldName: requestId
+requestIdTimeoutSeconds: 300
