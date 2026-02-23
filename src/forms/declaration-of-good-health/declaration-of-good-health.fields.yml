@@ -55,8 +55,8 @@ applyTo:
   required: false
   placeholder: Enter apply to
   options:
-    revive the above policy under special revival: 1. revive the above policy under special revival
-    revive the above policy under Normal revival: 2. revive the above policy under Normal revival
+    "1. revive the above policy under special revival": "1. revive the above policy under special revival"
+    "2. revive the above policy under Normal revival": "2. revive the above policy under Normal revival"
 applyToBenifit:
   type: checkbox
   label: "3. Include benefit"
