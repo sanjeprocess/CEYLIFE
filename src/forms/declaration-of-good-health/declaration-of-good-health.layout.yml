@@ -18,9 +18,6 @@
 - field: natureOfOccupation
 - field: annualIncome
 - field: applyTo
-# - text: "**3. Include benefit**"
-#   fontSize: 14
-#   key: text.include_benefit
 - field: applyToBenifit
 - card: Your Health/Other Details
   key: card.your_health_other_details
