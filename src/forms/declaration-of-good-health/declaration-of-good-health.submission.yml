@@ -180,9 +180,9 @@ fieldMapping:
     returnType: string
 
   # --- Metadata & Variables ---
-  - from: signature
-    to: spaceForSignatureSignatureOfTheLifeAssured
-    returnType: string
+  # - from: signature
+  #   to: spaceForSignatureSignatureOfTheLifeAssured
+  #   returnType: string
 
   - from: generatedPDF
     to: generatedPDF

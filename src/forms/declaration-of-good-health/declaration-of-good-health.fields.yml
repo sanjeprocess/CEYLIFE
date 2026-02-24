@@ -253,7 +253,7 @@ submittedDate:
   defaultValue: "{{$today}}"
   readOnly: true
 
-signature:
-  type: file
-  label: Signature of the life Assured
-  required: true
+# signature:
+#   type: file
+#   label: Signature of the life Assured
+#   required: true
