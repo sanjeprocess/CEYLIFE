@@ -57,7 +57,7 @@
 - row: 2
   columns:
     - field: submittedDate
-    - field: signature
+    # - field: signature
 - spacer: 20
 - row: 12
   columns:
