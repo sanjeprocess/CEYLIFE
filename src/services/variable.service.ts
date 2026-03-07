@@ -11,7 +11,18 @@ export function initializeVariablesFromCookies() {
     if (cookieVariables) {
       const variables = JSON.parse(cookieVariables);
       if (variables && typeof variables === "object") {
+        // Preserve locale if it was already set by initializeLocalization
+        // Form default locale takes precedence over cookie locale
+        const existingLocale = useVariableStore.getState().variables.locale;
+        
         useVariableStore.getState().initializeVariables(variables, "cookie");
+        
+        // Restore locale from form default if it was set before variable initialization
+        // This ensures form default locale takes precedence over cookie locale
+        if (existingLocale) {
+          useVariableStore.getState().updateVariable("locale", existingLocale);
+        }
+        
         cookies.set(COOKIES.VARIABLES_INITIALIZED, "true");
       }
     }

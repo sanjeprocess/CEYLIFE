@@ -1,106 +1,106 @@
-# otp form otp
+# # otp form otp
 
-enabled: true
+# enabled: true
 
-# OTP Request Configuration (on-demand OTP sending)
-# When this section is present, user must click "Proceed" to request OTP before entering it
-request:
-  method: POST
-  baseUrl: https://beta.workhub24.com
-  endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wc30def1bfc/cards
-  headers:
-    - name: Accept
-      value: application/json
-    - name: Authorization
-      value: Bearer {{$WORKHUB_TOKEN}}
-    - name: Content-Type
-      value: application/json
-  body:
-    - name: contractSequenceNo
-      value: "{{contract_sequence}}"
-      type: string
-    - name: recordCardID
-      value: "{{card_id}}"
-      type: number
-    - name: title
-      value: "OTP Request"
-      type: string
+# # OTP Request Configuration (on-demand OTP sending)
+# # When this section is present, user must click "Proceed" to request OTP before entering it
+# request:
+#   method: POST
+#   baseUrl: https://beta.workhub24.com
+#   endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wc30def1bfc/cards
+#   headers:
+#     - name: Accept
+#       value: application/json
+#     - name: Authorization
+#       value: Bearer {{$WORKHUB_TOKEN}}
+#     - name: Content-Type
+#       value: application/json
+#   body:
+#     - name: contractSequenceNo
+#       value: "{{contract_sequence}}"
+#       type: string
+#     - name: recordCardID
+#       value: "{{card_id}}"
+#       type: number
+#     - name: title
+#       value: "OTP Request"
+#       type: string
 
-# UI configuration for the OTP request step
-requestDialog:
-  title: Request OTP
-  content: Thank you for accessing the digital forms of Ceylinco Life. Click the
-    button below to receive your One-Time Password (OTP) via SMS.
-  button: Proceed
+# # UI configuration for the OTP request step
+# requestDialog:
+#   title: Request OTP
+#   content: Thank you for accessing the digital forms of Ceylinco Life. Click the
+#     button below to receive your One-Time Password (OTP) via SMS.
+#   button: Proceed
 
-# UI configuration for OTP verification step
-dialog:
-  title: OTP Verification
-  content: Thank you for accessing the digital forms of Ceylinco Life. In order to
-    proceed ahead, please enter the OTP you received via SMS.
-  button: Verify OTP
-  inputLabel: OTP
-  inputPlaceholder: Enter OTP
+# # UI configuration for OTP verification step
+# dialog:
+#   title: OTP Verification
+#   content: Thank you for accessing the digital forms of Ceylinco Life. In order to
+#     proceed ahead, please enter the OTP you received via SMS.
+#   button: Verify OTP
+#   inputLabel: OTP
+#   inputPlaceholder: Enter OTP
 
-# OTP Verification API Configuration
-verification:
-  method: GET
-  baseUrl: https://app.workhub24.com
-  endpoint: /api/view/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/KBPFCS27DWJF3KLT7GQ7D57JAL44RD52
-  headers:
-    - name: Accept
-      value: application/json
-    - name: Authorization
-      value: Bearer {{$WORKHUB_TOKEN}}
-  queryParams:
-    - name: OTP
-      value: "{{otp}}"
-    - name: Timestamp_Sequence
-      value: "{{timestamp_sequence}}"
-  response:
-    variableMapping:
-      - path: "[0].cLOUReferenceNumber"
-        to: clou_reference
-        required: true
-      - path: "[0].cardID"
-        to: card_id
-        required: true
-      - path: "[0].clientEmail"
-        to: client_email
-        required: true
-      - path: "[0].clientName"
-        to: client_name
-        required: true
-      - path: "[0].clientNumber"
-        to: client_number
-        required: true
-      - path: "[0].contactNo1"
-        to: contact_1
-        required: true
-      - path: "[0].contactNo2"
-        to: contact_2
-        required: true
-      - path: "[0].contractNumber"
-        to: contract_number
-        required: true
-      - path: "[0].contractSequence"
-        to: contract_sequence
-        required: true
-      - path: "[0].iD"
-        to: id
-        required: true
-      - path: "[0].language"
-        to: preferred_language
-        required: true
-      - path: "[0].oTP"
-        to: otp
-        required: true
-      - path: "[0].questionnaire"
-        to: questionnaire_type
-        required: true
-      - path: "[0].requestType"
-        to: request_type
-        required: true
-      - path: "[0].timestampSequence"
-        to: timestamp_sequence
-        required: true
+# # OTP Verification API Configuration
+# verification:
+#   method: GET
+#   baseUrl: https://app.workhub24.com
+#   endpoint: /api/view/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/KBPFCS27DWJF3KLT7GQ7D57JAL44RD52
+#   headers:
+#     - name: Accept
+#       value: application/json
+#     - name: Authorization
+#       value: Bearer {{$WORKHUB_TOKEN}}
+#   queryParams:
+#     - name: OTP
+#       value: "{{otp}}"
+#     - name: Timestamp_Sequence
+#       value: "{{timestamp_sequence}}"
+#   response:
+#     variableMapping:
+#       - path: "[0].cLOUReferenceNumber"
+#         to: clou_reference
+#         required: true
+#       - path: "[0].cardID"
+#         to: card_id
+#         required: true
+#       - path: "[0].clientEmail"
+#         to: client_email
+#         required: true
+#       - path: "[0].clientName"
+#         to: client_name
+#         required: true
+#       - path: "[0].clientNumber"
+#         to: client_number
+#         required: true
+#       - path: "[0].contactNo1"
+#         to: contact_1
+#         required: true
+#       - path: "[0].contactNo2"
+#         to: contact_2
+#         required: true
+#       - path: "[0].contractNumber"
+#         to: contract_number
+#         required: true
+#       - path: "[0].contractSequence"
+#         to: contract_sequence
+#         required: true
+#       - path: "[0].iD"
+#         to: id
+#         required: true
+#       - path: "[0].language"
+#         to: preferred_language
+#         required: true
+#       - path: "[0].oTP"
+#         to: otp
+#         required: true
+#       - path: "[0].questionnaire"
+#         to: questionnaire_type
+#         required: true
+#       - path: "[0].requestType"
+#         to: request_type
+#         required: true
+#       - path: "[0].timestampSequence"
+#         to: timestamp_sequence
+#         required: true

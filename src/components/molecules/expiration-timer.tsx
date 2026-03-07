@@ -60,7 +60,7 @@ export function ExpirationTimer({ form }: { form: IForm }) {
 
     const formatTimer = useCallback((time: { days: number; hours: number; minutes: number; seconds: number }) => {
         let timeString = "";
-        if (time.days > 0) timeString += `${time.days.toString().padStart}d `;
+        if (time.days > 0) timeString += `${time.days.toString().padStart(2, '0')}d `;
         if (time.hours > 0) timeString += `${time.hours.toString().padStart(2, '0')}h `;
         if (time.minutes > 0) timeString += `${time.minutes.toString().padStart(2, '0')}m `;
         if (time.seconds > 0) timeString += `${time.seconds.toString().padStart(2, '0')}s `;

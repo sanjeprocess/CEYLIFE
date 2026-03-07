@@ -135,6 +135,11 @@ fieldMapping:
     to: metadata.client_name
     value: "{{client_name}}"
 
+  # Locale variable
+  - from: $variable
+    to: customer.language
+    value: "{{locale}}"
+
   # System variables
   - from: $static
     to: metadata.submitted_at
