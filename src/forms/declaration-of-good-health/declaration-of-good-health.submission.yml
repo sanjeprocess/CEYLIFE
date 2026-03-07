@@ -213,3 +213,7 @@ fieldMapping:
   - from: $variable
     to: sequenceNo
     value: "{{contract_sequence}}"
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"
