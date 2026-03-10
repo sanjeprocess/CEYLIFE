@@ -94,7 +94,7 @@ si:
 
 ta: 
   # Field labels
-  policyNumber.label: "1. காப்பறுதி இலக்கம்"
+  policyNumber.label: "1.  காப்புறுதி இலக்கம்"
   fullName.label: "2. முழுப்பெயர்"
   address.label: "3. முகவரி"
   text.telephone_number: "**4. தொலைபேசி இலக்கம்**"
