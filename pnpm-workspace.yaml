@@ -1,3 +1,7 @@
+packages:
+  - '.'
+  - 'cdk'
+
 onlyBuiltDependencies:
   - sharp
   - unrs-resolver
