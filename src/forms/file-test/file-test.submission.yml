@@ -1,0 +1,50 @@
+# file-test — multipart submit to mock API (see _mockMetadata.receivedBody in response)
+
+baseUrl: http://localhost:3000
+endpoint: /api/mock-submit
+method: POST
+requiresAccessToken: false
+contentType: multipart/form-data
+
+queryParams:
+  - name: form
+    value: file-test
+
+fieldMapping:
+  # File fields: omit returnType / transform so Blob is sent as file parts
+  - from: signature
+    to: signature
+
+  # - from: document
+  #   to: document
+
+  # - from: extraFiles
+  #   to: extraFiles
+
+  # - from: notes
+  #   to: notes
+  #   returnType: string
+
+  # - from: $static
+  #   to: metadata.formId
+  #   value: file-test
+
+  - from: dependents
+    to: dependents
+    returnType: associative-array
+
+response:
+  successCheck:
+    - type: status
+      values: [200, 201]
+    - type: field
+      path: data.status
+      value: success
+
+  messages:
+    success:
+      title: Submitted
+      content: Form submitted successfully! You can now close the window safely.
+    error:
+      title: Error
+      content: "{{error_message}}"

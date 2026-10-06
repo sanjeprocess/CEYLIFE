@@ -6,7 +6,7 @@
 - field: dutyInvolve
 - field: teetotaler
 - field: liquorType
-- field: avvgDailyIntake
+- field: avgDailyIntake
 - field: health
 - field: smoker
 - field: changeTheNature

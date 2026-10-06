@@ -3,121 +3,141 @@
 ProposerName:
   type: text
   label: Proposer's Name
-  required: false
+  required: true
   placeholder: Proposer's Name
   defaultValue: "{{proposers_name}}"
 proposalNum:
   type: number
   label: Proposal Number
-  required: false
+  required: true
   placeholder: Proposal Number
   defaultValue: "{{proposal_number}}"
 occupation:
   type: text
   label: 1. What is your occupation? if more than one, State all occupations.
-  required: false
+  required: true
   placeholder: Enter occupation(s)
   defaultValue: ""
 dutyInvolve:
   type: checkbox-group
   label: "2. Which of the following duties are part of your role?"
-  required: false
+  required: true
   defaultValue: ""
   options:
     Regular attendance at a bar: (a) Regular attendance at a bar
     Part time attendance at a bar: (b) Part time attendance at a bar
     Supervisory duties only: (c) Supervisory duties only
     A regular shift or changeable working hours: (d) A regular shift or changeable working hours
-    Working in a brewery, distillery or winery: (e) Working in a brewery, distillery or winery
+    Working in a brewery or a distillery or a winery: (e) Working in a brewery, distillery or winery
 teetotaler:
   type: radio-group
   label: 3. Are you a teetotaler? If so, have you always been so? 
-  required: false
+  required: true
   defaultValue: ""
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   orientation: horizontal
   dependencies:
     teetotalerDetails:
       type: textarea
       label: Details
-      required: false
+      required: true
       placeholder: Enter Details
       conditionalOptions:
         operator: eq
-        value: yes
-liquorType:
-  type: textarea
-  label: (a) Type of liquor consumed
-  required: false
-  placeholder: Enter liquor type(s)
-  defaultValue: ""
-avgDailyIntake:
-  type: textarea
-  label: "(b) Average daily intake in units. (One unit represents: 1 ounce
-    spirits, or 4 ounces wine, or 10 ounces beer.)"
-  required: false
-  placeholder: Enter average daily intake
-  defaultValue: ""
+        value: No
+    liquorType:
+      type: textarea
+      label: (a) Type of liquor consumed
+      required: true
+      placeholder: Enter liquor type(s)
+      defaultValue: ""
+      conditionalOptions:
+        operator: eq
+        value: No
+    avgDailyIntake:
+      type: textarea
+      label: "(b) Average daily intake in units. (One unit represents: 1 ounce
+        spirits, or 4 ounces wine, or 10 ounces beer.)"
+      required: true
+      placeholder: Enter average daily intake
+      defaultValue: ""
+      conditionalOptions:
+        operator: eq
+        value: No
 health:
-  type: textarea
+  type: radio-group
   label: 4. Has consumption of liquor ever affected your health or ability to work?
-  required: false
-  placeholder: Enter  details
-  defaultValue: ""
+  required: true
+  options:
+    Yes: Yes
+    No: No
+  orientation: horizontal
+  dependencies:
+    healthDetails:
+      type: textarea
+      label: Details
+      required: true
+      placeholder: Enter in full details
+      defaultValue: ""
+      conditionalOptions:
+        operator: eq
+        value: Yes
 smoker:
   type: radio-group
   label: 5. Do you smoke? If so give details.
-  required: false
+  required: true
   defaultValue: ""
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   orientation: horizontal
   dependencies:
     smokerDetails:
       type: textarea
       label: Details
-      required: false
+      required: true
       placeholder: Enter Details
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 changeTheNature:
   type: radio-group
   label: 6. Do you intend to change the nature of the work you perform in the next
     twelve months? (if so give details.)
-  required: false
+  required: true
   defaultValue: ""
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   orientation: horizontal
   dependencies:
     changeTheNatureDetails:
       type: textarea
       label: Details
-      required: false
+      required: true
       placeholder: Enter Details
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 date:
   type: date
   label: Date
   required: true
   placeholder: Date
-  defaultValue: ""
+  defaultValue: "{{$today}}"
+  readOnly: true
 signature:
-  type: file
+  type: adjustableImage
   label: Signature
   required: true
   defaultValue: ""
+  description: Take a photo or upload an image, then adjust the frame to include only the signature.
   fileOptions:
-    maxFileSize: 10485760
+    maxSize: 10485760
     allowedExtensions:
       - png
       - jpg
       - jpeg
-      - pdf
+      - webp

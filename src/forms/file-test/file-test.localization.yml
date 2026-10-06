@@ -1,0 +1,157 @@
+# file-test form localization
+# Locales: en, si, ta
+# English entries below demonstrate Markdown in labels, descriptions, options, placeholders (plain), and OTP title.
+
+en:
+  # Override smoke test: form wins over merged system defaults
+  system.table.addRow: Add Beneficiary
+
+  formTitle: File upload test
+  formDescription: >
+    Upload one or more files and submit to the dev mock API as multipart/form-data.
+    Open this form at /forms/file-test (OTP is disabled for quick local testing).
+
+  dependents.label: "**Dependents** / Beneficiaries"
+  dependents.description: |
+    Add dependents or beneficiaries associated with this contract.
+
+    - One row per person
+    - Fields marked with * are required
+
+  dependents.label.columns.name: Full Name
+  dependents.placeholder.columns.name: "Enter **full** name"
+
+  dependents.label.columns.relationship: Relationship
+  dependents.placeholder.columns.relationship: Select relationship
+  dependents.options.spouse: "_Spouse_ (primary)"
+  dependents.options.child: Child
+  dependents.options.parent: Parent
+  dependents.options.sibling: Sibling
+  dependents.options.other: Other
+
+  dependents.label.columns.dateOfBirth: Date of Birth
+  dependents.placeholder.columns.dateOfBirth: Select date of birth
+
+  dependents.label.columns.age: Age
+  dependents.placeholder.columns.age: Age
+
+  dependents.label.columns.idNumber: ID Number
+  dependents.placeholder.columns.idNumber: National ID or Passport
+
+  dependents.label.columns.contactNumber: Contact Number
+  dependents.placeholder.columns.contactNumber: Contact number
+
+  dependents.label.columns.isPrimary: Primary Beneficiary
+
+  otp.dialog.title: "**OTP** Verification"
+  otp.dialog.content: >
+    Thank you for accessing the digital forms of Ceylinco Life.
+    In order to proceed ahead, please enter the OTP you received via SMS.
+  otp.dialog.button: Verify OTP
+  otp.dialog.inputLabel: OTP
+  otp.dialog.inputPlaceholder: Enter OTP
+
+  submission.messages.success.title: Submitted
+  submission.messages.error.title: Error
+  submission.messages.error.content: "{{error_message}}"
+  submission.messages.error.generic: Something went wrong while submitting the form
+si:
+  formTitle: ගොනු උඩුගත කිරීමේ පරීක්ෂණය
+  formDescription: >
+    ගොනු එකක් හෝ කිහිපයක් උඩුගත කර multipart/form-data ලෙස dev mock API වෙත ඉදිරිපත් කරන්න.
+    මෙම පෝරමය /forms/file-test මගින් විවෘත කළ හැක (ඉක්මන් පරීක්ෂණ සඳහා OTP අක්‍රීය කර ඇත).
+
+  dependents.label: "**යැපෙන්නන්** / ප්‍රතිලාභීන්"
+  dependents.description: |
+    මෙම ගිවිසුමට අදාළ යැපෙන්නන් හෝ ප්‍රතිලාභීන් එකතු කරන්න.
+
+    - පුද්ගලයෙකුට පේළියක්
+    - * ලකුණ ඇති ක්ෂේත්‍ර අනිවාර්යයි
+
+  dependents.label.columns.name: සම්පූර්ණ නම
+  dependents.placeholder.columns.name: සම්පූර්ණ නම ඇතුළත් කරන්න
+
+  dependents.label.columns.relationship: සම්බන්ධතාවය
+  dependents.placeholder.columns.relationship: සම්බන්ධතාවය තෝරන්න
+  dependents.options.spouse: "_භාර්යාව/සැමියා_"
+  dependents.options.child: දරුවා
+  dependents.options.parent: දෙමාපිය
+  dependents.options.sibling: සහෝදර/සහෝදරිය
+  dependents.options.other: අනෙක
+
+  dependents.label.columns.dateOfBirth: උපන් දිනය
+  dependents.placeholder.columns.dateOfBirth: උපන් දිනය තෝරන්න
+
+  dependents.label.columns.age: වයස
+  dependents.placeholder.columns.age: වයස
+
+  dependents.label.columns.idNumber: හැඳුනුම්පත් අංකය
+  dependents.placeholder.columns.idNumber: ජාතික හැඳුනුම්පත හෝ ගමන් බලපත්‍රය
+
+  dependents.label.columns.contactNumber: දුරකථන අංකය
+  dependents.placeholder.columns.contactNumber: දුරකථන අංකය
+
+  dependents.label.columns.isPrimary: ප්‍රධාන ප්‍රතිලාභියා
+
+  otp.dialog.title: "**OTP** තහවුරු කිරීම"
+  otp.dialog.content: >
+    Ceylinco Life ඩිජිටල් පෝරම වෙත ප්‍රවේශ වීමට ස්තුතියි.
+    ඉදිරියට යාම සඳහා SMS මගින් ලැබුණු OTP අංකය ඇතුළත් කරන්න.
+  otp.dialog.button: OTP තහවුරු කරන්න
+  otp.dialog.inputLabel: OTP
+  otp.dialog.inputPlaceholder: OTP ඇතුළත් කරන්න
+
+  submission.messages.success.title: ඉදිරිපත් කරන ලදී
+  submission.messages.error.title: දෝෂය
+  submission.messages.error.content: "{{error_message}}"
+  submission.messages.error.generic: පෝරමය ඉදිරිපත් කිරීමේදී දෝෂයක් සිදු විය
+ta:
+  formTitle: கோப்பு பதிவேற்றச் சோதனை
+  formDescription: >
+    ஒரு அல்லது பல கோப்புகளை பதிவேற்றி multipart/form-data ஆக dev mock API-க்கு சமர்ப்பிக்கவும்.
+    இந்த படிவத்தை /forms/file-test மூலம் திறக்கலாம் (விரைவு சோதனைக்காக OTP முடக்கப்பட்டுள்ளது).
+
+  dependents.label: "**சார்பர்கள்** / பயனாளர்கள்"
+  dependents.description: |
+    இந்த ஒப்பந்தத்துடன் தொடர்புடைய சார்பர்கள் அல்லது பயனாளர்களைச் சேர்க்கவும்.
+
+    - ஒருவருக்கு ஒரு வரி
+    - * குறியிடப்பட்டவை கட்டாயம்
+
+  dependents.label.columns.name: முழுப் பெயர்
+  dependents.placeholder.columns.name: முழுப் பெயரை உள்ளிடுங்கள்
+
+  dependents.label.columns.relationship: உறவு
+  dependents.placeholder.columns.relationship: உறவைத் தேர்ந்தெடுக்கவும்
+  dependents.options.spouse: "_துணை_"
+  dependents.options.child: குழந்தை
+  dependents.options.parent: பெற்றோர்
+  dependents.options.sibling: சகோதரர்/சகோதரி
+  dependents.options.other: மற்றவை
+
+  dependents.label.columns.dateOfBirth: பிறந்த தேதி
+  dependents.placeholder.columns.dateOfBirth: பிறந்த தேதியைத் தேர்ந்தெடுக்கவும்
+
+  dependents.label.columns.age: வயது
+  dependents.placeholder.columns.age: வயது
+
+  dependents.label.columns.idNumber: அடையாள எண்
+  dependents.placeholder.columns.idNumber: தேசிய அடையாள அட்டை அல்லது பாஸ்போர்ட்
+
+  dependents.label.columns.contactNumber: தொடர்பு எண்
+  dependents.placeholder.columns.contactNumber: தொடர்பு எண்
+
+  dependents.label.columns.isPrimary: முதன்மை பயனாளர்
+
+  otp.dialog.title: "**OTP** சரிபார்ப்பு"
+  otp.dialog.content: >
+    Ceylinco Life டிஜிட்டல் படிவங்களை அணுகியதற்கு நன்றி.
+    தொடர, SMS மூலம் பெற்ற OTP-யை உள்ளிடவும்.
+  otp.dialog.button: OTP சரிபார்க்கவும்
+  otp.dialog.inputLabel: OTP
+  otp.dialog.inputPlaceholder: OTP-யை உள்ளிடுங்கள்
+
+  submission.messages.success.title: சமர்ப்பிக்கப்பட்டது
+  submission.messages.error.title: பிழை
+  submission.messages.error.content: "{{error_message}}"
+  submission.messages.error.generic: படிவத்தை சமர்ப்பிக்கும் போது ஏதோ தவறு ஏற்பட்டது

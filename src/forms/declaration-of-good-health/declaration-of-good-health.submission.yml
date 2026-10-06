@@ -4,7 +4,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w1fd6da45a6/cards
 method: POST
 requiresAccessToken: true
-
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -66,6 +66,10 @@ fieldMapping:
   - from: applyTo
     to: iweHerebyApplyTo
     returnType: string
+
+  - from: special_revival
+    to: specialRevivalAcknowledgement
+    returnType: string 
 
   - from: applyToBenifit
     to: benefit
@@ -165,10 +169,9 @@ fieldMapping:
   - from: confinementDate
     to: confinementDate
     returnType: string
-    transform: 
+    transform:
       name: formatDate
-      options:
-        format:"YYYY-MM-DD"
+      options: format:"YYYY-MM-DD"
 
   # 10. Declined Proposal
   - from: healthQ10
@@ -180,13 +183,12 @@ fieldMapping:
     returnType: string
 
   # --- Metadata & Variables ---
-  # - from: signature
-  #   to: spaceForSignatureSignatureOfTheLifeAssured
-  #   returnType: string
+  - from: signature
+    to: spaceForSignatureSignatureOfTheLifeAssured
 
-  - from: generatedPDF
-    to: generatedPDF
-    returnType: file
+  # - from: generatedPDF
+  #   to: generatedPDF
+  #   returnType: file
 
   - from: [policyNumber, fullName, mobileNumber]
     to: title

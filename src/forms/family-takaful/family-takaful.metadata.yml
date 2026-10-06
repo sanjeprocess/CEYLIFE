@@ -6,6 +6,7 @@ formDescription: (ALL ANSWERS TO BE FILLED LEGIBLY, ANSWERS MUST BE GIVEN IN WOR
 showFormHeader: true
 availableLocales:
   - en
+  - si
   - ta
 defaultLocale: en
 searchParamsVariables:

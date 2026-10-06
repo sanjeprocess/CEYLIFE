@@ -4,6 +4,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w6870919706/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -33,7 +34,10 @@ fieldMapping:
   - from: declarationDate
     to: date
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: certificateNo
     to: cERTIFICATENO
@@ -50,11 +54,18 @@ fieldMapping:
 
   - from: signature
     to: signatureOfTheParticipant
-    returnType: string
 
   # --- Revival / Benefit ---
   - from: revivalType
     to: iHerebyApplyTo
+    returnType: string
+
+  - from: special_revival
+    to: specialRevivalAcknowledgement
+    returnType: string 
+
+  - from: benefit
+    to: benefit
     returnType: string
 
   - from: include
@@ -133,7 +144,7 @@ fieldMapping:
   - from: confinementDate
     to: "8ConfinementDate"
     returnType: string
-    transform: toDate
+    # transform: toDate
 
   # Q9
   - from: healthQ9
@@ -157,3 +168,6 @@ fieldMapping:
        return 'title_not_generated';
 
 
+  - from: $variable
+    to: language
+    value: "{{locale}}"

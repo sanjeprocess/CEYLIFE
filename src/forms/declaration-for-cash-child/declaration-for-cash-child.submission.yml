@@ -1,5 +1,362 @@
-# declaration-for-cash form submission
+# declaration-for-cash-child from submission
 
-endpoint: /api/forms/declaration-for-cash
+baseUrl: https://lk.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w73a7027ba4/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
+
+headers:
+  - name: authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  - from: [policyNo, nameOfChild, telephone]
+    to: title
+    returnType: string
+    script: |
+      if (value) {
+          value = value.replaceAll(' ', '_');
+          return value;
+      }
+      return 'title_not_generated';
+
+  - from: nameOfChild
+    to: nameOfChild
+    returnType: string
+
+  - from: dateOfBirth
+    to: dateOfBirth
+    returnType: string
+    # transfrom:
+    #   name: fromatDate
+    #   options:
+    #     fromat: "YYYY-MM-DD"
+
+  - from: age
+    to: age
+    returnType: string
+
+  - from: height
+    to: height
+    returnType: string
+
+  - from: weight
+    to: weight
+    returnType: string
+
+  - from: address
+    to: address
+    returnType: string
+
+  - from: nicNo
+    to: nICNO
+    returnType: string
+
+  - from: personalPhysicianName
+    to: nameOfPersonalPhysician
+    returnType: string
+
+  - from: telephone
+    to: telephoneNo
+    returnType: string
+
+  - from: email
+    to: emailAddress
+    returnType: string
+
+  - from: policyNo
+    to: policyProposalNo
+    returnType: string
+
+  - from: familyDigasiriPlus
+    to: ceylincoLifeFamilyDigasiriPlusNew
+    returnType: string
+
+  - from: familyDigasiriPlusAmount
+    to: digasiriPlusAmount
+    returnType: string
+
+  - from: hospitalCashPlus
+    to: ceylincoLifeHospitalCashPlusBenefitPerDay
+    returnType: string
+
+  - from: hospitalCashPlusAmount
+    to: cashPlusBenefitAmount
+    returnType: string
+
+  - from: majorSurgeryPlus
+    to: ceylincoLifeMajorSurgeryPlusBenefit
+    returnType: string
+
+  - from: majorSurgeryPlusAmount
+    to: surgeryPlusBenefitAmount
+    returnType: string
+
+  - from: healthSupportPlus
+    to: ceylincoLifeHealthSupportPlusBenefit
+    returnType: string
+
+  - from: healthSupportPlusBenefitDetails
+    to: supportPlusBenefitAmount
+    returnType: string
+
+  - from: isChildGoodHealth
+    to: 1IsYourChildInGoodHealthAndEntirelyFreeOfAnyMentalOrPhysicalImpairmentsOfDeformities
+    returnType: string
+
+  - from: goodHealthDetails
+    to: 1Details
+    returnType: string
+
+  - from: circulatoryDisease
+    to: 21DiseaseOfTheCirculatorySystemeGHeartTroubleHoleInTheHeartValvularDiseaseRheumaticLeverHighBloodPressureDiseaseOfArteriesOrVeinsMyocardialInfractionCoronaryArteryDisease
+    returnType: string
+
+  - from: circulatoryDetails
+    to: 21Details
+    returnType: string
+
+  - from: respiratoryDisease
+    to: 22DiseaseOfTheRespiratorySystemeGTuberculosisAsthmaPersistentCoughPneumoniaChronicLungDisease
+    returnType: string
+
+  - from: respiratoryDetails
+    to: 22Details
+    returnType: string
+
+  - from: genitourinaryDisease
+    to: 23DiseaseOfGenitoUrinarySystemOrCongenitalAbnormalitieseGInfectionOfKidneysUrinaryPassageBladderOrGenitalOrgansRentalStonesVenerealDiseaseKidneyFailure
+    returnType: string
+
+  - from: genitourinaryDetails
+    to: 23Details
+    returnType: string
+
+  - from: gastrointestinalDisease
+    to: 24DiseaseOfGastroIntestinalSystemeGDigestiveDisordersGastricAndDuodenalUlcerDisordersOfTheLiverOrGallBladderHepatitisChronicLiverDisease
+    returnType: string
+
+  - from: gastrointestinalDetails
+    to: 24Details
+    returnType: string
+
+  - from: nervousSystemDisease
+    to: 25DiseaseOfTheNervousSystemOrMentalDisorderseGEpilepsyFitsOrLaintingAttacksFrequentHeadachesNervousBreakdownStrokeParalysisMultiSclerosisComa
+    returnType: string
+
+  - from: nervousSystemDetails
+    to: 25Details
+    returnType: string
+
+  - from: otherMajorDiseases
+    to: 26DiabatesCancerOrAnyDiseaseOfTheBloodGlandsSpleenEarOrEyesMuscularDystrophyMajorBurnsBlindnessDeafnessOrLossOfSpeech
+    returnType: string
+
+  - from: otherMajorDiseaseDetails
+    to: 26Details
+    returnType: string
+
+  - from: chronicSymptoms
+    to: 27NightSweatsAndorLossOfWeightPersistentLeaverContinuousOrRecurrentDiarrhoea
+    returnType: string
+
+  - from: chronicSymptomDetails
+    to: 27Details
+    returnType: string
+
+  - from: otherAilments
+    to: 28AnyOtherDiseaseOrAllmentNotMentionedAbove
+    returnType: string
+
+  - from: otherAilmentDetails
+    to: 28Details
+    returnType: string
+
+  - from: hospitalTreatment
+    to: 3HasYourChildEverHadOrBeenAdvisedToHaveHospitalTreatmentOrSurgeryOrMajorOrganTransplant
+    returnType: string
+
+  - from: hospitalTreatmentDetails
+    to: 3Details
+    returnType: string
+
+  - from: paediatricianConsultation
+    to: 4HasYourChildConsultedAPediatricianPhysicianSurgeonForAnyReasonIncludingRoutineExaminationsOrInvestigationsAndBloodTestsInThePast5Years
+    returnType: string
+
+  - from: paediatricianConsultationDetails
+    to: 4Details
+    returnType: string
+
+  - from: disabilityBenefit
+    to: 5HasYourChildEverReceivedOrDoesHeNowReceiveAnyDisabilityBenefit
+    returnType: string
+
+  - from: disabilityBenefitDetails
+    to: 5Details
+    returnType: string
+
+  - from: existingPolicy
+    to: 6HasYourChildReceivedAnyCeylincoLifeInsurancePolicyThatIncludedCeylincoLifeHospitalCashBenefitOrCeylincoLifeMajorSurgeryBenefitOrCeylincoLifeDigastricBenefitIfYesPleaseStatePolicyNo
+    returnType: string
+
+  - from: existingPolicyNo
+    to: 6Details
+    returnType: string
+
+  - from: declinedProposal
+    to: 7HasAnyProposalForChildProtectionOrCriticalIllnessCoverEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremiumWithRegardsToYourChildInsurance
+    returnType: string
+
+  - from: declinedProposalDetails
+    to: 7Details
+    returnType: string
+
+  - from: smokedLast12Months
+    to: 81HasYourChildEverSmokedInTheLast12Months
+    returnType: string
+
+  - from: smokeNow
+    to: 82DoesHeSheSmokeNow
+    returnType: string
+
+  - from: drugsOrNarcotics
+    to: 83HasYourChildEverTakenOrDoesHesheNowTakeDrugsOrNarcotic
+    returnType: string
+
+  - from: alcoholConsumption
+    to: 84DoesHeSheConsumeBeerWineOrAlcoholifSoPleaseGiveAverageDailyConsumption
+    returnType: string
+
+  - from: alcoholConsumptionDetails
+    to: 84Details
+    returnType: string
+
+  - from: hazardousActivities
+    to: 91HasYourChildAnIntentionOfEngagingInAnyHazardousSportsActivityOrMilitaryAlliedServices
+    returnType: string
+
+  - from: hazardousActivitiesDetails
+    to: 91Details
+    returnType: string
+
+  - from: criminalOffence
+    to: 92HasYourChildEverBeenConvictedOfAnyCriminalOffenceOrIllegalActivity
+    returnType: string
+
+  - from: criminalOffenceDetails
+    to: 92Details
+    returnType: string
+
+  - from: pendingLitigation
+    to: 93IsThereAnyCaseOfLitigationPendingOrUnderInvestigationAtPresent
+    returnType: string
+
+  - from: pendingLitigationDetails
+    to: 93Details
+    returnType: string
+
+  # - from: datedAt
+  #   to: datedAt
+  #   returnType: string
+
+  # - from: onThis
+  #   to: onThis
+  #   returnType: string
+  # transfrom:
+  #   name: fromatDate
+  #   options:
+  #     fromat: "YYYY-MM-DD"
+
+  - from: fathersSignature
+    to: fathersSignature
+
+  # - from: mothersSignature
+  #   to: mothersSignature
+
+  - from: fathersNic
+    to: fNICNo
+    returnType: string
+
+  - from: submittedDate
+    to: submittedDate
+    returnType: string
+
+  - from: submittedPlace
+    to: submittedPlace
+    returnType: string
+
+  - from: nameWithInitial
+    to: nameWithInitial
+    returnType: string
+
+  # - from: mothersNic
+  #   to: mNICNo
+  #   returnType: string
+
+  - from: witness1Signature
+    to: 1Signature
+
+  # - from: witness2Signature
+  #   to: 2Signature
+
+  - from: witness1Name
+    to: 1Name
+    returnType: string
+
+  # - from: witness2Name
+  #   to: 2Name
+  #   returnType: string
+
+  - from: witness1Address
+    to: 1Address
+    returnType: string
+
+  # - from: witness2Address
+  #   to: 2Address
+  #   returnType: string
+
+  - from: witness1Nic
+    to: 1NICNo
+    returnType: string
+
+  # - from: witness2CodeNo
+  #   to: 2NICNo
+  #   returnType: string
+
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+  - from: $variable
+    to: requestType
+    value: "{{request_type}}"
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: smokedLast12MonthsDetails
+    to: 81Details
+    returnType: string
+
+  - from: smokeNowDetails
+    to: 82Details
+    returnType: string
+
+  - from: drugsOrNarcoticsDetails
+    to: 83Details
+    returnType: string
+
+  - from: nameTitle
+    to: nameTitle
+    returnType: string

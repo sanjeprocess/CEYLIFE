@@ -14,7 +14,7 @@ proposalNum:
   defaultValue: "{{proposal_number}}"
 vesselName:
   type: text
-  label: 1) a) What is the name of the Vessel?
+  label: a) What is the name of the Vessel?
   required: true
   placeholder: Vessel Name
   defaultValue: ""
@@ -59,7 +59,7 @@ vesselType:
   label: 6) What is the type of the vessel?
   required: true
   options:
-    barge_boat: Is the boat a barge
+    barge_boat: Barge
     tug_boat: Tug Boat
     launch_first: Launch First - class passenger steamship
     freight_steamship: Freight steamship
@@ -85,8 +85,8 @@ insurable:
   label: 10) Is the vessel seaworthy and insurable?
   required: true
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   orientation: horizontal
   dependencies:
     Details:
@@ -94,24 +94,27 @@ insurable:
       label: If so, is the vessel now insured?
       placeholder: Enter insurance status.
       defaultValue: ""
+      required: true
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 date:
   type: date
   label: Date
   required: true
   placeholder: Date
-  defaultValue: ""
+  defaultValue: "{{$today}}"
+  readOnly: true
 signature:
-  type: file
+  type: adjustableImage
   label: Signature
-  required: false
+  required: true
   defaultValue: ""
+  description: Take a photo or upload an image, then adjust the frame to include only the signature.
   fileOptions:
-    maxFileSize: 10485760
+    maxSize: 10485760
     allowedExtensions:
-      - .png
-      - .jpg
-      - .jpeg
-      - .pdf
+      - png
+      - jpg
+      - jpeg
+      - webp

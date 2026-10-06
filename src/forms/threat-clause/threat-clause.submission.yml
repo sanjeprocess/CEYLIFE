@@ -1,12 +1,10 @@
 # threat-clause submission config
 
-# baseUrl: https://app.workhub24.com
-# endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w09b185f6a7/cards
-
-baseUrl: http://localhost:3000
-endpoint: /api/mock-submit
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w09b185f6a7/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -19,7 +17,10 @@ fieldMapping:
   - from: date
     to: date
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: proposerName
     to: proposersName
@@ -31,7 +32,6 @@ fieldMapping:
 
   - from: signature
     to: signatureOfTheProposer
-    returnType: image
 
   # --- Variables ---
   - from: $variable
@@ -55,12 +55,16 @@ fieldMapping:
     value: "{{contract_sequence}}"
 
   # --- Computed ---
-  - from: ["{{contract_number}}",proposerName]
+  - from: ["{{contract_number}}", proposerName]
     to: title
     returnType: string
     script: |
-       if (value) {
-           value = value.replaceAll(' ', '_');
-           return value;
-       }
-       return 'title_not_generated';
+      if (value) {
+          value = value.replaceAll(' ', '_');
+          return value;
+      }
+      return 'title_not_generated';
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

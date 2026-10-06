@@ -4,6 +4,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wbcb4aaff6f/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -24,14 +25,20 @@ fieldMapping:
   - from: date
     to: date
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   # --- Questionnaire ---
   # 1. Menstrual Period
   - from: firstDateOfMenstrualPeriod
     to: 1DateOfTheFirstDateOfTheLastMenstrualPeriod
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   # 1. Children
   - from: haveChildren
@@ -46,15 +53,22 @@ fieldMapping:
   - from: deliveryDate
     to: 2ExpectedDateOfDelivery
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   # 2. Premature Births
   - from: prematureBirth
     to: 2WereThereAnyPrematureBirths
     returnType: string
 
-  # 3. Medical Details
-  - from: medicalDetails
+  # 3. Present pregnancy (Yes/No + Details)
+  - from: beingTreatedOrCloselyMonitored
+    to: 3YesNo
+    returnType: string
+
+  - from: beingTreatedOrCloselyMonitoredDetails
     to: 3AreYouBeingTreatedOrCloselyMonitoredDueToElevatedBloodPressureDiabetesOfForAnyOtherPregnantRelatedComplicationsIfSoPleaseGiveDetailsAndForwardRelatedMedicalReports
     returnType: string
 
@@ -79,7 +93,6 @@ fieldMapping:
   # --- Metadata & Variables ---
   - from: signature
     to: signatureOfTheLifeToBeAssured
-    returnType: string
 
   - from: [contractNumber, proposersName]
     to: title
@@ -106,3 +119,7 @@ fieldMapping:
   - from: $variable
     to: sequenceNo
     value: "{{contract_sequence}}"
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

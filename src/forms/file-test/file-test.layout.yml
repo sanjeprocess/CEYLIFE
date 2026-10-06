@@ -1,0 +1,18 @@
+# file-test layout
+
+- h2: File upload test
+  key: formTitle
+- text: Use the mock API (localhost) and multipart/form-data. Check server logs or API response metadata for received parts.
+  key: formDescription
+- spacer: 16
+- field: dependents
+# - spacer: 16
+# - field: today
+- spacer: 16
+- field: signature
+# - spacer: 16
+# - field: document
+# - spacer: 16
+# - field: extraFiles
+# - spacer: 24
+- submit: Submit

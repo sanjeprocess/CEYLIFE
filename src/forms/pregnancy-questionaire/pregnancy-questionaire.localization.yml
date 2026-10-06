@@ -5,27 +5,31 @@ en:
   # Field labels
   proposersName.label: "Proposer's Name"
   contractNumber.label: "Contract Number"
-  firstDateOfMenstrualPeriod.label: "3. Date of first date of the last menstrual period"
-  deliveryDate.label: "4. Expected date of delivery"
-  medicalDetails.label: "5. Are you being-treated or closely monitored due to elevated blood pressure, diabetes or for any other pregnant related complications? if so,please give details and forward related medical reports."
+  firstDateOfMenstrualPeriod.label: "1. Date of first date of the last menstrual period"
+  deliveryDate.label: "2. Expected date of delivery"
+  beingTreatedOrCloselyMonitored.label: "3. Are you being-treated or closely monitored due to elevated blood pressure, diabetes or for any other pregnant related complications?"
+  beingTreatedOrCloselyMonitored.options.Yes: "Yes"
+  beingTreatedOrCloselyMonitored.options.No: "No"
+  beingTreatedOrCloselyMonitoredDetails.label: "Details"
+  beingTreatedOrCloselyMonitoredDetails.placeholder: "Please give details and forward related medical reports."
   
-  abnormalitiesPertaining.label: "6. Are you aware of any abnormalities pertaining to current pregnancy? If so, please give details. "
-  abnormalitiesPertaining.options.yes: "Yes"
-  abnormalitiesPertaining.options.no: "No"
+  abnormalitiesPertaining.label: "4. Are you aware of any abnormalities pertaining to current pregnancy? If so, please give details. "
+  abnormalitiesPertaining.options.Yes: "Yes"
+  abnormalitiesPertaining.options.No: "No"
   
   abnormalitiesDetails.label: "Details"
 
   haveChildren.label: "1. Do you have  children? If yes, state the number. "
-  haveChildren.options.yes: "Yes"
-  haveChildren.options.no: "No"
+  haveChildren.options.Yes: "Yes"
+  haveChildren.options.No: "No"
 
   childrenNo.label: "Number of Children"
 
   prematureBirth.label: "2. Were there any premature births? "
 
   treatedforPregnancyRelatedComplications.label: "3. During past pregnancy/ies, were you treated for elevated blood pressure, blood sugar or any adverse urine / blood reports or other illness/es? If so, please give details. "
-  treatedforPregnancyRelatedComplications.options.yes: "Yes"
-  treatedforPregnancyRelatedComplications.options.no: "No"
+  treatedforPregnancyRelatedComplications.options.Yes: "Yes"
+  treatedforPregnancyRelatedComplications.options.No: "No"
 
   complicationsDetails.label: "Details"
 
@@ -44,68 +48,77 @@ si:
   # Field labels
   proposersName.label: "යෝජකයාගේ නම"
   contractNumber.label: "යෝජනාපත්‍ර / ඔප්පු අංකය"
-  firstDateOfMenstrualPeriod.label: "3. අවසන් වරට ඇති වූ මාසික ශුද්ධියේ ප්‍රථම දිනය :"
-  deliveryDate.label: "4. ප්‍රසුතිය නියමිත දිනය :"
-  medicalDetails.label: "5. අධිරුධිර පීඩනය, දියවැඩියාව හෝ වෙනයම් ගර්භනි සංකූලතාවයක් සඳහා ප්‍රතිකාර ලබා ගත්තේද? / ගන්නේද? නැතිනම් සුපරීක්ෂාවෙන් සිටින්නේද?"
+  firstDateOfMenstrualPeriod.label: "1. අවසන් වරට ඇති වූ මාසික ශුද්ධියේ ප්‍රථම දිනය :"
+  deliveryDate.label: "2. ප්‍රසුතිය නියමිත දිනය :"
+  beingTreatedOrCloselyMonitored.label: "3. අධිරුධිර පීඩනය, දියවැඩියාව හෝ වෙනයම් ගර්භනි සංකූලතාවයක් සඳහා ප්‍රතිකාර ලබා ගත්තේද? / ගන්නේද? නැතිනම් සුපරීක්ෂාවෙන් සිටින්නේද?"
+  beingTreatedOrCloselyMonitored.options.Yes: "ඔව්"
+  beingTreatedOrCloselyMonitored.options.No: "නැත"
+  beingTreatedOrCloselyMonitoredDetails.label: "කරුණාකර විස්තර දක්වන්න."
+  beingTreatedOrCloselyMonitoredDetails.placeholder: "කරුණාකර විස්තර දක්වන්න."
   
-  abnormalitiesPertaining.label: "6. පවතින ගර්භයේ යම් අසාමාන්‍යතාවයක් පවතින්නේද? එසේ නම් ඒ පිළිබඳ විස්තර සපයන්න. "
-  abnormalitiesPertaining.options.yes: "ඔව්"
-  abnormalitiesPertaining.options.no: "නැත"
+  abnormalitiesPertaining.label: "4. පවතින ගර්භයේ යම් අසාමාන්‍යතාවයක් පවතින්නේද? එසේ නම් ඒ පිළිබඳ විස්තර සපයන්න. "
+  abnormalitiesPertaining.options.Yes: "ඔව්"
+  abnormalitiesPertaining.options.No: "නැත"
   
   abnormalitiesDetails.label: "කරුණාකර විස්තර දක්වන්න."
 
-  haveChildren.label: "1. ඔබට දරුවකු/ දරුවන් සිටින්නේද? "
-  haveChildren.options.yes: "ඔව්"
-  haveChildren.options.no: "නැත"
+  haveChildren.label: "1. ඔබට දරුවකු/ දරුවන් සිටින්නේද? (එසේ නම් කී දෙනෙක්ද?)"
+  haveChildren.options.Yes: "ඔව්"
+  haveChildren.options.No: "නැත"
 
   childrenNo.label: "එසේ නම් කී දෙනෙක්ද?"
 
   prematureBirth.label: "2. නොමේරු දරු උපත් සිදුව තිබේද? "
 
-  treatedforPregnancyRelatedComplications.label: "3. පසුගිය ගර්භය /න්හිදී අධිරුධිර පීඩනය, දියවැඩියාව හෝ අසාමාණය මුත්‍රා/ රුධිර වාර්තා හෝ රෝගාබාධයන් පැවතුනිද? "
-  treatedforPregnancyRelatedComplications.options.yes: "ඔව්"
-  treatedforPregnancyRelatedComplications.options.no: "නැත"
+  treatedforPregnancyRelatedComplications.label: "3. පසුගිය ගර්භය /න්හිදී අධිරුධිර පීඩනය, දියවැඩියාව හෝ අසාමාන්‍ය මුත්‍රා/ රුධිර වාර්තා හෝ රෝගාබාධයන් පැවතුනිද? "
+  treatedforPregnancyRelatedComplications.options.Yes: "ඔව්"
+  treatedforPregnancyRelatedComplications.options.No: "නැත"
 
   complicationsDetails.label: "කරුණාකර විස්තර දක්වන්න."
 
   date.label: "දිනය"
   signature.label: "යෝජකයාගේ අත්සන"
+  signature.description: "ඡායාරූපයක් ගන්න හෝ රූපයක් උඩුගත කරන්න, ඉන්පසු අත්සන පමණක් ඇතුළත් කිරීමට රාමුව සකසන්න."
 
   # Layout translations
   h1.title: "ගර්භනි තත්ත්වය පිළිබඳ ප්‍රශ්නාවලිය"
   card.presentPregnancy: "දැනට පවතින ගර්භයේ තත්ත්වය"
   card.pastPregnancy: "පසුගිය ගර්භනී අවස්ථා පිළිබඳ විස්තර"
-  text.declaration: "ඉහත පිළිතුරු මාගේ දැනුමේ ප්‍රකාර සත්‍ය හා නිවැරදි බව ප්‍රකාශ කර සිටිමි.තවද මෙම ආකෘති පත්‍රය යෝජනා පත්‍රයේම කොටසක් බවත්, කිසියම් වැදගත් තොරතුරක් වසන් කිරීමෙන් මෙම ගිවිසුම අහෝසි වීමට හේතු වන බව මා දන්නා බවත් ප්‍රකාශ කරමි."
-  submit.button: "පෝරමය පුරවන්න"
+  text.declaration: "ඉහත පිළිතුරු මාගේ දැනුමේ ප්‍රකාර සත්‍ය හා නිවැරදි බව ප්‍රකාශ කර සිටිමි. තවද මෙම ආකෘති පත්‍රය යෝජනා පත්‍රයේම කොටසක් බවත්, කිසියම් වැදගත් තොරතුරක් වසන් කිරීමෙන් මෙම ගිවිසුම අහෝසි වීමට හේතු වන බව මා දන්නා බවත් ප්‍රකාශ කරමි."
+  submit.button: "පෝරමය යොමු කරන්න"
   reset.button: "පෝරමයේ දත්ත මකන්න"
 
 
 
 ta:
   # Field labels
-  proposersName.label: "பிரேரிப்பவரின் பெயர்"
-  contractNumber.label: "பிரேரணை இல"
-  firstDateOfMenstrualPeriod.label: "3. 	கடைசி மாதவிடாய் ஆரம்பித்த திகதி :"
-  deliveryDate.label: "4.	மகப்பேறு எதிர்பார்க்கப்படும் திகதி :"
-  medicalDetails.label: "5. உங்களுக்கு உயர் குருதியமுக்கம், நீரிழிவு அல்லது வேறேதும் கர்ப்ப கால சிகிச்சை அளிக்கப்படுகின்றதா? அல்லது தொடர்ச்சியான மருத்துவக் கண்காணிப்பில் உள்ளீரா? 'ஆம்' எனில், விபரங்கள் தருவதுடன் தொடர்புடைய மருத்துவ அறிக்கைகளையும் சமர்ப்பிக்கவும்"
+  proposersName.label: "ஆயுள் காப்புறுதி செய்யப்பட்டவர் பெயர்"
+  contractNumber.label: "ஆயுள் காப்புறுதி   இலக்கம்"
+  firstDateOfMenstrualPeriod.label: "1. 	கடைசி மாதவிடாய் ஆரம்பித்த திகதி :"
+  deliveryDate.label: "2.	மகப்பேறு எதிர்பார்க்கப்படும் திகதி :"
+  beingTreatedOrCloselyMonitored.label: "3. உங்களுக்கு உயர் குருதியமுக்கம், நீரிழிவு அல்லது வேறேதும் கர்ப்ப கால சிகிச்சை அளிக்கப்படுகின்றதா? அல்லது தொடர்ச்சியான மருத்துவக் கண்காணிப்பில் உள்ளீர்களா?"
+  beingTreatedOrCloselyMonitored.options.Yes: "ஆம்"
+  beingTreatedOrCloselyMonitored.options.No: "இல்லை"
+  beingTreatedOrCloselyMonitoredDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்."
+  beingTreatedOrCloselyMonitoredDetails.placeholder: "விபரங்கள் தருவதுடன் தொடர்புடைய மருத்துவ அறிக்கைகளையும் சமர்ப்பிக்கவும்."
   
-  abnormalitiesPertaining.label: "6.	தற்போதைய கர்ப்பம் தொடர்புடைய எதுவிதமான சிக்கல்கள் பற்றி நீங்கள் அறிந்துள்ளீர்களா? 'ஆம்' எனில் தயவுசெய்து விபரங்களைத் தரவும். "
-  abnormalitiesPertaining.options.yes: "ஆம்"
-  abnormalitiesPertaining.options.no: "இல்லை"
+  abnormalitiesPertaining.label: "4.	தற்போதைய கர்ப்பம் தொடர்புடைய எதுவிதமான சிக்கல்கள் பற்றி நீங்கள் அறிந்துள்ளீர்களா? 'ஆம்' எனில் தயவுசெய்து விபரங்களைத் தரவும். "
+  abnormalitiesPertaining.options.Yes: "ஆம்"
+  abnormalitiesPertaining.options.No: "இல்லை"
   
   abnormalitiesDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்."
 
   haveChildren.label: "1.	உங்களுக்கு பிள்ளைகள் உண்டா?  "
-  haveChildren.options.yes: "ஆம்"
-  haveChildren.options.no: "இல்லை"
+  haveChildren.options.Yes: "ஆம்"
+  haveChildren.options.No: "இல்லை"
 
   childrenNo.label: "'ஆம்' எனில், எத்தனை பேர்?"
 
   prematureBirth.label: "2.	இவற்றுள் குறைமாதப் பிள்ளைகள் உள்ளனரா? "
 
-  treatedforPregnancyRelatedComplications.label: "3.	கடந்த பிரசவங்களின் போது உயர் குருதியமுக்கம், நீரிழிவு, அல்லது அசாதாரண சிறுநீர் / குருதிப் பரிசோதனை அறிக்கைகள் அல்லது வேறேதாவது சுகயீனங்களினால் பாதிக்கப்பட்டிருந்தீர்களா? 'ஆம்' எனில், விபரங்கள் தருக. "
-  treatedforPregnancyRelatedComplications.options.yes: "ஆம்"
-  treatedforPregnancyRelatedComplications.options.no: "இல்லை"
+  treatedforPregnancyRelatedComplications.label: "3.	கடந்த பிரசவங்களின் போது உயர் குருதியமுக்கம், நீரிழிவு, அல்லது அசாதாரண சிறுநீர் / குருதிப் பரிசோதனை அறிக்கைகள் அல்லது வேறேதாவது நோய்களினால் பாதிக்கப்பட்டிருந்தீர்களா? 'ஆம்' எனில், விபரங்களைத் தருக. "
+  treatedforPregnancyRelatedComplications.options.Yes: "ஆம்"
+  treatedforPregnancyRelatedComplications.options.No: "இல்லை"
 
   complicationsDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்."
 

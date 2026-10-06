@@ -221,7 +221,7 @@ idDocument:
   required: true
   description: Upload a clear scan/photo of your NIC or passport (PDF/JPG/PNG).
   fileOptions:
-    maxSize: 5242880
+    maxSize: 10485760
     allowedExtensions:
       - pdf
       - jpg

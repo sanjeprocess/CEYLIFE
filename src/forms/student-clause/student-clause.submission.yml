@@ -2,6 +2,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wd6b25c9985/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -28,7 +29,6 @@ fieldMapping:
 
   - from: signature
     to: signatureOfTheProposer
-    returnType: string
 
   - from: [proposerContract, proposerName]
     to: title
@@ -56,3 +56,7 @@ fieldMapping:
   - from: $variable
     to: sequenceNo
     value: "{{contract_sequence}}"
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

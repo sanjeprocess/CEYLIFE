@@ -1,0 +1,391 @@
+# lifestyle-questionnaire form fields
+
+proposerName:
+  type: text
+  label: PROPOSER'S NAME
+  required: false
+  placeholder: Enter proposer's name
+  defaultValue: "{{full_name}}"
+  readOnly: true
+
+contractNumber:
+  type: text
+  label: CONTRACT NUMBER
+  required: false
+  placeholder: Enter contract number
+  defaultValue: "{{contract_number}}"
+  readOnly: true
+
+title:
+  type: text
+  label: " "
+  required: false
+  placeholder: Enter title
+  defaultValue: "{{full_name}}/{{policy_no}}"
+  readOnly: true
+
+nicNumber:
+  type: text
+  label: NIC NUMBER
+  required: true
+  placeholder: Enter NIC number
+
+question1:
+  type: radio-group
+  label: "01) Are you consuming alcoholic beverages?"
+  required: false
+  options:
+    Yes: "Yes"
+    No: "No"
+
+question2:
+  type: text
+  label: "02) If so, When did you start taking alcohol?"
+  required: false
+  placeholder: "Enter date or details"
+  dependsOn: question1
+  conditionalOptions:
+    operator: eq
+    value: "Yes"
+question3A:
+  type: radio-group
+  label: "A) How often do you consume liquor"
+  required: false
+  options:
+    Daily: "Daily"
+    Weekly: "Weekly"
+    Monthly: "Monthly"
+    Occasionally: "Occasionally"
+  dependsOn: question1
+  conditionalOptions:
+    operator: eq
+    value: "Yes"
+# question3B:
+#   type: radio-group
+#   label: "B) Type of liquor"
+#   required: false
+#   options:
+#     Beer: "Beer"
+#     Spirit: "Spirit (Arrack, Whisky, Wine etc.)"
+#   dependsOn: question1
+#   conditionalOptions:
+#     operator: eq
+#     value: "Yes"
+
+question3B:
+  type: checkbox-group
+  label: B) Type of liquor
+  required: false
+  options:
+    Beer: "Beer"
+    Spirits: "Spirits(Arrack, Whisky, Wine etc.)"
+  dependsOn: question1
+  conditionalOptions:
+    operator: eq
+    value: "Yes"
+
+# question3C:
+#   type: radio-group
+#   label: "C) Quantity"
+#   required: false
+#   options:
+#     "1/4_Bottle": "1/4 Bottle"
+#     "1/2_Bottle": "1/2 Bottle"
+#     "1-2_Bottle": "1-2 Bottle"
+#     "2-6_Bottle": "2-6 Bottle"
+#     "7+_Bottle": "7+ Bottle"
+#     "Other": "Other"
+#   dependsOn: question1
+#   conditionalOptions:
+#     operator: eq
+#     value: "Yes"
+#   dependencies:
+#     question3CDetails:
+#       type: textarea
+#       label: "Please provide details"
+#       required: false
+#       conditionalOptions:
+#         operator: eq
+#         value: "Other"
+
+questionBeerQuantity:
+  type: radio-group
+  label: "C) Quantity (Beer)"
+  required: false
+  options:
+    "1/4_Bottle": "1/4 Bottle"
+    "1/2_Bottle": "1/2 Bottle"
+    "1-2_Bottle": "1-2 Bottle"
+    "2-6_Bottle": "2-6 Bottle"
+    "7+_Bottle": "7+ Bottle"
+    "Other": "Other"
+  dependsOn: question1
+  conditionalOptions:
+    operator: eq
+    value: "Yes"
+  dependencies:
+    questionBeerQuantityDetails:
+      type: textarea
+      label: "Please provide details"
+      required: false
+      conditionalOptions:
+        operator: eq
+        value: "Other"
+
+questionSpiritQuantity:
+  type: radio-group
+  label: "C) Quantity (Spirit)"
+  required: false
+  options:
+    "1/4_Bottle": "1/4 Bottle"
+    "1/2_Bottle": "1/2 Bottle"
+    "1-2_Bottle": "1-2 Bottle"
+    "2-6_Bottle": "2-6 Bottle"
+    "7+_Bottle": "7+ Bottle"
+    "Other": "Other"
+  dependsOn: question1
+  conditionalOptions:
+    operator: eq
+    value: "Yes"
+  dependencies:
+    questionSpiritQuantityDetails:
+      type: textarea
+      label: "Please provide details"
+      required: false
+      conditionalOptions:
+        operator: eq
+        value: "Other"
+        # No questions
+question6A:
+  type: radio-group
+  label: "A) How often did you consume liquor (please tick)?"
+  required: false
+  options:
+    Daily: "Daily"
+    Weekly: "Weekly"
+    Monthly: "Monthly"
+    Occasionally: "Occasionally"
+  dependsOn: question1
+  conditionalOptions:
+    operator: eq
+    value: "No"
+# question6B:
+#   type: radio-group
+#   label: "B) Type of liquor"
+#   required: false
+#   options:
+#     Beer: "Beer"
+#     Spirits: "Spirits(Arrack, Whisky, Wine etc.)"
+#   dependsOn: question1
+#   conditionalOptions:
+#     operator: eq
+#     value: "No"
+
+question6B:
+  type: checkbox-group
+  label: B) Type of liquor
+  required: false
+  options:
+    Beer: "Beer"
+    Spirits: "Spirits(Arrack, Whisky, Wine etc.)"
+  dependsOn: question1
+  conditionalOptions:
+    operator: eq
+    value: "No"
+
+questionNoBeerQuantity:
+  type: radio-group
+  label: "C) Quantity (Beer)"
+  required: false
+  options:
+    "1/4_Bottle": "1/4 Bottle"
+    "1/2_Bottle": "1/2 Bottle"
+    "1-2_Bottle": "1-2 Bottle"
+    "2-6_Bottle": "2-6 Bottle"
+    "7+_Bottle": "7+ Bottle"
+    "Other": "Other"
+  dependsOn: question1
+  conditionalOptions:
+    operator: eq
+    value: "No"
+  dependencies:
+    questionNoBeerQuantityDetails:
+      type: textarea
+      label: "Please provide details"
+      required: false
+      conditionalOptions:
+        operator: eq
+        value: "Other"
+
+questionNoSpiritQuantity:
+  type: radio-group
+  label: "C) Quantity (Spirit)"
+  required: false
+  options:
+    "1/4_Bottle": "1/4 Bottle"
+    "1/2_Bottle": "1/2 Bottle"
+    "1-2_Bottle": "1-2 Bottle"
+    "2-6_Bottle": "2-6 Bottle"
+    "7+_Bottle": "7+ Bottle"
+    "Other": "Other"
+  dependsOn: question1
+  conditionalOptions:
+    operator: eq
+    value: "No"
+  dependencies:
+    questionNoSpiritQuantityDetails:
+      type: textarea
+      label: "Please provide details"
+      required: false
+      conditionalOptions:
+        operator: eq
+        value: "Other"
+question6C:
+  type: radio-group
+  label: "C) Quantity"
+  required: false
+  options:
+    "1/4_Bottle": "1/4 Bottle"
+    "1/2_Bottle": "1/2 Bottle"
+    "1-2_Bottle": "1-2 Bottle"
+    "2-6_Bottle": "2-6 Bottle"
+    "+7_Bottles": "+7 Bottles"
+    Other: "Other"
+  dependsOn: question1
+  conditionalOptions:
+    operator: eq
+    value: "No"
+  dependencies:
+    6BOtherDetails:
+      type: textarea
+      label: "Please provide details"
+      required: false
+      placeholder: "Please provide details"
+      conditionalOptions:
+        operator: eq
+        value: "Other"
+
+question4:
+  type: radio-group
+  label: "04) Have you taken any treatment for alcohol addiction? (If so give the names of the doctors and treated durations)"
+  required: false
+  options:
+    Yes: "Yes"
+    No: "No"
+  dependencies:
+    question4Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "Yes"
+
+# question5:
+#   type: radio-group
+#   label: "05) Are you not taking alcohol now?"
+#   required: false
+#   options:
+#     Yes: "Yes"
+#     No: "No"
+#   dependencies:
+#     question5Details:
+#       type: textarea
+#       label: What is the date you abstained from taking alcohol?
+#       required: true
+#       conditionalOptions:
+#         operator: eq
+#         value: "Yes"
+
+# s
+
+question7:
+  type: textarea
+  label: "07) How is you general health?"
+  required: true
+  placeholder: Describe general health
+
+question8:
+  type: radio-group
+  label: "08) Have you had any convictions for bad Driving for alcohol addiction? If so, give full details with dates etc."
+  required: false
+  options:
+    Yes: "Yes"
+    No: "No"
+  dependencies:
+    question8Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "Yes"
+
+question9:
+  type: radio-group
+  label: "09) Have you had any accidents for alcohol addiction? If so, give full details with dates etc."
+  required: false
+  options:
+    Yes: "Yes"
+    No: "No"
+  dependencies:
+    question9Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "Yes"
+
+question10:
+  type: radio-group
+  label: "10) Have you been convicted in a court of low for any other offence, Or wanted by law enforcement authorities for misconduct? If so, give full details with dates etc."
+  required: false
+  options:
+    Yes: "Yes"
+    No: "No"
+  dependencies:
+    question10Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "Yes"
+
+question11:
+  type: radio-group
+  label: "11) Do you / Have you Smoke / Smoked Cigarettes, Cigars or beedis?"
+  required: false
+  options:
+    Yes: "Yes"
+    No: "No"
+  dependencies:
+    question11Details:
+      type: textarea
+      label: Please provide details
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "Yes"
+
+submittedDate:
+  type: date
+  label: Date
+  required: true
+  placeholder: Date
+  defaultValue: "{{$today}}"
+  readOnly: true
+
+signature:
+  type: adjustableImage
+  label: Signature of the life Assured
+  required: true
+  description: Take a photo or upload an image, then adjust the frame to include only the signature.
+  fileOptions:
+    maxSize: 10485760
+    allowedExtensions:
+      - png
+      - jpg
+      - jpeg
+      - webp

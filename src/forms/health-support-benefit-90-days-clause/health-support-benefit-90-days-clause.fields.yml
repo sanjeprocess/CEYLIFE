@@ -18,19 +18,25 @@ policyNumber:
   readOnly: true
 
 signature:
-  type: file
+  type: adjustableImage
   label: Signature of the life to be Assured/Proposer
-  required: false
+  required: true
   defaultValue: ""
+  description: Take a photo or upload an image, then adjust the frame to include only the signature.
   fileOptions:
-    maxFileSize: 10485760
+    maxSize: 10485760
+    allowedExtensions:
+      - png
+      - jpg
+      - jpeg
+      - webp
 
 date:
   type: date
   label: Date
   required: true
   placeholder: Date
-  readOnly: true
   defaultValue: "{{$today}}"
+  readOnly: true
   
   

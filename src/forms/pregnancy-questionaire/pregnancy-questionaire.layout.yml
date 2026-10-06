@@ -16,7 +16,8 @@
   items:
     - field: firstDateOfMenstrualPeriod
     - field: deliveryDate
-    - field: medicalDetails
+    - field: beingTreatedOrCloselyMonitored
+    - field: beingTreatedOrCloselyMonitoredDetails
     - field: abnormalitiesPertaining
     
 - card: Past pregnancy

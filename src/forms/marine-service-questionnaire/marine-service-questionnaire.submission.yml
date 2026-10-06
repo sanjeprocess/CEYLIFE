@@ -5,6 +5,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wa51d7753b6/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -45,7 +46,10 @@ fieldMapping:
   - from: date
     to: date
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: ports
     to: eBetweenWhatPorts
@@ -84,7 +88,6 @@ fieldMapping:
 
   - from: signature
     to: proposersSignature
-    returnType: string
 
   - from: $variable
     to: initialRecordCardID
@@ -112,3 +115,7 @@ fieldMapping:
            return value;
        }
        return 'Marine_Service_Questionnaire_Submission';
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

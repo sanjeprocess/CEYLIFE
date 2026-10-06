@@ -4,6 +4,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wc361b25ef7/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -19,6 +20,9 @@ fieldMapping:
   - from: dutyInvolve
     to: doYourDutiesInvolvegiveDetails
     returnType: string
+    script: |
+      if (!value || !Array.isArray(value) || value.length === 0) return "[]";
+      return JSON.stringify(value);
 
   - from: teetotaler
     to: 3AreYouATeetotalerIfSoHaveYouAlwaysBeenSo
@@ -29,6 +33,10 @@ fieldMapping:
     returnType: string
 
   - from: health
+    to: 4HasDrinkingEverAffectedYourHealthOrWorkYesNo
+    returnType: string
+
+  - from: healthDetails
     to: 4HasConsumptionOfLiquorEverAffectedYourHealthOrAbilityToWork
     returnType: string
 
@@ -59,7 +67,10 @@ fieldMapping:
   - from: date
     to: date
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: ProposerName
     to: proposersName
@@ -71,7 +82,6 @@ fieldMapping:
 
   - from: signature
     to: proposersSignature
-    returnType: string
 
   # --- Metadata & Variables ---
 
@@ -100,3 +110,7 @@ fieldMapping:
            return value;
        }
        return 'title_not_generated';
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

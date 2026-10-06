@@ -359,7 +359,7 @@ response:
   messages:
     success:
       title: Success
-      content: Form submitted successfully! Your reference number is {{reference_number}}
+      content: Form submitted successfully! You can now close the window safely.
     error:
       title: Error
       content: "{{error_message}}"

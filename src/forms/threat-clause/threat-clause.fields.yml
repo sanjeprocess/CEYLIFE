@@ -6,12 +6,14 @@ proposerName:
   label: Proposer Name
   required: true
   placeholder: Enter Proposer Name
+  defaultValue: "{{client_name}}"
 
 proposerContract:
-  type: tel
+  type: text
   label: Contract Number
   required: true
   placeholder: Enter Contract Number
+  defaultValue: "{{contract_number}}"
 
 proposerNic:
   type: text
@@ -23,9 +25,19 @@ date:
   type: date
   label: Date
   required: true
+  placeholder: Date
   defaultValue: "{{$today}}"
+  readOnly: true
 
 signature:
-  type: file
+  type: adjustableImage
   label: Signature of Life Assured
-  required: false
+  required: true
+  description: Take a photo or upload an image, then adjust the frame to include only the signature.
+  fileOptions:
+    maxSize: 10485760
+    allowedExtensions:
+      - png
+      - jpg
+      - jpeg
+      - webp

@@ -15,14 +15,14 @@ policyNo:
   placeholder: Enter full name
   defaultValue: "{{client_name}}"
 
-gender:
-  type: radio-group
-  label: Gender
-  required: false
-  options:
-    male: Male
-    female: Female
-    other: Other / Prefer not to say
+# gender:
+#   type: radio-group
+#   label: Gender
+#   required: false
+#   options:
+#     male: Male
+#     female: Female
+#     other: Other / Prefer not to say
 
 12CurrentAddress:
   type: text
@@ -295,8 +295,8 @@ nameOfTheEmployee:
   label: 2.1 Diabetes
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     21Details:
       type: textarea
@@ -304,15 +304,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 22HighBloodPressure:
   type: radio-group
   label: 2.2 High blood pressure(Hypertension)
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     22Details:
       type: textarea
@@ -320,15 +320,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 23ElevatedCholesterol:
   type: radio-group
   label: 2.3 Elevated cholesterol
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     23Details:
       type: textarea
@@ -336,15 +336,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 24CardiovascularSystemDiseaseASDVSD:
   type: radio-group
   label: "2.4 Any Disease of the Cardio Vascular System e.g.: Heart disease, Shortness of breath, Chest pain, Hole in the heart (ASD, VSD)"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     24Details:
       type: textarea
@@ -352,15 +352,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 25CystNoduleTumorGrowthOrAnyTypeOfCancer:
   type: radio-group
   label: "2.5 Cyst, Nodule, Tumour, growth or any type of cancer"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     25Details:
       type: textarea
@@ -368,15 +368,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 26DisordersOfTheBloodSuchAsAnemiaLeukemiaThalassemiaEtc:
   type: radio-group
   label: "2.6 Disorders of the blood such as Aneamia, Leukaemia, Thalassaemia, etc."
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     26Details:
       type: textarea
@@ -384,15 +384,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 27AnyDiseaseOfTheBrainOrNervousSystemEGEpilepsyOrFitsConvulsionStrokeEtc:
   type: radio-group
   label: "2.7 Any disease of the brain or nervous system e.g.: Epilepsy or fits, Convulsion, Paralysis, Stroke, etc."
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     27Details:
       type: textarea
@@ -400,31 +400,31 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc:
   type: radio-group
   label: "2.8 Any disease of the lungs e.g.: frequent Cough, Asthma, Bronchitis, spitting of blood, Tuberculosis, etc."
   required: true
   options:
-    yes: "Yes"
-    no: "No"
-  28Details:
-    healthQ2_8Details:
+    Yes: "Yes"
+    No: "No"
+  dependencies:
+    28Details:
       type: textarea
       label: Please provide details
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc:
   type: radio-group
   label: "2.9 Any diseases of the Gastrointestinal or Digestive system e.g.: Gastric ulcer, Chronic indigestion / Diarrhea / Abdominal pain, Piles Fistula, Rupture, Hernia or Liver disease, Jaundice, Hepatitis or Gallbladder disease, etc."
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     29Details:
       type: textarea
@@ -432,15 +432,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc:
   type: radio-group
   label: "2.10 Any disorder of the Genito-urinary system – e.g.: fibroids, ovarian cyst, endometriosis, heavy or irregular menstruation, prostate disorder, Kidney / Bladder stones, Kidney failure or any other urinary disease, etc."
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     210Details:
       type: textarea
@@ -448,15 +448,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
-211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc:
+211AnyDiseaseOfTheEYesEYesEarsNoseOrThroatEGCataractGoiterEtc:
   type: radio-group
   label: "2.11 Any disease of the eyes, ears, nose or throat -e.g.: Cataract, Goiter, etc."
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     211Details:
       type: textarea
@@ -464,15 +464,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis:
   type: radio-group
   label: "2.12 Any disease / disorder of the Spine, Bones, Joints or Gout, Rheumatism / Rheumatic fever, Arthritis"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     212Details:
       type: textarea
@@ -480,15 +480,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge:
   type: radio-group
   label: "2.13 Any sexually transmitted disease e.g.: Gonorrhoea, Syphilis, AIDS or any Genital sore or discharge."
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     213Details:
       type: textarea
@@ -496,15 +496,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 214ChronicOrCongenitalSkinCondition:
   type: radio-group
   label: "2.14 Chronic or Congenital skin conditions"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     214Details:
       type: textarea
@@ -512,15 +512,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 215AnyMentalImpairmentsDisorderOrIllness:
   type: radio-group
   label: "2.15 Any Mental impairments, disorder or illness"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     215Details:
       type: textarea
@@ -528,15 +528,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 216AnyCongenitalDisordersDeformitiesOrAnomalies:
   type: radio-group
   label: "2.16 Any Congenital disorders, deformities or anomalies"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     216Details:
       type: textarea
@@ -544,15 +544,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 217ACovid19InfectionOrItsComplication:
   type: radio-group
   label: "2.17 A covid-19 infection or its complications"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     217Details:
       type: textarea
@@ -560,15 +560,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 218AnyOtherDiseaseNotMentionedHerein:
   type: radio-group
   label: "2.18 Any other disease not mentioned herein"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     218Details:
       type: textarea
@@ -576,7 +576,7 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 # Section 3: Other Information
 31HaveYouConsultedAPhysicianSurgeonForAnyReasonIncludingRoutineExaminationOrInvestigationAndBloodTestsInThePast5Years:
@@ -584,8 +584,8 @@ nameOfTheEmployee:
   label: "3.1 Have you consulted a physician / surgeon for any reason including routine examinations or investigations and blood tests in the past 5 years?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     31Details:
       type: textarea
@@ -593,15 +593,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 32DoYouConsumeLiquordrugsOrSmokeCigarettesifSoPleaseStateTheFrequentlyAndQuantity:
   type: radio-group
   label: "3.2 Do you consume liquor/drugs or smoke cigarettes? (if so, please state the frequency and quantity)"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     32Details:
       type: textarea
@@ -609,15 +609,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 33HasAnyOfYourProposalForInsuranceEverBeenDeclinedOrPostponedOrBeenAcceptedWithAnExtraPremium:
   type: radio-group
   label: "3.3 Has any of your proposal for insurance ever been declined or postponed or been accepted with an extra premium."
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     33Details:
       type: textarea
@@ -625,15 +625,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 34DoYouOrYourRelativesHaveOrHadAnyKindOfThreatOnYourtheirLivesOrIsThereAnyCriminalCaseAgainstYou:
   type: radio-group
   label: "3.4 Do you or your relatives have or had any kind of threat on your/their lives or is there any criminal case against you?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     34Details:
       type: textarea
@@ -641,15 +641,15 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 35AreYouPoliticallyExposedPersonPEPOrRelatedToAPEP:
   type: radio-group
   label: "3.5 Are you a politically exposed person (PEP) or related to a PEP? (PEP-Politicians, Senior Government Officers, Judges and judicial Officers, Commissioned Officers of Armed forces / police, Members of Commissions / Director Boards / University Councils, Officers of International Organizations.)"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     35Details:
       type: textarea
@@ -657,15 +657,25 @@ nameOfTheEmployee:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 date:
   type: date
   label: Date
   required: true
+  placeholder: Date
   defaultValue: "{{$today}}"
+  readOnly: true
 
 signatureOfLifeAssured:
-  type: file
+  type: adjustableImage
   label: Signature of Life Assured
   required: true
+  description: Take a photo or upload an image, then adjust the frame to include only the signature.
+  fileOptions:
+    maxSize: 10485760
+    allowedExtensions:
+      - png
+      - jpg
+      - jpeg
+      - webp

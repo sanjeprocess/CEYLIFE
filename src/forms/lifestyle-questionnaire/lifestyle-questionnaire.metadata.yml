@@ -1,0 +1,15 @@
+# lifestyle-questionnaire form metadata
+
+formVersion: 1
+formTitle: Lifestyle Questionnaire
+formDescription: Form description for Lifestyle Questionnaire
+showFormHeader: false
+availableLocales:
+  - en
+  - si
+  - ta
+defaultLocale: en
+searchParamsVariables:
+  cs: contract_sequence
+  id: card_id
+  fullName: full_name

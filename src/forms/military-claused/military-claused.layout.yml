@@ -26,7 +26,7 @@
   key: text.manager
 - text: "Ceylinco Life Insurance Limited"
   key: text.company
-- text: "Dear Sir"
+- text: "Dear Sir<br><br>"
   key: text.dear
 
 - field: policyNo  
@@ -36,7 +36,7 @@
 #   key: text.clause
 - text: "I do hereby declare and agreed that I have read and understood the clause given below, and my life insurance policy is issued subject to the conditions stipulated therein." 
   key: text.first
-- text: "clause"
+- text: "**Clause**"
   key: text.clause
 - text: "**'If the death of the Life Assured should occur as a result of engaging or participating in any way or any manner in any war or war like operation (whether war be declared or not), civil war, rebellion, insurrection, any terrorist activity, civil commotion, military or usurped power, riot, mutiny, invasion, act of foreign enemies or any act against any lawfully constituted authority the Company shall not be liable to make any payment whatsoever under the policy'**" 
   key: text.second

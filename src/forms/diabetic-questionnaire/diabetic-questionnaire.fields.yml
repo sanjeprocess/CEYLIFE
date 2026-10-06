@@ -9,7 +9,8 @@ proposerName:
     maxLength: 100
   defaultValue: "{{client_name}}"
 contractNum:
-  type: tel
+  type: text
+  readOnly: true
   label: 2. Contract Number
   required: true
   validation:
@@ -17,7 +18,7 @@ contractNum:
     maxLength: 100
   defaultValue: "{{contract_number}}"
 dateDiagnosed:
-  type: date
+  type: text
   label: 3. Date diabetes Diagnosed
   required: true
   validation:
@@ -33,32 +34,16 @@ nameAndAddressOfTheDoctor:
 strictDiet:
   type: radio-group
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   label: 5. Do you follow a strict Diet?
   required: true
-  validation:
-    minLength: 3
-    maxLength: 100
   orientation: horizontal
-  dependencies:
-    strictDietDetails:
-      type: textarea
-      label: Details
-      required: false
-      placeholder: Please give details
-      defaultValue: ""
-      validation:
-        minLength: 3
-        maxLength: 100
-      conditionalOptions:
-        operator: eq
-        value: yes
 oralDrug:
   type: radio-group
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   label: 6. Are you now having oral drug treatment? if so, please give the name of the
     drug and dosage
   required: true
@@ -70,7 +55,7 @@ oralDrug:
     oralDrugDetails:
       type: textarea
       label: Details
-      required: false
+      required: true
       placeholder: Enter the name of the drug and dosage.
       defaultValue: ""
       validation:
@@ -78,12 +63,12 @@ oralDrug:
         maxLength: 100
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 insulin:
   type: radio-group
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   label: "7. Are you now taking Insulin? If so, please give the number of units per day"
   required: true
   validation:
@@ -94,7 +79,7 @@ insulin:
     insulinDetails:
       type: textarea
       label: Details
-      required: false
+      required: true
       placeholder: Enter the number of units per day.
       defaultValue: ""
       validation:
@@ -102,12 +87,12 @@ insulin:
         maxLength: 100
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 oralInsulinVaried:
   type: radio-group
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   label: 8. Has your intake of Insulin or oral drugs varied during the last 2 years?
     If so, please give full details
   required: true
@@ -119,7 +104,7 @@ oralInsulinVaried:
     oralInsulinVariedDetails:
       type: textarea
       label: Details
-      required: false
+      required: true
       placeholder: Please give full details
       defaultValue: ""
       validation:
@@ -127,12 +112,12 @@ oralInsulinVaried:
         maxLength: 100
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 urineCheck:
   type: radio-group
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   label: 9. Do you check your urine on a regular basis? If so, how often does it
     contain sugar?
   required: true
@@ -156,12 +141,12 @@ urineCheck:
         maxLength: 100
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 coma:
   type: radio-group
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   label: 10. Since your treatment began have you ever had a diabetic or Insulin Coma?
     (If so please give details including dates.)
   required: true
@@ -175,13 +160,13 @@ coma:
       defaultValue: ""
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 illnesses:
   type: radio-group
   options:
-    yes: Yes
-    no: No
-  label: 11. Have you ever had any illness or disease of the Heart, Kidneys, Eyes,
+    Yes: Yes
+    No: No
+  label: 11. Have you ever had any illness or disease of the Heart, Kidneys, EYes,
     Circulatory or Nervous System? If so, please give full details.
   required: true
   orientation: horizontal
@@ -194,20 +179,23 @@ illnesses:
       defaultValue: ""
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 date:
   type: date
   label: Date
   required: true
-  defaultValue: ""
+  placeholder: Date
+  defaultValue: "{{$today}}"
+  readOnly: true
 signature:
-  type: file
+  type: adjustableImage
   label: Signature
-  required: false
+  required: true
+  description: Take a photo or upload an image, then adjust the frame to include only the signature.
   fileOptions:
-    maxFileSize: 10485760
+    maxSize: 10485760
     allowedExtensions:
-      - jpg
       - png
+      - jpg
       - jpeg
-      - pdf
+      - webp

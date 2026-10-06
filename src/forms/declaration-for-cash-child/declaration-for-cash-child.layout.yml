@@ -5,7 +5,6 @@
   items:
     - row: 2
       columns:
-        - field: clientNo
         - field: policyNo
 
     - row: 12
@@ -44,7 +43,7 @@
     - field: isChildGoodHealth
 - card:
   items:
-    - text: 2. Is your child ever suffered or is he/she suffering from
+    - text: 2. Has your child ever suffered or is he/she now suffering from
       key: text.isChildEverSuffered
     - field: circulatoryDisease
     - field: respiratoryDisease
@@ -62,7 +61,6 @@
     - field: disabilityBenefit
     - field: existingPolicy
     - field: declinedProposal
-    - text: " 8.) "
     - field: smokedLast12Months
     - field: smokeNow
     - field: drugsOrNarcotics
@@ -81,54 +79,60 @@
       key: text.foregoingStatements
     - text: We hereby authorise any doctor, nurse or hospital official to disclose to Ceylinco Life Insurance Limited. any and all information regarding this child's past medical history, present treatment and the results of any investigation carried out
       key: text.authoriseDisclosure
-    - row: 8
-      columns:
-        - text: Dated at
-          key: text.datedAt
-        - field: datedAt
-        - text: On this
-          key: text.onThis
-        - field: onThis
-        - text: day of
-          key: text.dayOf
-        - field: dayOf
-        - text: "20"
-          key: text.yearOf
-        - field: yearOf
+    # - row: 8
+    #   columns:
+    #     - text: Dated at
+    #       key: text.datedAt
+    #     - field: datedAt
+    #     - text: On this
+    #       key: text.onThis
+    #     - field: onThis
+    - h4: PROPOSER
+      key: h4.proposer
     - row: 2
       columns:
         - field: fathersSignature
-        - field:  fathersNic
+        - row: 1
+          columns:
+            - field: fathersNic
+            - field: nameWithInitial
+
     - row: 2
       columns:
-        - field: mothersSignature
-        - field: mothersNic
-    - text: Witnesses 1
-      key: text.witnesses1
+        - field: submittedPlace
+        - field: submittedDate
+
+    # - row: 2
+    #   columns:
+    # - field: mothersSignature
+    # - field: mothersNic
+    - h4: Witnesses 1
+      key: h4.witnesses1
     - text: I certify that the signature 1-2 was/were placed in my presence
       key: text.certifySignature1
-    - row: 2 
+    - row: 2
       columns:
         - field: witness1Signature
-        - field: witness1Name
+        - row: 1
+          columns:
+            - field: witness1Name
+            - field: witness1Nic
     - row: 2
       columns:
         - field: witness1Address
-        - field: witness1Nic
-    - text: Witnesses 2
-      key: text.witnesses2
-    - text: I certify that the signature 1-2 and witness 1 were placed in my presence
-      key: text.certifySignature2
-    - row: 2
-      columns:
-        - field: witness2Signature
-        - field: witness2Name
-    - row: 2
-      columns:
-        - field: witness2Address
-        - field: witness2CodeNo
+    # - h4: Witnesses 2
+    #   key: h4.witnesses2
+    # - text: I certify that the signature 1-2 and witness 1 were placed in my presence
+    #   key: text.certifySignature2
+    # - row: 2
+    #   columns:
+    # - field: witness2Signature
+    # - field: witness2Name
+    # - row: 2
+    #   columns:
+    #     - field: witness2Address
+    #     - field: witness2CodeNo
 
-        
 - spacer: 20
 - row: 12
   columns:

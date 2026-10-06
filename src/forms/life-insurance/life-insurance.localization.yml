@@ -101,8 +101,8 @@ en:
   addAccidentalDeathRider.label: Add Accidental Death Benefit Rider
   addAccidentalDeathRider.description: Additional benefit in the event of death due to accident.
   hasExistingPolicies.label: Do you have existing life insurance policies?
-  hasExistingPolicies.options.no: No
-  hasExistingPolicies.options.yes: Yes
+  hasExistingPolicies.options.No: No
+  hasExistingPolicies.options.Yes: Yes
   existingPolicyDetails.label: Existing Policy Details
   existingPolicyDetails.placeholder: Company, policy number, sum assured, commencement date, etc.
   existingPolicyDetails.description: Provide details of all existing life insurance policies.

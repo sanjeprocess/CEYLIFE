@@ -2,6 +2,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w59ab243e96/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -14,7 +15,10 @@ fieldMapping:
   - from: date
     to: date
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: policyNumber
     to: lifeInsurancePolicyNumber
@@ -26,7 +30,6 @@ fieldMapping:
 
   - from: signature
     to: signatureOfLifeToBeAssuredProposer
-    returnType: string
 
   # --- Metadata & Variables ---
   - from: [policyNumber, proposersName]
@@ -58,3 +61,7 @@ fieldMapping:
     to: sequenceNo
     value: "{{contract_sequence}}"
     # Send the Sequence No which was sent in the URL to this field
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

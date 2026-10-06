@@ -8,13 +8,13 @@ availableLocales:
   - si
   - ta
 defaultLocale: en
-searchParamsVariables:
-  ts: timestamp_sequence
+# searchParamsVariables:
+#   ts: timestamp_sequence
 
-listenToRedirectLink: true
-requestIdFieldName: requestId
-requestIdTimeoutSeconds: 300
+# listenToRedirectLink: true
+# requestIdFieldName: requestId
+# requestIdTimeoutSeconds: 300
 
-formExpiration: true
-formExpirationDays: 365
-formExpirationQueryKey: ts
+# formExpiration: true
+# formExpirationDays: 365
+# formExpirationQueryKey: ts

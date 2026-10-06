@@ -1,11 +1,10 @@
 # military-claused form submission
 
-# baseUrl: https://app.workhub24.com
-# endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w5a5bf4da6e/cards
-baseUrl: http://localhost:3000
-endpoint: /api/mock-submit
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w5a5bf4da6e/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -18,12 +17,18 @@ fieldMapping:
   - from: date
     to: submittedDate
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: topDate
     to: date
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: name
     to: name
@@ -43,7 +48,6 @@ fieldMapping:
 
   - from: signature
     to: signature
-    returnType: string
 
   - from: $variable
     to: initialRecordCardID
@@ -70,3 +74,7 @@ fieldMapping:
            return value;
        }
        return 'title_not_generated';
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

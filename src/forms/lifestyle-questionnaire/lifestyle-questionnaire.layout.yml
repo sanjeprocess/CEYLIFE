@@ -1,0 +1,64 @@
+# lifestyle-questionnaire form layout
+# Items: field, h1, h2, h3, h4, h5, h6, text, spacer, divider, card, row, submit, reset
+
+- field: proposerName
+- field: contractNumber
+- field: nicNumber
+- h1: "Lifestyle Questionnaire"
+  align: center
+  key: h1.lifestyleQuestionnaire
+- text: "(To be completed by the proposer)<br><br>"
+  align: center
+  key: text.toBeCompleted
+- field: question1
+# - text: "03 )"
+
+# yes no area
+- field: question2
+  key: text.03
+- field: question3A
+- field: question3B
+# - field: question3C
+- row: 2
+  columns:
+    - field: questionBeerQuantity
+    - field: questionSpiritQuantity
+
+# - text: "06 )"
+#   key: text.06
+- field: question6A
+- field: question6B
+# - field: question6C
+- row: 2
+  columns:
+    - field: questionNoBeerQuantity
+    - field: questionNoSpiritQuantity
+
+# yes no area
+
+- field: question4
+- field: question5
+# - text: "06 )"
+#   key: text.06
+# - field: question6A
+# - field: question6B
+# - field: question6C
+- field: question7
+- field: question8
+- field: question9
+- field: question10
+- field: question11
+- card:
+  items:
+    - text: "I declare that the answers i have given are to the best of my knowledge true and that i have not withheld any material information that may influence the assessment or acceptance of the proposal."
+      key: text.declaration
+
+    - text: "I agree that this form will constitute part of my proposal for life assurance and that failure to disclose any material fact known to me may invalidate the contract."
+      key: "text.agreement"
+
+- row: 2
+  columns:
+    - field: submittedDate
+    - field: signature
+- spacer: 20
+- submit: Submit

@@ -3,6 +3,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w0325a937d2/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -22,7 +23,10 @@ fieldMapping:
   - from: date
     to: date
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: $variable
     to: initialRecordCardID
@@ -46,7 +50,6 @@ fieldMapping:
 
   - from: signature
     to: signatureOfTheProposer
-    returnType: string
 
   - from: [contractNumber, ProposerName]
     to: title
@@ -57,3 +60,7 @@ fieldMapping:
            return value;
        }
        return 'title_not_generated';
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

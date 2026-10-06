@@ -1,12 +1,11 @@
-# otp form otp
-
-enabled: true
-
-# OTP Request Configuration (on-demand OTP sending)
-# When this section is present, user must click "Proceed" to request OTP before entering it
+# lifestyle-questionnaire form otp
+# 
+# On-Demand OTP: To enable on-demand OTP (user must click "Proceed" to receive OTP),
+# uncomment the 'request' and 'requestDialog' sections below and configure the endpoint.
+#
 request:
   method: POST
-  baseUrl: https://beta.workhub24.com
+  baseUrl: https://app.workhub24.com
   endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wc30def1bfc/cards
   headers:
     - name: Accept
@@ -26,24 +25,19 @@ request:
       value: "OTP Request"
       type: string
 
-# UI configuration for the OTP request step
 requestDialog:
   title: Request OTP
-  content: Thank you for accessing the digital forms of Ceylinco Life. Click the
-    button below to receive your One-Time Password (OTP) via SMS.
+  content: Thank you for accessing the digital forms of Ceylinco Life. Click the button below to receive your One-Time Password (OTP) via SMS.
   button: Proceed
 
-# UI configuration for OTP verification step
+enabled: true
 dialog:
   title: OTP Verification
-  content:
-    Thank you for accessing the digital forms of Ceylinco Life. In order to
+  content: Thank you for accessing the digital forms of Ceylinco Life. In order to
     proceed ahead, please enter the OTP you received via SMS.
   button: Verify OTP
   inputLabel: OTP
   inputPlaceholder: Enter OTP
-
-# OTP Verification API Configuration
 verification:
   method: GET
   baseUrl: https://app.workhub24.com

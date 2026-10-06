@@ -1,0 +1,118 @@
+# # file-test — file + text fields for multipart submission testing
+
+# notes:
+#   type: text
+#   label: Notes (optional)
+#   required: false
+#   placeholder: Short description of the upload
+#   description: Sent as a plain text part alongside the file(s).
+
+# today:
+#   type: date
+#   label: Today
+#   required: true
+#   placeholder: Today
+#   defaultValue: "{{$today}}"
+#   readOnly: true
+
+signature:
+  type: adjustableImage
+  label: Signature sample
+  required: false
+  description: Take a photo or upload an image, then adjust the frame to include only the signature. Mapped to multipart field `signature`.
+  fileOptions:
+    maxSize: 10485760
+    allowedExtensions:
+      - png
+      - jpg
+      - jpeg
+      - webp
+
+# document:
+#   type: file
+#   label: Primary document
+#   required: true
+#   description: Single file (e.g. PNG, JPG, PDF). Mapped to multipart field `document`.
+#   fileOptions:
+#     maxSize: 10485760
+#     allowedExtensions:
+#       - png
+#       - jpg
+#       - jpeg
+#       - pdf
+#       - webp
+#     multiple: false
+
+# extraFiles:
+#   type: file
+#   label: Extra attachments (optional)
+#   required: false
+#   description: Optional multiple files; sent as indexed parts extraFiles.0, extraFiles.1, …
+#   fileOptions:
+#     maxSize: 10485760
+#     allowedExtensions:
+#       - png
+#       - jpg
+#       - jpeg
+#       - pdf
+#     multiple: true
+
+dependents:
+  type: table
+  label: Dependents / Beneficiaries
+  required: false
+  description: Add dependents or beneficiaries associated with this contract
+  minRows: 0
+  maxRows: 10
+  defaultRows: 0
+  columns:
+    - key: name
+      label: Full Name
+      type: text
+      required: true
+      placeholder: Enter full name
+      validation:
+        minLength: 2
+        maxLength: 100
+    - key: relationship
+      label: Relationship
+      type: select
+      required: true
+      placeholder: Select relationship
+      options:
+        spouse: Spouse
+        child: Child
+        parent: Parent
+        sibling: Sibling
+        other: Other
+    - key: dateOfBirth
+      label: Date of Birth
+      type: date
+      required: true
+      placeholder: Select date of birth
+    - key: age
+      label: Age
+      type: number
+      required: false
+      placeholder: Age
+      validation:
+        min: 0
+        max: 150
+    - key: idNumber
+      label: ID Number
+      type: text
+      required: false
+      placeholder: National ID or Passport
+      validation:
+        minLength: 5
+        maxLength: 50
+    - key: contactNumber
+      label: Contact Number
+      type: tel
+      required: false
+      placeholder: Contact number
+    - key: isPrimary
+      label: Primary Beneficiary
+      type: checkbox
+      required: false
+      checked: false

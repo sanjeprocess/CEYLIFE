@@ -1,7 +1,7 @@
 # travel-and-residence-questionnaire form metadata
 
 formVersion: 1
-formTitle: Travel And Residence Questionnaire
+formTitle: Residence And Travel Questionnaire
 formDescription: ""
 showFormHeader: true
 availableLocales:
@@ -14,6 +14,6 @@ searchParamsVariables:
   id: card_id
   fullName: full_name
 
-listenToRedirectLink: true
-requestIdFieldName: requestId
-requestIdTimeoutSeconds: 300
+# listenToRedirectLink: true
+# requestIdFieldName: requestId
+# requestIdTimeoutSeconds: 300

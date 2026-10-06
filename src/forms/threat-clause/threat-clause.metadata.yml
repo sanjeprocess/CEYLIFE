@@ -6,6 +6,7 @@ formDescription: ""
 showFormHeader: false
 availableLocales:
   - en
+  - si
   - ta
 defaultLocale: en
 searchParamsVariables:

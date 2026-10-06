@@ -1,5 +1,8 @@
 # otp form layout
 
+- h2: Annual Income
+- field: annualIncome
+- spacer: 10
 - h2: Personal Information
 - field: clientName
 - spacer: 10

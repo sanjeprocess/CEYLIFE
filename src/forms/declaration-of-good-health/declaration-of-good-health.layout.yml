@@ -2,6 +2,7 @@
 
 - h1: Personal Information
   key: h1.personal_information
+  fontSize: 20
 - field: policyNumber
 - field: fullName
 - field: gender
@@ -44,6 +45,7 @@
     - field: confinementDate
     - field: healthQ10
     - field: healthQ10Details
+- field: special_revival
 - card: DECLARATION
   align: center
   key: card.declaration
@@ -57,7 +59,7 @@
 - row: 2
   columns:
     - field: submittedDate
-    # - field: signature
+    - field: signature
 - spacer: 20
 - row: 12
   columns:

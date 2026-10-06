@@ -1,0 +1,13 @@
+# file-test form metadata — exercise multipart/form-data + file fields against mock-submit
+
+formVersion: 1
+formTitle: File upload test
+formDescription: >
+  Upload one or more files and submit to the dev mock API as multipart/form-data.
+  Open this form at /forms/file-test (OTP is disabled for quick local testing).
+showFormHeader: true
+availableLocales:
+  - en
+  - si
+  - ta
+defaultLocale: en

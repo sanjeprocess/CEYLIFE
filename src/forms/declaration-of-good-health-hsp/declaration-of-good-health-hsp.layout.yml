@@ -8,13 +8,15 @@
   key: card.life_assured
   items:
     - field: 11FullName
-    - field: gender
     - field: 12CurrentAddress
     - row: 2
       columns:
         - field: country
         - field: city
     - field: emailAddress
+    - text: "<b>Telephone Number</b>"
+      fontSize: 14
+      key: text.telephone_number
     - row: 2
       columns:
         - field: telephoneFixed
@@ -43,7 +45,7 @@
     - field: 28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc
     - field: 29AnyDiseasesOfTheGastrointestinalOrDigestiveSystemEGGastricUlcerChronicIndigestionDiarrheaAbdominalPainPilesFistulaRuptureHerniaOrLiverDiseaseJaundiceHepatitisOrGallbladderDiseaseEtc
     - field: 210AnyDisorderOfTheGenitoUrinarySystemEGFibroidsOvarianCystEndometriosisHeavyOrIrregularMenstruationProstateDisorderKidneyBladderStonesKidneyFailureOrAnyOtherUrinaryDiseaseEtc
-    - field: 211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc
+    - field: 211AnyDiseaseOfTheEYesEYesEarsNoseOrThroatEGCataractGoiterEtc
     - field: 212AnyDiseasedisorderOfTheSpineBonesJointsOrGoutRheumaticFeverArthritis
     - field: 213AnySexuallyTransmittedDiseaseEGGonorrhoeicSyphilisAIDSOrAnyGenitalSoreOrDischarge
     - field: 214ChronicOrCongenitalSkinCondition

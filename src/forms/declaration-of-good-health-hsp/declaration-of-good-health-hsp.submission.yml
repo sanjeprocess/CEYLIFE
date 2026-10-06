@@ -4,6 +4,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w2f50e680cd/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -21,9 +22,9 @@ fieldMapping:
     to: 11FullName
     returnType: string
 
-  - from: gender
-    to: gender
-    returnType: string
+  # - from: gender
+  #   to: gender
+  #   returnType: string
 
   - from: 12CurrentAddress
     to: 12CurrentAddress
@@ -52,7 +53,10 @@ fieldMapping:
   - from: 13DateOfBirth
     to: 13DateOfBirth
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: 14Height
     to: 14Height
@@ -135,7 +139,7 @@ fieldMapping:
     to: 28AnyDiseaseOfTheLungsEGFrequentCoughAsthmaBronchitisSpittingOfBloodTuberculosisEtc
     returnType: string
 
-  - from: healthQ2_8Details
+  - from: 28Details
     to: 28Details
     returnType: string
 
@@ -155,7 +159,7 @@ fieldMapping:
     to: 210Details
     returnType: string
 
-  - from: 211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc
+  - from: 211AnyDiseaseOfTheEYesEYesEarsNoseOrThroatEGCataractGoiterEtc
     to: 211AnyDiseaseOfTheEyesEyesEarsNoseOrThroatEGCataractGoiterEtc
     returnType: string
 
@@ -263,11 +267,13 @@ fieldMapping:
   - from: date
     to: date
     returnType: string
-    transform: toDate
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
 
   - from: signatureOfLifeAssured
     to: signatureOfLifeAssured
-    returnType: string
 
 
   - from: [policyNo, 11FullName, mobile]
@@ -279,14 +285,6 @@ fieldMapping:
       return value;
       }
       return 'title_not_generated';
-
-  - from: iHerebyApplyTo
-    to: iHerebyApplyTo
-    returnType: array
-  
-  - from: details
-    to: details
-    returnType: string
 
   - from: $variable
     to: cLOUReferenceNumber
@@ -305,4 +303,6 @@ fieldMapping:
     to: sequenceNo
     value: "{{contract_sequence}}"
 
-
+  - from: $variable
+    to: language
+    value: "{{locale}}"

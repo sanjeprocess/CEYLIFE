@@ -4,6 +4,8 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wb8ec06469e/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
+
 
 headers:
   - name: Content-Type
@@ -21,47 +23,13 @@ fieldMapping:
     to: 1PleaseProvideDetailsOfYourCurrentResidencyAndYourResidencyStatusIncludingInformationOfLengthOfStayByVisaEtcIfAppropriate
     returnType: string
 
-  # --- Previous Residence (Section 2) ---
-  - from: dateOfStayPreviousResidence
-    to: aDatesOfStay
-    returnType: string
+  - from: previousResidence
+    to: question2Table
+    returnType: associative-array
 
-  - from: countryOfPreviousResidence
-    to: bCountryAndRegionOfResidence
-    returnType: string
-
-  - from: reasonForVisitingPreviousResidence
-    to: cReasonForVisiting
-    returnType: string
-
-  - from: frequencyOfVisitsPreviousResidence
-    to: dFrequencynumberOfTripsPerYear
-    returnType: string
-
-  - from: durationOfStayPreviousResidence
-    to: eDurationOfEachStay
-    returnType: string
-
-  # --- Future Residence (Section 3) ---
-  - from: dateOfStayFutureResidence
-    to: 3aDatesOfStay
-    returnType: string
-
-  - from: countryOfFutureResidence
-    to: 3bCountryAndRegionOfResidence
-    returnType: string
-
-  - from: reasonForVisitingFutureResidence
-    to: 3cReasonForVisiting
-    returnType: string
-
-  - from: frequencyOfVisitsFutureResidence
-    to: 3dFrequencynumberOfTripsPerYear
-    returnType: string
-
-  - from: durationOfStayFutureResidence
-    to: 3eDurationOfEachStay
-    returnType: string
+  - from: futureResidence
+    to: question3Table
+    returnType: associative-array
 
   # --- Occupational & Travel Details ---
   - from: occupationalDuties
@@ -95,7 +63,6 @@ fieldMapping:
   # --- Signature & Date ---
   - from: signature
     to: signature
-    returnType: string
 
   - from: date
     to: date
@@ -144,3 +111,7 @@ fieldMapping:
       if (cleanMobile) parts.push(cleanMobile);
       
       return parts.length > 0 ? parts.join('_') : 'Travel_Residence_Questionnaire';
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

@@ -30,7 +30,7 @@
     - field: confinementDate
     - field: healthQ9
     - field: healthQ9Details
-
+- field: special_revival
 - card: DECLARATION
   key: card.declaration_title
   align: center

@@ -1,0 +1,287 @@
+# lifestyle-questionnaire form localization
+# Locales: en
+
+en:
+  # Field labels and options
+  proposerName.label: "PROPOSER'S NAME"
+  contractNumber.label: "CONTRACT NUMBER"
+  title.label: "Title"
+  nicNumber.label: "NIC NUMBER"
+
+  question1.label: "01) Are you in consuming alcoholic beverages?"
+  question1.options.Yes: "Yes"
+  question1.options.No: "No"
+
+  question2.label: " If so, When did you start taking alcohol?"
+
+  question3A.label: "A) How often do you consume liquor"
+  question3A.options.Daily: "Daily"
+  question3A.options.Weekly: "Weekly"
+  question3A.options.Monthly: "Monthy"
+  question3A.options.Occasionally: "Occasionally"
+
+  question3B.label: "B) Type of liquor"
+  question3B.options.Beer: "Beer"
+  question3B.options.Spirit: "Spirit (Arrack, Whisky, Wine etc.)"
+
+  question3C.label: "C) Quantity"
+  "question3C.options.1/4_Bottle": "1/4 Bottle"
+  "question3C.options.1/2_Bottle": "1/2 Bottle"
+  "question3C.options.1-2_Bottle": "1-2 Bottle"
+  "question3C.options.2-6_Bottle": "2-6 Bottle"
+  "question3C.options.7+_Bottle": "7+ Bottle"
+  question3C.options.Other: "Other"
+  question3COtherDetails.label: "Please provide details"
+
+  question4.label: " 02) Have you taken any treatment for alcohol addiction?"
+  question4.options.Yes: "Yes"
+  question4.options.No: "No"
+  question4Details.label: "Please provide details"
+
+  # question5.label: " 03) Are you not taking alcohol now?"
+  # question5.options.Yes: "Yes"
+  # question5.options.No: "No"
+  # question5Details.label: "What is the date you abstained from taking alcohol?"
+
+  question6A.label: "A) How often did you consume liquor (please tick)?"
+  question6A.options.Daily: "Daily"
+  question6A.options.Weekly: "Weekly"
+  question6A.options.Monthly: "Monthly"
+  question6A.options.Occasionally: "Occasionally"
+
+  question6B.label: "B) Type of liquor"
+  question6B.options.Beer: "Beer"
+  question6B.options.Spirits: "Spirits(Arrack, Whisky, Wine etc.)"
+
+  question6C.label: "C) Quantity"
+  question6C.options.1/4_Bottle: "1/4 Bottle"
+  question6C.options.1/2_Bottle: "1/2 Bottle"
+  question6C.options.1-2_Bottle: "1-2 Bottle"
+  question6C.options.2-6_Bottle: "2-6 Bottle"
+  question6C.options.+7_Bottles: "+7 Bottles"
+  question6C.options.Other: "Other"
+  question6COtherDetails.label: "Please provide details"
+
+  question7.label: " 03) How is you general health?"
+
+  question8.label: " 04) Have you ever been convicted of a driving offence while under the influence of alcohol? If so, give full details with dates etc."
+  question8.options.Yes: "Yes"
+  question8.options.No: "No"
+  question8Details.label: "Please provide details"
+
+  question9.label: " 05) Have you ever been involved in an accident while under the influence of alcohol? If so, give full details with dates etc."
+  question9.options.Yes: "Yes"
+  question9.options.No: "No"
+  question9Details.label: "Please provide details"
+
+  question10.label: " 06) Have you been convicted in a court of law for any other offence, Or wanted by law enforcement authorities for misconduct? If so, give full details with dates etc."
+  question10.options.Yes: "Yes"
+  question10.options.No: "No"
+  question10Details.label: "Please provide details"
+
+  question11.label: " 07) Do you / Have you Smoke / Smoked Cigarettes, Cigars or beedis?"
+  question11.options.Yes: "Yes"
+  question11.options.No: "No"
+  question11Details.label: "Please provide details"
+
+  submittedDate.label: "Date"
+  signature.label: "Signature of the life Assured"
+
+  # Layout texts
+  h1.lifestyleQuestionnaire: "Lifestyle Questionnaire"
+  text.toBeCompleted: "(To be completed by the proposer)<br><br>"
+
+  text.declaration: "I declare that the answers i have given are to the best of my knowledge true and that i have not withheld any material information that may influence the assessment or acceptance of the proposal."
+  text.agreement: "I agree that this form will constitute part of my proposal for life assurance and that failure to disclose any material fact known to me may invalidate the contract."
+  submit.button: "Submit Form"
+  reset.button: "Reset Form"
+
+si:
+  # Field labels and options
+  proposerName.label: "යෝජකයාගේ නම"
+  contractNumber.label: "ඔප්පු අංකය"
+  title.label: " "
+  nicNumber.label: "ජාතික හැදුනුම්පත් අංකය"
+
+  question1.label: "01) ඔබ මත්පැන් භාවිතා කිරීමට පුරුදුව සිටින්නේද"
+  question1.options.Yes: "ඔව්"
+  question1.options.No: "නැත"
+
+  question2.label: " ඔබ මත්පැන් භාවිතා කිරීමට පටන් ගත්තේ කුමන කලක සිටද?"
+
+  question3A.label: "A) කොපමන කලකට වරක් ඔබ මත්පැන් පානය කරන්නේද?"
+  question3A.options.Daily: "දිනපතා"
+  question3A.options.Weekly: "සතිපතා"
+  question3A.options.Monthly: "මාසිකව"
+  question3A.options.Occasionally: "කලාතුරකින්"
+
+  question3B.label: "B) මත්පැන් වර්ගය"
+  question3B.options.Beer: "බියර්"
+  question3B.options.Spirit: "ස්ප්‍රීතු (අරක්කු,විස්කි,වයින්)"
+
+  question3C.label: "C) භාවිතා කරන ප්‍රමාණය"
+  "question3C.options.1/4_Bottle": "බෝතල් 1/4"
+  "question3C.options.1/2_Bottle": "බෝතල් 1/2"
+  "question3C.options.1-2_Bottle": "බෝතල් 1-2"
+  "question3C.options.2-6_Bottle": "බෝතල් 2-6"
+  "question3C.options.7+_Bottle": "බෝතල් 7+"
+  question3C.options.Other: "වෙනත්"
+  question3COtherDetails.label: "කරුණාකර විස්තර දක්වන්න"
+
+  question4.label: " 02) ඔබ මත්පැන් භාවිතය පිලිබදව ප්‍රතිකාර ලබාගෙන ඇත්තේද?(එසේනම්, ප්‍රතිකාර කරන ලද වෛද්‍ය වරුන්ගේ නම් සහ ප්‍රතිකාර ලබාගත් කාලයන් සදහන් කරන්න)"
+  question4.options.Yes: "ඔව්"
+  question4.options.No: "නැත"
+  question4Details.label: "කරුණාකර විස්තර සපයන්න"
+
+  question5.label: " 03) ඔබ දැනට මත්පැන් පානය නොකරන්නේ නම්, ඒ කවදා සිටද?"
+  question5.options.Yes: "ඔව්"
+  question5.options.No: "නැත"
+  question5Details.label: "කරුණාකර විස්තර සපයන්න"
+
+  question6A.label: "A) කොපමන කලකට වරක් ඔබ මත්පැන් පානය කරන ලද්දේද?"
+  question6A.options.Daily: "දිනපතා"
+  question6A.options.Weekly: "සතිපතා"
+  question6A.options.Monthly: "මාසිකව"
+  question6A.options.Occasionally: "කලාතුරකින්"
+
+  question6B.label: "B) මත්පැන් වර්ගය"
+  question6B.options.Beer: "බියර්"
+  question6B.options.Spirits: "ස්ප්‍රීතු (අරක්කු,විස්කි,වයින්)"
+
+  question6C.label: "C) භාවිතා කල ප්‍රමාණය"
+  question6C.options.1/4_Bottle: "බෝතල් 1/4"
+  question6C.options.1/2_Bottle: "බෝතල් 1/2"
+  question6C.options.1-2_Bottle: "බෝතල් 1-2"
+  question6C.options.2-6_Bottle: "බෝතල් 2-6"
+  question6C.options.+7_Bottles: "බෝතල් +7"
+  question6C.options.Other: "වෙනත්"
+  question6COtherDetails.label: "කරුණාකර විස්තර දක්වන්න"
+
+  question7.label: " 03) ඔබගේ සාමන්‍ය සෞඛ්‍ය තත්වය කෙසේද?"
+
+  question8.label: " 04) මත්පැන් භාවිතය නිසා ඔබ රිය පැදවීමේදී වරදකරුවෙකු වී ඇත්ද ? එසේනම්, දිනයන් සහිතව සම්පූර්ණ විස්තර දක්වන්න "
+  question8.options.Yes: "ඔව්"
+  question8.options.No: "නැත"
+  question8Details.label: "කරුණාකර විස්තර සපයන්න"
+
+  question9.label: " 05) මත්පැන් භාවිතය නිසා ඔබ කිසියම් හෝ හදිසි අනතුරකට මුහුණපා ඇත්ද? එසේනම්, දිනයන් සහිතව සම්පූර්ණ විස්තර දක්වන්න."
+  question9.options.Yes: "ඔව්"
+  question9.options.No: "නැත"
+  question9Details.label: "කරුණාකර විස්තර සපයන්න"
+
+  question10.label: " 06) මත්පැන් භාවිතය නිසා ඔබ කිසියම් හෝ වැරදි හැසිරීමකට නීතිය ඉදිරියේ වරදකරුවකු වී හෝ අවවාද ලබා ඇතිද? එසේනම්, දිනයන් සහිතව සම්පූර්ණ විස්තර දක්වන්න. "
+  question10.options.Yes: "ඔව්"
+  question10.options.No: "නැත"
+  question10Details.label: "කරුණාකර විස්තර සපයන්න"
+
+  question11.label: " 07) ඔබ දුම්පානය කරන්නේද ? (සිගරට්,සුරුට්ටු, ප්‍යිප්ප ආදිය)"
+  question11.options.Yes: "ඔව්"
+  question11.options.No: "නැත"
+  question11Details.label: "කරුණාකර විස්තර සපයන්න"
+
+  submittedDate.label: "දිනය"
+  signature.label: "රක්ෂණය වීමට සිටින අයගේ අත්සන"
+
+  # Layout texts
+  h1.lifestyleQuestionnaire: "ජීවන ශෛලිය පිළිබද ප්‍රශ්ණාවලිය"
+  text.toBeCompleted: "(යෝජකයා විසින් සම්පූර්ණ කිරීම සදහා)<br><br>"
+
+  text.declaration: "ඉහත අසා ඇති ප්‍රශ්ණවලට මා විසින් සපයන ලද පිළිතුරු සත්‍ය බව ප්‍රකාශ කරමි. තවද, මෙම ආකෘති පත්‍රය මා විසින් සීමාසහිත සෙලින්කෝ ලයිෆ් ඉන්ෂුවරන්ස් සමාගම වෙත ඉදිරිපත් කල ජීවිත රක්ෂණ යෝජනා පත්‍රයේම කොටසක් බවත්, කිසියම් වටිනා තොරතුරක් වසන් කිරීමෙන් එම ගිවිසුම අහෝසි වන බවත්, මා වන්නා බව ප්‍රකාශ කරමි. "
+  text.agreement: " "
+  submit.button: "පෝරමය යොමු කරන්න"
+  reset.button: "පෝරමයේ දත්ත මකන්න"
+
+ta:
+  # Field labels and options
+  proposerName.label: "முன்மொழிபவர் பெயர்"
+  contractNumber.label: "ஒப்பந்த இல"
+  title.label: "தலைப்பு"
+  nicNumber.label: "தேசிய அடையாள அட்டை இல"
+
+  question1.label: "01)	நீங்கள் மதுபானங்களை உட்கொள்ளும் பழக்கம் உள்ளவரா?"
+  question1.options.Yes: "ஆம்"
+  question1.options.No: "இல்லை"
+
+  question2.label: " அப்படியானால், நீங்கள் எப்போது மது அருந்த ஆரம்பித்தீர்கள்?"
+
+  question3A.label: "A) அப்படியானால், அளவு"
+  question3A.options.Daily: "தினசரி "
+  question3A.options.Weekly: "வாராந்தம் "
+  question3A.options.Monthly: "மாதாந்தம்  "
+  question3A.options.Occasionally: "அவ்வப்போது"
+
+  question3B.label: "B) நீங்கள் இப்போது பயன்படுத்தும் மதுபான வகைகள் என்ன?"
+  question3B.options.Beer: "பீர்"
+  question3B.options.Spirit: "ஸ்பிரிட் (அராக், விஸ்கி, ஒயின் போன்றவை)"
+
+  question3C.label: "C) அளவு"
+  "question3C.options.1/4_Bottle": "1/4 பாட்டில்"
+  "question3C.options.1/2_Bottle": "1/2 பாட்டில்"
+  "question3C.options.1-2_Bottle": "1-2 பாட்டில்"
+  "question3C.options.2-6_Bottle": "2-6 பாட்டில்"
+  "question3C.options.7+_Bottle": "7+ பாட்டில்"
+  question3C.options.Other: "மற்றவை"
+  question3COtherDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  question4.label: " 02) மதுப் பழக்கத்திற்கு ஏதாவது சிகிச்சை எடுத்துள்ளீர்களா?"
+  question4.options.Yes: "ஆம்"
+  question4.options.No: "இல்லை"
+  question4Details.label: "அப்படியானால், மருத்துவர்களின் பெயர்களையும் சிகிச்சை காலங்களையும் குறிப்பிடுங்கள்."
+
+  question5.label: " 03) நீங்கள் இப்போது மது அருந்துவதில்லையா?"
+  question5.options.Yes: "ஆம்"
+  question5.options.No: "இல்லை"
+  question5Details.label: "எந்த திகதியில் மது அருந்துவதைத் தவிர்த்துள்ளீர்கள்?"
+
+  question6A.label: "A) நீங்கள் எப்படி உணர்ந்தீர்கள்? நீங்கள் அதை ஆறவைத்துச் சாப்பிட்டீர்களா? (டிக் செய்யவும்)?"
+  question6A.options.Daily: "தினசரி"
+  question6A.options.Weekly: "வாராந்தம்"
+  question6A.options.Monthly: "மாதாந்தம்"
+  question6A.options.Occasionally: "அவ்வப்போது"
+
+  question6B.label: "B) நீங்கள் வழமையாக பயன்படுத்தும் மதுபான வகைகள் என்ன?"
+  question6B.options.Beer: "பீர்"
+  question6B.options.Spirits: "சாராயங்கள் (அராக், விஸ்கி, ஒயின் போன்றவை)"
+
+  question6C.label: "C) அளவு"
+  question6C.options.1/4_Bottle: "1/4 பாட்டில்"
+  question6C.options.1/2_Bottle: "1/2 பாட்டில்"
+  question6C.options.1-2_Bottle: "1-2 பாட்டில்"
+  question6C.options.2-6_Bottle: "2-6 பாட்டில்"
+  question6C.options.+7_Bottles: "+7 பாட்டில்"
+  question6C.options.Other: "மற்றவை"
+  question6COtherDetails.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  question7.label: " 03) உங்கள் பொது ஆரோக்கியம் எப்படி இருக்கிறது?"
+
+  question8.label: " 04) மது போதைக்கு அடிமையாகி மோசமாக வாகனம் ஓட்டியதற்காக உங்களுக்கு ஏதேனும் தண்டனை உள்ளதா? அப்படியானால், திகதிகள் போன்றவற்றுடன் முழு விவரங்களையும்   குறிப்பிடுங்கள்."
+  question8.options.Yes: "ஆம்"
+  question8.options.No: "இல்லை"
+  question8Details.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  question9.label: " 05) மது போதையால் உங்களுக்கு ஏதேனும் விபத்துகள் ஏற்பட்டுள்ளதா? அப்படியானால், திகதிகள் போன்றவற்றுடன் முழு விவரங்களையும் குறிப்பிடுங்கள்."
+  question9.options.Yes: "ஆம்"
+  question9.options.No: "இல்லை"
+  question9Details.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  question10.label: " 06) வேறு ஏதேனும் குற்றத்திற்காக நீதிமன்றத்தில் நீங்கள் தண்டிக்கப்பட்டிருக்கிறீர்களா அல்லது தவறான நடத்தைக்காக சட்ட அமுலாக்க அதிகாரிகளால் தேடப்படுகிறீர்களா? அப்படியானால், திகதிகள் போன்றவற்றுடன் முழு விவரங்களையும் குறிப்பிடுங்கள்."
+  question10.options.Yes: "ஆம்"
+  question10.options.No: "இல்லை"
+  question10Details.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  question11.label: " 07) நீங்கள் புகைப்பிடிக்கும் பழக்கம் உள்ளவரா? (சிகரெட், சுருட்டு, குழாய் போன்றவை)?அப்படியானால், ஒரு நாளைக்கு எத்தனை சிகரட்டுகள் என குறிப்பிடவும்."
+  question11.options.Yes: "ஆம்"
+  question11.options.No: "இல்லை"
+  question11Details.label: "தயவுசெய்து விவரங்களை வழங்கவும்"
+
+  submittedDate.label: "திகதி"
+  signature.label: "பிரேரிப்பவரின் கையொப்பம் :"
+
+  # Layout texts
+  h1.lifestyleQuestionnaire: "வாழ்க்கை முறை பற்றிய கேள்விக்கொத்து"
+  text.toBeCompleted: "முன்மொழிபவரினால் பூரணப்படுத்தப்படவேண்டும்)<br><br>"
+
+  text.declaration: "நான் அளித்த பதில்கள் எனக்குத் தெரிந்தவரை சரியானவையும் உண்மையானவையுமாகும் என்றும், முன்மொழிவின் மதிப்பீடு அல்லது ஏற்றுக்கொள்ளலைப் பாதிக்கக்கூடிய எந்தவொரு முக்கிய தகவலையும் நான் மறைக்கவில்லை என்றும் நான் வெளிப்படுத்துகிறேன்."
+  text.agreement: "இந்தப் படிவம் எனது ஆயுள் காப்புறுதித் திட்டத்தின் ஒரு பகுதியாக இருக்கும் என்பதையும், எனக்குத் தெரிந்த எந்தவொரு முக்கிய உண்மைகளையும் வெளியிடத் தவறினால் ஒப்பந்தம் செல்லுபடியற்றதாகிவிடும் என்பதையும் நான் ஏற்றுக்கொள்கிறேன்."
+  submit.button: "படிவத்தை சமர்ப்பிக்கவும்"
+  reset.button: " படிவத் தரவை மீளமைக்கவும்"

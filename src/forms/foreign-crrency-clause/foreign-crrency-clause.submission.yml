@@ -4,6 +4,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/w3047756566/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -38,6 +39,9 @@ fieldMapping:
 
   - from: proposerSignature
     to: signatureOfTheProposer
+
+  - from: address
+    to: address
     returnType: string
 
   # --- Metadata & Variables ---
@@ -69,3 +73,7 @@ fieldMapping:
            return value;
        }
        return 'title_not_generated';
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

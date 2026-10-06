@@ -14,6 +14,7 @@ contractNumber:
   placeholder: Auto-filled after OTP verification
   description: Your contract number
   defaultValue: "{{contract_number}}"
+  readOnly: true
 clouReference:
   type: text
   label: CLOU Reference Number
@@ -160,6 +161,11 @@ streetAddress:
   required: false
   placeholder: 123 Main Street
   description: Your street address
+annualIncome:
+  type: currency
+  label: 8. Annual Income
+  required: true
+  placeholder: Enter annual income
 city:
   type: text
   label: City

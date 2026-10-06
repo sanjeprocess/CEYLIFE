@@ -3,11 +3,12 @@
 - field: ProposerName
 - row: 2
   columns:
-    - field: contactNumber
+    - field: contractNumber
     - field: nicNumber
 - card: Occupation Clause
   align: center
   key: card.occupationClause
+  fontSize: 24
   items:
     - text: "**It is hereby declared and agreed, that if the Life Assured / Spouse
         Assured meets with an accident whilst being engaged in his usual
@@ -17,6 +18,7 @@
         Monthly Income Benefit, Jeewayathra Partial and Permanent Disability
         Benefit.**"
       key: text.occupation_clause_body
+      align : justify
 - card: Consent
   key: card.consent
   items:

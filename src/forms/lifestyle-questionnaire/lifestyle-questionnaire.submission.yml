@@ -1,0 +1,179 @@
+# lifestyle-questionnaire form submission
+
+baseUrl: https://app.workhub24.com
+endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/we35b691857/cards
+method: POST
+requiresAccessToken: true
+contentType: multipart/form-data
+
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: authorization
+    value: Bearer {{$WORKHUB_TOKEN}}
+
+fieldMapping:
+  # --- Header Information ---
+  - from: title
+    to: title
+    returnType: string
+
+  - from: proposerName
+    to: pROPOSERSNAME
+    returnType: string
+
+  - from: contractNumber
+    to: cONTRACTNUMBER
+    returnType: string
+
+  - from: nicNumber
+    to: nICNUMBER
+    returnType: string
+
+  - from: submittedDate
+    to: date
+    returnType: string
+    transform:
+      name: formatDate
+      options:
+        format: "YYYY-MM-DD"
+
+  # --- Questionnaire ---
+  - from: question1
+    to: 01AreYouInConsumingAlcoholicBeverages
+    returnType: string
+
+  - from: question2
+    to: 01YesIfSoWhenDidYouStartTakingAlcohol
+    returnType: string
+
+  - from: question3A
+    to: 01YesAHowOftenDoYouConsumeLiquor
+    returnType: string
+
+  - from: question3B
+    to: 01YesBTypeOfLiquor
+    returnType: string
+
+  - from: questionBeerQuantity
+    to: 01YesBQuantityBeer
+    returnType: string
+
+  - from: questionBeerQuantityDetails
+    to: 01YesBOtherBeer
+    returnType: string
+
+  - from: questionSpiritQuantity
+    to: 01YesBQuantitySpirit
+    returnType: string
+
+  - from: questionSpiritQuantityDetails
+    to: 01YesBOtherSpirit
+    returnType: string
+
+  - from: question4
+    to: 04HaveYouTakenAnyTreatmentForAlcoholAddiction
+    returnType: string
+
+  - from: question4Details
+    to: 04Details
+    returnType: string
+
+  # - from: question5
+  #   to: 05AreYouNotTakingAlcoholNow
+  #   returnType: string
+
+  - from: question5Details
+    to: 05WhatIsTheDateYouAbstainedFromTakingAlcohol
+    returnType: string
+
+  - from: question6A
+    to: 01NoAHowOftenDidYouConsumeLiquorpleaseTick
+    returnType: string
+
+  - from: question6B
+    to: 01NoBTypeOfLiquor
+    returnType: string
+
+  - from: questionNoBeerQuantity
+    to: 01NoCQuantityBeer
+    returnType: string
+
+  - from: questionNoBeerQuantityDetails
+    to: 01NoBOtherBeer
+    returnType: string
+
+  - from: questionNoSpiritQuantity
+    to: 01NoCQuantitySpirit
+    returnType: string
+
+  - from: questionNoSpiritQuantityDetails
+    to: 01NoBOtherSpirit
+    returnType: string
+
+  - from: question6C
+    to: 06CQuantity
+    returnType: string
+
+  - from: 6BOtherDetails
+    to: 6BOther
+    returnType: string
+
+  - from: question7
+    to: 07HowIsYouGeneralHealth
+    returnType: string
+
+  - from: question8
+    to: 08HaveYouHadAnyConvictionsForBadDrivingForAlcoholAddictionIfSoGiveFullDetailsWithDatesEtc
+    returnType: string
+
+  - from: question8Details
+    to: 08GiveFullDetailsWithDatesEtc
+    returnType: string
+
+  - from: question9
+    to: 09HaveYouHadAnyAccidentsForAlcoholAddictionIfSoGiveFullDetailsWithDatesEtc
+    returnType: string
+
+  - from: question9Details
+    to: 09GiveFullDetailsWithDatesEtc
+    returnType: string
+
+  - from: question10
+    to: 10HaveYouBeenConvictedInACourtOfLowForAnyOtherOffenceOrWantedByLawEnforcementAuthoritiesForMisconductIfSoGiveFullDetailsWithDatesEtc
+    returnType: string
+
+  - from: question10Details
+    to: 10GiveFullDetailsWithDatesEtc
+    returnType: string
+
+  - from: question11
+    to: 11DoYouHaveYouSmokeSmokedCigarettesCigarsOrBeedis
+    returnType: string
+
+  - from: question11Details
+    to: 11PleaseGiveDetails
+    returnType: string
+
+  - from: signature
+    to: signatureOfTheProposer
+
+  # --- Metadata & Variables ---
+  - from: $variable
+    to: initialRecordCardID
+    value: "{{card_id}}"
+
+  - from: $variable
+    to: cLOUReferenceNumber
+    value: "{{clou_reference}}"
+
+  - from: $variable
+    to: sequenceNo
+    value: "{{contract_sequence}}"
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"
+
+  - from: signature
+    to: signatureOfTheProposer

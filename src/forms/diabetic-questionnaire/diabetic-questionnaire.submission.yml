@@ -4,6 +4,7 @@ baseUrl: https://app.workhub24.com
 endpoint: /api/workflows/MB4EALVIJI66HLKVX6LISPLOZ6HYZL6C/wee881b4e45/cards
 method: POST
 requiresAccessToken: true
+contentType: multipart/form-data
 
 headers:
   - name: Content-Type
@@ -24,7 +25,10 @@ fieldMapping:
   - from: dateDiagnosed
     to: dateDiabetesDiagnosed
     returnType: string
-    transform: toDate
+    # transform:
+    #   name: formatDate
+    #   options:
+    #     format: "YYYY-MM-DD"
 
   - from: nameAndAddressOfTheDoctor
     to: doctorNameAndAddress
@@ -36,9 +40,9 @@ fieldMapping:
     to: 3DoYouFollowAStrictDiet
     returnType: string
 
-  - from: strictDietDetails
-    to: 3Details
-    returnType: string
+  # - from: strictDietDetails
+  #   to: 3Details
+  #   returnType: string
 
   # 4. Oral Drug
   - from: oralDrug
@@ -98,11 +102,13 @@ fieldMapping:
   - from: date
     to: date
     returnType: string
-    transform: toDate
+    # transform:
+    #   name: formatDate
+    #   options:
+    #     format: "YYYY-MM-DD"
 
   - from: signature
     to: proposersSignature
-    returnType: string
 
   - from: generatedPDF
     to: generatedPDF
@@ -134,3 +140,7 @@ fieldMapping:
   - from: $variable
     to: sequenceNo
     value: "{{contract_sequence}}"
+
+  - from: $variable
+    to: language
+    value: "{{locale}}"

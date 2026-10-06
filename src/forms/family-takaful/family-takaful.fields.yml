@@ -26,7 +26,16 @@ revivalType:
   required: false
   options:
     revive the above certificate under special revival: 1. Revive the above certificate under special revival
-    normal revivall: 2. Review the above certificate under normal revival
+    normal revival: 2. Revive the above certificate under normal revival
+
+special_revival:
+  type: checkbox
+  label: "I hereby declare that I am aware that the premium amount will be increased and the maturity date will be extended after performing a special revival on this contract."
+  required: true
+  dependsOn: revivalType
+  conditionalOptions:
+    operator: eq
+    value: "revive the above certificate under special revival"
 
 benefit:
   type: checkbox
@@ -47,8 +56,8 @@ healthQ1:
   label: "01. Do you suffer or have you suffered from diabetes, heart disease, high blood pressure, elevated cholesterol, kidney disease, respiratory disease, liver disease, stroke, cancer?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ1Details:
       type: textarea
@@ -56,15 +65,15 @@ healthQ1:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ2:
   type: radio-group
   label: "02. Do you suffer or have you suffered from any other disease or undergone any medical investigation or surgery?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ2Details:
       type: textarea
@@ -72,15 +81,15 @@ healthQ2:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ3:
   type: radio-group
   label: "03. Have you consulted a Physician for any reason, including routine examinations and blood tests during the past 05 years?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ3Details:
       type: textarea
@@ -88,15 +97,15 @@ healthQ3:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ4:
   type: radio-group
   label: "04. Do you consume liquor/drugs or smoke cigarettes? (if so, please state the frequency and quantity)"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ4Details:
       type: textarea
@@ -104,15 +113,15 @@ healthQ4:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ5:
   type: radio-group
   label: "05. Do you or your relatives have or had any kind of threats on your/their lives or is/was there a criminal case made against you?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ5Details:
       type: textarea
@@ -120,15 +129,15 @@ healthQ5:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ6:
   type: radio-group
   label: "06. Have you had any proposal for life or health assurance/Takaful Cover declined or postponed or accepted with any extra premium/contribution?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ6Details:
       type: textarea
@@ -136,15 +145,15 @@ healthQ6:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ7:
   type: radio-group
   label: "07. Do you suffer from any mental impairment or physical deformity?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ7Details:
       type: textarea
@@ -152,31 +161,32 @@ healthQ7:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 healthQ8:
   type: radio-group
   label: "08. For female lives only: Are you pregnant? If so, when is the confinement?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
-  # dependencies:
-  #   confinementDate:
-  #     type: date
-  #     label: Confinement Date
-  #     required: true
-  #     conditionalOptions:
-  #       operator: eq
-  #       value: "yes"
+    Yes: "Yes"
+    No: "No"
+    not-applicable: "Not applicable"
+  dependencies:
+    confinementDate:
+      type: date
+      label: Confinement Date
+      required: true
+      conditionalOptions:
+        operator: eq
+        value: "Yes"
 
 healthQ9:
   type: radio-group
   label: "09. Have you changed your occupation?"
   required: true
   options:
-    yes: "Yes"
-    no: "No"
+    Yes: "Yes"
+    No: "No"
   dependencies:
     healthQ9Details:
       type: textarea
@@ -184,15 +194,25 @@ healthQ9:
       required: true
       conditionalOptions:
         operator: eq
-        value: "yes"
+        value: "Yes"
 
 declarationDate:
   type: date
   label: Date
   required: true
+  placeholder: Date
   defaultValue: "{{$today}}"
+  readOnly: true
 
 signature:
-  type: file
+  type: adjustableImage
   label: Signature of the participant
-  required: false
+  required: true
+  description: Take a photo or upload an image, then adjust the frame to include only the signature.
+  fileOptions:
+    maxSize: 10485760
+    allowedExtensions:
+      - png
+      - jpg
+      - jpeg
+      - webp

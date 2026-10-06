@@ -3,87 +3,103 @@
 proposersName:
   type: text
   label: "Proposer's Name"
-  required: false
+  required: true
   placeholder: "Proposer's Name"
   defaultValue: "{{client_name}}"
 
 contractNumber:
   type: text
   label: "Contract Number"
-  required: false
+  required: true
   placeholder: "Contract Number"
   defaultValue: "{{contract_number}}"
+  readOnly: true
 
 firstDateOfMenstrualPeriod:
   type: date
   label: "3. Date of first date of the last menstrual period"
-  required: false
+  required: true
 
 deliveryDate:
   type: date
   label: "4. Expected date of delivery"
-  required: false
+  required: true
 
-medicalDetails:
-  type: textarea
-  label: "5. Are you being-treated or closely monitored due to elevated blood pressure, diabetes or for any other pregnant related complications? if so,please give details and forward related medical reports."
-  required: false
+beingTreatedOrCloselyMonitored:
+  type: radio-group
+  label: "3. Are you being-treated or closely monitored due to elevated blood pressure, diabetes or for any other pregnant related complications?"
+  required: true
+  options:
+    Yes: Yes
+    No: No
+  dependencies:
+    beingTreatedOrCloselyMonitoredDetails:
+      type: textarea
+      label: Details
+      required: true
+      placeholder: Please give details and forward related medical reports.
+      conditionalOptions:
+        operator: eq
+        value: Yes
 
 abnormalitiesPertaining: 
   type: radio-group
   label: "6. Are you aware of any abnormalities pertaining to current pregnancy? If so, please give details. "
-  required: false
+  required: true
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   dependencies:
     abnormalitiesDetails:
       type: textarea
       label: Details
-      required: false
+      required: true
       placeholder: Enter Details
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 
 haveChildren:
   type: radio-group
-  label: 1. Do you have  children? If yes, state the number. 
-  required: false
+  label: 1. Do you have  children? If Yes, state the number. 
+  required: true
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   dependencies:
     childrenNo:
       type: number
       label: Number of Children
-      required: false
+      required: true
       placeholder: Enter Number of Children
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 
 prematureBirth:
-  type: textarea
-  label: 2. Were there any premature births? 
-  required: false
+  type: radio-group
+  label: 2. Were there any premature births?
+  required: true
+  options:
+    Yes: Yes
+    No: No
 
 treatedforPregnancyRelatedComplications:
   type: radio-group
   label: 3. During past pregnancy/ies, were you treated for elevated blood pressure, blood sugar or any adverse urine / blood reports or other illness/es? If so, please give details. 
-  required: false
+  required: true
   options:
-    yes: Yes
-    no: No
+    Yes: Yes
+    No: No
   dependencies:
     complicationsDetails:
       type: textarea
       label: Details
-      required: false
+      required: true
       placeholder: Enter Details
       conditionalOptions:
         operator: eq
-        value: yes
+        value: Yes
 
 
 date:
@@ -91,17 +107,19 @@ date:
   label: Date
   required: true
   placeholder: Date
-  defaultValue: ""
+  defaultValue: "{{$today}}"
+  readOnly: true
 
 signature:
-  type: file
+  type: adjustableImage
   label: Signature of the life to be assured
-  required: false
+  required: true
   defaultValue: ""
+  description: Take a photo or upload an image, then adjust the frame to include only the signature.
   fileOptions:
-    maxFileSize: 10485760
+    maxSize: 10485760
     allowedExtensions:
       - png
       - jpg
       - jpeg
-      - pdf
+      - webp
